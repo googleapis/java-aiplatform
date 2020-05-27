@@ -1,0 +1,15 @@
+{
+  "name": "aiplatform",
+  "name_pretty": "Cloud AI Platform",
+  "product_documentation": "https://cloud.google.com",
+  "api_description": "is about",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-aiplatform/latest/index.html",
+  "release_level": "alpha",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-aiplatform",
+  "repo_short": "java-aiplatform",
+  "distribution_name": "com.google.cloud:google-cloud-aiplatform",
+  "api_id": "aiplatform.googleapis.com",
+  "requires_billing": true
+}

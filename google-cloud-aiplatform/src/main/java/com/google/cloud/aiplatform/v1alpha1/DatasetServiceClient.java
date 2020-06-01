@@ -49,7 +49,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
- *   String name = "";
+ *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
  *   Dataset response = datasetServiceClient.getDataset(name);
  * }
  * </code>
@@ -317,8 +317,30 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   String name = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   Dataset response = datasetServiceClient.getDataset(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the Dataset resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Dataset getDataset(DatasetName name) {
+    GetDatasetRequest request =
+        GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   Dataset response = datasetServiceClient.getDataset(name.toString());
    * }
    * </code></pre>
    *
@@ -338,9 +360,9 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   String name = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   Dataset response = datasetServiceClient.getDataset(request);
    * }
@@ -361,9 +383,9 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   String name = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Dataset&gt; future = datasetServiceClient.getDatasetCallable().futureCall(request);
    *   // Do something

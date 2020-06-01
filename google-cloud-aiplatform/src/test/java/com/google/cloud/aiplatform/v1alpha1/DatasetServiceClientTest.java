@@ -181,7 +181,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
 
     Dataset actualResponse = client.getDataset(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -190,7 +190,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetDatasetRequest actualRequest = (GetDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -204,7 +204,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String name = "name3373707";
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
 
       client.getDataset(name);
       Assert.fail("No exception raised");

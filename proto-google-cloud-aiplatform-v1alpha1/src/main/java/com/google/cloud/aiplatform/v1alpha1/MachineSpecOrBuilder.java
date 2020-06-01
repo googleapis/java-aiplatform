@@ -29,7 +29,6 @@ public interface MachineSpecOrBuilder
    * <pre>
    * Immutable. The type of the machine.
    * Following machine types are supported:
-   * LINT.IfChange
    * * `n1-standard-2`
    * * `n1-standard-4`
    * * `n1-standard-8`
@@ -45,9 +44,6 @@ public interface MachineSpecOrBuilder
    * * `n1-highcpu-8`
    * * `n1-highcpu-16`
    * * `n1-highcpu-32`
-   * LINT.ThenChange(
-   * //depot/google3/java/com/google/cloud/ai
-   * // /platform/boq/common/validator/Validator.java)
    * When used for [DeployedMode][] this field is optional and the default value
    * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1alpha1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1alpha1.WorkerPoolSpec] this field is required.
@@ -64,7 +60,6 @@ public interface MachineSpecOrBuilder
    * <pre>
    * Immutable. The type of the machine.
    * Following machine types are supported:
-   * LINT.IfChange
    * * `n1-standard-2`
    * * `n1-standard-4`
    * * `n1-standard-8`
@@ -80,9 +75,6 @@ public interface MachineSpecOrBuilder
    * * `n1-highcpu-8`
    * * `n1-highcpu-16`
    * * `n1-highcpu-32`
-   * LINT.ThenChange(
-   * //depot/google3/java/com/google/cloud/ai
-   * // /platform/boq/common/validator/Validator.java)
    * When used for [DeployedMode][] this field is optional and the default value
    * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1alpha1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1alpha1.WorkerPoolSpec] this field is required.

@@ -136,7 +136,6 @@ public interface HyperparameterTuningJobOrBuilder
    *
    * <pre>
    * Required. The desired number of Trials to run in parallel.
-   * The default is 1 Trial.
    * </pre>
    *
    * <code>int32 parallel_trial_count = 6 [(.google.api.field_behavior) = REQUIRED];</code>

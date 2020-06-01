@@ -28,7 +28,7 @@
  * <pre>
  * <code>
  * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
- *   String name = "";
+ *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
  *   Dataset response = datasetServiceClient.getDataset(name);
  * }
  * </code>

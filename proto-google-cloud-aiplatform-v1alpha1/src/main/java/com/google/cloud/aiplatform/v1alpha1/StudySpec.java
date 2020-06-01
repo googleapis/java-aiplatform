@@ -4168,9 +4168,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4183,9 +4183,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4198,9 +4198,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4334,9 +4334,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4351,9 +4351,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4368,9 +4368,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of possible values.
-       * The list should be in strictly increasing order. For instance, this
-       * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-       * should not contain more than 1,000 values.
+       * The list should be in increasing order and at least 1e-10 apart.
+       * For instance, this parameter might have possible settings of 1.5, 2.5,
+       * and 4.0. This list should not contain more than 1,000 values.
        * </pre>
        *
        * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4776,9 +4776,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4795,9 +4795,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4812,9 +4812,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4830,9 +4830,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4852,9 +4852,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4873,9 +4873,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4894,9 +4894,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. A list of possible values.
-         * The list should be in strictly increasing order. For instance, this
-         * parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-         * should not contain more than 1,000 values.
+         * The list should be in increasing order and at least 1e-10 apart.
+         * For instance, this parameter might have possible settings of 1.5, 2.5,
+         * and 4.0. This list should not contain more than 1,000 values.
          * </pre>
          *
          * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>

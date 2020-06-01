@@ -54,7 +54,6 @@ message HyperparameterTuningJob {
   int32 max_trial_count = 5 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The desired number of Trials to run in parallel.
-  // The default is 1 Trial.
   int32 parallel_trial_count = 6 [(google.api.field_behavior) = REQUIRED];
 
   // The number of failed Trials that need to be seen before failing

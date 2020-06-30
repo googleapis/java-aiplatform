@@ -249,6 +249,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+   * chosen schema must be consistent with the parent Dataset's
+   * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
    * </pre>
    *
    * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -275,6 +279,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+   * chosen schema must be consistent with the parent Dataset's
+   * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
    * </pre>
    *
    * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1164,6 +1172,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+     * chosen schema must be consistent with the parent Dataset's
+     * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
      * </pre>
      *
      * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1190,6 +1202,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+     * chosen schema must be consistent with the parent Dataset's
+     * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
      * </pre>
      *
      * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1216,6 +1232,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+     * chosen schema must be consistent with the parent Dataset's
+     * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
      * </pre>
      *
      * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1241,6 +1261,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+     * chosen schema must be consistent with the parent Dataset's
+     * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
      * </pre>
      *
      * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1262,6 +1286,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+     * chosen schema must be consistent with the parent Dataset's
+     * [metadata][google.cloud.aiplatform.v1alpha1.Dataset.metadata_schema_uri].
      * </pre>
      *
      * <code>string payload_schema_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -903,7 +903,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   for (ModelEvaluation element : modelServiceClient.listModelEvaluations(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -914,7 +914,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/models/{model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelEvaluationsPagedResponse listModelEvaluations(LocationName parent) {
+  public final ListModelEvaluationsPagedResponse listModelEvaluations(ModelName parent) {
     ListModelEvaluationsRequest request =
         ListModelEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -930,7 +930,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   for (ModelEvaluation element : modelServiceClient.listModelEvaluations(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -955,7 +955,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -981,7 +981,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -1006,7 +1006,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

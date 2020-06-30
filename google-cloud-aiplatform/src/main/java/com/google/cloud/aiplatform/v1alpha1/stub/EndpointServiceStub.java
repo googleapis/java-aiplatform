@@ -43,7 +43,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for AI Platform API.
+ * Base stub class for Cloud AI Platform API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

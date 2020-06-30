@@ -585,6 +585,8 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this job.
    * Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   * Note: This field currently may be not populated for batch predictions that
+   * use AutoML Models.
    * </pre>
    *
    * <code>
@@ -601,6 +603,8 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this job.
    * Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   * Note: This field currently may be not populated for batch predictions that
+   * use AutoML Models.
    * </pre>
    *
    * <code>
@@ -617,6 +621,8 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this job.
    * Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   * Note: This field currently may be not populated for batch predictions that
+   * use AutoML Models.
    * </pre>
    *
    * <code>

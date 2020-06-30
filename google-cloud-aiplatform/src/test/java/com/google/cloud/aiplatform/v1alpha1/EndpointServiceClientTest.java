@@ -225,7 +225,7 @@ public class EndpointServiceClientTest {
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
-    EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListEndpointsPagedResponse pagedListResponse = client.listEndpoints(parent);
 
@@ -237,7 +237,7 @@ public class EndpointServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEndpointsRequest actualRequest = (ListEndpointsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, EndpointName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -251,7 +251,7 @@ public class EndpointServiceClientTest {
     mockEndpointService.addException(exception);
 
     try {
-      EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
       client.listEndpoints(parent);
       Assert.fail("No exception raised");

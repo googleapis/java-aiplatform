@@ -50,6 +50,8 @@ message Dataset {
   // https:
   // //github.com/OAI/OpenAPI-Specification/b
   // // lob/master/versions/3.0.2.md#schema-object)
+  // The schema files that can be used here are found in
+  // gs://google-cloud-aiplatform/schema/dataset/metadata/.
   string metadata_schema_uri = 3 [(google.api.field_behavior) = REQUIRED];
 
   // Required. An additional information about the Dataset; the schema of the metadata can

@@ -186,7 +186,7 @@ public interface DataItemOrBuilder
    * <pre>
    * Required. The data that the DataItem represents (e.g. an image or a text snippet).
    * The schema of the payload is stored in the parent Dataset's
-   * [data_item_schema][Dataset.data_item_schema].
+   * [metadata schema's][Dataset.metadata_shema_uri] dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -200,7 +200,7 @@ public interface DataItemOrBuilder
    * <pre>
    * Required. The data that the DataItem represents (e.g. an image or a text snippet).
    * The schema of the payload is stored in the parent Dataset's
-   * [data_item_schema][Dataset.data_item_schema].
+   * [metadata schema's][Dataset.metadata_shema_uri] dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -214,7 +214,7 @@ public interface DataItemOrBuilder
    * <pre>
    * Required. The data that the DataItem represents (e.g. an image or a text snippet).
    * The schema of the payload is stored in the parent Dataset's
-   * [data_item_schema][Dataset.data_item_schema].
+   * [metadata schema's][Dataset.metadata_shema_uri] dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>

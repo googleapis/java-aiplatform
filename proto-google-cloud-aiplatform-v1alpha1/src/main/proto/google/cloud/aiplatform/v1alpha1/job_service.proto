@@ -22,7 +22,6 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/aiplatform/v1alpha1/batch_prediction_job.proto";
 import "google/cloud/aiplatform/v1alpha1/custom_job.proto";
-import "google/cloud/aiplatform/v1alpha1/data_labeling_job.proto";
 import "google/cloud/aiplatform/v1alpha1/hyperparameter_tuning_job.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
@@ -89,52 +88,6 @@ service JobService {
   rpc CancelCustomJob(CancelCustomJobRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       post: "/v1alpha1/{name=projects/*/locations/*/customJobs/*}:cancel"
-      body: "*"
-    };
-    option (google.api.method_signature) = "name";
-  }
-
-  // Creates a DataLabelingJob.
-  rpc CreateDataLabelingJob(CreateDataLabelingJobRequest) returns (DataLabelingJob) {
-    option (google.api.http) = {
-      post: "/v1alpha1/{parent=projects/*/locations/*}/dataLabelingJobs"
-      body: "data_labeling_job"
-    };
-    option (google.api.method_signature) = "parent,data_labeling_job";
-  }
-
-  // Gets a DataLabelingJob.
-  rpc GetDataLabelingJob(GetDataLabelingJobRequest) returns (DataLabelingJob) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{name=projects/*/locations/*/dataLabelingJobs/*}"
-    };
-    option (google.api.method_signature) = "name";
-  }
-
-  // Lists DataLabelingJobs in a Location.
-  rpc ListDataLabelingJobs(ListDataLabelingJobsRequest) returns (ListDataLabelingJobsResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{parent=projects/*/locations/*}/dataLabelingJobs"
-    };
-    option (google.api.method_signature) = "parent";
-  }
-
-  // Deletes a DataLabelingJob.
-  rpc DeleteDataLabelingJob(DeleteDataLabelingJobRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      delete: "/v1alpha1/{name=projects/*/locations/*/dataLabelingJobs/*}"
-    };
-    option (google.api.method_signature) = "name";
-    option (google.longrunning.operation_info) = {
-      response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
-    };
-  }
-
-  // Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
-  rpc CancelDataLabelingJob(CancelDataLabelingJobRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      post: "/v1alpha1/{name=projects/*/locations/*/dataLabelingJobs/*}:cancel"
       body: "*"
     };
     option (google.api.method_signature) = "name";
@@ -348,109 +301,6 @@ message CancelCustomJobRequest {
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
       type: "aiplatform.googleapis.com/CustomJob"
-    }
-  ];
-}
-
-// Request message for [DataLabelingJobService.CreateDataLabelingJob][].
-message CreateDataLabelingJobRequest {
-  // Required. The parent of the DataLabelingJob.
-  // Format: `projects/{project}/locations/{location}`
-  string parent = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "locations.googleapis.com/Location"
-    }
-  ];
-
-  // Required. The DataLabelingJob to create.
-  DataLabelingJob data_labeling_job = 2 [(google.api.field_behavior) = REQUIRED];
-}
-
-// Request message for [DataLabelingJobService.GetDataLabelingJob][].
-message GetDataLabelingJobRequest {
-  // Required. The name of the DataLabelingJob.
-  // Format:
-  //
-  // `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-  string name = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/DataLabelingJob"
-    }
-  ];
-}
-
-// Request message for [DataLabelingJobService.ListDataLabelingJobs][].
-message ListDataLabelingJobsRequest {
-  // Required. The parent of the DataLabelingJob.
-  // Format: `projects/{project}/locations/{location}`
-  string parent = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "locations.googleapis.com/Location"
-    }
-  ];
-
-  // The standard list filter.
-  // Supported fields:
-  //   * `display_name` supports = and !=.
-  //   * `state` supports = and !=.
-  //
-  // Some examples of using the filter are:
-  //  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-  //  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-  //  * `NOT display_name="my_job"`
-  //  * `state="JOB_STATE_FAILED"`
-  string filter = 2;
-
-  // The standard list page size.
-  int32 page_size = 3;
-
-  // The standard list page token.
-  string page_token = 4;
-
-  // Mask specifying which fields to read. FieldMask represents a set of
-  // symbolic field paths. For example, the mask can be `paths: "name"`. The
-  // "name" here is a field in DataLabelingJob.
-  // If this field is not set, all fields of the DataLabelingJob are returned.
-  google.protobuf.FieldMask read_mask = 5;
-}
-
-// Response message for [DataLabelingJobService.ListDataLabelingJobs][].
-message ListDataLabelingJobsResponse {
-  // A list of DataLabelingJobs that matches the specified filter in the
-  // request.
-  repeated DataLabelingJob data_labeling_jobs = 1;
-
-  // The standard List next-page token.
-  string next_page_token = 2;
-}
-
-// Request message for [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1alpha1.JobService.DeleteDataLabelingJob].
-message DeleteDataLabelingJobRequest {
-  // Required. The name of the DataLabelingJob to be deleted.
-  // Format:
-  //
-  // `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-  string name = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/DataLabelingJob"
-    }
-  ];
-}
-
-// Request message for [DataLabelingJobService.CancelDataLabelingJob][].
-message CancelDataLabelingJobRequest {
-  // Required. The name of the DataLabelingJob.
-  // Format:
-  //
-  // `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
-  string name = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/DataLabelingJob"
     }
   ];
 }

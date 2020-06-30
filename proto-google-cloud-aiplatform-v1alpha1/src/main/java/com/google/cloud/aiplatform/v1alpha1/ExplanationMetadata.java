@@ -3011,7 +3011,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Tables Models always have this field populated.
+   * AutoML Tables Models always have this field populated by AI Platform.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.
@@ -3042,7 +3042,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Tables Models always have this field populated.
+   * AutoML Tables Models always have this field populated by AI Platform.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.
@@ -3914,7 +3914,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Tables Models always have this field populated.
+     * AutoML Tables Models always have this field populated by AI Platform.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -3945,7 +3945,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Tables Models always have this field populated.
+     * AutoML Tables Models always have this field populated by AI Platform.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -3976,7 +3976,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Tables Models always have this field populated.
+     * AutoML Tables Models always have this field populated by AI Platform.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -4006,7 +4006,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Tables Models always have this field populated.
+     * AutoML Tables Models always have this field populated by AI Platform.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -4032,7 +4032,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Tables Models always have this field populated.
+     * AutoML Tables Models always have this field populated by AI Platform.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.

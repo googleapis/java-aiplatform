@@ -409,7 +409,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Endpoint element : endpointServiceClient.listEndpoints(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -420,7 +420,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointsPagedResponse listEndpoints(EndpointName parent) {
+  public final ListEndpointsPagedResponse listEndpoints(LocationName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -436,7 +436,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Endpoint element : endpointServiceClient.listEndpoints(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -460,7 +460,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -485,7 +485,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -510,7 +510,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

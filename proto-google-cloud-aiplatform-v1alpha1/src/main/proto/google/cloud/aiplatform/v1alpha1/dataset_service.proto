@@ -145,7 +145,7 @@ message CreateDatasetRequest {
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/Dataset"
+      type: "locations.googleapis.com/Location"
     }
   ];
 
@@ -191,7 +191,12 @@ message UpdateDatasetRequest {
 message ListDatasetsRequest {
   // Required. The name of the Dataset's parent resource.
   // Format: `projects/{project}/locations/{location}`
-  string parent = 1 [(google.api.field_behavior) = REQUIRED];
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "locations.googleapis.com/Location"
+    }
+  ];
 
   // The standard list filter.
   string filter = 2;
@@ -233,7 +238,12 @@ message ImportDataRequest {
   // Required. The name of the Dataset resource.
   // Format:
   // `projects/{project}/locations/{location}/datasets/{dataset}`
-  string name = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/Dataset"
+    }
+  ];
 
   // Required. The desired input locations. The contents of all input locations will be
   // imported in one batch.
@@ -256,7 +266,12 @@ message ExportDataRequest {
   // Required. The name of the Dataset resource.
   // Format:
   // `projects/{project}/locations/{location}/datasets/{dataset}`
-  string name = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/Dataset"
+    }
+  ];
 
   // Required. The desired output location.
   ExportDataConfig export_config = 2 [(google.api.field_behavior) = REQUIRED];
@@ -283,7 +298,12 @@ message ListDataItemsRequest {
   // Required. The resource name of the Dataset to list DataItems from.
   // Format:
   // `projects/{project}/locations/{location}/datasets/{dataset}`
-  string parent = 1 [(google.api.field_behavior) = REQUIRED];
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/Dataset"
+    }
+  ];
 
   // The standard list filter.
   string filter = 2;
@@ -313,7 +333,12 @@ message GetAnnotationSpecRequest {
   // Format:
   //
   // `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
-  string name = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/AnnotationSpec"
+    }
+  ];
 
   // Mask specifying which fields to read.
   google.protobuf.FieldMask read_mask = 2;
@@ -325,7 +350,12 @@ message ListAnnotationsRequest {
   // Format:
   //
   // `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
-  string parent = 1 [(google.api.field_behavior) = REQUIRED];
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/DataItem"
+    }
+  ];
 
   // The standard list filter.
   string filter = 2;

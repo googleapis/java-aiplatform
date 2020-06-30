@@ -128,7 +128,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(resultOperation);
 
-    DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Dataset dataset = Dataset.newBuilder().build();
 
     Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
@@ -138,7 +138,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateDatasetRequest actualRequest = (CreateDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(dataset, actualRequest.getDataset());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -153,7 +153,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Dataset dataset = Dataset.newBuilder().build();
 
       client.createDatasetAsync(parent, dataset).get();
@@ -277,7 +277,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
 
@@ -289,7 +289,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDatasetsRequest actualRequest = (ListDatasetsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -303,7 +303,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
       client.listDatasets(parent);
       Assert.fail("No exception raised");
@@ -370,7 +370,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
     List<ImportDataConfig> importConfigs = new ArrayList<>();
 
     ImportDataResponse actualResponse = client.importDataAsync(name, importConfigs).get();
@@ -380,7 +380,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ImportDataRequest actualRequest = (ImportDataRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertEquals(importConfigs, actualRequest.getImportConfigsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -395,7 +395,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String name = "name3373707";
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
       List<ImportDataConfig> importConfigs = new ArrayList<>();
 
       client.importDataAsync(name, importConfigs).get();
@@ -419,7 +419,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
     ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
 
     ExportDataResponse actualResponse = client.exportDataAsync(name, exportConfig).get();
@@ -429,7 +429,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertEquals(exportConfig, actualRequest.getExportConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -444,7 +444,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String name = "name3373707";
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
       ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
 
       client.exportDataAsync(name, exportConfig).get();
@@ -469,7 +469,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
 
     ListDataItemsPagedResponse pagedListResponse = client.listDataItems(parent);
 
@@ -481,7 +481,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDataItemsRequest actualRequest = (ListDataItemsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -495,7 +495,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
 
       client.listDataItems(parent);
       Assert.fail("No exception raised");
@@ -519,7 +519,8 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    AnnotationSpecName name =
+        AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
 
     AnnotationSpec actualResponse = client.getAnnotationSpec(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -528,7 +529,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetAnnotationSpecRequest actualRequest = (GetAnnotationSpecRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, AnnotationSpecName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -542,7 +543,8 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String name = "name3373707";
+      AnnotationSpecName name =
+          AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
 
       client.getAnnotationSpec(name);
       Assert.fail("No exception raised");
@@ -564,7 +566,7 @@ public class DatasetServiceClientTest {
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
 
     ListAnnotationsPagedResponse pagedListResponse = client.listAnnotations(parent);
 
@@ -576,7 +578,7 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListAnnotationsRequest actualRequest = (ListAnnotationsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, DataItemName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -590,7 +592,7 @@ public class DatasetServiceClientTest {
     mockDatasetService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
 
       client.listAnnotations(parent);
       Assert.fail("No exception raised");

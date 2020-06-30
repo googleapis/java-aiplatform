@@ -143,7 +143,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated.
+   * AutoML Models always have this field populated by AI Platform.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -176,7 +176,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated.
+   * AutoML Models always have this field populated by AI Platform.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -212,8 +212,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated, if no parameters are
-   * supported it is set to an empty string.
+   * AutoML Models always have this field populated by AI Platform, if no
+   * parameters are supported it is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -246,8 +246,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated, if no parameters are
-   * supported it is set to an empty string.
+   * AutoML Models always have this field populated by AI Platform, if no
+   * parameters are supported it is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -283,7 +283,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated.
+   * AutoML Models always have this field populated by AI Platform.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -316,7 +316,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
-   * AutoML Models always have this field populated.
+   * AutoML Models always have this field populated by AI Platform.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -703,7 +703,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -736,7 +736,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -769,7 +769,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -801,7 +801,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -829,7 +829,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -864,8 +864,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated, if no parameters are
-     * supported it is set to an empty string.
+     * AutoML Models always have this field populated by AI Platform, if no
+     * parameters are supported it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -898,8 +898,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated, if no parameters are
-     * supported it is set to an empty string.
+     * AutoML Models always have this field populated by AI Platform, if no
+     * parameters are supported it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -932,8 +932,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated, if no parameters are
-     * supported it is set to an empty string.
+     * AutoML Models always have this field populated by AI Platform, if no
+     * parameters are supported it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -965,8 +965,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated, if no parameters are
-     * supported it is set to an empty string.
+     * AutoML Models always have this field populated by AI Platform, if no
+     * parameters are supported it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -994,8 +994,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated, if no parameters are
-     * supported it is set to an empty string.
+     * AutoML Models always have this field populated by AI Platform, if no
+     * parameters are supported it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1030,7 +1030,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1063,7 +1063,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1096,7 +1096,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1128,7 +1128,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1156,7 +1156,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
-     * AutoML Models always have this field populated.
+     * AutoML Models always have this field populated by AI Platform.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.

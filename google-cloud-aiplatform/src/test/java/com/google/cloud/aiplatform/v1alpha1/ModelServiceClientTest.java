@@ -415,7 +415,7 @@ public class ModelServiceClientTest {
             .build();
     mockModelService.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
 
     ListModelEvaluationsPagedResponse pagedListResponse = client.listModelEvaluations(parent);
 
@@ -427,7 +427,7 @@ public class ModelServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListModelEvaluationsRequest actualRequest = (ListModelEvaluationsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ModelName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -441,7 +441,7 @@ public class ModelServiceClientTest {
     mockModelService.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
 
       client.listModelEvaluations(parent);
       Assert.fail("No exception raised");

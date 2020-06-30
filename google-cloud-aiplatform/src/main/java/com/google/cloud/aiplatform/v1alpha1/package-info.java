@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to AI Platform API.
+ * A client to Cloud AI Platform API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

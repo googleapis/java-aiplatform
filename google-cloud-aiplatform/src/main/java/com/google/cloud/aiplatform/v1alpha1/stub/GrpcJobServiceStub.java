@@ -17,7 +17,6 @@ package com.google.cloud.aiplatform.v1alpha1.stub;
 
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListCustomJobsPagedResponse;
-import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -32,30 +31,23 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1alpha1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelCustomJobRequest;
-import com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateCustomJobRequest;
-import com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CustomJob;
-import com.google.cloud.aiplatform.v1alpha1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1alpha1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteCustomJobRequest;
-import com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1alpha1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetCustomJobRequest;
-import com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsResponse;
-import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest;
-import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsResponse;
 import com.google.common.collect.ImmutableMap;
@@ -71,7 +63,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for AI Platform API.
+ * gRPC stub implementation for Cloud AI Platform API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -122,55 +114,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1alpha1.JobService/CancelCustomJob")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelCustomJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<CreateDataLabelingJobRequest, DataLabelingJob>
-      createDataLabelingJobMethodDescriptor =
-          MethodDescriptor.<CreateDataLabelingJobRequest, DataLabelingJob>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1alpha1.JobService/CreateDataLabelingJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateDataLabelingJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetDataLabelingJobRequest, DataLabelingJob>
-      getDataLabelingJobMethodDescriptor =
-          MethodDescriptor.<GetDataLabelingJobRequest, DataLabelingJob>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1alpha1.JobService/GetDataLabelingJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetDataLabelingJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
-      listDataLabelingJobsMethodDescriptor =
-          MethodDescriptor.<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1alpha1.JobService/ListDataLabelingJobs")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListDataLabelingJobsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListDataLabelingJobsResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteDataLabelingJobRequest, Operation>
-      deleteDataLabelingJobMethodDescriptor =
-          MethodDescriptor.<DeleteDataLabelingJobRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1alpha1.JobService/DeleteDataLabelingJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDataLabelingJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<CancelDataLabelingJobRequest, Empty>
-      cancelDataLabelingJobMethodDescriptor =
-          MethodDescriptor.<CancelDataLabelingJobRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1alpha1.JobService/CancelDataLabelingJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CancelDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<
@@ -297,19 +240,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final OperationCallable<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
       deleteCustomJobOperationCallable;
   private final UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable;
-  private final UnaryCallable<CreateDataLabelingJobRequest, DataLabelingJob>
-      createDataLabelingJobCallable;
-  private final UnaryCallable<GetDataLabelingJobRequest, DataLabelingJob>
-      getDataLabelingJobCallable;
-  private final UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
-      listDataLabelingJobsCallable;
-  private final UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
-      listDataLabelingJobsPagedCallable;
-  private final UnaryCallable<DeleteDataLabelingJobRequest, Operation>
-      deleteDataLabelingJobCallable;
-  private final OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
-      deleteDataLabelingJobOperationCallable;
-  private final UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable;
   private final UnaryCallable<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
       createHyperparameterTuningJobCallable;
   private final UnaryCallable<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -442,75 +372,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 new RequestParamsExtractor<CancelCustomJobRequest>() {
                   @Override
                   public Map<String, String> extract(CancelCustomJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
-        createDataLabelingJobTransportSettings =
-            GrpcCallSettings.<CreateDataLabelingJobRequest, DataLabelingJob>newBuilder()
-                .setMethodDescriptor(createDataLabelingJobMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
-        getDataLabelingJobTransportSettings =
-            GrpcCallSettings.<GetDataLabelingJobRequest, DataLabelingJob>newBuilder()
-                .setMethodDescriptor(getDataLabelingJobMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<GetDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
-        listDataLabelingJobsTransportSettings =
-            GrpcCallSettings.<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>newBuilder()
-                .setMethodDescriptor(listDataLabelingJobsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ListDataLabelingJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListDataLabelingJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<DeleteDataLabelingJobRequest, Operation>
-        deleteDataLabelingJobTransportSettings =
-            GrpcCallSettings.<DeleteDataLabelingJobRequest, Operation>newBuilder()
-                .setMethodDescriptor(deleteDataLabelingJobMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobTransportSettings =
-        GrpcCallSettings.<CancelDataLabelingJobRequest, Empty>newBuilder()
-            .setMethodDescriptor(cancelDataLabelingJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CancelDataLabelingJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelDataLabelingJobRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -692,42 +553,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
     this.cancelCustomJobCallable =
         callableFactory.createUnaryCallable(
             cancelCustomJobTransportSettings, settings.cancelCustomJobSettings(), clientContext);
-    this.createDataLabelingJobCallable =
-        callableFactory.createUnaryCallable(
-            createDataLabelingJobTransportSettings,
-            settings.createDataLabelingJobSettings(),
-            clientContext);
-    this.getDataLabelingJobCallable =
-        callableFactory.createUnaryCallable(
-            getDataLabelingJobTransportSettings,
-            settings.getDataLabelingJobSettings(),
-            clientContext);
-    this.listDataLabelingJobsCallable =
-        callableFactory.createUnaryCallable(
-            listDataLabelingJobsTransportSettings,
-            settings.listDataLabelingJobsSettings(),
-            clientContext);
-    this.listDataLabelingJobsPagedCallable =
-        callableFactory.createPagedCallable(
-            listDataLabelingJobsTransportSettings,
-            settings.listDataLabelingJobsSettings(),
-            clientContext);
-    this.deleteDataLabelingJobCallable =
-        callableFactory.createUnaryCallable(
-            deleteDataLabelingJobTransportSettings,
-            settings.deleteDataLabelingJobSettings(),
-            clientContext);
-    this.deleteDataLabelingJobOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteDataLabelingJobTransportSettings,
-            settings.deleteDataLabelingJobOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.cancelDataLabelingJobCallable =
-        callableFactory.createUnaryCallable(
-            cancelDataLabelingJobTransportSettings,
-            settings.cancelDataLabelingJobSettings(),
-            clientContext);
     this.createHyperparameterTuningJobCallable =
         callableFactory.createUnaryCallable(
             createHyperparameterTuningJobTransportSettings,
@@ -838,39 +663,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
 
   public UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable() {
     return cancelCustomJobCallable;
-  }
-
-  public UnaryCallable<CreateDataLabelingJobRequest, DataLabelingJob>
-      createDataLabelingJobCallable() {
-    return createDataLabelingJobCallable;
-  }
-
-  public UnaryCallable<GetDataLabelingJobRequest, DataLabelingJob> getDataLabelingJobCallable() {
-    return getDataLabelingJobCallable;
-  }
-
-  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
-      listDataLabelingJobsPagedCallable() {
-    return listDataLabelingJobsPagedCallable;
-  }
-
-  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
-      listDataLabelingJobsCallable() {
-    return listDataLabelingJobsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
-      deleteDataLabelingJobOperationCallable() {
-    return deleteDataLabelingJobOperationCallable;
-  }
-
-  public UnaryCallable<DeleteDataLabelingJobRequest, Operation> deleteDataLabelingJobCallable() {
-    return deleteDataLabelingJobCallable;
-  }
-
-  public UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable() {
-    return cancelDataLabelingJobCallable;
   }
 
   public UnaryCallable<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>

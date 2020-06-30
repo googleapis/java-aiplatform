@@ -314,6 +314,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -341,6 +343,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * https:
    * //github.com/OAI/OpenAPI-Specification/b
    * // lob/master/versions/3.0.2.md#schema-object)
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1408,6 +1412,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1435,6 +1441,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1462,6 +1470,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1488,6 +1498,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1510,6 +1522,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * https:
      * //github.com/OAI/OpenAPI-Specification/b
      * // lob/master/versions/3.0.2.md#schema-object)
+     * The schema files that can be used here are found in
+     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>

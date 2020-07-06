@@ -27,6 +27,19 @@ public final class DataLabelingJobProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_AnnotationLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_AnnotationLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_LabelsEntry_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -43,11 +56,35 @@ public final class DataLabelingJobProto {
           + "to\0326google/cloud/aiplatform/v1alpha1/spe"
           + "cialist_pool.proto\032\034google/protobuf/stru"
           + "ct.proto\032\037google/protobuf/timestamp.prot"
-          + "o\032\034google/api/annotations.protoB\212\001\n$com."
-          + "google.cloud.aiplatform.v1alpha1B\024DataLa"
-          + "belingJobProtoP\001ZJgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/aiplatform/v1alpha"
-          + "1;aiplatformb\006proto3"
+          + "o\032\027google/type/money.proto\032\034google/api/a"
+          + "nnotations.proto\"\262\007\n\017DataLabelingJob\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340"
+          + "A\002\022;\n\010datasets\030\003 \003(\tB)\340A\002\372A#\n!aiplatform"
+          + ".googleapis.com/Dataset\022b\n\021annotation_la"
+          + "bels\030\014 \003(\0132G.google.cloud.aiplatform.v1a"
+          + "lpha1.DataLabelingJob.AnnotationLabelsEn"
+          + "try\022\032\n\rlabeler_count\030\004 \001(\005B\003\340A\002\022\034\n\017instr"
+          + "uction_uri\030\005 \001(\tB\003\340A\002\022\036\n\021inputs_schema_u"
+          + "ri\030\006 \001(\tB\003\340A\002\022+\n\006inputs\030\007 \001(\0132\026.google.p"
+          + "rotobuf.ValueB\003\340A\002\022>\n\005state\030\010 \001(\0162*.goog"
+          + "le.cloud.aiplatform.v1alpha1.JobStateB\003\340"
+          + "A\003\022\036\n\021labeling_progress\030\r \001(\005B\003\340A\003\022.\n\rcu"
+          + "rrent_spend\030\016 \001(\0132\022.google.type.MoneyB\003\340"
+          + "A\003\0224\n\013create_time\030\t \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\n \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\022M\n\006labels"
+          + "\030\013 \003(\0132=.google.cloud.aiplatform.v1alpha"
+          + "1.DataLabelingJob.LabelsEntry\022\030\n\020special"
+          + "ist_pools\030\020 \003(\t\0327\n\025AnnotationLabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Labe"
+          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:"
+          + "|\352Ay\n)aiplatform.googleapis.com/DataLabe"
+          + "lingJob\022Lprojects/{project}/locations/{l"
+          + "ocation}/dataLabelingJobs/{data_labeling"
+          + "_job}B\212\001\n$com.google.cloud.aiplatform.v1"
+          + "alpha1B\024DataLabelingJobProtoP\001ZJgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/aipl"
+          + "atform/v1alpha1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -59,14 +96,65 @@ public final class DataLabelingJobProto {
               com.google.cloud.aiplatform.v1alpha1.SpecialistPoolProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.MoneyProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "Datasets",
+              "AnnotationLabels",
+              "LabelerCount",
+              "InstructionUri",
+              "InputsSchemaUri",
+              "Inputs",
+              "State",
+              "LabelingProgress",
+              "CurrentSpend",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "SpecialistPools",
+            });
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_AnnotationLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_AnnotationLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_AnnotationLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1alpha1_DataLabelingJob_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1alpha1.JobStateProto.getDescriptor();
     com.google.cloud.aiplatform.v1alpha1.SpecialistPoolProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.MoneyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

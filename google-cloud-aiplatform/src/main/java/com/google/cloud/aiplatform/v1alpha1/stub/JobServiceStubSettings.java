@@ -17,6 +17,7 @@ package com.google.cloud.aiplatform.v1alpha1.stub;
 
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListCustomJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -48,23 +49,30 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1alpha1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CustomJob;
+import com.google.cloud.aiplatform.v1alpha1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1alpha1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1alpha1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsResponse;
+import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest;
+import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsResponse;
 import com.google.common.collect.ImmutableList;
@@ -125,6 +133,21 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final OperationCallSettings<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
       deleteCustomJobOperationSettings;
   private final UnaryCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobSettings;
+  private final UnaryCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
+      createDataLabelingJobSettings;
+  private final UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
+      getDataLabelingJobSettings;
+  private final PagedCallSettings<
+          ListDataLabelingJobsRequest,
+          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsSettings;
+  private final UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
+      deleteDataLabelingJobSettings;
+  private final OperationCallSettings<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationSettings;
+  private final UnaryCallSettings<CancelDataLabelingJobRequest, Empty>
+      cancelDataLabelingJobSettings;
   private final UnaryCallSettings<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
       createHyperparameterTuningJobSettings;
   private final UnaryCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -190,6 +213,45 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   /** Returns the object with the settings used for calls to cancelCustomJob. */
   public UnaryCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
     return cancelCustomJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDataLabelingJob. */
+  public UnaryCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
+      createDataLabelingJobSettings() {
+    return createDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataLabelingJob. */
+  public UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
+      getDataLabelingJobSettings() {
+    return getDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataLabelingJobs. */
+  public PagedCallSettings<
+          ListDataLabelingJobsRequest,
+          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsSettings() {
+    return listDataLabelingJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  public UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
+      deleteDataLabelingJobSettings() {
+    return deleteDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationSettings() {
+    return deleteDataLabelingJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelDataLabelingJob. */
+  public UnaryCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobSettings() {
+    return cancelDataLabelingJobSettings;
   }
 
   /** Returns the object with the settings used for calls to createHyperparameterTuningJob. */
@@ -347,6 +409,13 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     deleteCustomJobSettings = settingsBuilder.deleteCustomJobSettings().build();
     deleteCustomJobOperationSettings = settingsBuilder.deleteCustomJobOperationSettings().build();
     cancelCustomJobSettings = settingsBuilder.cancelCustomJobSettings().build();
+    createDataLabelingJobSettings = settingsBuilder.createDataLabelingJobSettings().build();
+    getDataLabelingJobSettings = settingsBuilder.getDataLabelingJobSettings().build();
+    listDataLabelingJobsSettings = settingsBuilder.listDataLabelingJobsSettings().build();
+    deleteDataLabelingJobSettings = settingsBuilder.deleteDataLabelingJobSettings().build();
+    deleteDataLabelingJobOperationSettings =
+        settingsBuilder.deleteDataLabelingJobOperationSettings().build();
+    cancelDataLabelingJobSettings = settingsBuilder.cancelDataLabelingJobSettings().build();
     createHyperparameterTuningJobSettings =
         settingsBuilder.createHyperparameterTuningJobSettings().build();
     getHyperparameterTuningJobSettings =
@@ -402,6 +471,47 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               return payload.getCustomJobsList() != null
                   ? payload.getCustomJobsList()
                   : ImmutableList.<CustomJob>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob>
+      LIST_DATA_LABELING_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDataLabelingJobsRequest injectToken(
+                ListDataLabelingJobsRequest payload, String token) {
+              return ListDataLabelingJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDataLabelingJobsRequest injectPageSize(
+                ListDataLabelingJobsRequest payload, int pageSize) {
+              return ListDataLabelingJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDataLabelingJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDataLabelingJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataLabelingJob> extractResources(
+                ListDataLabelingJobsResponse payload) {
+              return payload.getDataLabelingJobsList() != null
+                  ? payload.getDataLabelingJobsList()
+                  : ImmutableList.<DataLabelingJob>of();
             }
           };
 
@@ -517,6 +627,30 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
+          ListDataLabelingJobsRequest,
+          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsPagedResponse>
+      LIST_DATA_LABELING_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDataLabelingJobsRequest,
+              ListDataLabelingJobsResponse,
+              ListDataLabelingJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDataLabelingJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse> callable,
+                ListDataLabelingJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDataLabelingJobsResponse> futureResponse) {
+              PageContext<
+                      ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATA_LABELING_JOBS_PAGE_STR_DESC, request, context);
+              return ListDataLabelingJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListHyperparameterTuningJobsRequest,
           ListHyperparameterTuningJobsResponse,
           ListHyperparameterTuningJobsPagedResponse>
@@ -591,6 +725,22 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
         deleteCustomJobOperationSettings;
     private final UnaryCallSettings.Builder<CancelCustomJobRequest, Empty> cancelCustomJobSettings;
+    private final UnaryCallSettings.Builder<CreateDataLabelingJobRequest, DataLabelingJob>
+        createDataLabelingJobSettings;
+    private final UnaryCallSettings.Builder<GetDataLabelingJobRequest, DataLabelingJob>
+        getDataLabelingJobSettings;
+    private final PagedCallSettings.Builder<
+            ListDataLabelingJobsRequest,
+            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsPagedResponse>
+        listDataLabelingJobsSettings;
+    private final UnaryCallSettings.Builder<DeleteDataLabelingJobRequest, Operation>
+        deleteDataLabelingJobSettings;
+    private final OperationCallSettings.Builder<
+            DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+        deleteDataLabelingJobOperationSettings;
+    private final UnaryCallSettings.Builder<CancelDataLabelingJobRequest, Empty>
+        cancelDataLabelingJobSettings;
     private final UnaryCallSettings.Builder<
             CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
         createHyperparameterTuningJobSettings;
@@ -679,6 +829,19 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
       cancelCustomJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listDataLabelingJobsSettings =
+          PagedCallSettings.newBuilder(LIST_DATA_LABELING_JOBS_PAGE_STR_FACT);
+
+      deleteDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteDataLabelingJobOperationSettings = OperationCallSettings.newBuilder();
+
+      cancelDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -712,6 +875,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               listCustomJobsSettings,
               deleteCustomJobSettings,
               cancelCustomJobSettings,
+              createDataLabelingJobSettings,
+              getDataLabelingJobSettings,
+              listDataLabelingJobsSettings,
+              deleteDataLabelingJobSettings,
+              cancelDataLabelingJobSettings,
               createHyperparameterTuningJobSettings,
               getHyperparameterTuningJobSettings,
               listHyperparameterTuningJobsSettings,
@@ -759,6 +927,31 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
       builder
           .cancelCustomJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listDataLabelingJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .cancelDataLabelingJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -816,6 +1009,29 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteCustomJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .deleteDataLabelingJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDataLabelingJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
@@ -894,6 +1110,13 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       deleteCustomJobSettings = settings.deleteCustomJobSettings.toBuilder();
       deleteCustomJobOperationSettings = settings.deleteCustomJobOperationSettings.toBuilder();
       cancelCustomJobSettings = settings.cancelCustomJobSettings.toBuilder();
+      createDataLabelingJobSettings = settings.createDataLabelingJobSettings.toBuilder();
+      getDataLabelingJobSettings = settings.getDataLabelingJobSettings.toBuilder();
+      listDataLabelingJobsSettings = settings.listDataLabelingJobsSettings.toBuilder();
+      deleteDataLabelingJobSettings = settings.deleteDataLabelingJobSettings.toBuilder();
+      deleteDataLabelingJobOperationSettings =
+          settings.deleteDataLabelingJobOperationSettings.toBuilder();
+      cancelDataLabelingJobSettings = settings.cancelDataLabelingJobSettings.toBuilder();
       createHyperparameterTuningJobSettings =
           settings.createHyperparameterTuningJobSettings.toBuilder();
       getHyperparameterTuningJobSettings = settings.getHyperparameterTuningJobSettings.toBuilder();
@@ -920,6 +1143,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               listCustomJobsSettings,
               deleteCustomJobSettings,
               cancelCustomJobSettings,
+              createDataLabelingJobSettings,
+              getDataLabelingJobSettings,
+              listDataLabelingJobsSettings,
+              deleteDataLabelingJobSettings,
+              cancelDataLabelingJobSettings,
               createHyperparameterTuningJobSettings,
               getHyperparameterTuningJobSettings,
               listHyperparameterTuningJobsSettings,
@@ -981,6 +1209,48 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     /** Returns the builder for the settings used for calls to cancelCustomJob. */
     public UnaryCallSettings.Builder<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
       return cancelCustomJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDataLabelingJob. */
+    public UnaryCallSettings.Builder<CreateDataLabelingJobRequest, DataLabelingJob>
+        createDataLabelingJobSettings() {
+      return createDataLabelingJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataLabelingJob. */
+    public UnaryCallSettings.Builder<GetDataLabelingJobRequest, DataLabelingJob>
+        getDataLabelingJobSettings() {
+      return getDataLabelingJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDataLabelingJobs. */
+    public PagedCallSettings.Builder<
+            ListDataLabelingJobsRequest,
+            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsPagedResponse>
+        listDataLabelingJobsSettings() {
+      return listDataLabelingJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataLabelingJob. */
+    public UnaryCallSettings.Builder<DeleteDataLabelingJobRequest, Operation>
+        deleteDataLabelingJobSettings() {
+      return deleteDataLabelingJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataLabelingJob. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+        deleteDataLabelingJobOperationSettings() {
+      return deleteDataLabelingJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDataLabelingJob. */
+    public UnaryCallSettings.Builder<CancelDataLabelingJobRequest, Empty>
+        cancelDataLabelingJobSettings() {
+      return cancelDataLabelingJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to createHyperparameterTuningJob. */

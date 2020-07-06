@@ -266,6 +266,247 @@ public final class JobServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest,
+          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+      getCreateDataLabelingJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataLabelingJob",
+      requestType = com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1alpha1.DataLabelingJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest,
+          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+      getCreateDataLabelingJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest,
+            com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+        getCreateDataLabelingJobMethod;
+    if ((getCreateDataLabelingJobMethod = JobServiceGrpc.getCreateDataLabelingJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getCreateDataLabelingJobMethod = JobServiceGrpc.getCreateDataLabelingJobMethod)
+            == null) {
+          JobServiceGrpc.getCreateDataLabelingJobMethod =
+              getCreateDataLabelingJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest,
+                          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDataLabelingJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.DataLabelingJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("CreateDataLabelingJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDataLabelingJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest,
+          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+      getGetDataLabelingJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataLabelingJob",
+      requestType = com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1alpha1.DataLabelingJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest,
+          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+      getGetDataLabelingJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest,
+            com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+        getGetDataLabelingJobMethod;
+    if ((getGetDataLabelingJobMethod = JobServiceGrpc.getGetDataLabelingJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getGetDataLabelingJobMethod = JobServiceGrpc.getGetDataLabelingJobMethod) == null) {
+          JobServiceGrpc.getGetDataLabelingJobMethod =
+              getGetDataLabelingJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest,
+                          com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDataLabelingJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.DataLabelingJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("GetDataLabelingJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetDataLabelingJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest,
+          com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+      getListDataLabelingJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDataLabelingJobs",
+      requestType = com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest,
+          com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+      getListDataLabelingJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest,
+            com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+        getListDataLabelingJobsMethod;
+    if ((getListDataLabelingJobsMethod = JobServiceGrpc.getListDataLabelingJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getListDataLabelingJobsMethod = JobServiceGrpc.getListDataLabelingJobsMethod)
+            == null) {
+          JobServiceGrpc.getListDataLabelingJobsMethod =
+              getListDataLabelingJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest,
+                          com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDataLabelingJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("ListDataLabelingJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListDataLabelingJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteDataLabelingJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataLabelingJob",
+      requestType = com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteDataLabelingJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest,
+            com.google.longrunning.Operation>
+        getDeleteDataLabelingJobMethod;
+    if ((getDeleteDataLabelingJobMethod = JobServiceGrpc.getDeleteDataLabelingJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getDeleteDataLabelingJobMethod = JobServiceGrpc.getDeleteDataLabelingJobMethod)
+            == null) {
+          JobServiceGrpc.getDeleteDataLabelingJobMethod =
+              getDeleteDataLabelingJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDataLabelingJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("DeleteDataLabelingJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDataLabelingJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest,
+          com.google.protobuf.Empty>
+      getCancelDataLabelingJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelDataLabelingJob",
+      requestType = com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest,
+          com.google.protobuf.Empty>
+      getCancelDataLabelingJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest,
+            com.google.protobuf.Empty>
+        getCancelDataLabelingJobMethod;
+    if ((getCancelDataLabelingJobMethod = JobServiceGrpc.getCancelDataLabelingJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getCancelDataLabelingJobMethod = JobServiceGrpc.getCancelDataLabelingJobMethod)
+            == null) {
+          JobServiceGrpc.getCancelDataLabelingJobMethod =
+              getCancelDataLabelingJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelDataLabelingJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("CancelDataLabelingJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelDataLabelingJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1alpha1.CreateHyperparameterTuningJobRequest,
           com.google.cloud.aiplatform.v1alpha1.HyperparameterTuningJob>
       getCreateHyperparameterTuningJobMethod;
@@ -901,6 +1142,75 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
+    public void createDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateDataLabelingJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
+    public void getDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetDataLabelingJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
+    public void listDataLabelingJobs(
+        com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListDataLabelingJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
+    public void deleteDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteDataLabelingJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
+    public void cancelDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getCancelDataLabelingJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a HyperparameterTuningJob
      * </pre>
      */
@@ -1091,6 +1401,39 @@ public final class JobServiceGrpc {
                       com.google.cloud.aiplatform.v1alpha1.CancelCustomJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_CANCEL_CUSTOM_JOB)))
           .addMethod(
+              getCreateDataLabelingJobMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest,
+                      com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>(
+                      this, METHODID_CREATE_DATA_LABELING_JOB)))
+          .addMethod(
+              getGetDataLabelingJobMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest,
+                      com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>(
+                      this, METHODID_GET_DATA_LABELING_JOB)))
+          .addMethod(
+              getListDataLabelingJobsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest,
+                      com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>(
+                      this, METHODID_LIST_DATA_LABELING_JOBS)))
+          .addMethod(
+              getDeleteDataLabelingJobMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_DATA_LABELING_JOB)))
+          .addMethod(
+              getCancelDataLabelingJobMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest,
+                      com.google.protobuf.Empty>(this, METHODID_CANCEL_DATA_LABELING_JOB)))
+          .addMethod(
               getCreateHyperparameterTuningJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1268,6 +1611,90 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCancelCustomJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
+    public void createDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateDataLabelingJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
+    public void getDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetDataLabelingJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
+    public void listDataLabelingJobs(
+        com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListDataLabelingJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
+    public void deleteDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteDataLabelingJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
+    public void cancelDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCancelDataLabelingJobMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1553,6 +1980,71 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1alpha1.DataLabelingJob createDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1alpha1.DataLabelingJob getDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse listDataLabelingJobs(
+        com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListDataLabelingJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelDataLabelingJob(
+        com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCancelDataLabelingJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a HyperparameterTuningJob
      * </pre>
      */
@@ -1802,6 +2294,78 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+        createDataLabelingJob(
+            com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateDataLabelingJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>
+        getDataLabelingJob(com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetDataLabelingJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>
+        listDataLabelingJobs(
+            com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListDataLabelingJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDataLabelingJob(
+            com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteDataLabelingJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        cancelDataLabelingJob(
+            com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCancelDataLabelingJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a HyperparameterTuningJob
      * </pre>
      */
@@ -1972,16 +2536,21 @@ public final class JobServiceGrpc {
   private static final int METHODID_LIST_CUSTOM_JOBS = 2;
   private static final int METHODID_DELETE_CUSTOM_JOB = 3;
   private static final int METHODID_CANCEL_CUSTOM_JOB = 4;
-  private static final int METHODID_CREATE_HYPERPARAMETER_TUNING_JOB = 5;
-  private static final int METHODID_GET_HYPERPARAMETER_TUNING_JOB = 6;
-  private static final int METHODID_LIST_HYPERPARAMETER_TUNING_JOBS = 7;
-  private static final int METHODID_DELETE_HYPERPARAMETER_TUNING_JOB = 8;
-  private static final int METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB = 9;
-  private static final int METHODID_CREATE_BATCH_PREDICTION_JOB = 10;
-  private static final int METHODID_GET_BATCH_PREDICTION_JOB = 11;
-  private static final int METHODID_LIST_BATCH_PREDICTION_JOBS = 12;
-  private static final int METHODID_DELETE_BATCH_PREDICTION_JOB = 13;
-  private static final int METHODID_CANCEL_BATCH_PREDICTION_JOB = 14;
+  private static final int METHODID_CREATE_DATA_LABELING_JOB = 5;
+  private static final int METHODID_GET_DATA_LABELING_JOB = 6;
+  private static final int METHODID_LIST_DATA_LABELING_JOBS = 7;
+  private static final int METHODID_DELETE_DATA_LABELING_JOB = 8;
+  private static final int METHODID_CANCEL_DATA_LABELING_JOB = 9;
+  private static final int METHODID_CREATE_HYPERPARAMETER_TUNING_JOB = 10;
+  private static final int METHODID_GET_HYPERPARAMETER_TUNING_JOB = 11;
+  private static final int METHODID_LIST_HYPERPARAMETER_TUNING_JOBS = 12;
+  private static final int METHODID_DELETE_HYPERPARAMETER_TUNING_JOB = 13;
+  private static final int METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB = 14;
+  private static final int METHODID_CREATE_BATCH_PREDICTION_JOB = 15;
+  private static final int METHODID_GET_BATCH_PREDICTION_JOB = 16;
+  private static final int METHODID_LIST_BATCH_PREDICTION_JOBS = 17;
+  private static final int METHODID_DELETE_BATCH_PREDICTION_JOB = 18;
+  private static final int METHODID_CANCEL_BATCH_PREDICTION_JOB = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2027,6 +2596,35 @@ public final class JobServiceGrpc {
         case METHODID_CANCEL_CUSTOM_JOB:
           serviceImpl.cancelCustomJob(
               (com.google.cloud.aiplatform.v1alpha1.CancelCustomJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_DATA_LABELING_JOB:
+          serviceImpl.createDataLabelingJob(
+              (com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DATA_LABELING_JOB:
+          serviceImpl.getDataLabelingJob(
+              (com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1alpha1.DataLabelingJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DATA_LABELING_JOBS:
+          serviceImpl.listDataLabelingJobs(
+              (com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DATA_LABELING_JOB:
+          serviceImpl.deleteDataLabelingJob(
+              (com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_DATA_LABELING_JOB:
+          serviceImpl.cancelDataLabelingJob(
+              (com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_HYPERPARAMETER_TUNING_JOB:
@@ -2158,6 +2756,11 @@ public final class JobServiceGrpc {
                       .addMethod(getListCustomJobsMethod())
                       .addMethod(getDeleteCustomJobMethod())
                       .addMethod(getCancelCustomJobMethod())
+                      .addMethod(getCreateDataLabelingJobMethod())
+                      .addMethod(getGetDataLabelingJobMethod())
+                      .addMethod(getListDataLabelingJobsMethod())
+                      .addMethod(getDeleteDataLabelingJobMethod())
+                      .addMethod(getCancelDataLabelingJobMethod())
                       .addMethod(getCreateHyperparameterTuningJobMethod())
                       .addMethod(getGetHyperparameterTuningJobMethod())
                       .addMethod(getListHyperparameterTuningJobsMethod())

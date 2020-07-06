@@ -17,6 +17,7 @@ package com.google.cloud.aiplatform.v1alpha1.stub;
 
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListCustomJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -26,23 +27,30 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1alpha1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CancelHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.CustomJob;
+import com.google.cloud.aiplatform.v1alpha1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1alpha1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1alpha1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetCustomJobRequest;
+import com.google.cloud.aiplatform.v1alpha1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1alpha1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListBatchPredictionJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListCustomJobsResponse;
+import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsRequest;
+import com.google.cloud.aiplatform.v1alpha1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1alpha1.ListHyperparameterTuningJobsResponse;
 import com.google.longrunning.Operation;
@@ -94,6 +102,40 @@ public abstract class JobServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelCustomJobCallable()");
+  }
+
+  public UnaryCallable<CreateDataLabelingJobRequest, DataLabelingJob>
+      createDataLabelingJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDataLabelingJobCallable()");
+  }
+
+  public UnaryCallable<GetDataLabelingJobRequest, DataLabelingJob> getDataLabelingJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDataLabelingJobCallable()");
+  }
+
+  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDataLabelingJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
+      listDataLabelingJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDataLabelingJobsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDataLabelingJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDataLabelingJobRequest, Operation> deleteDataLabelingJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDataLabelingJobCallable()");
+  }
+
+  public UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelDataLabelingJobCallable()");
   }
 
   public UnaryCallable<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>

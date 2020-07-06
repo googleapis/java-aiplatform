@@ -283,6 +283,8 @@ public interface DataLabelingJobOrBuilder
    * <pre>
    * Required. Points to a YAML file stored on Google Cloud Storage describing the
    * config for a specific type of DataLabelingJob.
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/.
    * </pre>
    *
    * <code>string inputs_schema_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -296,6 +298,8 @@ public interface DataLabelingJobOrBuilder
    * <pre>
    * Required. Points to a YAML file stored on Google Cloud Storage describing the
    * config for a specific type of DataLabelingJob.
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/.
    * </pre>
    *
    * <code>string inputs_schema_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>

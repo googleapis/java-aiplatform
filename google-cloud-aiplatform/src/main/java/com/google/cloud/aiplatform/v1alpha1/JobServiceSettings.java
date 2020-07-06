@@ -17,6 +17,7 @@ package com.google.cloud.aiplatform.v1alpha1;
 
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListCustomJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1alpha1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -105,6 +106,46 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   /** Returns the object with the settings used for calls to cancelCustomJob. */
   public UnaryCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).cancelCustomJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDataLabelingJob. */
+  public UnaryCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
+      createDataLabelingJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).createDataLabelingJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDataLabelingJob. */
+  public UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
+      getDataLabelingJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).getDataLabelingJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDataLabelingJobs. */
+  public PagedCallSettings<
+          ListDataLabelingJobsRequest,
+          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).listDataLabelingJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  public UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
+      deleteDataLabelingJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).deleteDataLabelingJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).deleteDataLabelingJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelDataLabelingJob. */
+  public UnaryCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).cancelDataLabelingJobSettings();
   }
 
   /** Returns the object with the settings used for calls to createHyperparameterTuningJob. */
@@ -319,6 +360,48 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     /** Returns the builder for the settings used for calls to cancelCustomJob. */
     public UnaryCallSettings.Builder<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
       return getStubSettingsBuilder().cancelCustomJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDataLabelingJob. */
+    public UnaryCallSettings.Builder<CreateDataLabelingJobRequest, DataLabelingJob>
+        createDataLabelingJobSettings() {
+      return getStubSettingsBuilder().createDataLabelingJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDataLabelingJob. */
+    public UnaryCallSettings.Builder<GetDataLabelingJobRequest, DataLabelingJob>
+        getDataLabelingJobSettings() {
+      return getStubSettingsBuilder().getDataLabelingJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDataLabelingJobs. */
+    public PagedCallSettings.Builder<
+            ListDataLabelingJobsRequest,
+            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsPagedResponse>
+        listDataLabelingJobsSettings() {
+      return getStubSettingsBuilder().listDataLabelingJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataLabelingJob. */
+    public UnaryCallSettings.Builder<DeleteDataLabelingJobRequest, Operation>
+        deleteDataLabelingJobSettings() {
+      return getStubSettingsBuilder().deleteDataLabelingJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataLabelingJob. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+        deleteDataLabelingJobOperationSettings() {
+      return getStubSettingsBuilder().deleteDataLabelingJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDataLabelingJob. */
+    public UnaryCallSettings.Builder<CancelDataLabelingJobRequest, Empty>
+        cancelDataLabelingJobSettings() {
+      return getStubSettingsBuilder().cancelDataLabelingJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to createHyperparameterTuningJob. */

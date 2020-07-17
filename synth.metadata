@@ -1,22 +1,17 @@
 {
-  "updateTime": "2020-07-06T18:53:37.649977Z",
   "sources": [
     {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2020.2.4"
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/aiplatform/java-aiplatform",
+        "sha": "57bfa601a803162f8cf6805d1efadc0e9aef5131"
       }
-    }
-  ],
-  "destinations": [
+    },
     {
-      "client": {
-        "source": "googleapis",
-        "apiName": "aiplatform",
-        "apiVersion": "v1alpha1",
-        "language": "java",
-        "generator": "bazel"
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b8ff6a41e195cda91bbfb20d9f11d5e58b7cc218"
       }
     }
   ]

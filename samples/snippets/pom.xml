@@ -25,22 +25,12 @@
 
 
   <!-- [START aiplatform_install_with_bom] -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>8.1.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-aiplatform</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <!-- [END aiplatform_install_with_bom] -->
 

@@ -104,6 +104,9 @@
               <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
+            <ignoredUsedUndeclaredDependencies>
+              <ignoredUsedUndeclaredDependency>com.google.api.grpc:proto-google-common-protos</ignoredUsedUndeclaredDependency>
+            </ignoredUsedUndeclaredDependencies>
           </configuration>
         </plugin>
       </plugins>

@@ -79,7 +79,8 @@ public class CreateTrainingPipelineSample {
       LocationName locationName = LocationName.of(project, location);
 
       String jsonString =
-          "{\"multiLabel\": false, \"modelType\": \"CLOUD\", \"budgetMilliNodeHours\": 8000, \"disableEarlyStopping\": false}";
+          "{\"multiLabel\": false, \"modelType\": \"CLOUD\", \"budgetMilliNodeHours\": 8000,"
+              + " \"disableEarlyStopping\": false}";
       Value.Builder trainingTaskInputs = Value.newBuilder();
       JsonFormat.parser().merge(jsonString, trainingTaskInputs);
 

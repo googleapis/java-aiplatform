@@ -39,7 +39,8 @@ public class CreateTrainingPipelineSampleTest {
   private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
   private static final String DATASET_ID = System.getenv("TRAINING_PIPELINE_DATASET_ID");
   private static final String TRAINING_TASK_DEFINITION =
-      "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_image_classification_1.0.0.yaml";
+      "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
+          + "automl_image_classification_1.0.0.yaml";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

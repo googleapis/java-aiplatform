@@ -39,7 +39,8 @@ public class ImportDataSampleTest {
   private static final String GCS_SOURCE_URI =
       "gs://prj-ucaip-tutorials-vcm/dataset/csv/all_data_sample.csv";
   private static final String IMPORT_SCHEMA_URI =
-      "gs://google-cloud-aiplatform/schema/dataset/ioformat/image_classification_single_label_io_format_1.0.0.yaml";
+      "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
+          + "image_classification_single_label_io_format_1.0.0.yaml";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

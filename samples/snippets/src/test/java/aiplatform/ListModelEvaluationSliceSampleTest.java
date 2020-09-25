@@ -67,7 +67,8 @@ public class ListModelEvaluationSliceSampleTest {
   @Test
   public void testListModelEvaluationSliceSample() throws IOException {
     // Act
-    ListModelEvaluationSliceSample.listModelEvaluationSliceSample(PROJECT_ID, MODEL_ID, EVALUATION_ID);
+    ListModelEvaluationSliceSample.listModelEvaluationSliceSample(
+        PROJECT_ID, MODEL_ID, EVALUATION_ID);
 
     // Assert
     String got = bout.toString();

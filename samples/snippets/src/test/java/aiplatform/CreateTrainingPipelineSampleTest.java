@@ -92,14 +92,10 @@ public class CreateTrainingPipelineSampleTest {
     // Act
     String tempUUID = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String trainingPipelineDisplayName =
-        String.format(
-            "temp_create_training_pipeline_test_%s",
-            tempUUID);
+        String.format("temp_create_training_pipeline_test_%s", tempUUID);
 
     String modelDisplayName =
-        String.format(
-            "temp_create_training_pipeline_model_test_%s",
-            tempUUID);
+        String.format("temp_create_training_pipeline_model_test_%s", tempUUID);
 
     CreateTrainingPipelineSample.createTrainingPipelineSample(
         PROJECT_ID,

@@ -63,7 +63,7 @@ public class ExportModelSample {
       ExportModelRequest.OutputConfig outputConfig =
           ExportModelRequest.OutputConfig.newBuilder()
               .setExportFormatId(exportFormat)
-              .setGcsDestination(gcsDestination)
+              .setArtifactDestination(gcsDestination)
               .build();
 
       OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelResponseFuture =

@@ -35,7 +35,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateEndpointSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,7 +50,6 @@ public class CreateEndpointSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
   }
 
   @Before
@@ -65,7 +64,7 @@ public class CreateEndpointSampleTest {
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // Delete the created endpoint
-    DeleteEndpointSample.deleteEndpointSample(PROJECT, endpointId);
+    DeleteEndpointSample.deleteEndpointSample(PROJECT_ID, endpointId);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -83,7 +82,7 @@ public class CreateEndpointSampleTest {
             "temp_create_endpoint_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateEndpointSample.createEndpointSample(PROJECT, displayName);
+    CreateEndpointSample.createEndpointSample(PROJECT_ID, displayName);
 
     // Assert
     String got = bout.toString();

@@ -34,11 +34,11 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ExportModelSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("EXPORT_MODEL_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "5359002081594179584";
   private static final String GCS_DESTINATION_URI_PREFIX =
       "gs://prj-ucaip-tutorials-vcm/export_model/";
-  private static final String EXPORT_FORMAT = System.getenv("EXPORT_FORMAT");
+  private static final String EXPORT_FORMAT = "tf-saved-model";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -52,9 +52,6 @@ public class ExportModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("EXPORT_MODEL_ID");
-    requireEnvVar("EXPORT_FORMAT");
   }
 
   @Before
@@ -73,7 +70,7 @@ public class ExportModelSampleTest {
     String objectName;
     bucketName = GCS_DESTINATION_URI_PREFIX.split("/", 4)[2];
     objectName = (GCS_DESTINATION_URI_PREFIX.split("/", 4)[3]).concat("model-" + MODEL_ID);
-    DeleteExportModelSample.deleteExportModelSample(PROJECT, bucketName, objectName);
+    DeleteExportModelSample.deleteExportModelSample(PROJECT_ID, bucketName, objectName);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -87,7 +84,7 @@ public class ExportModelSampleTest {
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act
     ExportModelSample.exportModelSample(
-        PROJECT, MODEL_ID, GCS_DESTINATION_URI_PREFIX, EXPORT_FORMAT);
+        PROJECT_ID, MODEL_ID, GCS_DESTINATION_URI_PREFIX, EXPORT_FORMAT);
 
     // Assert
     String got = bout.toString();

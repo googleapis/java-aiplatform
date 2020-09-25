@@ -32,11 +32,9 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ListModelEvaluationSliceSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("LIST_MODEL_EVALUATION_SLICE_SAMPLE_MODEL_ID");
-  private static final String EVALUATION_ID =
-      System.getenv("LIST_MODEL_EVALUATION_SLICE_SAMPLE_EVALUATION_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "5162251072873431040";
+  private static final String EVALUATION_ID = "5615675837586029221";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,9 +48,6 @@ public class ListModelEvaluationSliceSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("LIST_MODEL_EVALUATION_SLICE_SAMPLE_MODEL_ID");
-    requireEnvVar("LIST_MODEL_EVALUATION_SLICE_SAMPLE_EVALUATION_ID");
   }
 
   @Before
@@ -72,7 +67,7 @@ public class ListModelEvaluationSliceSampleTest {
   @Test
   public void testListModelEvaluationSliceSample() throws IOException {
     // Act
-    ListModelEvaluationSliceSample.listModelEvaluationSliceSample(PROJECT, MODEL_ID, EVALUATION_ID);
+    ListModelEvaluationSliceSample.listModelEvaluationSliceSample(PROJECT_ID, MODEL_ID, EVALUATION_ID);
 
     // Assert
     String got = bout.toString();

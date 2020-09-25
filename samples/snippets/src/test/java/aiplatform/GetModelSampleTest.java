@@ -32,8 +32,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class GetModelSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("MODEL_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "1478306577684365312";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -47,8 +47,6 @@ public class GetModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("MODEL_ID");
   }
 
   @Before
@@ -68,7 +66,7 @@ public class GetModelSampleTest {
   @Test
   public void testGetModelSample() throws IOException {
     // Act
-    GetModelSample.getModelSample(PROJECT, MODEL_ID);
+    GetModelSample.getModelSample(PROJECT_ID, MODEL_ID);
 
     // Assert
     String got = bout.toString();

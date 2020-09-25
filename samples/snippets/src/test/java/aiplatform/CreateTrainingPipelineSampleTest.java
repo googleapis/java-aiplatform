@@ -36,8 +36,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateTrainingPipelineSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("TRAINING_PIPELINE_DATASET_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String DATASET_ID = "1084241610289446912";
   private static final String TRAINING_TASK_DEFINITION =
       "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
           + "automl_image_classification_1.0.0.yaml";
@@ -55,8 +55,6 @@ public class CreateTrainingPipelineSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("TRAINING_PIPELINE_DATASET_ID");
   }
 
   @Before
@@ -71,7 +69,7 @@ public class CreateTrainingPipelineSampleTest {
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // Cancel the Training Pipeline
-    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT, trainingPipelineId);
+    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT_ID, trainingPipelineId);
 
     // Assert
     String cancelResponse = bout.toString();
@@ -79,7 +77,7 @@ public class CreateTrainingPipelineSampleTest {
     TimeUnit.MINUTES.sleep(2);
 
     // Delete the Training Pipeline
-    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
+    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT_ID, trainingPipelineId);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -92,18 +90,19 @@ public class CreateTrainingPipelineSampleTest {
   public void testCreateTrainingPipelineSample()
       throws IOException, InterruptedException, ExecutionException {
     // Act
+    String tempUUID = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String trainingPipelineDisplayName =
         String.format(
             "temp_create_training_pipeline_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+            tempUUID);
 
     String modelDisplayName =
         String.format(
             "temp_create_training_pipeline_model_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+            tempUUID);
 
     CreateTrainingPipelineSample.createTrainingPipelineSample(
-        PROJECT,
+        PROJECT_ID,
         trainingPipelineDisplayName,
         DATASET_ID,
         TRAINING_TASK_DEFINITION,
@@ -111,7 +110,6 @@ public class CreateTrainingPipelineSampleTest {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains(DATASET_ID);
     assertThat(got).contains("Create Training Pipeline Response");
     trainingPipelineId = got.split("Name: ")[1].split("trainingPipelines/")[1].split("\n")[0];
   }

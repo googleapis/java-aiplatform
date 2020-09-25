@@ -32,11 +32,10 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class GetModelEvaluationSliceSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("MODEL_EVALUATION_SLICE_SAMPLE_MODEL_ID");
-  private static final String EVALUATION_ID =
-      System.getenv("MODEL_EVALUATION_SLICE_SAMPLE_EVALUATION_ID");
-  private static final String SLICE_ID = System.getenv("MODEL_EVALUATION_SLICE_SAMPLE_SLICE_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "5162251072873431040";
+  private static final String EVALUATION_ID = "5615675837586029221";
+  private static final String SLICE_ID = "4322488217836113260";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,10 +49,6 @@ public class GetModelEvaluationSliceSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("MODEL_EVALUATION_SLICE_SAMPLE_MODEL_ID");
-    requireEnvVar("MODEL_EVALUATION_SLICE_SAMPLE_EVALUATION_ID");
-    requireEnvVar("MODEL_EVALUATION_SLICE_SAMPLE_SLICE_ID");
   }
 
   @Before
@@ -74,7 +69,7 @@ public class GetModelEvaluationSliceSampleTest {
   public void testGetModelEvaluationSliceSample() throws IOException {
     // Act
     GetModelEvaluationSliceSample.getModelEvaluationSliceSample(
-        PROJECT, MODEL_ID, EVALUATION_ID, SLICE_ID);
+        PROJECT_ID, MODEL_ID, EVALUATION_ID, SLICE_ID);
 
     // Assert
     String got = bout.toString();

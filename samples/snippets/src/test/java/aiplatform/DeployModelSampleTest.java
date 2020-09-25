@@ -33,8 +33,8 @@ import org.junit.Test;
 
 public class DeployModelSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("DEPLOY_MODEL_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "4190810559500779520";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,8 +50,6 @@ public class DeployModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
-    requireEnvVar("DEPLOY_MODEL_ID");
   }
 
   @Before
@@ -66,7 +64,7 @@ public class DeployModelSampleTest {
             "temp_create_endpoint_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateEndpointSample.createEndpointSample(PROJECT, endpointDisplayName);
+    CreateEndpointSample.createEndpointSample(PROJECT_ID, endpointDisplayName);
     String endpointOutput = bout.toString();
     endpointId = endpointOutput.split("Name: ")[1].split("endpoints/")[1].split("\n")[0];
   }
@@ -75,7 +73,7 @@ public class DeployModelSampleTest {
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // Undeploy the deployed Model
-    UndeployModelSample.undeployModelSample(PROJECT, endpointId, deployedModelId);
+    UndeployModelSample.undeployModelSample(PROJECT_ID, endpointId, deployedModelId);
 
     // Assert
     String undeployResponse = bout.toString();
@@ -83,7 +81,7 @@ public class DeployModelSampleTest {
     TimeUnit.MINUTES.sleep(2);
 
     // Delete the endpoint
-    DeleteEndpointSample.deleteEndpointSample(PROJECT, endpointId);
+    DeleteEndpointSample.deleteEndpointSample(PROJECT_ID, endpointId);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -100,7 +98,7 @@ public class DeployModelSampleTest {
         String.format(
             "temp_deploy_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    DeployModelSample.deployModelSample(PROJECT, deployedModelDisplayName, endpointId, MODEL_ID);
+    DeployModelSample.deployModelSample(PROJECT_ID, deployedModelDisplayName, endpointId, MODEL_ID);
 
     // Assert
     String got = bout.toString();

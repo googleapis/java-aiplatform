@@ -35,7 +35,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateDatasetSampleTest {
 
-  private static final String PROJECT = System.getenv("CAIP_PROJECT_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
   private static final String METADATA_SCHEMA_URI =
       "gs://google-cloud-aiplatform/schema/dataset/metadata/image_1.0.0.yaml";
   private ByteArrayOutputStream bout;
@@ -52,7 +52,6 @@ public class CreateDatasetSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("CAIP_PROJECT_ID");
   }
 
   @Before
@@ -67,7 +66,7 @@ public class CreateDatasetSampleTest {
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // Delete the created dataset
-    DeleteDatasetSample.deleteDatasetSample(PROJECT, datasetId);
+    DeleteDatasetSample.deleteDatasetSample(PROJECT_ID, datasetId);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -85,7 +84,7 @@ public class CreateDatasetSampleTest {
             "temp_create_dataset_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateDatasetSample.createDatasetSample(PROJECT, displayName, METADATA_SCHEMA_URI);
+    CreateDatasetSample.createDatasetSample(PROJECT_ID, displayName, METADATA_SCHEMA_URI);
 
     // Assert
     String got = bout.toString();

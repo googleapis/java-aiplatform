@@ -18,16 +18,16 @@ package aiplatform;
 
 // [START aiplatform_get_model_sample]
 
-import com.google.cloud.aiplatform.v1alpha1.DeployedModelRef;
-import com.google.cloud.aiplatform.v1alpha1.EnvVar;
-import com.google.cloud.aiplatform.v1alpha1.Model;
-import com.google.cloud.aiplatform.v1alpha1.Model.ExportFormat;
-import com.google.cloud.aiplatform.v1alpha1.ModelContainerSpec;
-import com.google.cloud.aiplatform.v1alpha1.ModelName;
-import com.google.cloud.aiplatform.v1alpha1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.ModelServiceSettings;
-import com.google.cloud.aiplatform.v1alpha1.Port;
-import com.google.cloud.aiplatform.v1alpha1.PredictSchemata;
+import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
+import com.google.cloud.aiplatform.v1beta1.EnvVar;
+import com.google.cloud.aiplatform.v1beta1.Model;
+import com.google.cloud.aiplatform.v1beta1.Model.ExportFormat;
+import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
+import com.google.cloud.aiplatform.v1beta1.ModelName;
+import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.Port;
+import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import java.io.IOException;
 
 public class GetModelSample {

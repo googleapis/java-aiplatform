@@ -19,11 +19,11 @@ package aiplatform;
 // [START aiplatform_create_endpoint_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1alpha1.CreateEndpointOperationMetadata;
-import com.google.cloud.aiplatform.v1alpha1.Endpoint;
-import com.google.cloud.aiplatform.v1alpha1.EndpointServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.EndpointServiceSettings;
-import com.google.cloud.aiplatform.v1alpha1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.CreateEndpointOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.Endpoint;
+import com.google.cloud.aiplatform.v1beta1.EndpointServiceClient;
+import com.google.cloud.aiplatform.v1beta1.EndpointServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

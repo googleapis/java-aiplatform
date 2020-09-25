@@ -18,9 +18,9 @@ package aiplatform;
 
 // [START aiplatform_cancel_batch_prediction_job_sample]
 
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJobName;
-import com.google.cloud.aiplatform.v1alpha1.JobServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJobName;
+import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
+import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import java.io.IOException;
 
 public class CancelBatchPredictionJobSample {

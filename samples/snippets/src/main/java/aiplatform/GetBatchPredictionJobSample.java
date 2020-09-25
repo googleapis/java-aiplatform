@@ -18,19 +18,19 @@ package aiplatform;
 
 // [START aiplatform_get_batch_prediction_job_sample]
 
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob;
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob.InputConfig;
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob.OutputConfig;
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJob.OutputInfo;
-import com.google.cloud.aiplatform.v1alpha1.BatchPredictionJobName;
-import com.google.cloud.aiplatform.v1alpha1.BigQueryDestination;
-import com.google.cloud.aiplatform.v1alpha1.BigQuerySource;
-import com.google.cloud.aiplatform.v1alpha1.CompletionStats;
-import com.google.cloud.aiplatform.v1alpha1.GcsDestination;
-import com.google.cloud.aiplatform.v1alpha1.GcsSource;
-import com.google.cloud.aiplatform.v1alpha1.JobServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1alpha1.ResourcesConsumed;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputInfo;
+import com.google.cloud.aiplatform.v1beta1.BatchPredictionJobName;
+import com.google.cloud.aiplatform.v1beta1.BigQueryDestination;
+import com.google.cloud.aiplatform.v1beta1.BigQuerySource;
+import com.google.cloud.aiplatform.v1beta1.CompletionStats;
+import com.google.cloud.aiplatform.v1beta1.GcsDestination;
+import com.google.cloud.aiplatform.v1beta1.GcsSource;
+import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
+import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.ResourcesConsumed;
 import com.google.protobuf.Any;
 import com.google.rpc.Status;
 import java.io.IOException;

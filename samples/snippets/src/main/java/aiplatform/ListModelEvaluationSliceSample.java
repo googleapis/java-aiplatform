@@ -18,11 +18,11 @@ package aiplatform;
 
 // [START aiplatform_list_model_evaluation_slice_sample]
 
-import com.google.cloud.aiplatform.v1alpha1.ModelEvaluationName;
-import com.google.cloud.aiplatform.v1alpha1.ModelEvaluationSlice;
-import com.google.cloud.aiplatform.v1alpha1.ModelEvaluationSlice.Slice;
-import com.google.cloud.aiplatform.v1alpha1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.ModelEvaluationName;
+import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice;
+import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
 import java.io.IOException;
 
 public class ListModelEvaluationSliceSample {

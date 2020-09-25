@@ -18,9 +18,9 @@ package aiplatform;
 
 // [START aiplatform_cancel_training_pipeline_sample]
 
-import com.google.cloud.aiplatform.v1alpha1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1alpha1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1alpha1.TrainingPipelineName;
+import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.TrainingPipelineName;
 import java.io.IOException;
 
 public class CancelTrainingPipelineSample {

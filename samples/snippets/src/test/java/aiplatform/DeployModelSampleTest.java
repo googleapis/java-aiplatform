@@ -102,7 +102,7 @@ public class DeployModelSampleTest {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains(deployedModelDisplayName);
+    assertThat(got).contains("Model deployment finished");
     assertThat(got).contains("Deploy Model Response");
     deployedModelId = got.split("Name: ")[1].split("id: ")[1].split("\n")[0];
   }

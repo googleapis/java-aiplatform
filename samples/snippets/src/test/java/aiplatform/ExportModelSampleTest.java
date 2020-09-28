@@ -37,7 +37,7 @@ public class ExportModelSampleTest {
   private static final String PROJECT_ID = "ucaip-sample-tests";
   private static final String MODEL_ID = "5359002081594179584";
   private static final String GCS_DESTINATION_URI_PREFIX =
-      "gs://prj-ucaip-tutorials-vcm/export_model/";
+      "gs://ucaip-samples-test-output/tmp/export_model_test";
   private static final String EXPORT_FORMAT = "tf-saved-model";
   private ByteArrayOutputStream bout;
   private PrintStream out;

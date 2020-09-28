@@ -85,6 +85,7 @@ public class DeployModelSample {
       System.out.println("Waiting for operation to finish...");
       DeployModelResponse deployModelResponse = deployModelResponseFuture.get(20, TimeUnit.MINUTES);
 
+      System.out.println("Model deployment finished");
       System.out.println("Deploy Model Response");
       DeployedModel deployedModel = deployModelResponse.getDeployedModel();
       System.out.println("\tDeployed Model");

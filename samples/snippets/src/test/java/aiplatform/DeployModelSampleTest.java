@@ -19,6 +19,7 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -34,12 +35,10 @@ import org.junit.Test;
 public class DeployModelSampleTest {
 
   private static final String PROJECT_ID = "ucaip-sample-tests";
-  private static final String MODEL_ID = "4190810559500779520";
+  private static final String MODEL_ID = "00000000000000000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String deployedModelId;
-  private String endpointId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -53,56 +52,37 @@ public class DeployModelSampleTest {
   }
 
   @Before
-  public void setUp()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
-    String endpointDisplayName =
-        String.format(
-            "temp_create_endpoint_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-
-    CreateEndpointSample.createEndpointSample(PROJECT_ID, endpointDisplayName);
-    String endpointOutput = bout.toString();
-    endpointId = endpointOutput.split("Name: ")[1].split("endpoints/")[1].split("\n")[0];
   }
 
   @After
-  public void tearDown()
-      throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    // Undeploy the deployed Model
-    UndeployModelSample.undeployModelSample(PROJECT_ID, endpointId, deployedModelId);
-
-    // Assert
-    String undeployResponse = bout.toString();
-    assertThat(undeployResponse).contains("Undeploy Model Response: ");
-    TimeUnit.MINUTES.sleep(2);
-
-    // Delete the endpoint
-    DeleteEndpointSample.deleteEndpointSample(PROJECT_ID, endpointId);
-
-    // Assert
-    String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Endpoint Response: ");
+  public void tearDown() {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
   public void testDeployModelSample()
-      throws IOException, InterruptedException, ExecutionException, TimeoutException {
-    // Act
+      throws TimeoutException {
+    // As model deployment can take a long time, instead try to deploy a
+    // nonexistent model and confirm that the model was not found, but other
+    // elements of the request were valid.
     String deployedModelDisplayName =
         String.format(
             "temp_deploy_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    DeployModelSample.deployModelSample(PROJECT_ID, deployedModelDisplayName, endpointId, MODEL_ID);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Deploy Model Response");
-    deployedModelId = got.split("Name: ")[1].split("id: ")[1].split("\n")[0];
+    try {
+      DeployModelSample.deployModelSample(PROJECT_ID, deployedModelDisplayName,
+          "4366591682456584192", MODEL_ID);
+      // Assert
+      String got = bout.toString();
+      assertThat(got).contains("is not found.");
+    } catch (StatusRuntimeException | ExecutionException | InterruptedException | IOException e) {
+      assertThat(e.getMessage()).contains("is not found.");
+    }
   }
 }

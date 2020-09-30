@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,7 +26,6 @@ import com.google.cloud.aiplatform.v1beta1.GcsSource;
 import com.google.cloud.aiplatform.v1beta1.ImportDataConfig;
 import com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportDataResponse;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +60,8 @@ public class ImportDataImageClassificationSample {
         DatasetServiceClient.create(datasetServiceSettings)) {
       String location = "us-central1";
       String importSchemaUri =
-          "gs://google-cloud-aiplatform/schema/dataset/ioformat/image_classification_single_label_io_format_1.0.0.yaml";
+          "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
+                  + "image_classification_single_label_io_format_1.0.0.yaml";
 
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);

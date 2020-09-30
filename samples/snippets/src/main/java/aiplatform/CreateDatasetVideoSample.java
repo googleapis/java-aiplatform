@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,7 +24,6 @@ import com.google.cloud.aiplatform.v1beta1.Dataset;
 import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
 import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

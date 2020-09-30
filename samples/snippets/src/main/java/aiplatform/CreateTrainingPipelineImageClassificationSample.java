@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -72,7 +72,8 @@ public class CreateTrainingPipelineImageClassificationSample {
         PipelineServiceClient.create(pipelineServiceSettings)) {
       String location = "us-central1";
       String trainingTaskDefinition =
-          "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_image_classification_1.0.0.yaml";
+          "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
+                  + "automl_image_classification_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
       String jsonString =
@@ -232,4 +233,3 @@ public class CreateTrainingPipelineImageClassificationSample {
   }
 }
 // [END aiplatform_create_training_pipeline_image_classification_sample]
-

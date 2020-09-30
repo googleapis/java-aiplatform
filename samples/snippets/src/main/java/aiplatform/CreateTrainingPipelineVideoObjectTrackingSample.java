@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,6 @@ import com.google.protobuf.Any;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -66,7 +65,8 @@ public class CreateTrainingPipelineVideoObjectTrackingSample {
         PipelineServiceClient.create(pipelineServiceSettings)) {
       String location = "us-central1";
       String trainingTaskDefinition =
-          "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_video_object_tracking_1.0.0.yaml";
+          "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
+                  + "automl_video_object_tracking_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
       String jsonString = "{\"modelType\": \"CLOUD\"}";

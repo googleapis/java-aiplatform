@@ -23,7 +23,19 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.Dataset;
+import com.google.cloud.aiplatform.v1beta1.DatasetName;
+import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.protobuf.Empty;
+import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,11 +44,15 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ImportDataTextEntityExtractionSampleTest {
+public class ImportDataSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("TEXT_ENTITY_DATASET_ID");
-  private static final String GCS_SOURCE_URI = "gs://automl-cloud-dataset/entity_extraction.jsonl";
+  private static final String LOCATION = "us-central1";
+  private static final String DATASET_ID = "000000000000000000000";
+
+  private static final String GCS_SOURCE_URI =
+      "gs://automl-cloud-dataset/SMSSpamCollection_train_dataset_2.csv";
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -51,7 +67,6 @@ public class ImportDataTextEntityExtractionSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TEXT_ENTITY_DATASET_ID");
   }
 
   @Before
@@ -63,21 +78,25 @@ public class ImportDataTextEntityExtractionSampleTest {
   }
 
   @After
-  public void tearDown()
-      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+  public void tearDown() {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
   public void testImportDataSample()
-      throws IOException, InterruptedException, ExecutionException, TimeoutException {
-    // Act
-    ImportDataTextEntityExtractionSample.importDataTextEntityExtractionSample(
-        PROJECT, DATASET_ID, GCS_SOURCE_URI);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Import Data Text Entity Extraction Response: ");
+      throws TimeoutException {
+    // As import data into dataset can take a long time, instead try to import data into a
+    // nonexistent dataset and confirm that the model was not found, but other
+    // elements of the request were valid.
+    try {
+      ImportDataTextClassificationSingleLabelSample.importDataTextClassificationSingleLabelSample(
+              PROJECT, DATASET_ID, GCS_SOURCE_URI);
+      // Assert
+      String got = bout.toString();
+      assertThat(got).contains("The Dataset does not exist.");
+    } catch (StatusRuntimeException | ExecutionException | InterruptedException | IOException e) {
+      assertThat(e.getMessage()).contains("The Dataset does not exist.");
+    }
   }
 }

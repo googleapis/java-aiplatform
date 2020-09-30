@@ -90,7 +90,7 @@ public class CreateBatchPredictionJobVideoObjectTrackingSample {
           GcsDestination.newBuilder().setOutputUriPrefix(gcsDestinationOutputUriPrefix).build();
       OutputConfig outputConfig =
           OutputConfig.newBuilder()
-              .setPredictionsFormat("csv")
+              .setPredictionsFormat("jsonl")
               .setGcsDestination(gcsDestination)
               .build();
 

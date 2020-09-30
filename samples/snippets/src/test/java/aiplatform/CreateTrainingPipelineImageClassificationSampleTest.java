@@ -81,7 +81,7 @@ public class CreateTrainingPipelineImageClassificationSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Training Pipeline Response: ");
+    assertThat(deleteResponse).contains("Deleted Training Pipeline.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }

@@ -80,7 +80,7 @@ public class CreateBatchPredictionJobVideoObjectTrackingSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Batch Prediction Job Response: ");
+    assertThat(deleteResponse).contains("Deleted Batch");
     System.out.flush();
     System.setOut(originalPrintStream);
   }

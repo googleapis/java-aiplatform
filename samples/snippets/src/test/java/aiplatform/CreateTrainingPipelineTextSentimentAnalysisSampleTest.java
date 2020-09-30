@@ -80,23 +80,24 @@ public class CreateTrainingPipelineTextSentimentAnalysisSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Training Pipeline Response: ");
+    assertThat(deleteResponse).contains("Deleted Training Pipeline.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
   public void testCreateTrainingPipelineTextSentimentAnalysisSample() throws IOException {
+    String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     // Act
     String trainingPipelineDisplayName =
         String.format(
             "temp_create_training_pipeline_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+            tempUuid);
 
     String modelDisplayName =
         String.format(
             "temp_create_training_pipeline_model_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+            tempUuid);
 
     CreateTrainingPipelineTextSentimentAnalysisSample
         .createTrainingPipelineTextSentimentAnalysisSample(

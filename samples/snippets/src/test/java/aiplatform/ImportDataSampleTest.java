@@ -36,7 +36,6 @@ import org.junit.runners.JUnit4;
 public class ImportDataSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String LOCATION = "us-central1";
   private static final String DATASET_ID = "000000000000000000000";
 
   private static final String GCS_SOURCE_URI =

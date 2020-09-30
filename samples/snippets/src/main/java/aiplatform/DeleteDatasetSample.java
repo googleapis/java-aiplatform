@@ -34,8 +34,8 @@ public class DeleteDatasetSample {
   public static void main(String[] args)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "YOUR_PROJECT_ID";
-    String datasetId = "YOUR_DATASET_ID";
+    String project = "ucaip-sample-tests";
+    String datasetId = "3171519300087316480";
     deleteDatasetSample(project, datasetId);
   }
 
@@ -58,9 +58,9 @@ public class DeleteDatasetSample {
           datasetServiceClient.deleteDatasetAsync(datasetName);
       System.out.format("Operation name: %s\n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
-      Empty deleteResponse = operationFuture.get(300, TimeUnit.SECONDS);
+      operationFuture.get(300, TimeUnit.SECONDS);
 
-      System.out.format("Delete Dataset Response: %s\n", deleteResponse);
+      System.out.println("Deleted Dataset.");
     }
   }
 }

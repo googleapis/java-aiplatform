@@ -156,7 +156,6 @@ public class CreateTrainingPipelineVideoClassificationSample {
       System.out.println("\tError");
       System.out.format("\t\tCode: %s\n", status.getCode());
       System.out.format("\t\tMessage: %s\n", status.getMessage());
-      List<Any> details = status.getDetailsList();
     }
   }
 }

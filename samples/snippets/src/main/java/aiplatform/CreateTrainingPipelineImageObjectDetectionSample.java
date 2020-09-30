@@ -227,8 +227,6 @@ public class CreateTrainingPipelineImageObjectDetectionSample {
       System.out.println("Error");
       System.out.format("Code: %s\n", status.getCode());
       System.out.format("Message: %s\n", status.getMessage());
-
-      List<Any> detailsList = status.getDetailsList();
     }
   }
 }

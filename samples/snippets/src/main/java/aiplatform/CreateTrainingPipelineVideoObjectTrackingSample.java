@@ -168,7 +168,6 @@ public class CreateTrainingPipelineVideoObjectTrackingSample {
       System.out.println("Error");
       System.out.format("Code: %s\n", status.getCode());
       System.out.format("Message: %s\n", status.getMessage());
-      List<Any> details = status.getDetailsList();
     }
   }
 }

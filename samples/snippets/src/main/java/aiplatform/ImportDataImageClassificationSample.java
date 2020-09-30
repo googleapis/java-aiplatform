@@ -81,7 +81,8 @@ public class ImportDataImageClassificationSample {
       System.out.println("Waiting for operation to finish...");
       ImportDataResponse importDataResponse = importDataResponseFuture.get(300, TimeUnit.SECONDS);
 
-      System.out.format("Import Data Image Classification Response: %s\n", importDataResponse.toString());
+      System.out.format("Import Data Image Classification Response: %s\n",
+              importDataResponse.toString());
     }
   }
 }

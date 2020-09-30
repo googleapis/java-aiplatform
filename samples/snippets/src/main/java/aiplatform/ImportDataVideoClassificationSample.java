@@ -81,7 +81,8 @@ public class ImportDataVideoClassificationSample {
       ImportDataResponse importDataResponse = importDataResponseFuture.get(1800, TimeUnit.SECONDS);
 
       System.out.format(
-          "Import Data Video Classification Response: %s\n", importDataResponse.toString());
+          "Import Data Video Classification Response: %s\n",
+              importDataResponse.toString());
     }
   }
 }

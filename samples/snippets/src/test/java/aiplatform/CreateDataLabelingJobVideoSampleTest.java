@@ -81,7 +81,7 @@ public class CreateDataLabelingJobVideoSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Data Labeling Job Response: ");
+    assertThat(deleteResponse).contains("Deleted Data Labeling Job.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }

@@ -58,9 +58,9 @@ public class DeleteDataLabelingJobSample {
           jobServiceClient.deleteDataLabelingJobAsync(dataLabelingJobName);
       System.out.format("Operation name: %s\n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
-      Empty deleteResponse = operationFuture.get(300, TimeUnit.SECONDS);
+      operationFuture.get(300, TimeUnit.SECONDS);
 
-      System.out.format("Delete Data Labeling Job Response: %s\n", deleteResponse);
+      System.out.format("Deleted Data Labeling Job.");
     }
   }
 }

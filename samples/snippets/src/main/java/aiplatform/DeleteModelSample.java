@@ -55,8 +55,8 @@ public class DeleteModelSample {
           modelServiceClient.deleteModelAsync(modelName);
       System.out.format("Operation name: %s\n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
-      Empty deleteResponse = operationFuture.get(300, TimeUnit.SECONDS);
-      System.out.format("Delete Model Response: %s\n", deleteResponse);
+      operationFuture.get(300, TimeUnit.SECONDS);
+      System.out.format("Deleted Model.");
     }
   }
 }

@@ -82,7 +82,8 @@ public class ImportDataTextSentimentAnalysisSample {
 
       System.out.println("Waiting for operation to finish...");
       ImportDataResponse importDataResponse = importDataResponseFuture.get(300, TimeUnit.SECONDS);
-      System.out.format("Import Data Text Sentiment Analysis Response: %s\n", importDataResponse);
+      System.out.format("Import Data Text Sentiment Analysis Response: %s\n",
+              importDataResponse.toString());
     }
   }
 }

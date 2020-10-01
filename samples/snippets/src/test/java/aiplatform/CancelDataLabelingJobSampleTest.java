@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CancelDataLabelingJobSampleTest {
@@ -80,6 +81,7 @@ public class CancelDataLabelingJobSampleTest {
   }
 
   @Test
+  @Ignore
   public void testCancelDataLabelingJob() throws IOException, InterruptedException {
     // Act
     String dataLabelingDisplayName =

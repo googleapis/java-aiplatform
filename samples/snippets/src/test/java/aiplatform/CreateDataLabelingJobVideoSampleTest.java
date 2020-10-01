@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CreateDataLabelingJobVideoSampleTest {
@@ -86,6 +87,7 @@ public class CreateDataLabelingJobVideoSampleTest {
   }
 
   @Test
+  @Ignore
   public void testCreateDataLabelingJobVideoSample() throws IOException {
     // Act
     String dataLabelingDisplayName =

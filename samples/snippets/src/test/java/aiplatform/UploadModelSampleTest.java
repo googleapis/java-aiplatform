@@ -73,7 +73,7 @@ public class UploadModelSampleTest {
 
     // Assert
     String deleteModelResponse = bout.toString();
-    assertThat(deleteModelResponse).contains("Delete Model Response");
+    assertThat(deleteModelResponse).contains("Deleted Model.");
     TimeUnit.MINUTES.sleep(1);
     System.out.flush();
     System.setOut(originalPrintStream);

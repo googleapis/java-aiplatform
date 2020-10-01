@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Base64;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -70,7 +71,8 @@ public class PredictCustomTrainedModelSampleTest {
   public void testPredictCustomTrainedModelSample() throws IOException {
     // Act
     ByteString content = ByteString.copyFrom(Files.readAllBytes(Paths.get("resources/daisy.jpg")));
-    String instance = "{'image_bytes': {'b64': " + content.toStringUtf8() + "}, 'key': '0'}";
+    String encoded = Base64.getEncoder().encodeToString(content.toByteArray());
+    String instance = "[{'image_bytes': {'b64': '" + encoded + "'}, 'key':'0'}]";
     PredictCustomTrainedModelSample.predictCustomTrainedModel(PROJECT, ENDPOINT_ID, instance);
 
     // Assert

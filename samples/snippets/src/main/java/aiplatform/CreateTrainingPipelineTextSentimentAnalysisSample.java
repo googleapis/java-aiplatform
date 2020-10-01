@@ -76,7 +76,8 @@ public class CreateTrainingPipelineTextSentimentAnalysisSample {
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
                   + "automl_text_sentiment_1.0.0.yaml";
 
-      // Use sentimentMax of 4
+      // Sentiment max must be between 1 and 10 inclusive.
+      // Higher value means positive sentiment.
       String jsonString = "{\"sentimentMax\": 4 }";
 
       LocationName locationName = LocationName.of(project, location);

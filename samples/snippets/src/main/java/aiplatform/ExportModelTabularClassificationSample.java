@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_export_model_tables_classification_sample]
+// [START aiplatform_export_model_tabular_classification_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata;
@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class ExportModelTablesClassificationSample {
+public class ExportModelTabularClassificationSample {
   public static void main(String[] args)
       throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // TODO(developer): Replace these variables before running the sample.
@@ -72,8 +72,8 @@ public class ExportModelTablesClassificationSample {
       ExportModelResponse exportModelResponse =
           exportModelResponseFuture.get(300, TimeUnit.SECONDS);
       System.out.format(
-          "Export Model Tables Classification Response: %s", exportModelResponse.toString());
+          "Export Model Tabular Classification Response: %s", exportModelResponse.toString());
     }
   }
 }
-// [END aiplatform_export_model_tables_classification_sample]
+// [END aiplatform_export_model_tabular_classification_sample]

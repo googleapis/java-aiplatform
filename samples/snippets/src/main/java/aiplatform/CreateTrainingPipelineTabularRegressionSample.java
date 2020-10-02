@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_create_training_pipeline_tables_regression_sample]
+// [START aiplatform_create_training_pipeline_tabular_regression_sample]
 
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
@@ -44,7 +44,7 @@ import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
 
-public class CreateTrainingPipelineTablesRegressionSample {
+public class CreateTrainingPipelineTabularRegressionSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
@@ -114,7 +114,7 @@ public class CreateTrainingPipelineTablesRegressionSample {
       TrainingPipeline trainingPipelineResponse =
           pipelineServiceClient.createTrainingPipeline(locationName, trainingPipeline);
 
-      System.out.println("Create Training Pipeline Tables Regression Response");
+      System.out.println("Create Training Pipeline Tabular Regression Response");
       System.out.format("\tName: %s\n", trainingPipelineResponse.getName());
       System.out.format("\tDisplay Name: %s\n", trainingPipelineResponse.getDisplayName());
       System.out.format(
@@ -251,4 +251,4 @@ public class CreateTrainingPipelineTablesRegressionSample {
     }
   }
 }
-// [END aiplatform_create_training_pipeline_tables_regression_sample]
+// [END aiplatform_create_training_pipeline_tabular_regression_sample]

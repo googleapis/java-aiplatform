@@ -17,23 +17,25 @@
 package aiplatform;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class GetModelEvaluationTablesRegressionSampleTest {
+public class ExportModelTabularClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String MODEL_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
-  private static final String EVALUATION_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
+      System.getenv("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
+  private static final String GCS_DESTINATION_URI_PREFIX =
+      "gs://ucaip-samples-test-output/tmp/export_model_test";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -48,8 +50,7 @@ public class GetModelEvaluationTablesRegressionSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
+    requireEnvVar("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
   }
 
   @Before
@@ -62,19 +63,27 @@ public class GetModelEvaluationTablesRegressionSampleTest {
 
   @After
   public void tearDown() {
+    // Delete the export model
+    String bucketName = GCS_DESTINATION_URI_PREFIX.split("/", 4)[2];
+    String objectName = (GCS_DESTINATION_URI_PREFIX.split("/", 4)[3]).concat("model-" + MODEL_ID);
+    DeleteExportModelSample.deleteExportModelSample(PROJECT, bucketName, objectName);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Export Model Deleted");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void getModelEvaluationTablesRegression() throws IOException {
+  public void exportModelTabularClassification()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // Act
-    GetModelEvaluationTablesRegressionSample.getModelEvaluationTablesRegression(
-        PROJECT, MODEL_ID, EVALUATION_ID);
+    ExportModelTabularClassificationSample.exportModelTableClassification(
+        GCS_DESTINATION_URI_PREFIX, PROJECT, MODEL_ID);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains(MODEL_ID);
-    assertThat(got).contains("Get Model Evaluation Tables Regression Response");
+    assertThat(got).contains("Export Model Tabular Classification Response: ");
   }
 }

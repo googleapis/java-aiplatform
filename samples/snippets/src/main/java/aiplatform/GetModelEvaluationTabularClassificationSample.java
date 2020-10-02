@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_get_model_evaluation_tables_regression_sample]
+// [START aiplatform_get_model_evaluation_tabular_classification_sample]
 
 import com.google.cloud.aiplatform.v1beta1.Attribution;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
@@ -26,17 +26,17 @@ import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
 import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
 import java.io.IOException;
 
-public class GetModelEvaluationTablesRegressionSample {
+public class GetModelEvaluationTabularClassificationSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
     String evaluationId = "YOUR_EVALUATION_ID";
-    getModelEvaluationTablesRegression(project, modelId, evaluationId);
+    getModelEvaluationTabularClassification(project, modelId, evaluationId);
   }
 
-  static void getModelEvaluationTablesRegression(
+  static void getModelEvaluationTabularClassification(
       String project, String modelId, String evaluationId) throws IOException {
     ModelServiceSettings modelServiceSettings =
         ModelServiceSettings.newBuilder()
@@ -52,7 +52,7 @@ public class GetModelEvaluationTablesRegressionSample {
           ModelEvaluationName.of(project, location, modelId, evaluationId);
       ModelEvaluation modelEvaluation = modelServiceClient.getModelEvaluation(modelEvaluationName);
 
-      System.out.println("Get Model Evaluation Tables Regression Response");
+      System.out.println("Get Model Evaluation Tabular Classification Response");
       System.out.format("\tName: %s\n", modelEvaluation.getName());
       System.out.format("\tMetrics Schema Uri: %s\n", modelEvaluation.getMetricsSchemaUri());
       System.out.format("\tMetrics: %s\n", modelEvaluation.getMetrics());
@@ -75,4 +75,4 @@ public class GetModelEvaluationTablesRegressionSample {
     }
   }
 }
-// [END aiplatform_get_model_evaluation_tables_regression_sample]
+// [END aiplatform_get_model_evaluation_tabular_classification_sample]

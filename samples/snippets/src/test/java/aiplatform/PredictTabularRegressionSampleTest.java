@@ -27,16 +27,36 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class PredictTablesClassificationSampleTest {
+public class PredictTabularRegressionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String INSTANCE =
-      "[{\"petal_length\": '1.4',"
-          + " \"petal_width\": '1.3',"
-          + " \"sepal_length\": '5.1',"
-          + " \"sepal_width\": '2.8'}]";
-  private static final String ENDPOINT_ID =
-      System.getenv("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
+      "[{\n"
+          + "    \"BOOLEAN_2unique_NULLABLE\": False,\n"
+          + "    \"DATETIME_1unique_NULLABLE\": '2019-01-01 00:00:00',\n"
+          + "    \"DATE_1unique_NULLABLE\": '2019-01-01',\n"
+          + "    \"FLOAT_5000unique_NULLABLE\": 1611,\n"
+          + "    \"FLOAT_5000unique_REPEATED\": [2320,1192],\n"
+          + "    \"INTEGER_5000unique_NULLABLE\": '8',\n"
+          + "    \"NUMERIC_5000unique_NULLABLE\": 16,\n"
+          + "    \"STRING_5000unique_NULLABLE\": 'str-2',\n"
+          + "    \"STRUCT_NULLABLE\": {\n"
+          + "        'BOOLEAN_2unique_NULLABLE': False,\n"
+          + "        'DATE_1unique_NULLABLE': '2019-01-01',\n"
+          + "        'DATETIME_1unique_NULLABLE': '2019-01-01 00:00:00',\n"
+          + "        'FLOAT_5000unique_NULLABLE': 1308,\n"
+          + "        'FLOAT_5000unique_REPEATED': [2323, 1178],\n"
+          + "        'FLOAT_5000unique_REQUIRED': 3089,\n"
+          + "        'INTEGER_5000unique_NULLABLE': '1777',\n"
+          + "        'NUMERIC_5000unique_NULLABLE': 3323,\n"
+          + "        'TIME_1unique_NULLABLE': '23:59:59.999999',\n"
+          + "        'STRING_5000unique_NULLABLE': 'str-49',\n"
+          + "        'TIMESTAMP_1unique_NULLABLE': '1546387199999999'\n"
+          + "    },\n"
+          + "    \"TIMESTAMP_1unique_NULLABLE\": '1546387199999999',\n"
+          + "    \"TIME_1unique_NULLABLE\": '23:59:59.999999'\n"
+          + "}]";
+  private static final String ENDPOINT_ID = System.getenv("PREDICT_TABLES_REGRESSION_ENDPOINT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -51,7 +71,7 @@ public class PredictTablesClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
+    requireEnvVar("PREDICT_TABLES_REGRESSION_ENDPOINT_ID");
   }
 
   @Before
@@ -69,12 +89,12 @@ public class PredictTablesClassificationSampleTest {
   }
 
   @Test
-  public void testPredictTablesClassification() throws IOException {
+  public void testPredictTabularRegression() throws IOException {
     // Act
-    PredictTablesClassificationSample.predictTablesClassification(INSTANCE, PROJECT, ENDPOINT_ID);
+    PredictTabularRegressionSample.predictTabularRegression(INSTANCE, PROJECT, ENDPOINT_ID);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Predict Tables Classification Response");
+    assertThat(got).contains("Predict Tabular Regression Response");
   }
 }

@@ -27,7 +27,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class GetModelEvaluationTablesClassificationSampleTest {
+public class GetModelEvaluationTabularClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String MODEL_ID =
@@ -67,14 +67,14 @@ public class GetModelEvaluationTablesClassificationSampleTest {
   }
 
   @Test
-  public void getModelEvaluationTablesClassification() throws IOException {
+  public void getModelEvaluationTabularClassification() throws IOException {
     // Act
-    GetModelEvaluationTablesClassificationSample.getModelEvaluationTablesClassification(
+    GetModelEvaluationTabularClassificationSample.getModelEvaluationTabularClassification(
         PROJECT, MODEL_ID, EVALUATION_ID);
 
     // Assert
     String got = bout.toString();
     assertThat(got).contains(MODEL_ID);
-    assertThat(got).contains("Get Model Evaluation Tables Classification Response");
+    assertThat(got).contains("Get Model Evaluation Tabular Classification Response");
   }
 }

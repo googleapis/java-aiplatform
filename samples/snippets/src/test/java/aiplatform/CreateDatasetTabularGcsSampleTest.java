@@ -30,7 +30,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateDatasetTablesGcsSampleTest {
+public class CreateDatasetTabularGcsSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String GCS_SOURCE_URI = "gs://cloud-ml-tables-data/bank-marketing.csv";
@@ -73,7 +73,7 @@ public class CreateDatasetTablesGcsSampleTest {
   }
 
   @Test
-  public void testCreateDatasetTablesGcsSample()
+  public void testCreateDatasetTabularGcsSample()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act
     String datasetDisplayName =
@@ -81,7 +81,7 @@ public class CreateDatasetTablesGcsSampleTest {
             "temp_create_dataset_table_gcs_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateDatasetTablesGcsSample.createDatasetTableGcs(PROJECT, datasetDisplayName, GCS_SOURCE_URI);
+    CreateDatasetTabularGcsSample.createDatasetTableGcs(PROJECT, datasetDisplayName, GCS_SOURCE_URI);
 
     // Assert
     String got = bout.toString();

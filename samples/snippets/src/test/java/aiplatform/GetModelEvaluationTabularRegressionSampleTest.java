@@ -17,27 +17,26 @@
 package aiplatform;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertNotNull;
+import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateDatasetTablesBigquerySampleTest {
+public class GetModelEvaluationTabularRegressionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String GCS_SOURCE_URI = "bq://ucaip-sample-tests.table_test.all_bq_types";
+  private static final String MODEL_ID =
+      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
+  private static final String EVALUATION_ID =
+      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String datasetId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -49,6 +48,8 @@ public class CreateDatasetTablesBigquerySampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
+    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
   }
 
   @Before
@@ -60,34 +61,20 @@ public class CreateDatasetTablesBigquerySampleTest {
   }
 
   @After
-  public void tearDown()
-      throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    // Delete the created dataset
-    DeleteDatasetSample.deleteDatasetSample(PROJECT, datasetId);
-
-    // Assert
-    String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Deleted Dataset.");
+  public void tearDown() {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testCreateDatasetTablesBigquerySample()
-      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+  public void getModelEvaluationTabularRegression() throws IOException {
     // Act
-    String datasetDisplayName =
-        String.format(
-            "temp_create_dataset_table_bigquery_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-
-    CreateDatasetTablesBigquerySample.createDatasetTableBigquery(
-        PROJECT, datasetDisplayName, GCS_SOURCE_URI);
+    GetModelEvaluationTabularRegressionSample.getModelEvaluationTabularRegression(
+        PROJECT, MODEL_ID, EVALUATION_ID);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains(datasetDisplayName);
-    assertThat(got).contains("Create Dataset Table Bigquery sample");
-    datasetId = got.split("Name: ")[1].split("datasets/")[1].split("\n")[0];
+    assertThat(got).contains(MODEL_ID);
+    assertThat(got).contains("Get Model Evaluation Tabular Regression Response");
   }
 }

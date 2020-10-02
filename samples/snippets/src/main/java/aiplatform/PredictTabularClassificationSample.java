@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_predict_tables_regression_sample]
+// [START aiplatform_predict_tabular_classification_sample]
 
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
@@ -28,17 +28,17 @@ import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.List;
 
-public class PredictTablesRegressionSample {
+public class PredictTabularClassificationSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
     String instance = "[{ “feature_column_a”: “value”, “feature_column_b”: “value”}]";
     String endpointId = "YOUR_ENDPOINT_ID";
-    predictTablesRegression(instance, project, endpointId);
+    predictTabularClassification(instance, project, endpointId);
   }
 
-  static void predictTablesRegression(String instance, String project, String endpointId)
+  static void predictTabularClassification(String instance, String project, String endpointId)
       throws IOException {
     PredictionServiceSettings predictionServiceSettings =
         PredictionServiceSettings.newBuilder()
@@ -60,8 +60,8 @@ public class PredictTablesRegressionSample {
       Value parameters = Value.newBuilder().build();
       PredictResponse predictResponse =
           predictionServiceClient.predict(endpointName, instanceList, parameters);
-      System.out.println("Predict Tables Regression Response");
-      System.out.format("\tDisplay Model Id: %s\n", predictResponse.getDeployedModelId());
+      System.out.println("Predict Tabular Classification Response");
+      System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
@@ -70,4 +70,4 @@ public class PredictTablesRegressionSample {
     }
   }
 }
-// [END aiplatform_predict_tables_regression_sample]
+// [END aiplatform_predict_tabular_classification_sample]

@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_create_dataset_tables_bigquery_sample]
+// [START aiplatform_create_dataset_tabular_bigquery_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class CreateDatasetTablesBigquerySample {
+public class CreateDatasetTabularBigquerySample {
 
   public static void main(String[] args)
       throws InterruptedException, ExecutionException, TimeoutException, IOException {
@@ -86,4 +86,4 @@ public class CreateDatasetTablesBigquerySample {
     }
   }
 }
-// [END aiplatform_create_dataset_tables_bigquery_sample]
+// [END aiplatform_create_dataset_tabular_bigquery_sample]

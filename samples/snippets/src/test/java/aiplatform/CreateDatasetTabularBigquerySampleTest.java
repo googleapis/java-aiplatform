@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
@@ -29,16 +30,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ExportModelTablesClassificationSampleTest {
+public class CreateDatasetTabularBigquerySampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
-  private static final String GCS_DESTINATION_URI_PREFIX =
-      "gs://ucaip-samples-test-output/tmp/export_model_test";
+  private static final String GCS_SOURCE_URI = "bq://ucaip-sample-tests.table_test.all_bq_types";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private String datasetId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -50,7 +49,6 @@ public class ExportModelTablesClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
   }
 
   @Before
@@ -62,28 +60,34 @@ public class ExportModelTablesClassificationSampleTest {
   }
 
   @After
-  public void tearDown() {
-    // Delete the export model
-    String bucketName = GCS_DESTINATION_URI_PREFIX.split("/", 4)[2];
-    String objectName = (GCS_DESTINATION_URI_PREFIX.split("/", 4)[3]).concat("model-" + MODEL_ID);
-    DeleteExportModelSample.deleteExportModelSample(PROJECT, bucketName, objectName);
+  public void tearDown()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    // Delete the created dataset
+    DeleteDatasetSample.deleteDatasetSample(PROJECT, datasetId);
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Export Model Deleted");
+    assertThat(deleteResponse).contains("Deleted Dataset.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void exportModelTablesClassification()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+  public void testCreateDatasetTabularBigquerySample()
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act
-    ExportModelTablesClassificationSample.exportModelTableClassification(
-        GCS_DESTINATION_URI_PREFIX, PROJECT, MODEL_ID);
+    String datasetDisplayName =
+        String.format(
+            "temp_create_dataset_table_bigquery_test_%s",
+            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+
+    CreateDatasetTabularBigquerySample.createDatasetTableBigquery(
+        PROJECT, datasetDisplayName, GCS_SOURCE_URI);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Export Model Tables Classification Response: ");
+    assertThat(got).contains(datasetDisplayName);
+    assertThat(got).contains("Create Dataset Table Bigquery sample");
+    datasetId = got.split("Name: ")[1].split("datasets/")[1].split("\n")[0];
   }
 }

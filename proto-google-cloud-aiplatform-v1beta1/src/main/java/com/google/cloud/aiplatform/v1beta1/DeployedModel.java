@@ -651,7 +651,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If true, the container of the DeployedModel instances will send `stderr`
    * and `stdout` streams to Stackdriver Logging.
-   * Only supported for custom-trained Models and AutoML Tables Models.
+   * Only supported for custom-trained Models and AutoML Tabular Models.
    * </pre>
    *
    * <code>bool enable_container_logging = 12;</code>
@@ -2462,7 +2462,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>
@@ -2479,7 +2479,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>
@@ -2499,7 +2499,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>

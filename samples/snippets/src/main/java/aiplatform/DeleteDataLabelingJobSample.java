@@ -16,52 +16,52 @@
 
 package aiplatform;
 
-// [START aiplatform_delete_dataset_sample]
+// [START aiplatform_delete_data_labeling_job_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.DataLabelingJobName;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
+import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class DeleteDatasetSample {
-
+public class DeleteDataLabelingJobSample {
   public static void main(String[] args)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
-    String datasetId = "YOUR_DATASET_ID";
-    deleteDatasetSample(project, datasetId);
+    String dataLabelingJobId = "YOUR_DATA_LABELING_JOB_ID";
+    deleteDataLabelingJob(project, dataLabelingJobId);
   }
 
-  static void deleteDatasetSample(String project, String datasetId)
+  static void deleteDataLabelingJob(String project, String dataLabelingJobId)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
-    DatasetServiceSettings datasetServiceSettings =
-        DatasetServiceSettings.newBuilder()
+    JobServiceSettings jobServiceSettings =
+        JobServiceSettings.newBuilder()
             .setEndpoint("us-central1-aiplatform.googleapis.com:443")
             .build();
 
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (DatasetServiceClient datasetServiceClient =
-        DatasetServiceClient.create(datasetServiceSettings)) {
+    try (JobServiceClient jobServiceClient = JobServiceClient.create(jobServiceSettings)) {
       String location = "us-central1";
-      DatasetName datasetName = DatasetName.of(project, location, datasetId);
+
+      DataLabelingJobName dataLabelingJobName =
+          DataLabelingJobName.of(project, location, dataLabelingJobId);
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
-          datasetServiceClient.deleteDatasetAsync(datasetName);
+          jobServiceClient.deleteDataLabelingJobAsync(dataLabelingJobName);
       System.out.format("Operation name: %s\n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       operationFuture.get(300, TimeUnit.SECONDS);
-      
-      System.out.format("Deleted Dataset.");
+
+      System.out.format("Deleted Data Labeling Job.");
     }
   }
 }
-// [END aiplatform_delete_dataset_sample]
+// [END aiplatform_delete_data_labeling_job_sample]

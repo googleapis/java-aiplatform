@@ -81,7 +81,7 @@ public class CreateTrainingPipelineSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Training Pipeline Response: ");
+    assertThat(deleteResponse).contains("Delete Training");
     System.out.flush();
     System.setOut(originalPrintStream);
   }

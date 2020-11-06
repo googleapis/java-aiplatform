@@ -35,6 +35,7 @@ public class PredictTabularClassificationSampleTest {
           + " \"petal_width\": '1.3',"
           + " \"sepal_length\": '5.1',"
           + " \"sepal_width\": '2.8'}]";
+
   private static final String ENDPOINT_ID =
       System.getenv("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
   private ByteArrayOutputStream bout;

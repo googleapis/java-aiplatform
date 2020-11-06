@@ -31,6 +31,7 @@
       <artifactId>google-cloud-aiplatform</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <!-- [END aiplatform_install_with_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>

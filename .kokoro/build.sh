@@ -69,15 +69,16 @@ integration)
     RETURN_CODE=$?
     ;;
 samples)
-    if [[ -f samples/pom.xml ]]
+    SAMPLES_DIR=samples
+    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
     then
-        # TODO: load this better
-        if [ -f "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets" ]
-        then
-            source "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets"
-        fi
+      SAMPLES_DIR=samples/snapshot
+    fi
 
-        pushd samples
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+    then
+        pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
           -DtrimStackTrace=false \

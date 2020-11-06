@@ -16,7 +16,7 @@
 
 package aiplatform;
 
-// [START aiplatform_get_model_image_object_detection_evaluation_sample]
+// [START aiplatform_get_model_evaluation_image_object_detection_sample]
 
 import com.google.cloud.aiplatform.v1beta1.Attribution;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;

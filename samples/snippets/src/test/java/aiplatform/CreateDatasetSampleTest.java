@@ -70,7 +70,7 @@ public class CreateDatasetSampleTest {
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Delete Dataset.");
+    assertThat(deleteResponse).contains("Deleted Dataset.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }

@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/image_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/image_object_detection.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/image_segmentation.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/text_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/text_extraction.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/text_sentiment.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/video_action_recognition.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/video_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/instance/video_object_tracking.proto";
+
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/image_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/image_object_detection.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/image_segmentation.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/video_action_recognition.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/video_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/params/video_object_tracking.proto";
+
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/image_object_detection.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/image_segmentation.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/tabular_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/tabular_regression.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/text_extraction.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/text_sentiment.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/time_series_forecasting.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_action_recognition.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_object_tracking.proto";
+
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_forecasting.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_object_detection.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_segmentation.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_tables.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_sentiment.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_action_recognition.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_classification.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_object_tracking.proto";
+import "google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/export_evaluated_data_items_config.proto";
+
+package google.cloud.aiplatform.v1beta1;
+
+option java_multiple_files = true;
+option java_outer_classname = "EnhancedTypesProto";
+option java_package = "com.google.cloud.aiplatform.v1beta1";
+
+// FOR LIBRARY GENERATION PURPOSES ONLY. DO NOT USE.
+// TODO(erschmid): Mark all fields as output-only to restrict usage by customers?
+message TrainingJobDefinition {
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecasting auto_ml_forecasting = 1;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs auto_ml_forecasting_inputs = 2;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingMetadata auto_ml_forecasting_metadata = 3;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassification auto_ml_image_classification = 4;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs auto_ml_image_classification_inputs = 5;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationMetadata auto_ml_image_classification_metadata = 6;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetection auto_ml_image_object_detection = 7;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs auto_ml_image_object_detection_inputs = 8;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionMetadata auto_ml_image_object_detection_metadata = 9;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation auto_ml_image_segmentation = 10;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs auto_ml_image_segmentation_inputs = 11;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata auto_ml_image_segmentation_metadata = 12;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTables auto_ml_tables = 13;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs auto_ml_tables_inputs = 14;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata auto_ml_tables_metadata = 15;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextClassification auto_ml_text_classification = 16;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextClassificationInputs auto_ml_text_classification_inputs = 17;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction auto_ml_text_extraction = 18;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs auto_ml_text_extraction_inputs = 19;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentiment auto_ml_text_sentiment = 20;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentimentInputs auto_ml_text_sentiment_inputs = 21;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognition auto_ml_video_action_recognition = 22;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs auto_ml_video_action_recognition_inputs = 23;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoClassification auto_ml_video_classification = 24;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoClassificationInputs auto_ml_video_classification_inputs = 25;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTracking auto_ml_video_object_tracking = 26;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs auto_ml_video_object_tracking_inputs = 27;
+
+  google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig export_evaluated_data_items_config = 28;
+}
+
+// FOR LIBRARY GENERATION PURPOSES ONLY. DO NOT USE.
+// TODO(erschmid): Mark all fields as output-only to restrict usage by customers?
+message PredictInstances {
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageClassificationPredictionInstance image_classification_prediction_instance = 1;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageObjectDetectionPredictionInstance image_object_detection_prediction_instance = 2;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageSegmentationPredictionInstance image_segmentation_prediction_instance = 3;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.TextClassificationPredictionInstance text_classification_prediction_instance = 4;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.TextExtractionPredictionInstance text_extraction_prediction_instance = 5;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance text_sentiment_prediction_instance = 6;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.VideoActionRecognitionPredictionInstance video_action_recognition_prediction_instance = 7;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.VideoClassificationPredictionInstance video_classification_prediction_instance = 8;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.instance.VideoObjectTrackingPredictionInstance video_object_tracking_prediction_instance = 9;
+}
+
+// FOR LIBRARY GENERATION PURPOSES ONLY. DO NOT USE.
+// TODO(erschmid): Mark all fields as output-only to restrict usage by customers?
+message PredictParams {
+  google.cloud.aiplatform.v1beta1.schema.predict.params.ImageClassificationPredictionParams image_classification_prediction_params = 1;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.params.ImageObjectDetectionPredictionParams image_object_detection_prediction_params = 2;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.params.ImageSegmentationPredictionParams image_segmentation_prediction_params = 62;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.params.VideoActionRecognitionPredictionParams video_action_recognition_prediction_params = 3;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.params.VideoClassificationPredictionParams video_classification_prediction_params = 4;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.params.VideoObjectTrackingPredictionParams video_object_tracking_prediction_params = 5;
+}
+
+// TODO(erschmid): Mark all fields as output-only to restrict usage by customers?
+message PredictionResults {
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult classification_prediction_result = 1;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageObjectDetectionPredictionResult image_object_detection_result = 2;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageSegmentationPredictionResult image_segmentation_prediction_result = 3;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularClassificationPredictionResult tabular_classification_prediction_result = 4;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularRegressionPredictionResult tabular_regression_prediction_result = 5;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult text_extraction_prediction_result = 6;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult text_sentiment_prediction_result = 7;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.TimeSeriesForecastingPredictionResult time_series_forecasting_prediction_result = 8;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoActionRecognitionPredictionResult video_action_recognition_result = 9;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoClassificationPredictionResult video_classification_result = 10;
+
+  google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoClassificationPredictionResult video_object_tracking_result = 11;
+}
+

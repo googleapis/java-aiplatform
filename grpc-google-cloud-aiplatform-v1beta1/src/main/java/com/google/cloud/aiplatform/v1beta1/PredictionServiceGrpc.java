@@ -1,30 +1,21 @@
-/*
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
- *
- *
  * <pre>
  * A service for online predictions and explanations.
  * </pre>
@@ -39,165 +30,130 @@ public final class PredictionServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.PredictionService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.PredictRequest,
-          com.google.cloud.aiplatform.v1beta1.PredictResponse>
-      getPredictMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PredictRequest,
+      com.google.cloud.aiplatform.v1beta1.PredictResponse> getPredictMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Predict",
       requestType = com.google.cloud.aiplatform.v1beta1.PredictRequest.class,
       responseType = com.google.cloud.aiplatform.v1beta1.PredictResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.PredictRequest,
-          com.google.cloud.aiplatform.v1beta1.PredictResponse>
-      getPredictMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1beta1.PredictRequest,
-            com.google.cloud.aiplatform.v1beta1.PredictResponse>
-        getPredictMethod;
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PredictRequest,
+      com.google.cloud.aiplatform.v1beta1.PredictResponse> getPredictMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PredictRequest, com.google.cloud.aiplatform.v1beta1.PredictResponse> getPredictMethod;
     if ((getPredictMethod = PredictionServiceGrpc.getPredictMethod) == null) {
       synchronized (PredictionServiceGrpc.class) {
         if ((getPredictMethod = PredictionServiceGrpc.getPredictMethod) == null) {
-          PredictionServiceGrpc.getPredictMethod =
-              getPredictMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1beta1.PredictRequest,
-                          com.google.cloud.aiplatform.v1beta1.PredictResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Predict"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.PredictRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.PredictResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Predict"))
-                      .build();
+          PredictionServiceGrpc.getPredictMethod = getPredictMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.PredictRequest, com.google.cloud.aiplatform.v1beta1.PredictResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Predict"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.PredictRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.PredictResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Predict"))
+              .build();
         }
       }
     }
     return getPredictMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-          com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-      getExplainMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.ExplainRequest,
+      com.google.cloud.aiplatform.v1beta1.ExplainResponse> getExplainMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Explain",
       requestType = com.google.cloud.aiplatform.v1beta1.ExplainRequest.class,
       responseType = com.google.cloud.aiplatform.v1beta1.ExplainResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-          com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-      getExplainMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-            com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-        getExplainMethod;
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.ExplainRequest,
+      com.google.cloud.aiplatform.v1beta1.ExplainResponse> getExplainMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.ExplainRequest, com.google.cloud.aiplatform.v1beta1.ExplainResponse> getExplainMethod;
     if ((getExplainMethod = PredictionServiceGrpc.getExplainMethod) == null) {
       synchronized (PredictionServiceGrpc.class) {
         if ((getExplainMethod = PredictionServiceGrpc.getExplainMethod) == null) {
-          PredictionServiceGrpc.getExplainMethod =
-              getExplainMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-                          com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Explain"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.ExplainRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.ExplainResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Explain"))
-                      .build();
+          PredictionServiceGrpc.getExplainMethod = getExplainMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.ExplainRequest, com.google.cloud.aiplatform.v1beta1.ExplainResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Explain"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.ExplainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.ExplainResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Explain"))
+              .build();
         }
       }
     }
     return getExplainMethod;
   }
 
-  /** Creates a new async stub that supports all call types for the service */
+  /**
+   * Creates a new async stub that supports all call types for the service
+   */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub>() {
-          @java.lang.Override
-          public PredictionServiceStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PredictionServiceStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub>() {
+        @java.lang.Override
+        public PredictionServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PredictionServiceStub(channel, callOptions);
+        }
+      };
     return PredictionServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static PredictionServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
+  public static PredictionServiceBlockingStub newBlockingStub(
+      io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingStub>() {
-          @java.lang.Override
-          public PredictionServiceBlockingStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PredictionServiceBlockingStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingStub>() {
+        @java.lang.Override
+        public PredictionServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PredictionServiceBlockingStub(channel, callOptions);
+        }
+      };
     return PredictionServiceBlockingStub.newStub(factory, channel);
   }
 
-  /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
-  public static PredictionServiceFutureStub newFutureStub(io.grpc.Channel channel) {
+  /**
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
+   */
+  public static PredictionServiceFutureStub newFutureStub(
+      io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceFutureStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceFutureStub>() {
-          @java.lang.Override
-          public PredictionServiceFutureStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PredictionServiceFutureStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceFutureStub>() {
+        @java.lang.Override
+        public PredictionServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PredictionServiceFutureStub(channel, callOptions);
+        }
+      };
     return PredictionServiceFutureStub.newStub(factory, channel);
   }
 
   /**
-   *
-   *
    * <pre>
    * A service for online predictions and explanations.
    * </pre>
    */
-  public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
+  public static abstract class PredictionServiceImplBase implements io.grpc.BindableService {
 
     /**
-     *
-     *
      * <pre>
      * Perform an online prediction.
      * </pre>
      */
-    public void predict(
-        com.google.cloud.aiplatform.v1beta1.PredictRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>
-            responseObserver) {
+    public void predict(com.google.cloud.aiplatform.v1beta1.PredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
@@ -210,42 +166,39 @@ public final class PredictionServiceGrpc {
      * explanation_spec.
      * </pre>
      */
-    public void explain(
-        com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-            responseObserver) {
+    public void explain(com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getExplainMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getPredictMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.PredictRequest,
-                      com.google.cloud.aiplatform.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
+            getPredictMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.PredictRequest,
+                com.google.cloud.aiplatform.v1beta1.PredictResponse>(
+                  this, METHODID_PREDICT)))
           .addMethod(
-              getExplainMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-                      com.google.cloud.aiplatform.v1beta1.ExplainResponse>(this, METHODID_EXPLAIN)))
+            getExplainMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.ExplainRequest,
+                com.google.cloud.aiplatform.v1beta1.ExplainResponse>(
+                  this, METHODID_EXPLAIN)))
           .build();
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service for online predictions and explanations.
    * </pre>
    */
-  public static final class PredictionServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<PredictionServiceStub> {
-    private PredictionServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class PredictionServiceStub extends io.grpc.stub.AbstractAsyncStub<PredictionServiceStub> {
+    private PredictionServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
@@ -256,23 +209,17 @@ public final class PredictionServiceGrpc {
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online prediction.
      * </pre>
      */
-    public void predict(
-        com.google.cloud.aiplatform.v1beta1.PredictRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>
-            responseObserver) {
+    public void predict(com.google.cloud.aiplatform.v1beta1.PredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
@@ -285,24 +232,19 @@ public final class PredictionServiceGrpc {
      * explanation_spec.
      * </pre>
      */
-    public void explain(
-        com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-            responseObserver) {
+    public void explain(com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getExplainMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service for online predictions and explanations.
    * </pre>
    */
-  public static final class PredictionServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<PredictionServiceBlockingStub> {
+  public static final class PredictionServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<PredictionServiceBlockingStub> {
     private PredictionServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -315,20 +257,16 @@ public final class PredictionServiceGrpc {
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online prediction.
      * </pre>
      */
-    public com.google.cloud.aiplatform.v1beta1.PredictResponse predict(
-        com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
-      return blockingUnaryCall(getChannel(), getPredictMethod(), getCallOptions(), request);
+    public com.google.cloud.aiplatform.v1beta1.PredictResponse predict(com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
@@ -341,22 +279,20 @@ public final class PredictionServiceGrpc {
      * explanation_spec.
      * </pre>
      */
-    public com.google.cloud.aiplatform.v1beta1.ExplainResponse explain(
-        com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {
-      return blockingUnaryCall(getChannel(), getExplainMethod(), getCallOptions(), request);
+    public com.google.cloud.aiplatform.v1beta1.ExplainResponse explain(com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getExplainMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service for online predictions and explanations.
    * </pre>
    */
-  public static final class PredictionServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<PredictionServiceFutureStub> {
-    private PredictionServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class PredictionServiceFutureStub extends io.grpc.stub.AbstractFutureStub<PredictionServiceFutureStub> {
+    private PredictionServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
@@ -367,21 +303,17 @@ public final class PredictionServiceGrpc {
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online prediction.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.aiplatform.v1beta1.PredictResponse>
-        predict(com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
-      return futureUnaryCall(getChannel().newCall(getPredictMethod(), getCallOptions()), request);
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.PredictResponse> predict(
+        com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPredictMethod(), getCallOptions()), request);
     }
 
     /**
-     *
-     *
      * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
@@ -394,21 +326,21 @@ public final class PredictionServiceGrpc {
      * explanation_spec.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.aiplatform.v1beta1.ExplainResponse>
-        explain(com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {
-      return futureUnaryCall(getChannel().newCall(getExplainMethod(), getCallOptions()), request);
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.ExplainResponse> explain(
+        com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getExplainMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_PREDICT = 0;
   private static final int METHODID_EXPLAIN = 1;
 
-  private static final class MethodHandlers<Req, Resp>
-      implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
+  private static final class MethodHandlers<Req, Resp> implements
+      io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
     private final PredictionServiceImplBase serviceImpl;
     private final int methodId;
 
@@ -422,16 +354,12 @@ public final class PredictionServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_PREDICT:
-          serviceImpl.predict(
-              (com.google.cloud.aiplatform.v1beta1.PredictRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>)
-                  responseObserver);
+          serviceImpl.predict((com.google.cloud.aiplatform.v1beta1.PredictRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>) responseObserver);
           break;
         case METHODID_EXPLAIN:
-          serviceImpl.explain(
-              (com.google.cloud.aiplatform.v1beta1.ExplainRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>)
-                  responseObserver);
+          serviceImpl.explain((com.google.cloud.aiplatform.v1beta1.ExplainRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -449,9 +377,8 @@ public final class PredictionServiceGrpc {
     }
   }
 
-  private abstract static class PredictionServiceBaseDescriptorSupplier
-      implements io.grpc.protobuf.ProtoFileDescriptorSupplier,
-          io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+  private static abstract class PredictionServiceBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     PredictionServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
@@ -493,13 +420,11 @@ public final class PredictionServiceGrpc {
       synchronized (PredictionServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
-          serviceDescriptor =
-              result =
-                  io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-                      .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
-                      .addMethod(getPredictMethod())
-                      .addMethod(getExplainMethod())
-                      .build();
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
+              .addMethod(getPredictMethod())
+              .addMethod(getExplainMethod())
+              .build();
         }
       }
     }

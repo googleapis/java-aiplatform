@@ -1,36 +1,35 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class AnnotationSpecName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -70,25 +69,23 @@ public class AnnotationSpecName implements ResourceName {
     annotationSpec = Preconditions.checkNotNull(builder.getAnnotationSpec());
   }
 
-  public static AnnotationSpecName of(
-      String project, String location, String dataset, String annotationSpec) {
+  public static AnnotationSpecName of(String project, String location, String dataset, String annotationSpec) {
     return newBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setDataset(dataset)
-        .setAnnotationSpec(annotationSpec)
-        .build();
+      .setProject(project)
+      .setLocation(location)
+      .setDataset(dataset)
+      .setAnnotationSpec(annotationSpec)
+      .build();
   }
 
-  public static String format(
-      String project, String location, String dataset, String annotationSpec) {
+  public static String format(String project, String location, String dataset, String annotationSpec) {
     return newBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setDataset(dataset)
-        .setAnnotationSpec(annotationSpec)
-        .build()
-        .toString();
+      .setProject(project)
+      .setLocation(location)
+      .setDataset(dataset)
+      .setAnnotationSpec(annotationSpec)
+      .build()
+      .toString();
   }
 
   public static AnnotationSpecName parse(String formattedString) {
@@ -96,13 +93,8 @@ public class AnnotationSpecName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "AnnotationSpecName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("dataset"),
-        matchMap.get("annotation_spec"));
+        PATH_TEMPLATE.validatedMatch(formattedString, "AnnotationSpecName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("dataset"), matchMap.get("annotation_spec"));
   }
 
   public static List<AnnotationSpecName> parseList(List<String> formattedStrings) {
@@ -151,15 +143,7 @@ public class AnnotationSpecName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "dataset",
-        dataset,
-        "annotation_spec",
-        annotationSpec);
+    return PATH_TEMPLATE.instantiate("project", project, "location", location, "dataset", dataset, "annotation_spec", annotationSpec);
   }
 
   /** Builder for AnnotationSpecName. */
@@ -206,7 +190,8 @@ public class AnnotationSpecName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
+    private Builder() {
+    }
 
     private Builder(AnnotationSpecName annotationSpecName) {
       project = annotationSpecName.project;
@@ -249,3 +234,4 @@ public class AnnotationSpecName implements ResourceName {
     return h;
   }
 }
+

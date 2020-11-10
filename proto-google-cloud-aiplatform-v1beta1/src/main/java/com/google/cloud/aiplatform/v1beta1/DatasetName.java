@@ -1,36 +1,35 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class DatasetName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/datasets/{dataset}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/datasets/{dataset}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -65,16 +64,20 @@ public class DatasetName implements ResourceName {
   }
 
   public static DatasetName of(String project, String location, String dataset) {
-    return newBuilder().setProject(project).setLocation(location).setDataset(dataset).build();
+    return newBuilder()
+      .setProject(project)
+      .setLocation(location)
+      .setDataset(dataset)
+      .build();
   }
 
   public static String format(String project, String location, String dataset) {
     return newBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setDataset(dataset)
-        .build()
-        .toString();
+      .setProject(project)
+      .setLocation(location)
+      .setDataset(dataset)
+      .build()
+      .toString();
   }
 
   public static DatasetName parse(String formattedString) {
@@ -82,8 +85,7 @@ public class DatasetName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "DatasetName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(formattedString, "DatasetName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("dataset"));
   }
 
@@ -169,7 +171,8 @@ public class DatasetName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
+    private Builder() {
+    }
 
     private Builder(DatasetName datasetName) {
       project = datasetName.project;
@@ -208,3 +211,4 @@ public class DatasetName implements ResourceName {
     return h;
   }
 }
+

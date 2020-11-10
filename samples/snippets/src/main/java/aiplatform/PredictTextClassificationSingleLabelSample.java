@@ -22,6 +22,7 @@ import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextClassificationPredictionInstance;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
@@ -32,9 +33,9 @@ public class PredictTextClassificationSingleLabelSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "YOUR_PROJECT_ID";
-    String content = "YOUR_TEXT_CONTENT";
-    String endpointId = "YOUR_ENDPOINT_ID";
+    String project = "ucaip-sample-tests";
+    String content = "My local greasy-spoon diner took way too long to get my food. It also costs too much. Good food though.";
+    String endpointId = "65372563341049856";
 
     predictTextClassificationSingleLabel(project, content, endpointId);
   }
@@ -62,6 +63,13 @@ public class PredictTextClassificationSingleLabelSample {
 
       List<Value> instances = new ArrayList<>();
       instances.add(instance.build());
+
+      TextClassificationPredictionInstance predictionInstance = TextClassificationPredictionInstance
+          .newBuilder()
+          .setContent(content)
+          .build();
+
+      System.out.println(predictionInstance.toString());
 
       PredictResponse predictResponse =
           predictionServiceClient.predict(endpointName, instances, parameter);

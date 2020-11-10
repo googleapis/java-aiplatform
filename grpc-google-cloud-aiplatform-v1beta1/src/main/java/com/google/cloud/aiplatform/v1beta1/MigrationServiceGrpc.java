@@ -1,30 +1,21 @@
-/*
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
- *
- *
  * <pre>
  * A service that migrates resources from automl.googleapis.com,
  * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
@@ -40,277 +31,216 @@ public final class MigrationServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.MigrationService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-          com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-      getSearchMigratableResourcesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
+      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> getSearchMigratableResourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SearchMigratableResources",
       requestType = com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest.class,
       responseType = com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-          com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-      getSearchMigratableResourcesMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-        getSearchMigratableResourcesMethod;
-    if ((getSearchMigratableResourcesMethod =
-            MigrationServiceGrpc.getSearchMigratableResourcesMethod)
-        == null) {
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
+      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> getSearchMigratableResourcesMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest, com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> getSearchMigratableResourcesMethod;
+    if ((getSearchMigratableResourcesMethod = MigrationServiceGrpc.getSearchMigratableResourcesMethod) == null) {
       synchronized (MigrationServiceGrpc.class) {
-        if ((getSearchMigratableResourcesMethod =
-                MigrationServiceGrpc.getSearchMigratableResourcesMethod)
-            == null) {
-          MigrationServiceGrpc.getSearchMigratableResourcesMethod =
-              getSearchMigratableResourcesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-                          com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "SearchMigratableResources"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new MigrationServiceMethodDescriptorSupplier("SearchMigratableResources"))
-                      .build();
+        if ((getSearchMigratableResourcesMethod = MigrationServiceGrpc.getSearchMigratableResourcesMethod) == null) {
+          MigrationServiceGrpc.getSearchMigratableResourcesMethod = getSearchMigratableResourcesMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest, com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchMigratableResources"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("SearchMigratableResources"))
+              .build();
         }
       }
     }
     return getSearchMigratableResourcesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-          com.google.longrunning.Operation>
-      getBatchMigrateResourcesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
+      com.google.longrunning.Operation> getBatchMigrateResourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "BatchMigrateResources",
       requestType = com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest.class,
       responseType = com.google.longrunning.Operation.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-          com.google.longrunning.Operation>
-      getBatchMigrateResourcesMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-            com.google.longrunning.Operation>
-        getBatchMigrateResourcesMethod;
-    if ((getBatchMigrateResourcesMethod = MigrationServiceGrpc.getBatchMigrateResourcesMethod)
-        == null) {
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
+      com.google.longrunning.Operation> getBatchMigrateResourcesMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest, com.google.longrunning.Operation> getBatchMigrateResourcesMethod;
+    if ((getBatchMigrateResourcesMethod = MigrationServiceGrpc.getBatchMigrateResourcesMethod) == null) {
       synchronized (MigrationServiceGrpc.class) {
-        if ((getBatchMigrateResourcesMethod = MigrationServiceGrpc.getBatchMigrateResourcesMethod)
-            == null) {
-          MigrationServiceGrpc.getBatchMigrateResourcesMethod =
-              getBatchMigrateResourcesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "BatchMigrateResources"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new MigrationServiceMethodDescriptorSupplier("BatchMigrateResources"))
-                      .build();
+        if ((getBatchMigrateResourcesMethod = MigrationServiceGrpc.getBatchMigrateResourcesMethod) == null) {
+          MigrationServiceGrpc.getBatchMigrateResourcesMethod = getBatchMigrateResourcesMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchMigrateResources"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("BatchMigrateResources"))
+              .build();
         }
       }
     }
     return getBatchMigrateResourcesMethod;
   }
 
-  /** Creates a new async stub that supports all call types for the service */
+  /**
+   * Creates a new async stub that supports all call types for the service
+   */
   public static MigrationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MigrationServiceStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceStub>() {
-          @java.lang.Override
-          public MigrationServiceStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MigrationServiceStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceStub>() {
+        @java.lang.Override
+        public MigrationServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MigrationServiceStub(channel, callOptions);
+        }
+      };
     return MigrationServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static MigrationServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
+  public static MigrationServiceBlockingStub newBlockingStub(
+      io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingStub>() {
-          @java.lang.Override
-          public MigrationServiceBlockingStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MigrationServiceBlockingStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingStub>() {
+        @java.lang.Override
+        public MigrationServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MigrationServiceBlockingStub(channel, callOptions);
+        }
+      };
     return MigrationServiceBlockingStub.newStub(factory, channel);
   }
 
-  /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
-  public static MigrationServiceFutureStub newFutureStub(io.grpc.Channel channel) {
+  /**
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
+   */
+  public static MigrationServiceFutureStub newFutureStub(
+      io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MigrationServiceFutureStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceFutureStub>() {
-          @java.lang.Override
-          public MigrationServiceFutureStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MigrationServiceFutureStub(channel, callOptions);
-          }
-        };
+      new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceFutureStub>() {
+        @java.lang.Override
+        public MigrationServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MigrationServiceFutureStub(channel, callOptions);
+        }
+      };
     return MigrationServiceFutureStub.newStub(factory, channel);
   }
 
   /**
-   *
-   *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
    * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
    * </pre>
    */
-  public abstract static class MigrationServiceImplBase implements io.grpc.BindableService {
+  public static abstract class MigrationServiceImplBase implements io.grpc.BindableService {
 
     /**
-     *
-     *
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
      * AI Platform's given location.
      * </pre>
      */
-    public void searchMigratableResources(
-        com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-            responseObserver) {
+    public void searchMigratableResources(com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSearchMigratableResourcesMethod(), responseObserver);
     }
 
     /**
-     *
-     *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
      * and datalabeling.googleapis.com to AI Platform (Unified).
      * </pre>
      */
-    public void batchMigrateResources(
-        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
+    public void batchMigrateResources(com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getBatchMigrateResourcesMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getSearchMigratableResourcesMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-                      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>(
-                      this, METHODID_SEARCH_MIGRATABLE_RESOURCES)))
+            getSearchMigratableResourcesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
+                com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>(
+                  this, METHODID_SEARCH_MIGRATABLE_RESOURCES)))
           .addMethod(
-              getBatchMigrateResourcesMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_MIGRATE_RESOURCES)))
+            getBatchMigrateResourcesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_BATCH_MIGRATE_RESOURCES)))
           .build();
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
    * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
    * </pre>
    */
-  public static final class MigrationServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<MigrationServiceStub> {
-    private MigrationServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class MigrationServiceStub extends io.grpc.stub.AbstractAsyncStub<MigrationServiceStub> {
+    private MigrationServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected MigrationServiceStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected MigrationServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MigrationServiceStub(channel, callOptions);
     }
 
     /**
-     *
-     *
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
      * AI Platform's given location.
      * </pre>
      */
-    public void searchMigratableResources(
-        com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-            responseObserver) {
+    public void searchMigratableResources(com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
-     *
-     *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
      * and datalabeling.googleapis.com to AI Platform (Unified).
      * </pre>
      */
-    public void batchMigrateResources(
-        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
+    public void batchMigrateResources(com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchMigrateResourcesMethod(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getBatchMigrateResourcesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
    * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
    * </pre>
    */
-  public static final class MigrationServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<MigrationServiceBlockingStub> {
-    private MigrationServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class MigrationServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MigrationServiceBlockingStub> {
+    private MigrationServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
@@ -321,47 +251,38 @@ public final class MigrationServiceGrpc {
     }
 
     /**
-     *
-     *
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
      * AI Platform's given location.
      * </pre>
      */
-    public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
-        searchMigratableResources(
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
+    public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse searchMigratableResources(com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
       return blockingUnaryCall(
           getChannel(), getSearchMigratableResourcesMethod(), getCallOptions(), request);
     }
 
     /**
-     *
-     *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
      * and datalabeling.googleapis.com to AI Platform (Unified).
      * </pre>
      */
-    public com.google.longrunning.Operation batchMigrateResources(
-        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
+    public com.google.longrunning.Operation batchMigrateResources(com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchMigrateResourcesMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   *
-   *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
    * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
    * </pre>
    */
-  public static final class MigrationServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<MigrationServiceFutureStub> {
-    private MigrationServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class MigrationServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MigrationServiceFutureStub> {
+    private MigrationServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
@@ -372,33 +293,26 @@ public final class MigrationServiceGrpc {
     }
 
     /**
-     *
-     *
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
      * AI Platform's given location.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
-        searchMigratableResources(
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse> searchMigratableResources(
+        com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()), request);
     }
 
     /**
-     *
-     *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
      * and datalabeling.googleapis.com to AI Platform (Unified).
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        batchMigrateResources(
-            com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchMigrateResources(
+        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getBatchMigrateResourcesMethod(), getCallOptions()), request);
     }
@@ -407,11 +321,11 @@ public final class MigrationServiceGrpc {
   private static final int METHODID_SEARCH_MIGRATABLE_RESOURCES = 0;
   private static final int METHODID_BATCH_MIGRATE_RESOURCES = 1;
 
-  private static final class MethodHandlers<Req, Resp>
-      implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
-          io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
+  private static final class MethodHandlers<Req, Resp> implements
+      io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
     private final MigrationServiceImplBase serviceImpl;
     private final int methodId;
 
@@ -425,15 +339,11 @@ public final class MigrationServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SEARCH_MIGRATABLE_RESOURCES:
-          serviceImpl.searchMigratableResources(
-              (com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>)
-                  responseObserver);
+          serviceImpl.searchMigratableResources((com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>) responseObserver);
           break;
         case METHODID_BATCH_MIGRATE_RESOURCES:
-          serviceImpl.batchMigrateResources(
-              (com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest) request,
+          serviceImpl.batchMigrateResources((com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -452,9 +362,8 @@ public final class MigrationServiceGrpc {
     }
   }
 
-  private abstract static class MigrationServiceBaseDescriptorSupplier
-      implements io.grpc.protobuf.ProtoFileDescriptorSupplier,
-          io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+  private static abstract class MigrationServiceBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     MigrationServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
@@ -496,13 +405,11 @@ public final class MigrationServiceGrpc {
       synchronized (MigrationServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
-          serviceDescriptor =
-              result =
-                  io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-                      .setSchemaDescriptor(new MigrationServiceFileDescriptorSupplier())
-                      .addMethod(getSearchMigratableResourcesMethod())
-                      .addMethod(getBatchMigrateResourcesMethod())
-                      .build();
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new MigrationServiceFileDescriptorSupplier())
+              .addMethod(getSearchMigratableResourcesMethod())
+              .addMethod(getBatchMigrateResourcesMethod())
+              .build();
         }
       }
     }

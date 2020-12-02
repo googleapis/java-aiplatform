@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service for online predictions and explanations.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/prediction_service.proto")
@@ -172,22 +166,10 @@ public final class PredictionServiceGrpc {
     return PredictionServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for online predictions and explanations.
-   * </pre>
-   */
+  /** */
   public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online prediction.
-     * </pre>
-     */
+    /** */
     public void predict(
         com.google.cloud.aiplatform.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>
@@ -195,21 +177,7 @@ public final class PredictionServiceGrpc {
       asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online explanation.
-     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
-     * the corresponding DeployModel must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
-     * is not specified, all DeployedModels must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. Only deployed AutoML tabular Models have
-     * explanation_spec.
-     * </pre>
-     */
+    /** */
     public void explain(
         com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>
@@ -236,13 +204,7 @@ public final class PredictionServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for online predictions and explanations.
-   * </pre>
-   */
+  /** */
   public static final class PredictionServiceStub
       extends io.grpc.stub.AbstractAsyncStub<PredictionServiceStub> {
     private PredictionServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -255,13 +217,7 @@ public final class PredictionServiceGrpc {
       return new PredictionServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online prediction.
-     * </pre>
-     */
+    /** */
     public void predict(
         com.google.cloud.aiplatform.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>
@@ -270,21 +226,7 @@ public final class PredictionServiceGrpc {
           getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online explanation.
-     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
-     * the corresponding DeployModel must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
-     * is not specified, all DeployedModels must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. Only deployed AutoML tabular Models have
-     * explanation_spec.
-     * </pre>
-     */
+    /** */
     public void explain(
         com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>
@@ -294,13 +236,7 @@ public final class PredictionServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for online predictions and explanations.
-   * </pre>
-   */
+  /** */
   public static final class PredictionServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<PredictionServiceBlockingStub> {
     private PredictionServiceBlockingStub(
@@ -314,46 +250,20 @@ public final class PredictionServiceGrpc {
       return new PredictionServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online prediction.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.PredictResponse predict(
         com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
       return blockingUnaryCall(getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online explanation.
-     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
-     * the corresponding DeployModel must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
-     * is not specified, all DeployedModels must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. Only deployed AutoML tabular Models have
-     * explanation_spec.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ExplainResponse explain(
         com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {
       return blockingUnaryCall(getChannel(), getExplainMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for online predictions and explanations.
-   * </pre>
-   */
+  /** */
   public static final class PredictionServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<PredictionServiceFutureStub> {
     private PredictionServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -366,34 +276,14 @@ public final class PredictionServiceGrpc {
       return new PredictionServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online prediction.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.PredictResponse>
         predict(com.google.cloud.aiplatform.v1beta1.PredictRequest request) {
       return futureUnaryCall(getChannel().newCall(getPredictMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Perform an online explanation.
-     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
-     * the corresponding DeployModel must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
-     * is not specified, all DeployedModels must have
-     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. Only deployed AutoML tabular Models have
-     * explanation_spec.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ExplainResponse>
         explain(com.google.cloud.aiplatform.v1beta1.ExplainRequest request) {

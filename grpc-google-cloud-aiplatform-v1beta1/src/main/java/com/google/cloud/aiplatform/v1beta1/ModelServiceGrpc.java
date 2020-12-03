@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service for managing AI Platform's machine learning Models.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/model_service.proto")
@@ -542,48 +536,24 @@ public final class ModelServiceGrpc {
     return ModelServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for managing AI Platform's machine learning Models.
-   * </pre>
-   */
+  /** */
   public abstract static class ModelServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Uploads a Model artifact into AI Platform.
-     * </pre>
-     */
+    /** */
     public void uploadModel(
         com.google.cloud.aiplatform.v1beta1.UploadModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUploadModelMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Model.
-     * </pre>
-     */
+    /** */
     public void getModel(
         com.google.cloud.aiplatform.v1beta1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists Models in a Location.
-     * </pre>
-     */
+    /** */
     public void listModels(
         com.google.cloud.aiplatform.v1beta1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListModelsResponse>
@@ -591,56 +561,28 @@ public final class ModelServiceGrpc {
       asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Model.
-     * </pre>
-     */
+    /** */
     public void updateModel(
         com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateModelMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
-     * from it.
-     * </pre>
-     */
+    /** */
     public void deleteModel(
         com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
-     * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-     * </pre>
-     */
+    /** */
     public void exportModel(
         com.google.cloud.aiplatform.v1beta1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getExportModelMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public void getModelEvaluation(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
@@ -648,13 +590,7 @@ public final class ModelServiceGrpc {
       asyncUnimplementedUnaryCall(getGetModelEvaluationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluations in a Model.
-     * </pre>
-     */
+    /** */
     public void listModelEvaluations(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -663,13 +599,7 @@ public final class ModelServiceGrpc {
       asyncUnimplementedUnaryCall(getListModelEvaluationsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluationSlice.
-     * </pre>
-     */
+    /** */
     public void getModelEvaluationSlice(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>
@@ -677,13 +607,7 @@ public final class ModelServiceGrpc {
       asyncUnimplementedUnaryCall(getGetModelEvaluationSliceMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluationSlices in a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public void listModelEvaluationSlices(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest request,
         io.grpc.stub.StreamObserver<
@@ -764,13 +688,7 @@ public final class ModelServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for managing AI Platform's machine learning Models.
-   * </pre>
-   */
+  /** */
   public static final class ModelServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ModelServiceStub> {
     private ModelServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -782,13 +700,7 @@ public final class ModelServiceGrpc {
       return new ModelServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Uploads a Model artifact into AI Platform.
-     * </pre>
-     */
+    /** */
     public void uploadModel(
         com.google.cloud.aiplatform.v1beta1.UploadModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -798,13 +710,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Model.
-     * </pre>
-     */
+    /** */
     public void getModel(
         com.google.cloud.aiplatform.v1beta1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
@@ -812,13 +718,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists Models in a Location.
-     * </pre>
-     */
+    /** */
     public void listModels(
         com.google.cloud.aiplatform.v1beta1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListModelsResponse>
@@ -827,13 +727,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Model.
-     * </pre>
-     */
+    /** */
     public void updateModel(
         com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
@@ -843,15 +737,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
-     * from it.
-     * </pre>
-     */
+    /** */
     public void deleteModel(
         com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -861,15 +747,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
-     * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-     * </pre>
-     */
+    /** */
     public void exportModel(
         com.google.cloud.aiplatform.v1beta1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -879,13 +757,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public void getModelEvaluation(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
@@ -896,13 +768,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluations in a Model.
-     * </pre>
-     */
+    /** */
     public void listModelEvaluations(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -914,13 +780,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluationSlice.
-     * </pre>
-     */
+    /** */
     public void getModelEvaluationSlice(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>
@@ -931,13 +791,7 @@ public final class ModelServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluationSlices in a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public void listModelEvaluationSlices(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest request,
         io.grpc.stub.StreamObserver<
@@ -950,13 +804,7 @@ public final class ModelServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for managing AI Platform's machine learning Models.
-   * </pre>
-   */
+  /** */
   public static final class ModelServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ModelServiceBlockingStub> {
     private ModelServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -969,128 +817,64 @@ public final class ModelServiceGrpc {
       return new ModelServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Uploads a Model artifact into AI Platform.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation uploadModel(
         com.google.cloud.aiplatform.v1beta1.UploadModelRequest request) {
       return blockingUnaryCall(getChannel(), getUploadModelMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Model.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.Model getModel(
         com.google.cloud.aiplatform.v1beta1.GetModelRequest request) {
       return blockingUnaryCall(getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists Models in a Location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ListModelsResponse listModels(
         com.google.cloud.aiplatform.v1beta1.ListModelsRequest request) {
       return blockingUnaryCall(getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Model.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.Model updateModel(
         com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
-     * from it.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation deleteModel(
         com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
-     * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation exportModel(
         com.google.cloud.aiplatform.v1beta1.ExportModelRequest request) {
       return blockingUnaryCall(getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation getModelEvaluation(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluations in a Model.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse listModelEvaluations(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluationSlice.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice getModelEvaluationSlice(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetModelEvaluationSliceMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluationSlices in a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse
         listModelEvaluationSlices(
             com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest request) {
@@ -1099,13 +883,7 @@ public final class ModelServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service for managing AI Platform's machine learning Models.
-   * </pre>
-   */
+  /** */
   public static final class ModelServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ModelServiceFutureStub> {
     private ModelServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1118,39 +896,21 @@ public final class ModelServiceGrpc {
       return new ModelServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Uploads a Model artifact into AI Platform.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         uploadModel(com.google.cloud.aiplatform.v1beta1.UploadModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUploadModelMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Model.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Model>
         getModel(com.google.cloud.aiplatform.v1beta1.GetModelRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists Models in a Location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListModelsResponse>
         listModels(com.google.cloud.aiplatform.v1beta1.ListModelsRequest request) {
@@ -1158,13 +918,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Model.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Model>
         updateModel(com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request) {
@@ -1172,43 +926,21 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getUpdateModelMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
-     * from it.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteModel(com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
-     * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportModel(com.google.cloud.aiplatform.v1beta1.ExportModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getExportModelMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
         getModelEvaluation(com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request) {
@@ -1216,13 +948,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluations in a Model.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse>
         listModelEvaluations(
@@ -1231,13 +957,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getListModelEvaluationsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a ModelEvaluationSlice.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>
         getModelEvaluationSlice(
@@ -1246,13 +966,7 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getGetModelEvaluationSliceMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ModelEvaluationSlices in a ModelEvaluation.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>
         listModelEvaluationSlices(

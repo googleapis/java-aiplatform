@@ -123,7 +123,7 @@ public class AnnotationSpecName implements ResourceName {
   public static List<String> toStringList(List<AnnotationSpecName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AnnotationSpecName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -138,20 +138,20 @@ public class AnnotationSpecName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(dataset)) {
+          if (dataset != null) {
             fieldMapBuilder.put("dataset", dataset);
           }
-          if (!Objects.isNull(annotationSpec)) {
+          if (annotationSpec != null) {
             fieldMapBuilder.put("annotation_spec", annotationSpec);
           }
           fieldValuesMap = fieldMapBuilder.build();

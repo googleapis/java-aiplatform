@@ -57,7 +57,6 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -154,7 +153,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
             @Override
             public Iterable<MigratableResource> extractResources(
                 SearchMigratableResourcesResponse payload) {
-              return Objects.isNull(payload.getMigratableResourcesList())
+              return payload.getMigratableResourcesList() == null
                   ? ImmutableList.<MigratableResource>of()
                   : payload.getMigratableResourcesList();
             }

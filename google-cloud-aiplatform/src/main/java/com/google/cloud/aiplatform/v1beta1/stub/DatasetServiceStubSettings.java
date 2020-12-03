@@ -77,7 +77,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -178,7 +177,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return Objects.isNull(payload.getDatasetsList())
+              return payload.getDatasetsList() == null
                   ? ImmutableList.<Dataset>of()
                   : payload.getDatasetsList();
             }
@@ -214,7 +213,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DataItem> extractResources(ListDataItemsResponse payload) {
-              return Objects.isNull(payload.getDataItemsList())
+              return payload.getDataItemsList() == null
                   ? ImmutableList.<DataItem>of()
                   : payload.getDataItemsList();
             }
@@ -253,7 +252,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Annotation> extractResources(ListAnnotationsResponse payload) {
-              return Objects.isNull(payload.getAnnotationsList())
+              return payload.getAnnotationsList() == null
                   ? ImmutableList.<Annotation>of()
                   : payload.getAnnotationsList();
             }

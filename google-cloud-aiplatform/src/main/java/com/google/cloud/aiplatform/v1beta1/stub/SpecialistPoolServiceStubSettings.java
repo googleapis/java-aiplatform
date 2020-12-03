@@ -62,7 +62,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -161,7 +160,7 @@ public class SpecialistPoolServiceStubSettings
 
             @Override
             public Iterable<SpecialistPool> extractResources(ListSpecialistPoolsResponse payload) {
-              return Objects.isNull(payload.getSpecialistPoolsList())
+              return payload.getSpecialistPoolsList() == null
                   ? ImmutableList.<SpecialistPool>of()
                   : payload.getSpecialistPoolsList();
             }

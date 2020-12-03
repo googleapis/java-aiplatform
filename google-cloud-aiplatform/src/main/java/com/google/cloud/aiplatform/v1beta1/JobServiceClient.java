@@ -36,7 +36,6 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -168,7 +167,7 @@ public class JobServiceClient implements BackgroundResource {
   public final CustomJob createCustomJob(LocationName parent, CustomJob customJob) {
     CreateCustomJobRequest request =
         CreateCustomJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setCustomJob(customJob)
             .build();
     return createCustomJob(request);
@@ -220,9 +219,7 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final CustomJob getCustomJob(CustomJobName name) {
     GetCustomJobRequest request =
-        GetCustomJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetCustomJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomJob(request);
   }
 
@@ -271,7 +268,7 @@ public class JobServiceClient implements BackgroundResource {
   public final ListCustomJobsPagedResponse listCustomJobs(LocationName parent) {
     ListCustomJobsRequest request =
         ListCustomJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listCustomJobs(request);
   }
@@ -333,9 +330,7 @@ public class JobServiceClient implements BackgroundResource {
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteCustomJobAsync(
       CustomJobName name) {
     DeleteCustomJobRequest request =
-        DeleteCustomJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteCustomJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCustomJobAsync(request);
   }
 
@@ -402,9 +397,7 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final void cancelCustomJob(CustomJobName name) {
     CancelCustomJobRequest request =
-        CancelCustomJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        CancelCustomJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     cancelCustomJob(request);
   }
 
@@ -476,7 +469,7 @@ public class JobServiceClient implements BackgroundResource {
       LocationName parent, DataLabelingJob dataLabelingJob) {
     CreateDataLabelingJobRequest request =
         CreateDataLabelingJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setDataLabelingJob(dataLabelingJob)
             .build();
     return createDataLabelingJob(request);
@@ -534,7 +527,7 @@ public class JobServiceClient implements BackgroundResource {
   public final DataLabelingJob getDataLabelingJob(DataLabelingJobName name) {
     GetDataLabelingJobRequest request =
         GetDataLabelingJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getDataLabelingJob(request);
   }
@@ -586,7 +579,7 @@ public class JobServiceClient implements BackgroundResource {
   public final ListDataLabelingJobsPagedResponse listDataLabelingJobs(LocationName parent) {
     ListDataLabelingJobsRequest request =
         ListDataLabelingJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listDataLabelingJobs(request);
   }
@@ -651,7 +644,7 @@ public class JobServiceClient implements BackgroundResource {
       DataLabelingJobName name) {
     DeleteDataLabelingJobRequest request =
         DeleteDataLabelingJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteDataLabelingJobAsync(request);
   }
@@ -716,7 +709,7 @@ public class JobServiceClient implements BackgroundResource {
   public final void cancelDataLabelingJob(DataLabelingJobName name) {
     CancelDataLabelingJobRequest request =
         CancelDataLabelingJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     cancelDataLabelingJob(request);
   }
@@ -769,7 +762,7 @@ public class JobServiceClient implements BackgroundResource {
       LocationName parent, HyperparameterTuningJob hyperparameterTuningJob) {
     CreateHyperparameterTuningJobRequest request =
         CreateHyperparameterTuningJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setHyperparameterTuningJob(hyperparameterTuningJob)
             .build();
     return createHyperparameterTuningJob(request);
@@ -829,7 +822,7 @@ public class JobServiceClient implements BackgroundResource {
       HyperparameterTuningJobName name) {
     GetHyperparameterTuningJobRequest request =
         GetHyperparameterTuningJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getHyperparameterTuningJob(request);
   }
@@ -883,7 +876,7 @@ public class JobServiceClient implements BackgroundResource {
       LocationName parent) {
     ListHyperparameterTuningJobsRequest request =
         ListHyperparameterTuningJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listHyperparameterTuningJobs(request);
   }
@@ -951,7 +944,7 @@ public class JobServiceClient implements BackgroundResource {
       HyperparameterTuningJobName name) {
     DeleteHyperparameterTuningJobRequest request =
         DeleteHyperparameterTuningJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteHyperparameterTuningJobAsync(request);
   }
@@ -1028,7 +1021,7 @@ public class JobServiceClient implements BackgroundResource {
   public final void cancelHyperparameterTuningJob(HyperparameterTuningJobName name) {
     CancelHyperparameterTuningJobRequest request =
         CancelHyperparameterTuningJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     cancelHyperparameterTuningJob(request);
   }
@@ -1116,7 +1109,7 @@ public class JobServiceClient implements BackgroundResource {
       LocationName parent, BatchPredictionJob batchPredictionJob) {
     CreateBatchPredictionJobRequest request =
         CreateBatchPredictionJobRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBatchPredictionJob(batchPredictionJob)
             .build();
     return createBatchPredictionJob(request);
@@ -1178,7 +1171,7 @@ public class JobServiceClient implements BackgroundResource {
   public final BatchPredictionJob getBatchPredictionJob(BatchPredictionJobName name) {
     GetBatchPredictionJobRequest request =
         GetBatchPredictionJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getBatchPredictionJob(request);
   }
@@ -1230,7 +1223,7 @@ public class JobServiceClient implements BackgroundResource {
   public final ListBatchPredictionJobsPagedResponse listBatchPredictionJobs(LocationName parent) {
     ListBatchPredictionJobsRequest request =
         ListBatchPredictionJobsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listBatchPredictionJobs(request);
   }
@@ -1295,7 +1288,7 @@ public class JobServiceClient implements BackgroundResource {
       BatchPredictionJobName name) {
     DeleteBatchPredictionJobRequest request =
         DeleteBatchPredictionJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteBatchPredictionJobAsync(request);
   }
@@ -1369,7 +1362,7 @@ public class JobServiceClient implements BackgroundResource {
   public final void cancelBatchPredictionJob(BatchPredictionJobName name) {
     CancelBatchPredictionJobRequest request =
         CancelBatchPredictionJobRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     cancelBatchPredictionJob(request);
   }

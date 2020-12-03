@@ -23,6 +23,10 @@ import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageClassificationPredictionInstance;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.params.ImageClassificationPredictionParams;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult;
+import com.google.cloud.aiplatform.v1beta1.utility.ValueConverter;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
@@ -36,9 +40,9 @@ public class PredictImageClassificationSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "YOUR_PROJECT_ID";
-    String fileName = "YOUR_IMAGE_FILE_PATH";
-    String endpointId = "YOUR_ENDPOINT_ID";
+    String project = "ucaip-sample-tests";
+    String fileName = "/Users/erschmid/SampleMedia/daisy.jpg";
+    String endpointId = "71213169107795968";
     predictImageClassification(project, fileName, endpointId);
   }
 
@@ -60,23 +64,38 @@ public class PredictImageClassificationSample {
       byte[] contents = Base64.encodeBase64(Files.readAllBytes(Paths.get(fileName)));
       String content = new String(contents, StandardCharsets.UTF_8);
 
-      Value parameter = Value.newBuilder().setNumberValue(0).setNumberValue(5).build();
-
-      String contentDict = "{\"content\": \"" + content + "\"}";
-      Value.Builder instance = Value.newBuilder();
-      JsonFormat.parser().merge(contentDict, instance);
+      ImageClassificationPredictionInstance predictionInstance = ImageClassificationPredictionInstance.newBuilder()
+          .setContent(content)
+          .build();
 
       List<Value> instances = new ArrayList<>();
-      instances.add(instance.build());
+      instances.add(ValueConverter.toValue(predictionInstance));
+
+      ImageClassificationPredictionParams predictionParams = ImageClassificationPredictionParams.newBuilder()
+          .setConfidenceThreshold((float) 0.5)
+          .setMaxPredictions(5)
+          .build();
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, parameter);
+          predictionServiceClient.predict(endpointName, instances, ValueConverter.toValue(predictionParams));
       System.out.println("Predict Image Classification Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+
+        ClassificationPredictionResult.Builder resultBuilder = ClassificationPredictionResult.newBuilder();
+        // Display names and confidences values correspond to
+        // IDs in the ID list.
+        ClassificationPredictionResult result =
+            (ClassificationPredictionResult)ValueConverter.fromValue(resultBuilder, prediction);
+        int counter = 0;
+        for (Long id : result.getIdsList()) {
+          System.out.printf("Label ID: %d\n", id);
+          System.out.printf("Label: %s\n", result.getDisplayNames(counter));
+          System.out.printf("Confidence: %.4f\n", result.getConfidences(counter));
+          counter++;
+        }
       }
     }
   }

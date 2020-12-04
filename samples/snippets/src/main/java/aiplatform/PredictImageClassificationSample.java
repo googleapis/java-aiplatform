@@ -64,14 +64,16 @@ public class PredictImageClassificationSample {
       byte[] contents = Base64.encodeBase64(Files.readAllBytes(Paths.get(fileName)));
       String content = new String(contents, StandardCharsets.UTF_8);
 
-      ImageClassificationPredictionInstance predictionInstance = ImageClassificationPredictionInstance.newBuilder()
+      ImageClassificationPredictionInstance predictionInstance =
+          ImageClassificationPredictionInstance.newBuilder()
           .setContent(content)
           .build();
 
       List<Value> instances = new ArrayList<>();
       instances.add(ValueConverter.toValue(predictionInstance));
 
-      ImageClassificationPredictionParams predictionParams = ImageClassificationPredictionParams.newBuilder()
+      ImageClassificationPredictionParams predictionParams =
+          ImageClassificationPredictionParams.newBuilder()
           .setConfidenceThreshold((float) 0.5)
           .setMaxPredictions(5)
           .build();

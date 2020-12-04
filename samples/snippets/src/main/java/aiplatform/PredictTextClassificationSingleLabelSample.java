@@ -35,9 +35,9 @@ public class PredictTextClassificationSingleLabelSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "ucaip-sample-tests";
-    String content = "My local greasy-spoon diner took way too long to get my food. It also costs too much. Good food though.";
-    String endpointId = "65372563341049856";
+    String project = "YOUR_PROJECT_ID";
+    String content = "YOUR_TEXT_CONTENT";
+    String endpointId = "YOUR_ENDPOINT_ID";
 
     predictTextClassificationSingleLabel(project, content, endpointId);
   }

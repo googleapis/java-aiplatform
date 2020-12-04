@@ -40,9 +40,9 @@ public class PredictImageClassificationSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "ucaip-sample-tests";
-    String fileName = "/Users/erschmid/SampleMedia/daisy.jpg";
-    String endpointId = "71213169107795968";
+    String project = "YOUR_PROJECT_ID";
+    String fileName = "YOUR_IMAGE_FILE_PATH";
+    String endpointId = "YOUR_ENDPOINT_ID";
     predictImageClassification(project, fileName, endpointId);
   }
 

@@ -166,7 +166,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the TrainingPipeline in.
    *     Format: `projects/{project}/locations/{location}`
-   * @param training_pipeline Required. The TrainingPipeline to create.
+   * @param trainingPipeline Required. The TrainingPipeline to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline createTrainingPipeline(
@@ -185,7 +185,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the TrainingPipeline in.
    *     Format: `projects/{project}/locations/{location}`
-   * @param training_pipeline Required. The TrainingPipeline to create.
+   * @param trainingPipeline Required. The TrainingPipeline to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline createTrainingPipeline(

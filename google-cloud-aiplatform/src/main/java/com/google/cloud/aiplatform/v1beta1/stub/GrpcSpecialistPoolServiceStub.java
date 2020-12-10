@@ -149,11 +149,21 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
         SpecialistPoolServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcSpecialistPoolServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcSpecialistPoolServiceStub(
       SpecialistPoolServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcSpecialistPoolServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcSpecialistPoolServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcSpecialistPoolServiceStub(
       SpecialistPoolServiceStubSettings settings,
       ClientContext clientContext,

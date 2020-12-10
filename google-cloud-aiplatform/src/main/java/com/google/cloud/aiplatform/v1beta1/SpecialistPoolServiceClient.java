@@ -171,7 +171,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent Project name for the new SpecialistPool. The form is
    *     `projects/{project}/locations/{location}`.
-   * @param specialist_pool Required. The SpecialistPool to create.
+   * @param specialistPool Required. The SpecialistPool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
@@ -190,7 +190,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent Project name for the new SpecialistPool. The form is
    *     `projects/{project}/locations/{location}`.
-   * @param specialist_pool Required. The SpecialistPool to create.
+   * @param specialistPool Required. The SpecialistPool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
@@ -422,8 +422,8 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
   /**
    * Updates a SpecialistPool.
    *
-   * @param specialist_pool Required. The SpecialistPool which replaces the resource on the server.
-   * @param update_mask Required. The update mask applies to the resource.
+   * @param specialistPool Required. The SpecialistPool which replaces the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SpecialistPool, UpdateSpecialistPoolOperationMetadata>

@@ -248,7 +248,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    *     [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
-   * @param deployed_model_id If specified, this ExplainRequest will be served by the chosen
+   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -292,7 +292,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    *     [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
-   * @param deployed_model_id If specified, this ExplainRequest will be served by the chosen
+   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

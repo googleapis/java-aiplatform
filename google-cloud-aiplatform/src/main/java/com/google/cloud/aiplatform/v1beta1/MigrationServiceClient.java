@@ -240,7 +240,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location of the migrated resource will live in. Format:
    *     `projects/{project}/locations/{location}`
-   * @param migrate_resource_requests Required. The request messages specifying the resources to
+   * @param migrateResourceRequests Required. The request messages specifying the resources to
    *     migrate. They must be in the same location as the destination. Up to 50 resources can be
    *     migrated in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -264,7 +264,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location of the migrated resource will live in. Format:
    *     `projects/{project}/locations/{location}`
-   * @param migrate_resource_requests Required. The request messages specifying the resources to
+   * @param migrateResourceRequests Required. The request messages specifying the resources to
    *     migrate. They must be in the same location as the destination. Up to 50 resources can be
    *     migrated in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

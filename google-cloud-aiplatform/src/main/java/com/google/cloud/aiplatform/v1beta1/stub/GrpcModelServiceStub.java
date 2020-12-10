@@ -213,11 +213,21 @@ public class GrpcModelServiceStub extends ModelServiceStub {
         ModelServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcModelServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcModelServiceStub(ModelServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcModelServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcModelServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcModelServiceStub(
       ModelServiceStubSettings settings,
       ClientContext clientContext,

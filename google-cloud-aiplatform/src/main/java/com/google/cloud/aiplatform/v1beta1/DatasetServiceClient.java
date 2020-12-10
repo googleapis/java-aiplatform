@@ -275,7 +275,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * Updates a Dataset.
    *
    * @param dataset Required. The Dataset which replaces the resource on the server.
-   * @param update_mask Required. The update mask applies to the resource. For the `FieldMask`
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see
    *     <p>[FieldMask](https: //tinyurl.com/dev-google-protobuf#google.protobuf.FieldMask).
    *     Updatable fields:
@@ -437,8 +437,8 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
-   * @param import_configs Required. The desired input locations. The contents of all input
-   *     locations will be imported in one batch.
+   * @param importConfigs Required. The desired input locations. The contents of all input locations
+   *     will be imported in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
@@ -457,8 +457,8 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
-   * @param import_configs Required. The desired input locations. The contents of all input
-   *     locations will be imported in one batch.
+   * @param importConfigs Required. The desired input locations. The contents of all input locations
+   *     will be imported in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
@@ -507,7 +507,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
-   * @param export_config Required. The desired output location.
+   * @param exportConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(
@@ -526,7 +526,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
-   * @param export_config Required. The desired output location.
+   * @param exportConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(

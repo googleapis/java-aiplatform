@@ -108,7 +108,7 @@ public class SpecialistPoolName implements ResourceName {
   public static List<String> toStringList(List<SpecialistPoolName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SpecialistPoolName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -123,17 +123,17 @@ public class SpecialistPoolName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(specialistPool)) {
+          if (specialistPool != null) {
             fieldMapBuilder.put("specialist_pool", specialistPool);
           }
           fieldValuesMap = fieldMapBuilder.build();

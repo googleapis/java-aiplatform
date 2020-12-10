@@ -24,7 +24,6 @@ import com.google.cloud.aiplatform.v1beta1.stub.PredictionServiceStubSettings;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -163,7 +162,7 @@ public class PredictionServiceClient implements BackgroundResource {
       EndpointName endpoint, List<Value> instances, Value parameters) {
     PredictRequest request =
         PredictRequest.newBuilder()
-            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
             .addAllInstances(instances)
             .setParameters(parameters)
             .build();
@@ -258,7 +257,7 @@ public class PredictionServiceClient implements BackgroundResource {
       EndpointName endpoint, List<Value> instances, Value parameters, String deployedModelId) {
     ExplainRequest request =
         ExplainRequest.newBuilder()
-            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
             .addAllInstances(instances)
             .setParameters(parameters)
             .setDeployedModelId(deployedModelId)

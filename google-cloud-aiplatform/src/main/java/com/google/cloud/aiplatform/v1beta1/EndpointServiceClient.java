@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -174,7 +173,7 @@ public class EndpointServiceClient implements BackgroundResource {
       LocationName parent, Endpoint endpoint) {
     CreateEndpointRequest request =
         CreateEndpointRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setEndpoint(endpoint)
             .build();
     return createEndpointAsync(request);
@@ -239,9 +238,7 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final Endpoint getEndpoint(EndpointName name) {
     GetEndpointRequest request =
-        GetEndpointRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEndpoint(request);
   }
 
@@ -290,7 +287,7 @@ public class EndpointServiceClient implements BackgroundResource {
   public final ListEndpointsPagedResponse listEndpoints(LocationName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listEndpoints(request);
   }
@@ -386,9 +383,7 @@ public class EndpointServiceClient implements BackgroundResource {
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEndpointAsync(
       EndpointName name) {
     DeleteEndpointRequest request =
-        DeleteEndpointRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEndpointAsync(request);
   }
 
@@ -464,7 +459,7 @@ public class EndpointServiceClient implements BackgroundResource {
       EndpointName endpoint, DeployedModel deployedModel, Map<String, Integer> trafficSplit) {
     DeployModelRequest request =
         DeployModelRequest.newBuilder()
-            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
             .setDeployedModel(deployedModel)
             .putAllTrafficSplit(trafficSplit)
             .build();
@@ -560,7 +555,7 @@ public class EndpointServiceClient implements BackgroundResource {
           EndpointName endpoint, String deployedModelId, Map<String, Integer> trafficSplit) {
     UndeployModelRequest request =
         UndeployModelRequest.newBuilder()
-            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
             .setDeployedModelId(deployedModelId)
             .putAllTrafficSplit(trafficSplit)
             .build();

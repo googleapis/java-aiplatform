@@ -84,7 +84,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -214,7 +213,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
             @Override
             public Iterable<CustomJob> extractResources(ListCustomJobsResponse payload) {
-              return Objects.isNull(payload.getCustomJobsList())
+              return payload.getCustomJobsList() == null
                   ? ImmutableList.<CustomJob>of()
                   : payload.getCustomJobsList();
             }
@@ -255,7 +254,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<DataLabelingJob> extractResources(
                 ListDataLabelingJobsResponse payload) {
-              return Objects.isNull(payload.getDataLabelingJobsList())
+              return payload.getDataLabelingJobsList() == null
                   ? ImmutableList.<DataLabelingJob>of()
                   : payload.getDataLabelingJobsList();
             }
@@ -304,7 +303,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<HyperparameterTuningJob> extractResources(
                 ListHyperparameterTuningJobsResponse payload) {
-              return Objects.isNull(payload.getHyperparameterTuningJobsList())
+              return payload.getHyperparameterTuningJobsList() == null
                   ? ImmutableList.<HyperparameterTuningJob>of()
                   : payload.getHyperparameterTuningJobsList();
             }
@@ -349,7 +348,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<BatchPredictionJob> extractResources(
                 ListBatchPredictionJobsResponse payload) {
-              return Objects.isNull(payload.getBatchPredictionJobsList())
+              return payload.getBatchPredictionJobsList() == null
                   ? ImmutableList.<BatchPredictionJob>of()
                   : payload.getBatchPredictionJobsList();
             }

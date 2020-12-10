@@ -75,7 +75,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -178,7 +177,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return Objects.isNull(payload.getModelsList())
+              return payload.getModelsList() == null
                   ? ImmutableList.<Model>of()
                   : payload.getModelsList();
             }
@@ -219,7 +218,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             @Override
             public Iterable<ModelEvaluation> extractResources(
                 ListModelEvaluationsResponse payload) {
-              return Objects.isNull(payload.getModelEvaluationsList())
+              return payload.getModelEvaluationsList() == null
                   ? ImmutableList.<ModelEvaluation>of()
                   : payload.getModelEvaluationsList();
             }
@@ -266,7 +265,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             @Override
             public Iterable<ModelEvaluationSlice> extractResources(
                 ListModelEvaluationSlicesResponse payload) {
-              return Objects.isNull(payload.getModelEvaluationSlicesList())
+              return payload.getModelEvaluationSlicesList() == null
                   ? ImmutableList.<ModelEvaluationSlice>of()
                   : payload.getModelEvaluationSlicesList();
             }

@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service for creating and managing AI Platform's pipelines.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/pipeline_service.proto")
@@ -321,10 +327,23 @@ public final class PipelineServiceGrpc {
     return PipelineServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's pipelines.
+   * </pre>
+   */
   public abstract static class PipelineServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     * </pre>
+     */
     public void createTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
@@ -332,7 +351,13 @@ public final class PipelineServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateTrainingPipelineMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TrainingPipeline.
+     * </pre>
+     */
     public void getTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
@@ -340,7 +365,13 @@ public final class PipelineServiceGrpc {
       asyncUnimplementedUnaryCall(getGetTrainingPipelineMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrainingPipelines in a Location.
+     * </pre>
+     */
     public void listTrainingPipelines(
         com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request,
         io.grpc.stub.StreamObserver<
@@ -349,14 +380,35 @@ public final class PipelineServiceGrpc {
       asyncUnimplementedUnaryCall(getListTrainingPipelinesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TrainingPipeline.
+     * </pre>
+     */
     public void deleteTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteTrainingPipelineMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a TrainingPipeline.
+     * Starts asynchronous cancellation on the TrainingPipeline. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the TrainingPipeline is not deleted; instead it becomes a pipeline with
+     * a [TrainingPipeline.error][google.cloud.aiplatform.v1beta1.TrainingPipeline.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public void cancelTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -403,7 +455,13 @@ public final class PipelineServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's pipelines.
+   * </pre>
+   */
   public static final class PipelineServiceStub
       extends io.grpc.stub.AbstractAsyncStub<PipelineServiceStub> {
     private PipelineServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -415,7 +473,14 @@ public final class PipelineServiceGrpc {
       return new PipelineServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     * </pre>
+     */
     public void createTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
@@ -426,7 +491,13 @@ public final class PipelineServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TrainingPipeline.
+     * </pre>
+     */
     public void getTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
@@ -437,7 +508,13 @@ public final class PipelineServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrainingPipelines in a Location.
+     * </pre>
+     */
     public void listTrainingPipelines(
         com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request,
         io.grpc.stub.StreamObserver<
@@ -449,7 +526,13 @@ public final class PipelineServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TrainingPipeline.
+     * </pre>
+     */
     public void deleteTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -459,7 +542,22 @@ public final class PipelineServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a TrainingPipeline.
+     * Starts asynchronous cancellation on the TrainingPipeline. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the TrainingPipeline is not deleted; instead it becomes a pipeline with
+     * a [TrainingPipeline.error][google.cloud.aiplatform.v1beta1.TrainingPipeline.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public void cancelTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -470,7 +568,13 @@ public final class PipelineServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's pipelines.
+   * </pre>
+   */
   public static final class PipelineServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<PipelineServiceBlockingStub> {
     private PipelineServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -483,35 +587,75 @@ public final class PipelineServiceGrpc {
       return new PipelineServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline createTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateTrainingPipelineMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TrainingPipeline.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline getTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetTrainingPipelineMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrainingPipelines in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse listTrainingPipelines(
         com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request) {
       return blockingUnaryCall(
           getChannel(), getListTrainingPipelinesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TrainingPipeline.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteTrainingPipelineMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a TrainingPipeline.
+     * Starts asynchronous cancellation on the TrainingPipeline. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the TrainingPipeline is not deleted; instead it becomes a pipeline with
+     * a [TrainingPipeline.error][google.cloud.aiplatform.v1beta1.TrainingPipeline.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public com.google.protobuf.Empty cancelTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {
       return blockingUnaryCall(
@@ -519,7 +663,13 @@ public final class PipelineServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's pipelines.
+   * </pre>
+   */
   public static final class PipelineServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<PipelineServiceFutureStub> {
     private PipelineServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -532,7 +682,14 @@ public final class PipelineServiceGrpc {
       return new PipelineServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+     * attempted to be run.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
         createTrainingPipeline(
@@ -541,7 +698,13 @@ public final class PipelineServiceGrpc {
           getChannel().newCall(getCreateTrainingPipelineMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a TrainingPipeline.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.TrainingPipeline>
         getTrainingPipeline(
@@ -550,7 +713,13 @@ public final class PipelineServiceGrpc {
           getChannel().newCall(getGetTrainingPipelineMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrainingPipelines in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse>
         listTrainingPipelines(
@@ -559,7 +728,13 @@ public final class PipelineServiceGrpc {
           getChannel().newCall(getListTrainingPipelinesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TrainingPipeline.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteTrainingPipeline(
             com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request) {
@@ -567,7 +742,22 @@ public final class PipelineServiceGrpc {
           getChannel().newCall(getDeleteTrainingPipelineMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a TrainingPipeline.
+     * Starts asynchronous cancellation on the TrainingPipeline. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the TrainingPipeline is not deleted; instead it becomes a pipeline with
+     * a [TrainingPipeline.error][google.cloud.aiplatform.v1beta1.TrainingPipeline.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelTrainingPipeline(
             com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {

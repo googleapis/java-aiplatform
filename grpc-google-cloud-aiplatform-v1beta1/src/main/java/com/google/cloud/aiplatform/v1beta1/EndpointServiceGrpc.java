@@ -398,14 +398,26 @@ public final class EndpointServiceGrpc {
   /** */
   public abstract static class EndpointServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
     public void createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateEndpointMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
     public void getEndpoint(
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
@@ -413,7 +425,13 @@ public final class EndpointServiceGrpc {
       asyncUnimplementedUnaryCall(getGetEndpointMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
     public void listEndpoints(
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
@@ -421,7 +439,13 @@ public final class EndpointServiceGrpc {
       asyncUnimplementedUnaryCall(getListEndpointsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
     public void updateEndpoint(
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
@@ -429,21 +453,40 @@ public final class EndpointServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateEndpointMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
     public void deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteEndpointMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
     public void deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeployModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
     public void undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -513,7 +556,13 @@ public final class EndpointServiceGrpc {
       return new EndpointServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
     public void createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -523,7 +572,13 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
     public void getEndpoint(
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
@@ -534,7 +589,13 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
     public void listEndpoints(
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
@@ -545,7 +606,13 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
     public void updateEndpoint(
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
@@ -556,7 +623,13 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
     public void deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -566,7 +639,13 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
     public void deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -576,7 +655,14 @@ public final class EndpointServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
     public void undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -600,43 +686,86 @@ public final class EndpointServiceGrpc {
       return new EndpointServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
     public com.google.longrunning.Operation createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request) {
       return blockingUnaryCall(getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.Endpoint getEndpoint(
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request) {
       return blockingUnaryCall(getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse listEndpoints(
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request) {
       return blockingUnaryCall(getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.Endpoint updateEndpoint(
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
     public com.google.longrunning.Operation deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request) {
       return blockingUnaryCall(getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
     public com.google.longrunning.Operation undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request) {
       return blockingUnaryCall(getChannel(), getUndeployModelMethod(), getCallOptions(), request);
@@ -656,14 +785,26 @@ public final class EndpointServiceGrpc {
       return new EndpointServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createEndpoint(com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateEndpointMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Endpoint>
         getEndpoint(com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request) {
@@ -671,7 +812,13 @@ public final class EndpointServiceGrpc {
           getChannel().newCall(getGetEndpointMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
         listEndpoints(com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request) {
@@ -679,7 +826,13 @@ public final class EndpointServiceGrpc {
           getChannel().newCall(getListEndpointsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Endpoint>
         updateEndpoint(com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request) {
@@ -687,21 +840,40 @@ public final class EndpointServiceGrpc {
           getChannel().newCall(getUpdateEndpointMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteEndpoint(com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteEndpointMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deployModel(com.google.cloud.aiplatform.v1beta1.DeployModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeployModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         undeployModel(com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request) {
       return futureUnaryCall(

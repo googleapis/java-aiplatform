@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service for creating and managing AI Platform's jobs.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/job_service.proto")
@@ -1044,10 +1050,23 @@ public final class JobServiceGrpc {
     return JobServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's jobs.
+   * </pre>
+   */
   public abstract static class JobServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomJob. A created CustomJob right away
+     * will be attempted to be run.
+     * </pre>
+     */
     public void createCustomJob(
         com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
@@ -1055,7 +1074,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateCustomJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a CustomJob.
+     * </pre>
+     */
     public void getCustomJob(
         com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
@@ -1063,7 +1088,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getGetCustomJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomJobs in a Location.
+     * </pre>
+     */
     public void listCustomJobs(
         com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>
@@ -1071,21 +1102,48 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getListCustomJobsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CustomJob.
+     * </pre>
+     */
     public void deleteCustomJob(
         com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteCustomJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a CustomJob.
+     * Starts asynchronous cancellation on the CustomJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetCustomJob][google.cloud.aiplatform.v1beta1.JobService.GetCustomJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the CustomJob is not deleted; instead it becomes a job with
+     * a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public void cancelCustomJob(
         com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getCancelCustomJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
     public void createDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
@@ -1093,7 +1151,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateDataLabelingJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
     public void getDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
@@ -1101,7 +1165,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getGetDataLabelingJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
     public void listDataLabelingJobs(
         com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1110,21 +1180,39 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getListDataLabelingJobsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
     public void deleteDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteDataLabelingJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
     public void cancelDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getCancelDataLabelingJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a HyperparameterTuningJob
+     * </pre>
+     */
     public void createHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
@@ -1132,7 +1220,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateHyperparameterTuningJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a HyperparameterTuningJob
+     * </pre>
+     */
     public void getHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
@@ -1140,7 +1234,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getGetHyperparameterTuningJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists HyperparameterTuningJobs in a Location.
+     * </pre>
+     */
     public void listHyperparameterTuningJobs(
         com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1149,21 +1249,49 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getListHyperparameterTuningJobsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a HyperparameterTuningJob.
+     * </pre>
+     */
     public void deleteHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteHyperparameterTuningJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a HyperparameterTuningJob.
+     * Starts asynchronous cancellation on the HyperparameterTuningJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the HyperparameterTuningJob is not deleted; instead it becomes a job with
+     * a [HyperparameterTuningJob.error][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code]
+     * of 1, corresponding to `Code.CANCELLED`, and
+     * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state] is set to `CANCELLED`.
+     * </pre>
+     */
     public void cancelHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getCancelHyperparameterTuningJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BatchPredictionJob. A BatchPredictionJob once created will
+     * right away be attempted to start.
+     * </pre>
+     */
     public void createBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
@@ -1171,7 +1299,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateBatchPredictionJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BatchPredictionJob
+     * </pre>
+     */
     public void getBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
@@ -1179,7 +1313,13 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getGetBatchPredictionJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists BatchPredictionJobs in a Location.
+     * </pre>
+     */
     public void listBatchPredictionJobs(
         com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1188,14 +1328,35 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getListBatchPredictionJobsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BatchPredictionJob. Can only be called on jobs that already
+     * finished.
+     * </pre>
+     */
     public void deleteBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteBatchPredictionJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a BatchPredictionJob.
+     * Starts asynchronous cancellation on the BatchPredictionJob. The server
+     * makes the best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On a successful cancellation,
+     * the BatchPredictionJob is not deleted;instead its
+     * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to `CANCELLED`. Any files already
+     * outputted by the job are not deleted.
+     * </pre>
+     */
     public void cancelBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1343,7 +1504,13 @@ public final class JobServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's jobs.
+   * </pre>
+   */
   public static final class JobServiceStub extends io.grpc.stub.AbstractAsyncStub<JobServiceStub> {
     private JobServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1354,7 +1521,14 @@ public final class JobServiceGrpc {
       return new JobServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomJob. A created CustomJob right away
+     * will be attempted to be run.
+     * </pre>
+     */
     public void createCustomJob(
         com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
@@ -1365,7 +1539,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a CustomJob.
+     * </pre>
+     */
     public void getCustomJob(
         com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
@@ -1376,7 +1556,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomJobs in a Location.
+     * </pre>
+     */
     public void listCustomJobs(
         com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>
@@ -1387,7 +1573,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CustomJob.
+     * </pre>
+     */
     public void deleteCustomJob(
         com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1397,7 +1589,22 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a CustomJob.
+     * Starts asynchronous cancellation on the CustomJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetCustomJob][google.cloud.aiplatform.v1beta1.JobService.GetCustomJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the CustomJob is not deleted; instead it becomes a job with
+     * a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public void cancelCustomJob(
         com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1407,7 +1614,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
     public void createDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
@@ -1418,7 +1631,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
     public void getDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
@@ -1429,7 +1648,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
     public void listDataLabelingJobs(
         com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1441,7 +1666,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
     public void deleteDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1451,7 +1682,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
     public void cancelDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1461,7 +1698,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a HyperparameterTuningJob
+     * </pre>
+     */
     public void createHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
@@ -1472,7 +1715,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a HyperparameterTuningJob
+     * </pre>
+     */
     public void getHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
@@ -1483,7 +1732,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists HyperparameterTuningJobs in a Location.
+     * </pre>
+     */
     public void listHyperparameterTuningJobs(
         com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1495,7 +1750,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a HyperparameterTuningJob.
+     * </pre>
+     */
     public void deleteHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1505,7 +1766,22 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a HyperparameterTuningJob.
+     * Starts asynchronous cancellation on the HyperparameterTuningJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the HyperparameterTuningJob is not deleted; instead it becomes a job with
+     * a [HyperparameterTuningJob.error][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code]
+     * of 1, corresponding to `Code.CANCELLED`, and
+     * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state] is set to `CANCELLED`.
+     * </pre>
+     */
     public void cancelHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1515,7 +1791,14 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BatchPredictionJob. A BatchPredictionJob once created will
+     * right away be attempted to start.
+     * </pre>
+     */
     public void createBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
@@ -1526,7 +1809,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BatchPredictionJob
+     * </pre>
+     */
     public void getBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
@@ -1537,7 +1826,13 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists BatchPredictionJobs in a Location.
+     * </pre>
+     */
     public void listBatchPredictionJobs(
         com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1549,7 +1844,14 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BatchPredictionJob. Can only be called on jobs that already
+     * finished.
+     * </pre>
+     */
     public void deleteBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1559,7 +1861,21 @@ public final class JobServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a BatchPredictionJob.
+     * Starts asynchronous cancellation on the BatchPredictionJob. The server
+     * makes the best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On a successful cancellation,
+     * the BatchPredictionJob is not deleted;instead its
+     * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to `CANCELLED`. Any files already
+     * outputted by the job are not deleted.
+     * </pre>
+     */
     public void cancelBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1570,7 +1886,13 @@ public final class JobServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's jobs.
+   * </pre>
+   */
   public static final class JobServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<JobServiceBlockingStub> {
     private JobServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1583,72 +1905,148 @@ public final class JobServiceGrpc {
       return new JobServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomJob. A created CustomJob right away
+     * will be attempted to be run.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.CustomJob createCustomJob(
         com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request) {
       return blockingUnaryCall(getChannel(), getCreateCustomJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a CustomJob.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.CustomJob getCustomJob(
         com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request) {
       return blockingUnaryCall(getChannel(), getGetCustomJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomJobs in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse listCustomJobs(
         com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request) {
       return blockingUnaryCall(getChannel(), getListCustomJobsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CustomJob.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteCustomJob(
         com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteCustomJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a CustomJob.
+     * Starts asynchronous cancellation on the CustomJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetCustomJob][google.cloud.aiplatform.v1beta1.JobService.GetCustomJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the CustomJob is not deleted; instead it becomes a job with
+     * a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public com.google.protobuf.Empty cancelCustomJob(
         com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request) {
       return blockingUnaryCall(getChannel(), getCancelCustomJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.DataLabelingJob createDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateDataLabelingJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.DataLabelingJob getDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetDataLabelingJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse listDataLabelingJobs(
         com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListDataLabelingJobsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteDataLabelingJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
     public com.google.protobuf.Empty cancelDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getCancelDataLabelingJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a HyperparameterTuningJob
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob
         createHyperparameterTuningJob(
             com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest request) {
@@ -1656,14 +2054,26 @@ public final class JobServiceGrpc {
           getChannel(), getCreateHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a HyperparameterTuningJob
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob getHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists HyperparameterTuningJobs in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse
         listHyperparameterTuningJobs(
             com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest request) {
@@ -1671,35 +2081,75 @@ public final class JobServiceGrpc {
           getChannel(), getListHyperparameterTuningJobsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a HyperparameterTuningJob.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a HyperparameterTuningJob.
+     * Starts asynchronous cancellation on the HyperparameterTuningJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the HyperparameterTuningJob is not deleted; instead it becomes a job with
+     * a [HyperparameterTuningJob.error][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code]
+     * of 1, corresponding to `Code.CANCELLED`, and
+     * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state] is set to `CANCELLED`.
+     * </pre>
+     */
     public com.google.protobuf.Empty cancelHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getCancelHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BatchPredictionJob. A BatchPredictionJob once created will
+     * right away be attempted to start.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob createBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BatchPredictionJob
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob getBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists BatchPredictionJobs in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse
         listBatchPredictionJobs(
             com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest request) {
@@ -1707,14 +2157,35 @@ public final class JobServiceGrpc {
           getChannel(), getListBatchPredictionJobsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BatchPredictionJob. Can only be called on jobs that already
+     * finished.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a BatchPredictionJob.
+     * Starts asynchronous cancellation on the BatchPredictionJob. The server
+     * makes the best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On a successful cancellation,
+     * the BatchPredictionJob is not deleted;instead its
+     * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to `CANCELLED`. Any files already
+     * outputted by the job are not deleted.
+     * </pre>
+     */
     public com.google.protobuf.Empty cancelBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request) {
       return blockingUnaryCall(
@@ -1722,7 +2193,13 @@ public final class JobServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing AI Platform's jobs.
+   * </pre>
+   */
   public static final class JobServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<JobServiceFutureStub> {
     private JobServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1734,7 +2211,14 @@ public final class JobServiceGrpc {
       return new JobServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomJob. A created CustomJob right away
+     * will be attempted to be run.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.CustomJob>
         createCustomJob(com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request) {
@@ -1742,7 +2226,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getCreateCustomJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a CustomJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.CustomJob>
         getCustomJob(com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request) {
@@ -1750,7 +2240,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getGetCustomJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomJobs in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>
         listCustomJobs(com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request) {
@@ -1758,21 +2254,48 @@ public final class JobServiceGrpc {
           getChannel().newCall(getListCustomJobsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CustomJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteCustomJob(com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteCustomJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a CustomJob.
+     * Starts asynchronous cancellation on the CustomJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetCustomJob][google.cloud.aiplatform.v1beta1.JobService.GetCustomJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the CustomJob is not deleted; instead it becomes a job with
+     * a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelCustomJob(com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCancelCustomJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataLabelingJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
         createDataLabelingJob(
@@ -1781,7 +2304,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getCreateDataLabelingJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataLabelingJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
         getDataLabelingJob(com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request) {
@@ -1789,7 +2318,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getGetDataLabelingJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataLabelingJobs in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse>
         listDataLabelingJobs(
@@ -1798,7 +2333,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getListDataLabelingJobsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataLabelingJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataLabelingJob(
             com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request) {
@@ -1806,7 +2347,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getDeleteDataLabelingJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelDataLabelingJob(
             com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request) {
@@ -1814,7 +2361,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getCancelDataLabelingJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a HyperparameterTuningJob
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
         createHyperparameterTuningJob(
@@ -1824,7 +2377,13 @@ public final class JobServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a HyperparameterTuningJob
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
         getHyperparameterTuningJob(
@@ -1833,7 +2392,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getGetHyperparameterTuningJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists HyperparameterTuningJobs in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse>
         listHyperparameterTuningJobs(
@@ -1842,7 +2407,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getListHyperparameterTuningJobsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a HyperparameterTuningJob.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteHyperparameterTuningJob(
             com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request) {
@@ -1851,7 +2422,22 @@ public final class JobServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a HyperparameterTuningJob.
+     * Starts asynchronous cancellation on the HyperparameterTuningJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the HyperparameterTuningJob is not deleted; instead it becomes a job with
+     * a [HyperparameterTuningJob.error][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code]
+     * of 1, corresponding to `Code.CANCELLED`, and
+     * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state] is set to `CANCELLED`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelHyperparameterTuningJob(
             com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request) {
@@ -1860,7 +2446,14 @@ public final class JobServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BatchPredictionJob. A BatchPredictionJob once created will
+     * right away be attempted to start.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
         createBatchPredictionJob(
@@ -1869,7 +2462,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getCreateBatchPredictionJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BatchPredictionJob
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
         getBatchPredictionJob(
@@ -1878,7 +2477,13 @@ public final class JobServiceGrpc {
           getChannel().newCall(getGetBatchPredictionJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists BatchPredictionJobs in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse>
         listBatchPredictionJobs(
@@ -1887,7 +2492,14 @@ public final class JobServiceGrpc {
           getChannel().newCall(getListBatchPredictionJobsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BatchPredictionJob. Can only be called on jobs that already
+     * finished.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteBatchPredictionJob(
             com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request) {
@@ -1895,7 +2507,21 @@ public final class JobServiceGrpc {
           getChannel().newCall(getDeleteBatchPredictionJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a BatchPredictionJob.
+     * Starts asynchronous cancellation on the BatchPredictionJob. The server
+     * makes the best effort to cancel the job, but success is not
+     * guaranteed. Clients can use [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On a successful cancellation,
+     * the BatchPredictionJob is not deleted;instead its
+     * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to `CANCELLED`. Any files already
+     * outputted by the job are not deleted.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelBatchPredictionJob(
             com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request) {

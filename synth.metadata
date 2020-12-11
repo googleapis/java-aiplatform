@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
-        "internalRef": "346372957"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -184,7 +184,9 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AcceleratorTypeProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ActiveLearningConfig.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ActiveLearningConfigOrBuilder.java",
+    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AnnotatedDatasetName.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/Annotation.java",
+    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AnnotationName.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AnnotationOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AnnotationProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/AnnotationSpec.java",
@@ -556,6 +558,7 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/UserActionReference.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/UserActionReferenceOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/UserActionReferenceProto.java",
+    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/VersionName.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/WorkerPoolSpec.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/WorkerPoolSpecOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/XraiAttribution.java",

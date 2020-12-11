@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -23,28 +24,18 @@ import com.google.cloud.aiplatform.v1beta1.stub.PredictionServiceStubSettings;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service for online predictions and explanations.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
- *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
- *   Value parameters = Value.newBuilder().build();
- *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the predictionServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -73,30 +64,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
@@ -117,7 +106,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PredictionServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PredictionServiceSettings}.
+   * is for advanced usage - prefer using create(PredictionServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionServiceClient create(PredictionServiceStub stub) {
@@ -149,20 +138,9 @@ public class PredictionServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   Value parameters = Value.newBuilder().build();
-   *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -185,27 +163,16 @@ public class PredictionServiceClient implements BackgroundResource {
       EndpointName endpoint, List<Value> instances, Value parameters) {
     PredictRequest request =
         PredictRequest.newBuilder()
-            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
             .addAllInstances(instances)
             .setParameters(parameters)
             .build();
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   Value parameters = Value.newBuilder().build();
-   *   PredictResponse response = predictionServiceClient.predict(endpoint.toString(), instances, parameters);
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -234,23 +201,9 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .addAllInstances(instances)
-   *     .build();
-   *   PredictResponse response = predictionServiceClient.predict(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -259,31 +212,17 @@ public class PredictionServiceClient implements BackgroundResource {
     return predictCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .addAllInstances(instances)
-   *     .build();
-   *   ApiFuture&lt;PredictResponse&gt; future = predictionServiceClient.predictCallable().futureCall(request);
-   *   // Do something
-   *   PredictResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online explanation.
    *
@@ -294,18 +233,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
    * Only deployed AutoML tabular Models have explanation_spec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   Value parameters = Value.newBuilder().build();
-   *   String deployedModelId = "";
-   *   ExplainResponse response = predictionServiceClient.explain(endpoint, instances, parameters, deployedModelId);
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the explanation. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -322,7 +249,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    *     [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
-   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
+   * @param deployed_model_id If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -331,7 +258,7 @@ public class PredictionServiceClient implements BackgroundResource {
       EndpointName endpoint, List<Value> instances, Value parameters, String deployedModelId) {
     ExplainRequest request =
         ExplainRequest.newBuilder()
-            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .setEndpoint(Objects.isNull(endpoint) ? null : endpoint.toString())
             .addAllInstances(instances)
             .setParameters(parameters)
             .setDeployedModelId(deployedModelId)
@@ -339,7 +266,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return explain(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online explanation.
    *
@@ -350,18 +277,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
    * Only deployed AutoML tabular Models have explanation_spec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   Value parameters = Value.newBuilder().build();
-   *   String deployedModelId = "";
-   *   ExplainResponse response = predictionServiceClient.explain(endpoint.toString(), instances, parameters, deployedModelId);
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the explanation. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -378,7 +293,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    *     [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
-   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
+   * @param deployed_model_id If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -395,7 +310,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return explain(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online explanation.
    *
@@ -406,20 +321,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
    * Only deployed AutoML tabular Models have explanation_spec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   ExplainRequest request = ExplainRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .addAllInstances(instances)
-   *     .build();
-   *   ExplainResponse response = predictionServiceClient.explain(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -428,7 +329,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return explainCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online explanation.
    *
@@ -441,20 +342,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * Only deployed AutoML tabular Models have explanation_spec.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List&lt;Value&gt; instances = new ArrayList&lt;&gt;();
-   *   ExplainRequest request = ExplainRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .addAllInstances(instances)
-   *     .build();
-   *   ApiFuture&lt;ExplainResponse&gt; future = predictionServiceClient.explainCallable().futureCall(request);
-   *   // Do something
-   *   ExplainResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return stub.explainCallable();

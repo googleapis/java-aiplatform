@@ -21,14 +21,6 @@ import com.google.cloud.aiplatform.v1beta1.AcceleratorType;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfConditionalParameterDecay;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfConditionalParameterLearningRate;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfDiscreteValueSpec;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfDoubleValueSpec;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfMetric;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfParameter;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfParameterSpec;
-//import com.google.cloud.aiplatform.v1beta1.ClassOfParentDiscreteValues;
 import com.google.cloud.aiplatform.v1beta1.CustomJobSpec;
 import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
@@ -44,7 +36,6 @@ import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSp
 import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType;
 import com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CreateHyperparameterTuningJobPythonPackageSample {

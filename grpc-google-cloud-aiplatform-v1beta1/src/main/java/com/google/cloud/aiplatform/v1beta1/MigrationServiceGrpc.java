@@ -22,7 +22,14 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that migrates resources from automl.googleapis.com,
+ * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/migration_service.proto")
@@ -175,10 +182,25 @@ public final class MigrationServiceGrpc {
     return MigrationServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that migrates resources from automl.googleapis.com,
+   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * </pre>
+   */
   public abstract static class MigrationServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches all of the resources in automl.googleapis.com,
+     * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
+     * AI Platform's given location.
+     * </pre>
+     */
     public void searchMigratableResources(
         com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
         io.grpc.stub.StreamObserver<
@@ -187,7 +209,14 @@ public final class MigrationServiceGrpc {
       asyncUnimplementedUnaryCall(getSearchMigratableResourcesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
+     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * </pre>
+     */
     public void batchMigrateResources(
         com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -214,7 +243,14 @@ public final class MigrationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that migrates resources from automl.googleapis.com,
+   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * </pre>
+   */
   public static final class MigrationServiceStub
       extends io.grpc.stub.AbstractAsyncStub<MigrationServiceStub> {
     private MigrationServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -226,7 +262,15 @@ public final class MigrationServiceGrpc {
       return new MigrationServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches all of the resources in automl.googleapis.com,
+     * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
+     * AI Platform's given location.
+     * </pre>
+     */
     public void searchMigratableResources(
         com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
         io.grpc.stub.StreamObserver<
@@ -238,7 +282,14 @@ public final class MigrationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
+     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * </pre>
+     */
     public void batchMigrateResources(
         com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -249,7 +300,14 @@ public final class MigrationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that migrates resources from automl.googleapis.com,
+   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * </pre>
+   */
   public static final class MigrationServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<MigrationServiceBlockingStub> {
     private MigrationServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -262,7 +320,15 @@ public final class MigrationServiceGrpc {
       return new MigrationServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches all of the resources in automl.googleapis.com,
+     * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
+     * AI Platform's given location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
         searchMigratableResources(
             com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
@@ -270,7 +336,14 @@ public final class MigrationServiceGrpc {
           getChannel(), getSearchMigratableResourcesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
+     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * </pre>
+     */
     public com.google.longrunning.Operation batchMigrateResources(
         com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
       return blockingUnaryCall(
@@ -278,7 +351,14 @@ public final class MigrationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that migrates resources from automl.googleapis.com,
+   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * </pre>
+   */
   public static final class MigrationServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<MigrationServiceFutureStub> {
     private MigrationServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -291,7 +371,15 @@ public final class MigrationServiceGrpc {
       return new MigrationServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Searches all of the resources in automl.googleapis.com,
+     * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
+     * AI Platform's given location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
         searchMigratableResources(
@@ -300,7 +388,14 @@ public final class MigrationServiceGrpc {
           getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
+     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchMigrateResources(
             com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {

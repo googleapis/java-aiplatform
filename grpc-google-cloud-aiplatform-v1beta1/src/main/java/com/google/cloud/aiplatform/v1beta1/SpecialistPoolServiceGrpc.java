@@ -22,7 +22,18 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service for creating and managing Customer SpecialistPools.
+ * When customers start Data Labeling jobs, they can reuse/create Specialist
+ * Pools to bring their own Specialists to label the data.
+ * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+ * then Managers will get email notifications to manage Specialists and tasks on
+ * CrowdCompute console.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/specialist_pool_service.proto")
@@ -323,17 +334,40 @@ public final class SpecialistPoolServiceGrpc {
     return SpecialistPoolServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
   public abstract static class SpecialistPoolServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SpecialistPool.
+     * </pre>
+     */
     public void createSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateSpecialistPoolMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SpecialistPool.
+     * </pre>
+     */
     public void getSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SpecialistPool>
@@ -341,7 +375,13 @@ public final class SpecialistPoolServiceGrpc {
       asyncUnimplementedUnaryCall(getGetSpecialistPoolMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists SpecialistPools in a Location.
+     * </pre>
+     */
     public void listSpecialistPools(
         com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>
@@ -349,14 +389,26 @@ public final class SpecialistPoolServiceGrpc {
       asyncUnimplementedUnaryCall(getListSpecialistPoolsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SpecialistPool as well as all Specialists in the pool.
+     * </pre>
+     */
     public void deleteSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteSpecialistPoolMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SpecialistPool.
+     * </pre>
+     */
     public void updateSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -402,7 +454,18 @@ public final class SpecialistPoolServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
   public static final class SpecialistPoolServiceStub
       extends io.grpc.stub.AbstractAsyncStub<SpecialistPoolServiceStub> {
     private SpecialistPoolServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -415,7 +478,13 @@ public final class SpecialistPoolServiceGrpc {
       return new SpecialistPoolServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SpecialistPool.
+     * </pre>
+     */
     public void createSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -425,7 +494,13 @@ public final class SpecialistPoolServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SpecialistPool.
+     * </pre>
+     */
     public void getSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SpecialistPool>
@@ -436,7 +511,13 @@ public final class SpecialistPoolServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists SpecialistPools in a Location.
+     * </pre>
+     */
     public void listSpecialistPools(
         com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>
@@ -447,7 +528,13 @@ public final class SpecialistPoolServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SpecialistPool as well as all Specialists in the pool.
+     * </pre>
+     */
     public void deleteSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -457,7 +544,13 @@ public final class SpecialistPoolServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SpecialistPool.
+     * </pre>
+     */
     public void updateSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -468,7 +561,18 @@ public final class SpecialistPoolServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
   public static final class SpecialistPoolServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SpecialistPoolServiceBlockingStub> {
     private SpecialistPoolServiceBlockingStub(
@@ -482,35 +586,65 @@ public final class SpecialistPoolServiceGrpc {
       return new SpecialistPoolServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SpecialistPool.
+     * </pre>
+     */
     public com.google.longrunning.Operation createSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateSpecialistPoolMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SpecialistPool.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.SpecialistPool getSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetSpecialistPoolMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists SpecialistPools in a Location.
+     * </pre>
+     */
     public com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse listSpecialistPools(
         com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListSpecialistPoolsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SpecialistPool as well as all Specialists in the pool.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteSpecialistPoolMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SpecialistPool.
+     * </pre>
+     */
     public com.google.longrunning.Operation updateSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request) {
       return blockingUnaryCall(
@@ -518,7 +652,18 @@ public final class SpecialistPoolServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
   public static final class SpecialistPoolServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<SpecialistPoolServiceFutureStub> {
     private SpecialistPoolServiceFutureStub(
@@ -532,7 +677,13 @@ public final class SpecialistPoolServiceGrpc {
       return new SpecialistPoolServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SpecialistPool.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createSpecialistPool(
             com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request) {
@@ -540,7 +691,13 @@ public final class SpecialistPoolServiceGrpc {
           getChannel().newCall(getCreateSpecialistPoolMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SpecialistPool.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.SpecialistPool>
         getSpecialistPool(com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request) {
@@ -548,7 +705,13 @@ public final class SpecialistPoolServiceGrpc {
           getChannel().newCall(getGetSpecialistPoolMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists SpecialistPools in a Location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>
         listSpecialistPools(
@@ -557,7 +720,13 @@ public final class SpecialistPoolServiceGrpc {
           getChannel().newCall(getListSpecialistPoolsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SpecialistPool as well as all Specialists in the pool.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteSpecialistPool(
             com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request) {
@@ -565,7 +734,13 @@ public final class SpecialistPoolServiceGrpc {
           getChannel().newCall(getDeleteSpecialistPoolMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SpecialistPool.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateSpecialistPool(
             com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request) {

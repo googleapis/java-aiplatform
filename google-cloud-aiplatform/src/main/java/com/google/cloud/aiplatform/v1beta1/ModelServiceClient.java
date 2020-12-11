@@ -337,7 +337,7 @@ public class ModelServiceClient implements BackgroundResource {
    * Updates a Model.
    *
    * @param model Required. The Model which replaces the resource on the server.
-   * @param update_mask Required. The update mask applies to the resource. For the `FieldMask`
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see
    *     <p>[FieldMask](https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask).
@@ -443,7 +443,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Model to export. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(
@@ -464,7 +464,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Model to export. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(

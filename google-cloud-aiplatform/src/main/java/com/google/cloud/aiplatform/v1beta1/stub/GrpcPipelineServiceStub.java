@@ -144,11 +144,21 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
         PipelineServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcPipelineServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcPipelineServiceStub(
       PipelineServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcPipelineServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcPipelineServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcPipelineServiceStub(
       PipelineServiceStubSettings settings,
       ClientContext clientContext,

@@ -161,7 +161,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the CustomJob in. Format:
    *     `projects/{project}/locations/{location}`
-   * @param custom_job Required. The CustomJob to create.
+   * @param customJob Required. The CustomJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomJob createCustomJob(LocationName parent, CustomJob customJob) {
@@ -179,7 +179,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the CustomJob in. Format:
    *     `projects/{project}/locations/{location}`
-   * @param custom_job Required. The CustomJob to create.
+   * @param customJob Required. The CustomJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomJob createCustomJob(String parent, CustomJob customJob) {
@@ -462,7 +462,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
-   * @param data_labeling_job Required. The DataLabelingJob to create.
+   * @param dataLabelingJob Required. The DataLabelingJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataLabelingJob createDataLabelingJob(
@@ -481,7 +481,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
-   * @param data_labeling_job Required. The DataLabelingJob to create.
+   * @param dataLabelingJob Required. The DataLabelingJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataLabelingJob createDataLabelingJob(
@@ -755,7 +755,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the HyperparameterTuningJob
    *     in. Format: `projects/{project}/locations/{location}`
-   * @param hyperparameter_tuning_job Required. The HyperparameterTuningJob to create.
+   * @param hyperparameterTuningJob Required. The HyperparameterTuningJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HyperparameterTuningJob createHyperparameterTuningJob(
@@ -774,7 +774,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the HyperparameterTuningJob
    *     in. Format: `projects/{project}/locations/{location}`
-   * @param hyperparameter_tuning_job Required. The HyperparameterTuningJob to create.
+   * @param hyperparameterTuningJob Required. The HyperparameterTuningJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HyperparameterTuningJob createHyperparameterTuningJob(
@@ -1102,7 +1102,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the BatchPredictionJob in.
    *     Format: `projects/{project}/locations/{location}`
-   * @param batch_prediction_job Required. The BatchPredictionJob to create.
+   * @param batchPredictionJob Required. The BatchPredictionJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchPredictionJob createBatchPredictionJob(
@@ -1122,7 +1122,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to create the BatchPredictionJob in.
    *     Format: `projects/{project}/locations/{location}`
-   * @param batch_prediction_job Required. The BatchPredictionJob to create.
+   * @param batchPredictionJob Required. The BatchPredictionJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchPredictionJob createBatchPredictionJob(

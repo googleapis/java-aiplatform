@@ -342,7 +342,7 @@ public class EndpointServiceClient implements BackgroundResource {
    * Updates an Endpoint.
    *
    * @param endpoint Required. The Endpoint which replaces the resource on the server.
-   * @param update_mask Required. The update mask applies to the resource.
+   * @param updateMask Required. The update mask applies to the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Endpoint updateEndpoint(Endpoint endpoint, FieldMask updateMask) {
@@ -439,12 +439,12 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param deployed_model Required. The DeployedModel to be created within the Endpoint. Note that
+   * @param deployedModel Required. The DeployedModel to be created within the Endpoint. Note that
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] must be
    *     updated for the DeployedModel to start receiving traffic, either as part of this call, or
    *     via
    *     [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.UpdateEndpoint].
-   * @param traffic_split A map from a DeployedModel's ID to the percentage of this Endpoint's
+   * @param trafficSplit A map from a DeployedModel's ID to the percentage of this Endpoint's
    *     traffic that should be forwarded to that DeployedModel.
    *     <p>If this field is non-empty, then the Endpoint's
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] will be overwritten
@@ -472,12 +472,12 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param deployed_model Required. The DeployedModel to be created within the Endpoint. Note that
+   * @param deployedModel Required. The DeployedModel to be created within the Endpoint. Note that
    *     [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] must be
    *     updated for the DeployedModel to start receiving traffic, either as part of this call, or
    *     via
    *     [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.UpdateEndpoint].
-   * @param traffic_split A map from a DeployedModel's ID to the percentage of this Endpoint's
+   * @param trafficSplit A map from a DeployedModel's ID to the percentage of this Endpoint's
    *     traffic that should be forwarded to that DeployedModel.
    *     <p>If this field is non-empty, then the Endpoint's
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] will be overwritten
@@ -540,9 +540,9 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint resource from which to undeploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param deployed_model_id Required. The ID of the DeployedModel to be undeployed from the
+   * @param deployedModelId Required. The ID of the DeployedModel to be undeployed from the
    *     Endpoint.
-   * @param traffic_split If this field is provided, then the Endpoint's
+   * @param trafficSplit If this field is provided, then the Endpoint's
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] will be overwritten
    *     with it. If last DeployedModel is being undeployed from the Endpoint, the
    *     [Endpoint.traffic_split] will always end up empty when this call returns. A DeployedModel
@@ -569,9 +569,9 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint resource from which to undeploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param deployed_model_id Required. The ID of the DeployedModel to be undeployed from the
+   * @param deployedModelId Required. The ID of the DeployedModel to be undeployed from the
    *     Endpoint.
-   * @param traffic_split If this field is provided, then the Endpoint's
+   * @param trafficSplit If this field is provided, then the Endpoint's
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] will be overwritten
    *     with it. If last DeployedModel is being undeployed from the Endpoint, the
    *     [Endpoint.traffic_split] will always end up empty when this call returns. A DeployedModel

@@ -82,7 +82,7 @@ public class PredictionServiceClientTest {
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .addAllPredictions(new ArrayList<Value>())
-            .setDeployedModelId("deployed_model_id866642506")
+            .setDeployedModelId("deployedModelId-1817547906")
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -127,7 +127,7 @@ public class PredictionServiceClientTest {
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .addAllPredictions(new ArrayList<Value>())
-            .setDeployedModelId("deployed_model_id866642506")
+            .setDeployedModelId("deployedModelId-1817547906")
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -172,7 +172,7 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .setDeployedModelId("deployed_model_id866642506")
+            .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
     mockPredictionService.addResponse(expectedResponse);
@@ -180,7 +180,7 @@ public class PredictionServiceClientTest {
     EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     List<Value> instances = new ArrayList<>();
     Value parameters = Value.newBuilder().build();
-    String deployedModelId = "deployed_model_id866642506";
+    String deployedModelId = "deployedModelId-1817547906";
 
     ExplainResponse actualResponse =
         client.explain(endpoint, instances, parameters, deployedModelId);
@@ -209,7 +209,7 @@ public class PredictionServiceClientTest {
       EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       List<Value> instances = new ArrayList<>();
       Value parameters = Value.newBuilder().build();
-      String deployedModelId = "deployed_model_id866642506";
+      String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -222,7 +222,7 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .setDeployedModelId("deployed_model_id866642506")
+            .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
     mockPredictionService.addResponse(expectedResponse);
@@ -230,7 +230,7 @@ public class PredictionServiceClientTest {
     String endpoint = "endpoint1741102485";
     List<Value> instances = new ArrayList<>();
     Value parameters = Value.newBuilder().build();
-    String deployedModelId = "deployed_model_id866642506";
+    String deployedModelId = "deployedModelId-1817547906";
 
     ExplainResponse actualResponse =
         client.explain(endpoint, instances, parameters, deployedModelId);
@@ -259,7 +259,7 @@ public class PredictionServiceClientTest {
       String endpoint = "endpoint1741102485";
       List<Value> instances = new ArrayList<>();
       Value parameters = Value.newBuilder().build();
-      String deployedModelId = "deployed_model_id866642506";
+      String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

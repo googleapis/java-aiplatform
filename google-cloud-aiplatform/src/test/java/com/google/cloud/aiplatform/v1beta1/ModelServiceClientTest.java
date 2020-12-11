@@ -193,17 +193,17 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
-            .setArtifactUri("artifact_uri-671891073")
+            .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
             .addAllSupportedInputStorageFormats(new ArrayList<String>())
             .addAllSupportedOutputStorageFormats(new ArrayList<String>())
@@ -251,17 +251,17 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
-            .setArtifactUri("artifact_uri-671891073")
+            .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
             .addAllSupportedInputStorageFormats(new ArrayList<String>())
             .addAllSupportedOutputStorageFormats(new ArrayList<String>())
@@ -397,17 +397,17 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
-            .setArtifactUri("artifact_uri-671891073")
+            .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
             .addAllSupportedInputStorageFormats(new ArrayList<String>())
             .addAllSupportedOutputStorageFormats(new ArrayList<String>())
@@ -640,7 +640,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
-            .setMetricsSchemaUri("metrics_schema_uri981925578")
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
@@ -687,7 +687,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
-            .setMetricsSchemaUri("metrics_schema_uri981925578")
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
@@ -823,7 +823,7 @@ public class ModelServiceClientTest {
                 ModelEvaluationSliceName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
                     .toString())
-            .setMetricsSchemaUri("metrics_schema_uri981925578")
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
@@ -872,7 +872,7 @@ public class ModelServiceClientTest {
                 ModelEvaluationSliceName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
                     .toString())
-            .setMetricsSchemaUri("metrics_schema_uri981925578")
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();

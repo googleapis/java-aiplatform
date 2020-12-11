@@ -92,7 +92,7 @@ public class SpecialistPoolServiceClientTest {
         SpecialistPool.newBuilder()
             .setName(
                 SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
@@ -147,7 +147,7 @@ public class SpecialistPoolServiceClientTest {
         SpecialistPool.newBuilder()
             .setName(
                 SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
@@ -202,7 +202,7 @@ public class SpecialistPoolServiceClientTest {
         SpecialistPool.newBuilder()
             .setName(
                 SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
@@ -246,7 +246,7 @@ public class SpecialistPoolServiceClientTest {
         SpecialistPool.newBuilder()
             .setName(
                 SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
@@ -464,7 +464,7 @@ public class SpecialistPoolServiceClientTest {
         SpecialistPool.newBuilder()
             .setName(
                 SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())

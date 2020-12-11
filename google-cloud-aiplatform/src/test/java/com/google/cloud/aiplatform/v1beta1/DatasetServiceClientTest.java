@@ -95,8 +95,8 @@ public class DatasetServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -151,8 +151,8 @@ public class DatasetServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -207,8 +207,8 @@ public class DatasetServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -252,8 +252,8 @@ public class DatasetServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -297,8 +297,8 @@ public class DatasetServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
-            .setMetadataSchemaUri("metadata_schema_uri-152319778")
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -793,7 +793,7 @@ public class DatasetServiceClientTest {
             .setName(
                 AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -839,7 +839,7 @@ public class DatasetServiceClientTest {
             .setName(
                 AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")

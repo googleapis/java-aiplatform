@@ -93,7 +93,7 @@ public class EndpointServiceClientTest {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
             .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
             .putAllTrafficSplit(new HashMap<String, Integer>())
@@ -150,7 +150,7 @@ public class EndpointServiceClientTest {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
             .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
             .putAllTrafficSplit(new HashMap<String, Integer>())
@@ -207,7 +207,7 @@ public class EndpointServiceClientTest {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
             .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
             .putAllTrafficSplit(new HashMap<String, Integer>())
@@ -253,7 +253,7 @@ public class EndpointServiceClientTest {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
             .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
             .putAllTrafficSplit(new HashMap<String, Integer>())
@@ -387,7 +387,7 @@ public class EndpointServiceClientTest {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
             .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
             .putAllTrafficSplit(new HashMap<String, Integer>())
@@ -633,7 +633,7 @@ public class EndpointServiceClientTest {
     mockEndpointService.addResponse(resultOperation);
 
     EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-    String deployedModelId = "deployed_model_id866642506";
+    String deployedModelId = "deployedModelId-1817547906";
     Map<String, Integer> trafficSplit = new HashMap<>();
 
     UndeployModelResponse actualResponse =
@@ -660,7 +660,7 @@ public class EndpointServiceClientTest {
 
     try {
       EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-      String deployedModelId = "deployed_model_id866642506";
+      String deployedModelId = "deployedModelId-1817547906";
       Map<String, Integer> trafficSplit = new HashMap<>();
       client.undeployModelAsync(endpoint, deployedModelId, trafficSplit).get();
       Assert.fail("No exception raised");
@@ -683,7 +683,7 @@ public class EndpointServiceClientTest {
     mockEndpointService.addResponse(resultOperation);
 
     String endpoint = "endpoint1741102485";
-    String deployedModelId = "deployed_model_id866642506";
+    String deployedModelId = "deployedModelId-1817547906";
     Map<String, Integer> trafficSplit = new HashMap<>();
 
     UndeployModelResponse actualResponse =
@@ -710,7 +710,7 @@ public class EndpointServiceClientTest {
 
     try {
       String endpoint = "endpoint1741102485";
-      String deployedModelId = "deployed_model_id866642506";
+      String deployedModelId = "deployedModelId-1817547906";
       Map<String, Integer> trafficSplit = new HashMap<>();
       client.undeployModelAsync(endpoint, deployedModelId, trafficSplit).get();
       Assert.fail("No exception raised");

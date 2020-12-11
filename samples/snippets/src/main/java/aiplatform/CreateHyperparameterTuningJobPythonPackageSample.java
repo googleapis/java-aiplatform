@@ -81,7 +81,7 @@ public class CreateHyperparameterTuningJobPythonPackageSample {
               .setDoubleValueSpec(doubleValueSpec)
               .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
               .build();
-      Double decayValues[] = {32.0, 64.0};
+      Double[] decayValues = {32.0, 64.0};
       DiscreteValueCondition discreteValueDecay =
           DiscreteValueCondition.newBuilder().addAllValues(Arrays.asList(decayValues)).build();
       ConditionalParameterSpec conditionalParameterDecay =
@@ -98,7 +98,7 @@ public class CreateHyperparameterTuningJobPythonPackageSample {
               .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
               .build();
 
-      Double learningRateValues[] = {4.0, 8.0, 16.0};
+      Double[] learningRateValues = {4.0, 8.0, 16.0};
       DiscreteValueCondition discreteValueLearning =
           DiscreteValueCondition.newBuilder()
               .addAllValues(Arrays.asList(learningRateValues))
@@ -110,7 +110,7 @@ public class CreateHyperparameterTuningJobPythonPackageSample {
               .build();
 
       // batch size
-      Double batchSizeValues[] = {4.0, 8.0, 16.0, 32.0, 64.0, 128.0};
+      Double[] batchSizeValues = {4.0, 8.0, 16.0, 32.0, 64.0, 128.0};
 
       DiscreteValueSpec discreteValueSpec =
           DiscreteValueSpec.newBuilder().addAllValues(Arrays.asList(batchSizeValues)).build();

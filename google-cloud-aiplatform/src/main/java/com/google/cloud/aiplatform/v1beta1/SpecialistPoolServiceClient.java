@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -179,7 +178,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
       createSpecialistPoolAsync(LocationName parent, SpecialistPool specialistPool) {
     CreateSpecialistPoolRequest request =
         CreateSpecialistPoolRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSpecialistPool(specialistPool)
             .build();
     return createSpecialistPoolAsync(request);
@@ -250,7 +249,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
   public final SpecialistPool getSpecialistPool(SpecialistPoolName name) {
     GetSpecialistPoolRequest request =
         GetSpecialistPoolRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getSpecialistPool(request);
   }
@@ -300,7 +299,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
   public final ListSpecialistPoolsPagedResponse listSpecialistPools(LocationName parent) {
     ListSpecialistPoolsRequest request =
         ListSpecialistPoolsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listSpecialistPools(request);
   }
@@ -365,7 +364,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
       SpecialistPoolName name) {
     DeleteSpecialistPoolRequest request =
         DeleteSpecialistPoolRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteSpecialistPoolAsync(request);
   }

@@ -35,7 +35,6 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,7 +174,7 @@ public class MigrationServiceClient implements BackgroundResource {
       LocationName parent) {
     SearchMigratableResourcesRequest request =
         SearchMigratableResourcesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return searchMigratableResources(request);
   }
@@ -252,7 +251,7 @@ public class MigrationServiceClient implements BackgroundResource {
           LocationName parent, List<MigrateResourceRequest> migrateResourceRequests) {
     BatchMigrateResourcesRequest request =
         BatchMigrateResourcesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllMigrateResourceRequests(migrateResourceRequests)
             .build();
     return batchMigrateResourcesAsync(request);

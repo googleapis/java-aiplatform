@@ -36,7 +36,6 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -174,7 +173,7 @@ public class PipelineServiceClient implements BackgroundResource {
       LocationName parent, TrainingPipeline trainingPipeline) {
     CreateTrainingPipelineRequest request =
         CreateTrainingPipelineRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTrainingPipeline(trainingPipeline)
             .build();
     return createTrainingPipeline(request);
@@ -232,7 +231,7 @@ public class PipelineServiceClient implements BackgroundResource {
   public final TrainingPipeline getTrainingPipeline(TrainingPipelineName name) {
     GetTrainingPipelineRequest request =
         GetTrainingPipelineRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getTrainingPipeline(request);
   }
@@ -284,7 +283,7 @@ public class PipelineServiceClient implements BackgroundResource {
   public final ListTrainingPipelinesPagedResponse listTrainingPipelines(LocationName parent) {
     ListTrainingPipelinesRequest request =
         ListTrainingPipelinesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listTrainingPipelines(request);
   }
@@ -349,7 +348,7 @@ public class PipelineServiceClient implements BackgroundResource {
       TrainingPipelineName name) {
     DeleteTrainingPipelineRequest request =
         DeleteTrainingPipelineRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteTrainingPipelineAsync(request);
   }
@@ -424,7 +423,7 @@ public class PipelineServiceClient implements BackgroundResource {
   public final void cancelTrainingPipeline(TrainingPipelineName name) {
     CancelTrainingPipelineRequest request =
         CancelTrainingPipelineRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     cancelTrainingPipeline(request);
   }

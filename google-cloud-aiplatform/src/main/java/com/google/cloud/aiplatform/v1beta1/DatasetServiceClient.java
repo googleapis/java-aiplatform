@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -170,7 +169,7 @@ public class DatasetServiceClient implements BackgroundResource {
       LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setDataset(dataset)
             .build();
     return createDatasetAsync(request);
@@ -234,9 +233,7 @@ public class DatasetServiceClient implements BackgroundResource {
    */
   public final Dataset getDataset(DatasetName name) {
     GetDatasetRequest request =
-        GetDatasetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
   }
 
@@ -323,7 +320,7 @@ public class DatasetServiceClient implements BackgroundResource {
   public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listDatasets(request);
   }
@@ -384,9 +381,7 @@ public class DatasetServiceClient implements BackgroundResource {
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetAsync(
       DatasetName name) {
     DeleteDatasetRequest request =
-        DeleteDatasetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
   }
 
@@ -450,7 +445,7 @@ public class DatasetServiceClient implements BackgroundResource {
       DatasetName name, List<ImportDataConfig> importConfigs) {
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .addAllImportConfigs(importConfigs)
             .build();
     return importDataAsync(request);
@@ -519,7 +514,7 @@ public class DatasetServiceClient implements BackgroundResource {
       DatasetName name, ExportDataConfig exportConfig) {
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setExportConfig(exportConfig)
             .build();
     return exportDataAsync(request);
@@ -585,7 +580,7 @@ public class DatasetServiceClient implements BackgroundResource {
   public final ListDataItemsPagedResponse listDataItems(DatasetName parent) {
     ListDataItemsRequest request =
         ListDataItemsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listDataItems(request);
   }
@@ -646,7 +641,7 @@ public class DatasetServiceClient implements BackgroundResource {
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
     GetAnnotationSpecRequest request =
         GetAnnotationSpecRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getAnnotationSpec(request);
   }
@@ -696,7 +691,7 @@ public class DatasetServiceClient implements BackgroundResource {
   public final ListAnnotationsPagedResponse listAnnotations(DataItemName parent) {
     ListAnnotationsRequest request =
         ListAnnotationsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listAnnotations(request);
   }

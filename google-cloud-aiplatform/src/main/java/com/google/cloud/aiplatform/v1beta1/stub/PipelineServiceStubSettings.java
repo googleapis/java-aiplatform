@@ -60,7 +60,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -154,7 +153,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
             @Override
             public Iterable<TrainingPipeline> extractResources(
                 ListTrainingPipelinesResponse payload) {
-              return Objects.isNull(payload.getTrainingPipelinesList())
+              return payload.getTrainingPipelinesList() == null
                   ? ImmutableList.<TrainingPipeline>of()
                   : payload.getTrainingPipelinesList();
             }

@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -171,7 +170,7 @@ public class ModelServiceClient implements BackgroundResource {
       LocationName parent, Model model) {
     UploadModelRequest request =
         UploadModelRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setModel(model)
             .build();
     return uploadModelAsync(request);
@@ -237,7 +236,7 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final Model getModel(ModelName name) {
     GetModelRequest request =
-        GetModelRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
   }
 
@@ -285,9 +284,7 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final ListModelsPagedResponse listModels(LocationName parent) {
     ListModelsRequest request =
-        ListModelsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
   }
 
@@ -384,9 +381,7 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(ModelName name) {
     DeleteModelRequest request =
-        DeleteModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
   }
 
@@ -455,7 +450,7 @@ public class ModelServiceClient implements BackgroundResource {
       ModelName name, ExportModelRequest.OutputConfig outputConfig) {
     ExportModelRequest request =
         ExportModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setOutputConfig(outputConfig)
             .build();
     return exportModelAsync(request);
@@ -530,7 +525,7 @@ public class ModelServiceClient implements BackgroundResource {
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getModelEvaluation(request);
   }
@@ -582,7 +577,7 @@ public class ModelServiceClient implements BackgroundResource {
   public final ListModelEvaluationsPagedResponse listModelEvaluations(ModelName parent) {
     ListModelEvaluationsRequest request =
         ListModelEvaluationsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listModelEvaluations(request);
   }
@@ -646,7 +641,7 @@ public class ModelServiceClient implements BackgroundResource {
   public final ModelEvaluationSlice getModelEvaluationSlice(ModelEvaluationSliceName name) {
     GetModelEvaluationSliceRequest request =
         GetModelEvaluationSliceRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getModelEvaluationSlice(request);
   }
@@ -701,7 +696,7 @@ public class ModelServiceClient implements BackgroundResource {
       ModelEvaluationName parent) {
     ListModelEvaluationSlicesRequest request =
         ListModelEvaluationSlicesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listModelEvaluationSlices(request);
   }

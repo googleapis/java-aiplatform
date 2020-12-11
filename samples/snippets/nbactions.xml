@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>test-compile</goal>
+                <goal>surefire:test</goal>
+            </goals>
+            <properties>
+                <test>${packageClassName}</test>
+                <Env.UCAIP_PROJECT_ID>580378083368</Env.UCAIP_PROJECT_ID>
+                <Env.BATCH_PREDICTION_TABULAR_BQ_MODEL_ID>8842430840248991744</Env.BATCH_PREDICTION_TABULAR_BQ_MODEL_ID>
+                <Env.GOOGLE_APPLICATION_CREDENTIALS>/Users/erschmid/Devtools/ucaip-samples-test.json</Env.GOOGLE_APPLICATION_CREDENTIALS>
+            </properties>
+        </action>
+    </actions>

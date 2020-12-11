@@ -32,7 +32,8 @@ import org.junit.Test;
 
 public class CreateBatchPredictionJobVideoActionRecognitionSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("BATCH_PREDICTION_VIDEO_ACTION_RECOGNITION_MODEL_ID");
+  private static final String MODEL_ID =
+      System.getenv("BATCH_PREDICTION_VIDEO_ACTION_RECOGNITION_MODEL_ID");
   private static final String GCS_SOURCE_URI =
       "gs://ucaip-samples-test-output/inputs/icn_batch_prediction_input.jsonl";
   private static final String GCS_OUTPUT_URI = "gs://ucaip-samples-test-output/";
@@ -90,15 +91,12 @@ public class CreateBatchPredictionJobVideoActionRecognitionSampleTest {
             "batch_prediction_video_action_recognition_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    String modelName = String.format("projects/%s/locations/us-central1/models/%s",
-        PROJECT, MODEL_ID);
+    String modelName =
+        String.format("projects/%s/locations/us-central1/models/%s", PROJECT, MODEL_ID);
 
-    CreateBatchPredictionJobVideoActionRecognitionSample.createBatchPredictionJobVideoActionRecognitionSample(
-        PROJECT,
-        batchPredictionDisplayName,
-        modelName,
-        GCS_SOURCE_URI,
-        GCS_OUTPUT_URI);
+    CreateBatchPredictionJobVideoActionRecognitionSample
+        .createBatchPredictionJobVideoActionRecognitionSample(
+            PROJECT, batchPredictionDisplayName, modelName, GCS_SOURCE_URI, GCS_OUTPUT_URI);
 
     // Assert
     String got = bout.toString();

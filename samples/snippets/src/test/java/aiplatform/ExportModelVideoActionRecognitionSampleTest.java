@@ -79,11 +79,7 @@ public class ExportModelVideoActionRecognitionSampleTest {
       throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // Act
     ExportModelVideoActionRecognitionSample.exportModelVideoActionRecognitionSample(
-        PROJECT,
-        MODEL_ID,
-        GCS_DESTINATION_URI_PREFIX,
-        EXPORT_FORMAT
-    );
+        PROJECT, MODEL_ID, GCS_DESTINATION_URI_PREFIX, EXPORT_FORMAT);
 
     // Assert
     String got = bout.toString();

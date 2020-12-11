@@ -53,8 +53,7 @@ public class DeployModelCustomTrainedModelSampleTest {
 
   @Before
   public void setUp() {
-    modelName = String.format("projects/%s/locations/us-central1/models/%s",
-        PROJECT_ID, MODEL_ID);
+    modelName = String.format("projects/%s/locations/us-central1/models/%s", PROJECT_ID, MODEL_ID);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
@@ -68,8 +67,7 @@ public class DeployModelCustomTrainedModelSampleTest {
   }
 
   @Test
-  public void testDeployModelCustomTrainedModelSample()
-      throws TimeoutException {
+  public void testDeployModelCustomTrainedModelSample() throws TimeoutException {
     // As model deployment can take a long time, instead try to deploy a
     // nonexistent model and confirm that the model was not found, but other
     // elements of the request were valid.
@@ -79,11 +77,7 @@ public class DeployModelCustomTrainedModelSampleTest {
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
     try {
       DeployModelCustomTrainedModelSample.deployModelCustomTrainedModelSample(
-          PROJECT_ID,
-          ENDPOINT_ID,
-          modelName,
-          deployedModelDisplayName
-      );
+          PROJECT_ID, ENDPOINT_ID, modelName, deployedModelDisplayName);
       // Assert
       String got = bout.toString();
       assertThat(got).contains("is not found.");

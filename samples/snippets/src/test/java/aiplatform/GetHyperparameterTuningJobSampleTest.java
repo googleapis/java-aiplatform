@@ -61,10 +61,9 @@ public class GetHyperparameterTuningJobSampleTest {
   }
 
   @Test
-  public void testGetHyperparameterTuningJobSample() throws IOException  {
+  public void testGetHyperparameterTuningJobSample() throws IOException {
     GetHyperparameterTuningJobSample.getHyperparameterTuningJobSample(
-        PROJECT, HYPERPARAMETER_TUNING_JOB_ID
-    );
+        PROJECT, HYPERPARAMETER_TUNING_JOB_ID);
 
     // Assert
     String got = bout.toString();

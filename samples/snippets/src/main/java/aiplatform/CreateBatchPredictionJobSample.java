@@ -120,4 +120,3 @@ public class CreateBatchPredictionJobSample {
 }
 
 // [END aiplatform_create_batch_prediction_job_sample]
-

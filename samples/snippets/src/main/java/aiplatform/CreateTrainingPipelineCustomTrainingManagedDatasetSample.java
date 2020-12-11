@@ -103,9 +103,8 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
               .add("machineSpec", jsonMachineSpec)
               .add("containerSpec", jsonTrainingContainerSpec)
               .build();
-      JsonArray jsonWorkerPoolSpecs = Json.createArrayBuilder()
-          .add(jsonTrainingWorkerPoolSpec)
-          .build();
+      JsonArray jsonWorkerPoolSpecs =
+          Json.createArrayBuilder().add(jsonTrainingWorkerPoolSpec).build();
       JsonObject jsonBaseOutputDirectory =
           Json.createObjectBuilder().add("outputUriPrefix", baseOutputUriPrefix).build();
       JsonObject jsonTrainingTaskInputs =

@@ -18,9 +18,6 @@ package aiplatform;
 
 // [START aiplatform_create_hyperparameter_tuning_job_python_package_sample]
 import com.google.cloud.aiplatform.v1beta1.AcceleratorType;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec;
 import com.google.cloud.aiplatform.v1beta1.CustomJobSpec;
 import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
@@ -29,6 +26,9 @@ import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.MachineSpec;
 import com.google.cloud.aiplatform.v1beta1.PythonPackageSpec;
 import com.google.cloud.aiplatform.v1beta1.StudySpec;
+import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec;
+import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType;
+import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition;
 import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec;
@@ -69,59 +69,59 @@ public class CreateHyperparameterTuningJobPythonPackageSample {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
       // study spec
-      MetricSpec metric = MetricSpec.newBuilder()
-          .setMetricId("val_rmse")
-          .setGoal(GoalType.MINIMIZE)
-          .build();
+      MetricSpec metric =
+          MetricSpec.newBuilder().setMetricId("val_rmse").setGoal(GoalType.MINIMIZE).build();
 
       // decay
-      DoubleValueSpec doubleValueSpec = DoubleValueSpec.newBuilder()
-          .setMinValue(1e-07)
-          .setMaxValue(1)
-          .build();
-      ParameterSpec parameterDecaySpec = ParameterSpec.newBuilder()
-          .setParameterId("decay")
-          .setDoubleValueSpec(doubleValueSpec)
-          .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
-          .build();
+      DoubleValueSpec doubleValueSpec =
+          DoubleValueSpec.newBuilder().setMinValue(1e-07).setMaxValue(1).build();
+      ParameterSpec parameterDecaySpec =
+          ParameterSpec.newBuilder()
+              .setParameterId("decay")
+              .setDoubleValueSpec(doubleValueSpec)
+              .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
+              .build();
       Double decayValues[] = {32.0, 64.0};
-      DiscreteValueCondition discreteValueDecay = DiscreteValueCondition.newBuilder()
-          .addAllValues(Arrays.asList(decayValues))
-          .build();
-      ConditionalParameterSpec conditionalParameterDecay = ConditionalParameterSpec.newBuilder()
-          .setParameterSpec(parameterDecaySpec)
-          .setParentDiscreteValues(discreteValueDecay)
-          .build();
+      DiscreteValueCondition discreteValueDecay =
+          DiscreteValueCondition.newBuilder().addAllValues(Arrays.asList(decayValues)).build();
+      ConditionalParameterSpec conditionalParameterDecay =
+          ConditionalParameterSpec.newBuilder()
+              .setParameterSpec(parameterDecaySpec)
+              .setParentDiscreteValues(discreteValueDecay)
+              .build();
 
       // learning rate
-      ParameterSpec parameterLearningSpec = ParameterSpec.newBuilder()
-          .setParameterId("learning_rate")
-          .setDoubleValueSpec(doubleValueSpec) // Use the same min/max as for decay
-          .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
-          .build();
+      ParameterSpec parameterLearningSpec =
+          ParameterSpec.newBuilder()
+              .setParameterId("learning_rate")
+              .setDoubleValueSpec(doubleValueSpec) // Use the same min/max as for decay
+              .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
+              .build();
 
       Double learningRateValues[] = {4.0, 8.0, 16.0};
-      DiscreteValueCondition discreteValueLearning = DiscreteValueCondition.newBuilder()
-          .addAllValues(Arrays.asList(learningRateValues))
-          .build();
-      ConditionalParameterSpec conditionalParameterLearning = ConditionalParameterSpec.newBuilder()
-          .setParameterSpec(parameterLearningSpec)
-          .setParentDiscreteValues(discreteValueLearning)
-          .build();
+      DiscreteValueCondition discreteValueLearning =
+          DiscreteValueCondition.newBuilder()
+              .addAllValues(Arrays.asList(learningRateValues))
+              .build();
+      ConditionalParameterSpec conditionalParameterLearning =
+          ConditionalParameterSpec.newBuilder()
+              .setParameterSpec(parameterLearningSpec)
+              .setParentDiscreteValues(discreteValueLearning)
+              .build();
 
       // batch size
       Double batchSizeValues[] = {4.0, 8.0, 16.0, 32.0, 64.0, 128.0};
 
-      DiscreteValueSpec discreteValueSpec = DiscreteValueSpec.newBuilder()
-          .addAllValues(Arrays.asList(batchSizeValues))
-          .build();
-      ParameterSpec parameter = ParameterSpec.newBuilder()
-          .setParameterId("batch_size")
-          .setDiscreteValueSpec(discreteValueSpec)
-          .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
-          .addConditionalParameterSpecs(conditionalParameterDecay)
-          .addConditionalParameterSpecs(conditionalParameterLearning)
-          .build();
+      DiscreteValueSpec discreteValueSpec =
+          DiscreteValueSpec.newBuilder().addAllValues(Arrays.asList(batchSizeValues)).build();
+      ParameterSpec parameter =
+          ParameterSpec.newBuilder()
+              .setParameterId("batch_size")
+              .setDiscreteValueSpec(discreteValueSpec)
+              .setScaleType(ScaleType.UNIT_LINEAR_SCALE)
+              .addConditionalParameterSpecs(conditionalParameterDecay)
+              .addConditionalParameterSpecs(conditionalParameterLearning)
+              .build();
 
       // trial_job_spec
       MachineSpec machineSpec =

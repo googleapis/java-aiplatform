@@ -35,8 +35,10 @@ import org.junit.Test;
 public class CreateHyperparameterTuningJobPythonPackageSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String EXECUTOR_IMAGE_URI = "us.gcr.io/cloud-aiplatform/training/tf-gpu.2-1:latest";
-  private static final String PACKAGE_URI = "gs://ucaip-test-us-central1/training/pythonpackages/trainer.tar.bz2";
+  private static final String EXECUTOR_IMAGE_URI =
+      "us.gcr.io/cloud-aiplatform/training/tf-gpu.2-1:latest";
+  private static final String PACKAGE_URI =
+      "gs://ucaip-test-us-central1/training/pythonpackages/trainer.tar.bz2";
   private static final String PYTHON_MODULE = "trainer.hptuning_trainer";
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -74,9 +76,9 @@ public class CreateHyperparameterTuningJobPythonPackageSampleTest {
     try (JobServiceClient client = JobServiceClient.create(settings)) {
       // Cancel hyper parameter job
       String hyperparameterJobName =
-          String.format("projects/%s/locations/us-central1/hyperparameterTuningJobs/%s",
-              PROJECT,
-              hyperparameterJobId);
+          String.format(
+              "projects/%s/locations/us-central1/hyperparameterTuningJobs/%s",
+              PROJECT, hyperparameterJobId);
       client.cancelHyperparameterTuningJob(hyperparameterJobName);
 
       TimeUnit.MINUTES.sleep(1);
@@ -94,17 +96,19 @@ public class CreateHyperparameterTuningJobPythonPackageSampleTest {
         String.format(
             "temp_hyperparameter_tuning_job_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    CreateHyperparameterTuningJobPythonPackageSample.createHyperparameterTuningJobPythonPackageSample(
-        PROJECT,
-        hyperparameterTuningJobDisplayName,
-        EXECUTOR_IMAGE_URI,
-        PACKAGE_URI,
-        PYTHON_MODULE);
+    CreateHyperparameterTuningJobPythonPackageSample
+        .createHyperparameterTuningJobPythonPackageSample(
+            PROJECT,
+            hyperparameterTuningJobDisplayName,
+            EXECUTOR_IMAGE_URI,
+            PACKAGE_URI,
+            PYTHON_MODULE);
 
     // Assert
     String got = bout.toString();
     assertThat(got).contains(hyperparameterTuningJobDisplayName);
     assertThat(got).contains("response:");
-    hyperparameterJobId = got.split("Name: ")[1].split("hyperparameterTuningJobs/")[1].split("\n")[0];
+    hyperparameterJobId =
+        got.split("Name: ")[1].split("hyperparameterTuningJobs/")[1].split("\n")[0];
   }
 }

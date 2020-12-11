@@ -90,8 +90,8 @@ public class CreateBatchPredictionJobSampleTest {
             "batch_prediction_bigquery_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    String modelName = String.format("projects/%s/locations/us-central1/models/%s",
-        PROJECT, MODEL_ID);
+    String modelName =
+        String.format("projects/%s/locations/us-central1/models/%s", PROJECT, MODEL_ID);
 
     CreateBatchPredictionJobSample.createBatchPredictionJobSample(
         PROJECT,

@@ -32,7 +32,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 public class CreateHyperparameterTuningJobSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String CONTAINER_IMAGE_URI = "gcr.io/ucaip-test/ucaip-training-test:latest";
@@ -72,9 +71,9 @@ public class CreateHyperparameterTuningJobSampleTest {
     try (JobServiceClient client = JobServiceClient.create(settings)) {
       // Cancel hyper parameter job
       String hyperparameterJobName =
-          String.format("projects/%s/locations/us-central1/hyperparameterTuningJobs/%s",
-              PROJECT,
-              hyperparameterJobId);
+          String.format(
+              "projects/%s/locations/us-central1/hyperparameterTuningJobs/%s",
+              PROJECT, hyperparameterJobId);
       client.cancelHyperparameterTuningJob(hyperparameterJobName);
 
       TimeUnit.MINUTES.sleep(1);
@@ -94,16 +93,12 @@ public class CreateHyperparameterTuningJobSampleTest {
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
     CreateHyperparameterTuningJobSample.createHyperparameterTuningJobSample(
-        PROJECT,
-        hyperparameterTuningJobDisplayName,
-        CONTAINER_IMAGE_URI
-    );
+        PROJECT, hyperparameterTuningJobDisplayName, CONTAINER_IMAGE_URI);
 
     String got = bout.toString();
     assertThat(got).contains(hyperparameterTuningJobDisplayName);
     assertThat(got).contains("response:");
-    hyperparameterJobId = got.split("Name: ")[1].split("hyperparameterTuningJobs/")[1].split("\n")[0];
-
+    hyperparameterJobId =
+        got.split("Name: ")[1].split("hyperparameterTuningJobs/")[1].split("\n")[0];
   }
-
 }

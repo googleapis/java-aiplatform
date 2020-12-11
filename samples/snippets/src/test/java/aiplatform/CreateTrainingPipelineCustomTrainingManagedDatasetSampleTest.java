@@ -33,10 +33,14 @@ import org.junit.Test;
 public class CreateTrainingPipelineCustomTrainingManagedDatasetSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String DATASET_ID = System.getenv("CUSTOM_MANAGED_DATASET");
-  private static final String ANNOTATION_SCHEMA_URI = "gs://google-cloud-aiplatform/schema/dataset/annotation/image_classification_1.0.0.yaml";
-  private static final String TRAINING_CONTAINER_IMAGE_URI = "gcr.io/ucaip-test/custom-container-managed-dataset:latest";
-  private static final String MODEL_CONTAIN_SPEC_IMAGE_URI = "gcr.io/cloud-aiplatform/prediction/tf-gpu.1-15:latest";
-  private static final String GCS_OUTPUT_DIRECTORY = "gs://ucaip-samples-us-central1/training_pipeline_output/custom_training_managed_dataset";
+  private static final String ANNOTATION_SCHEMA_URI =
+      "gs://google-cloud-aiplatform/schema/dataset/annotation/image_classification_1.0.0.yaml";
+  private static final String TRAINING_CONTAINER_IMAGE_URI =
+      "gcr.io/ucaip-test/custom-container-managed-dataset:latest";
+  private static final String MODEL_CONTAIN_SPEC_IMAGE_URI =
+      "gcr.io/cloud-aiplatform/prediction/tf-gpu.1-15:latest";
+  private static final String GCS_OUTPUT_DIRECTORY =
+      "gs://ucaip-samples-us-central1/training_pipeline_output/custom_training_managed_dataset";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -96,16 +100,16 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSampleTest {
             "temp_create_training_pipeline_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateTrainingPipelineCustomTrainingManagedDatasetSample.createTrainingPipelineCustomTrainingManagedDatasetSample(
-        PROJECT,
-        trainingPipelineDisplayName,
-        modelDisplayName,
-        DATASET_ID,
-        ANNOTATION_SCHEMA_URI,
-        TRAINING_CONTAINER_IMAGE_URI,
-        MODEL_CONTAIN_SPEC_IMAGE_URI,
-        GCS_OUTPUT_DIRECTORY
-    );
+    CreateTrainingPipelineCustomTrainingManagedDatasetSample
+        .createTrainingPipelineCustomTrainingManagedDatasetSample(
+            PROJECT,
+            trainingPipelineDisplayName,
+            modelDisplayName,
+            DATASET_ID,
+            ANNOTATION_SCHEMA_URI,
+            TRAINING_CONTAINER_IMAGE_URI,
+            MODEL_CONTAIN_SPEC_IMAGE_URI,
+            GCS_OUTPUT_DIRECTORY);
 
     // Assert
     String got = bout.toString();

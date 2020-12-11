@@ -31,81 +31,81 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CreateBatchPredictionJobBigquerySampleTest {
-        private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-    private static final String MODEL_ID = System.getenv("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
-    private static final String BIGQUERY_SOURCE_URI =
-        "bq://ucaip-sample-tests.table_test.all_bq_types";
-    private static final String BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX = "bq://ucaip-sample-tests";
-    private ByteArrayOutputStream bout;
-    private PrintStream out;
-    private PrintStream originalPrintStream;
-    private String batchPredictionJobId;
-    
-    private static void requireEnvVar(String varName) {
-      String errorMessage =
-          String.format("Environment variable '%s' is required to perform these tests.", varName);
-      assertNotNull(errorMessage, System.getenv(varName));
-    }
+  private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
+  private static final String MODEL_ID = System.getenv("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
+  private static final String BIGQUERY_SOURCE_URI =
+      "bq://ucaip-sample-tests.table_test.all_bq_types";
+  private static final String BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX = "bq://ucaip-sample-tests";
+  private ByteArrayOutputStream bout;
+  private PrintStream out;
+  private PrintStream originalPrintStream;
+  private String batchPredictionJobId;
 
-    @BeforeClass
-    public static void checkRequirements() {
-      requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-      requireEnvVar("UCAIP_PROJECT_ID");
-      requireEnvVar("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
-    }
+  private static void requireEnvVar(String varName) {
+    String errorMessage =
+        String.format("Environment variable '%s' is required to perform these tests.", varName);
+    assertNotNull(errorMessage, System.getenv(varName));
+  }
 
-    @Before
-    public void setUp() {
-      bout = new ByteArrayOutputStream();
-      out = new PrintStream(bout);
-      originalPrintStream = System.out;
-      System.setOut(out);
-    }
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
+  }
 
-    @After
-    public void tearDown()
-        throws InterruptedException, ExecutionException, IOException, TimeoutException {
-        CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
+  }
 
-        // Assert
-        String cancelResponse = bout.toString();
-        assertThat(cancelResponse).contains("Cancelled the Batch Prediction Job");
-        TimeUnit.MINUTES.sleep(2);
+  @After
+  public void tearDown()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
-        // Delete the Batch Prediction Job
-        DeleteBatchPredictionJobSample.deleteBatchPredictionJobSample(PROJECT, batchPredictionJobId);
+    // Assert
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled the Batch Prediction Job");
+    TimeUnit.MINUTES.sleep(2);
 
-        // Assert
-        String deleteResponse = bout.toString();
-        assertThat(deleteResponse).contains("Deleted Batch");
-        System.out.flush();
-        System.setOut(originalPrintStream);
-    }
+    // Delete the Batch Prediction Job
+    DeleteBatchPredictionJobSample.deleteBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
-    @Test
-    public void testCreateBatchPredictionJobBigquerySample() throws IOException {
-        // Act
-        String batchPredictionDisplayName =
-            String.format(
-                "batch_prediction_bigquery_display_name_%s",
-                UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Deleted Batch");
+    System.out.flush();
+    System.setOut(originalPrintStream);
+  }
 
-        String modelName = String.format("projects/%s/locations/us-central1/models/%s", 
-                PROJECT, MODEL_ID);
+  @Test
+  public void testCreateBatchPredictionJobBigquerySample() throws IOException {
+    // Act
+    String batchPredictionDisplayName =
+        String.format(
+            "batch_prediction_bigquery_display_name_%s",
+            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-        CreateBatchPredictionJobBigquerySample.createBatchPredictionJobBigquerySample(
-                PROJECT, 
-                batchPredictionDisplayName,
-                modelName,
-                "bigquery",
-                BIGQUERY_SOURCE_URI,
-                "bigquery",
-                BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX);
+    String modelName =
+        String.format("projects/%s/locations/us-central1/models/%s", PROJECT, MODEL_ID);
 
-        // Assert
-        String got = bout.toString();
-        assertThat(got).contains(batchPredictionDisplayName);
-        assertThat(got).contains("response:");
-        batchPredictionJobId = got.split("Name: ")[1].split("batchPredictionJobs/")[1].split("\n")[0];
-    }
+    CreateBatchPredictionJobBigquerySample.createBatchPredictionJobBigquerySample(
+        PROJECT,
+        batchPredictionDisplayName,
+        modelName,
+        "bigquery",
+        BIGQUERY_SOURCE_URI,
+        "bigquery",
+        BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains(batchPredictionDisplayName);
+    assertThat(got).contains("response:");
+    batchPredictionJobId = got.split("Name: ")[1].split("batchPredictionJobs/")[1].split("\n")[0];
+  }
 }

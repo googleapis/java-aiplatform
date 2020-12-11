@@ -95,13 +95,9 @@ public class CreateTrainingPipelineVideoActionRecognitionSampleTest {
             "temp_create_training_pipeline_video_action_recognition_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateTrainingPipelineVideoActionRecognitionSample.createTrainingPipelineVideoActionRecognitionSample(
-        PROJECT,
-        trainingPipelineDisplayName,
-        DATASET_ID,
-        modelDisplayName,
-        MODEL
-    );
+    CreateTrainingPipelineVideoActionRecognitionSample
+        .createTrainingPipelineVideoActionRecognitionSample(
+            PROJECT, trainingPipelineDisplayName, DATASET_ID, modelDisplayName, MODEL);
 
     // Assert
     String got = bout.toString();

@@ -34,10 +34,12 @@ import org.junit.Test;
 public class CreateDataLabelingJobActiveLearningSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("DATA_LABELING_ACTIVE_LEARNING_DATASET_ID");
+  private static final String DATASET_ID =
+      System.getenv("DATA_LABELING_ACTIVE_LEARNING_DATASET_ID");
   private static final String INSTRUCTION_URI =
       "gs://ucaip-sample-resources/images/datalabeling_instructions.pdf";
-  private static final String INPUTS_SCHEMA_URI = "gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/image_classification_1.0.0.yaml";
+  private static final String INPUTS_SCHEMA_URI =
+      "gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/image_classification_1.0.0.yaml";
   private static final String ANNOTATION_SPEC = "roses";
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -100,7 +102,7 @@ public class CreateDataLabelingJobActiveLearningSampleTest {
         dataLabelingDisplayName,
         DATASET_ID,
         INSTRUCTION_URI,
-        INPUTS_SCHEMA_URI ,
+        INPUTS_SCHEMA_URI,
         ANNOTATION_SPEC);
 
     // Assert

@@ -33,8 +33,10 @@ import org.junit.Test;
 public class CreateTrainingPipelineCustomJobSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String CONTAINER_IMAGE_URI = "gcr.io/ucaip-sample-tests/mnist-custom-job:latest";
-  private static final String GCS_OUTPUT_DIRECTORY = "gs://ucaip-samples-us-central1/training_pipeline_output";
+  private static final String CONTAINER_IMAGE_URI =
+      "gcr.io/ucaip-sample-tests/mnist-custom-job:latest";
+  private static final String GCS_OUTPUT_DIRECTORY =
+      "gs://ucaip-samples-us-central1/training_pipeline_output";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -99,8 +101,7 @@ public class CreateTrainingPipelineCustomJobSampleTest {
         trainingPipelineDisplayName,
         modelDisplayName,
         CONTAINER_IMAGE_URI,
-        GCS_OUTPUT_DIRECTORY
-    );
+        GCS_OUTPUT_DIRECTORY);
 
     // Assert
     String got = bout.toString();

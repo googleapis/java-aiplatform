@@ -74,7 +74,8 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(displayName)
               .setTrainingTaskDefinition(
-                  "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_video_action_recognition_1.0.0.yaml")
+                  "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
+                      + "automl_video_action_recognition_1.0.0.yaml")
               .setTrainingTaskInputs(trainingTaskInputs)
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(modelToUpload)

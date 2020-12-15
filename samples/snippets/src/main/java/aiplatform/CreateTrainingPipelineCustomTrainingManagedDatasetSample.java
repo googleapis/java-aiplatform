@@ -76,16 +76,7 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
       GcsDestination gcsDestination =
           GcsDestination.newBuilder().setOutputUriPrefix(baseOutputUriPrefix).build();
-      // input_data_config
-      InputDataConfig inputDataConfig =
-          InputDataConfig.newBuilder()
-              .setDatasetId(datasetId)
-              .setAnnotationSchemaUri(annotationSchemaUri)
-              .setGcsDestination(gcsDestination)
-              .build();
-      // training_task_definition
-      String customTaskDefinition =
-          "gs://google-cloud-aiplatform/schema/trainingjob/definition/custom_task_1.0.0.yaml";
+
       JsonArray jsonArgs = new JsonArray();
       jsonArgs.add("--model-dir=$(AIP_MODEL_DIR)");
       // training_task_inputs
@@ -123,6 +114,19 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
               .setDisplayName(modelDisplayName)
               .setContainerSpec(modelContainerSpec)
               .build();
+
+      // input_data_config
+      InputDataConfig inputDataConfig =
+          InputDataConfig.newBuilder()
+              .setDatasetId(datasetId)
+              .setAnnotationSchemaUri(annotationSchemaUri)
+              .setGcsDestination(gcsDestination)
+              .build();
+
+      // training_task_definition
+      String customTaskDefinition =
+          "gs://google-cloud-aiplatform/schema/trainingjob/definition/custom_task_1.0.0.yaml";
+
       TrainingPipeline trainingPipeline =
           TrainingPipeline.newBuilder()
               .setDisplayName(displayName)

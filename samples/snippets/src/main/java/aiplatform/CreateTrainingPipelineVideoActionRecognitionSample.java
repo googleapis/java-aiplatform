@@ -23,11 +23,10 @@ import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonObject;
 
 public class CreateTrainingPipelineVideoActionRecognitionSample {
 
@@ -59,11 +58,8 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
-      JsonObject jsonTrainingTaskInputs =
-          Json.createObjectBuilder()
-              // modelType can be either 'CLOUD' or 'MOBILE_VERSATILE_1'
-              .add("modelType", modelType)
-              .build();
+      JsonObject jsonTrainingTaskInputs = new JsonObject();
+      jsonTrainingTaskInputs.addProperty("modelType", modelType);
       Value.Builder trainingTaskInputsBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonTrainingTaskInputs.toString(), trainingTaskInputsBuilder);
       Value trainingTaskInputs = trainingTaskInputsBuilder.build();

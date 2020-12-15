@@ -26,11 +26,10 @@ import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.MachineSpec;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonObject;
 
 public class CreateBatchPredictionJobSample {
 
@@ -72,10 +71,13 @@ public class CreateBatchPredictionJobSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
-      JsonObject jsonModelParameters = Json.createObjectBuilder().build();
+
+      // Passing in an empty Value object for model parameters
+      JsonObject jsonModelParameters = new JsonObject();
       Value.Builder modelParametersBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonModelParameters.toString(), modelParametersBuilder);
       Value modelParameters = modelParametersBuilder.build();
+
       GcsSource gcsSource = GcsSource.newBuilder().addUris(gcsSourceUri).build();
       BatchPredictionJob.InputConfig inputConfig =
           BatchPredictionJob.InputConfig.newBuilder()

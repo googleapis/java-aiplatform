@@ -60,7 +60,7 @@ public class ImportDataVideoActionRecognitionSample {
               .setGcsSource(gcsSource)
               .setImportSchemaUri(
                   "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
-                  + "video_action_recognition_io_format_1.0.0.yaml")
+                      + "video_action_recognition_io_format_1.0.0.yaml")
               .build();
       List<ImportDataConfig> importConfigs = new ArrayList<>();
       importConfigs.add(importConfig0);

@@ -25,12 +25,11 @@ import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
 
 public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
 
@@ -87,31 +86,32 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
       // training_task_definition
       String customTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/custom_task_1.0.0.yaml";
-      JsonArray jsonArgs = Json.createArrayBuilder().add("--model-dir=$(AIP_MODEL_DIR)").build();
+      JsonArray jsonArgs = new JsonArray();
+      jsonArgs.add("--model-dir=$(AIP_MODEL_DIR)");
       // training_task_inputs
-      JsonObject jsonTrainingContainerSpec =
-          Json.createObjectBuilder()
-              .add("imageUri", trainingContainerSpecImageUri)
-              // AIP_MODEL_DIR is set by the service according to baseOutputDirectory.
-              .add("args", jsonArgs)
-              .build();
-      JsonObject jsonMachineSpec =
-          Json.createObjectBuilder().add("machineType", "n1-standard-8").build();
-      JsonObject jsonTrainingWorkerPoolSpec =
-          Json.createObjectBuilder()
-              .add("replicaCount", 1)
-              .add("machineSpec", jsonMachineSpec)
-              .add("containerSpec", jsonTrainingContainerSpec)
-              .build();
-      JsonArray jsonWorkerPoolSpecs =
-          Json.createArrayBuilder().add(jsonTrainingWorkerPoolSpec).build();
-      JsonObject jsonBaseOutputDirectory =
-          Json.createObjectBuilder().add("outputUriPrefix", baseOutputUriPrefix).build();
-      JsonObject jsonTrainingTaskInputs =
-          Json.createObjectBuilder()
-              .add("workerPoolSpecs", jsonWorkerPoolSpecs)
-              .add("baseOutputDirectory", jsonBaseOutputDirectory)
-              .build();
+      JsonObject jsonTrainingContainerSpec = new JsonObject();
+      jsonTrainingContainerSpec.addProperty("imageUri", trainingContainerSpecImageUri);
+      // AIP_MODEL_DIR is set by the service according to baseOutputDirectory.
+      jsonTrainingContainerSpec.add("args", jsonArgs);
+
+      JsonObject jsonMachineSpec = new JsonObject();
+      jsonMachineSpec.addProperty("machineType", "n1-standard-8");
+
+      JsonObject jsonTrainingWorkerPoolSpec = new JsonObject();
+      jsonTrainingWorkerPoolSpec.addProperty("replicaCount", 1);
+      jsonTrainingWorkerPoolSpec.add("machineSpec", jsonMachineSpec);
+      jsonTrainingWorkerPoolSpec.add("containerSpec", jsonTrainingContainerSpec);
+
+      JsonArray jsonWorkerPoolSpecs = new JsonArray();
+      jsonWorkerPoolSpecs.add(jsonTrainingWorkerPoolSpec);
+
+      JsonObject jsonBaseOutputDirectory = new JsonObject();
+      jsonBaseOutputDirectory.addProperty("outputUriPrefix", baseOutputUriPrefix);
+
+      JsonObject jsonTrainingTaskInputs = new JsonObject();
+      jsonTrainingTaskInputs.add("workerPoolSpecs", jsonWorkerPoolSpecs);
+      jsonTrainingTaskInputs.add("baseOutputDirectory", jsonBaseOutputDirectory);
+
       Value.Builder trainingTaskInputsBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonTrainingTaskInputs.toString(), trainingTaskInputsBuilder);
       Value trainingTaskInputs = trainingTaskInputsBuilder.build();

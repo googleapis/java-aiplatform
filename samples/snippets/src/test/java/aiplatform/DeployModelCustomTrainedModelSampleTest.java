@@ -69,9 +69,7 @@ public class DeployModelCustomTrainedModelSampleTest {
 
     // Undeploy the model
     try {
-      UndeployModelSample.undeployModelSample(
-          PROJECT_ID, ENDPOINT_ID, MODEL_ID
-      );
+      UndeployModelSample.undeployModelSample(PROJECT_ID, ENDPOINT_ID, MODEL_ID);
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
       e.printStackTrace();
     }

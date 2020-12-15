@@ -23,12 +23,11 @@ import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
 
 public class CreateTrainingPipelineCustomJobSample {
 
@@ -60,39 +59,35 @@ public class CreateTrainingPipelineCustomJobSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
-      JsonObject jsonMachineSpec =
-          Json.createObjectBuilder().add("machineType", "n1-standard-4").build();
-      JsonArray jsonArgs =
-          Json.createArrayBuilder()
-              // AIP_MODEL_DIR is set by the service according to baseOutputDirectory.
-              .add("--model_dir=$(AIP_MODEL_DIR)")
-              .build();
-      JsonObject jsonContainerSpec =
-          Json.createObjectBuilder()
-              // A working docker image can be found at
-              // gs://cloud-samples-data/ai-platform/mnist_tfrecord/custom_job
-              .add("imageUri", containerImageUri)
-              .add("args", jsonArgs)
-              .build();
-      JsonObject jsonJsonWorkerPoolSpec0 =
-          Json.createObjectBuilder()
-              .add("replicaCount", 1)
-              .add("machineSpec", jsonMachineSpec)
-              .add("containerSpec", jsonContainerSpec)
-              .build();
-      JsonArray jsonWorkerPoolSpecs =
-          Json.createArrayBuilder().add(jsonJsonWorkerPoolSpec0).build();
-      JsonObject jsonBaseOutputDirectory =
-          Json.createObjectBuilder()
-              // The GCS location for outputs must be accessible by the project's AI Platform
-              // service account.
-              .add("output_uri_prefix", baseOutputDirectoryPrefix)
-              .build();
-      JsonObject jsonTrainingTaskInputs =
-          Json.createObjectBuilder()
-              .add("workerPoolSpecs", jsonWorkerPoolSpecs)
-              .add("baseOutputDirectory", jsonBaseOutputDirectory)
-              .build();
+      JsonObject jsonMachineSpec = new JsonObject();
+      jsonMachineSpec.addProperty("machineType", "n1-standard-4");
+
+      JsonArray jsonArgs = new JsonArray();
+      jsonArgs.add("--model_dir=$(AIP_MODEL_DIR)");
+
+      // A working docker image can be found at
+      // gs://cloud-samples-data/ai-platform/mnist_tfrecord/custom_job
+      JsonObject jsonContainerSpec = new JsonObject();
+      jsonContainerSpec.addProperty("imageUri", containerImageUri);
+      jsonContainerSpec.add("args", jsonArgs);
+
+      JsonObject jsonJsonWorkerPoolSpec0 = new JsonObject();
+      jsonJsonWorkerPoolSpec0.addProperty("replicaCount", 1);
+      jsonJsonWorkerPoolSpec0.add("machineSpec", jsonMachineSpec);
+      jsonJsonWorkerPoolSpec0.add("containerSpec", jsonContainerSpec);
+
+      JsonArray jsonWorkerPoolSpecs = new JsonArray();
+      jsonWorkerPoolSpecs.add(jsonJsonWorkerPoolSpec0);
+
+      JsonObject jsonBaseOutputDirectory = new JsonObject();
+      // The GCS location for outputs must be accessible by the project's AI Platform
+      // service account.
+      jsonBaseOutputDirectory.addProperty("output_uri_prefix", baseOutputDirectoryPrefix);
+
+      JsonObject jsonTrainingTaskInputs = new JsonObject();
+      jsonTrainingTaskInputs.add("workerPoolSpecs", jsonWorkerPoolSpecs);
+      jsonTrainingTaskInputs.add("baseOutputDirectory", jsonBaseOutputDirectory);
+
       Value.Builder trainingTaskInputsBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonTrainingTaskInputs.toString(), trainingTaskInputsBuilder);
       Value trainingTaskInputs = trainingTaskInputsBuilder.build();

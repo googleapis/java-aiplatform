@@ -22,12 +22,11 @@ import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
 
 public class CreateDataLabelingJobActiveLearningSample {
 
@@ -61,9 +60,10 @@ public class CreateDataLabelingJobActiveLearningSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
-      JsonArray jsonAnnotationSpecs = Json.createArrayBuilder().add(annotationSpec).build();
-      JsonObject jsonInputs =
-          Json.createObjectBuilder().add("annotation_specs", jsonAnnotationSpecs).build();
+      JsonArray jsonAnnotationSpecs = new JsonArray();
+      jsonAnnotationSpecs.add(annotationSpec);
+      JsonObject jsonInputs = new JsonObject();
+      jsonInputs.add("annotation_specs", jsonAnnotationSpecs);
       Value.Builder inputsBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonInputs.toString(), inputsBuilder);
       Value inputs = inputsBuilder.build();

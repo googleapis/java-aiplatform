@@ -23,11 +23,10 @@ import com.google.cloud.aiplatform.v1beta1.GcsSource;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonObject;
 
 public class CreateBatchPredictionJobVideoActionRecognitionSample {
 
@@ -59,8 +58,8 @@ public class CreateBatchPredictionJobVideoActionRecognitionSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
-      JsonObject jsonModelParameters =
-          Json.createObjectBuilder().add("confidenceThreshold", 0.5).build();
+      JsonObject jsonModelParameters = new JsonObject();
+      jsonModelParameters.addProperty("confidenceThreshold", 0.5);
       Value.Builder modelParametersBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonModelParameters.toString(), modelParametersBuilder);
       Value modelParameters = modelParametersBuilder.build();

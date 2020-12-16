@@ -91,13 +91,10 @@ public class CreateBatchPredictionJobSampleTest {
             "batch_prediction_bigquery_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    String modelName =
-        String.format("projects/%s/locations/us-central1/models/%s", PROJECT, MODEL_ID);
-
     CreateBatchPredictionJobSample.createBatchPredictionJobSample(
         PROJECT,
         batchPredictionDisplayName,
-        modelName,
+        MODEL_ID,
         "jsonl",
         GCS_SOURCE_URI,
         "jsonl",

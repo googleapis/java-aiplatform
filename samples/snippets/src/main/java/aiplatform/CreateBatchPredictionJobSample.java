@@ -26,6 +26,7 @@ import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.MachineSpec;
+import com.google.cloud.aiplatform.v1beta1.ModelName;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
@@ -55,7 +56,7 @@ public class CreateBatchPredictionJobSample {
   static void createBatchPredictionJobSample(
       String project,
       String displayName,
-      String modelName,
+      String model,
       String instancesFormat,
       String gcsSourceUri,
       String predictionsFormat,
@@ -103,10 +104,10 @@ public class CreateBatchPredictionJobSample {
               .setStartingReplicaCount(1)
               .setMaxReplicaCount(1)
               .build();
+      String modelName = ModelName.of(project, location, model).toString();
       BatchPredictionJob batchPredictionJob =
           BatchPredictionJob.newBuilder()
               .setDisplayName(displayName)
-              // Format: 'projects/{project}/locations/{location}/models/{model_id}'
               .setModel(modelName)
               .setModelParameters(modelParameters)
               .setInputConfig(inputConfig)

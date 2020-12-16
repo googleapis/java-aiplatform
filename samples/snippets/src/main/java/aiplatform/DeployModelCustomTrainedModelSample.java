@@ -26,6 +26,7 @@ import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.EndpointServiceClient;
 import com.google.cloud.aiplatform.v1beta1.EndpointServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.MachineSpec;
+import com.google.cloud.aiplatform.v1beta1.ModelName;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +45,7 @@ public class DeployModelCustomTrainedModelSample {
   }
 
   static void deployModelCustomTrainedModelSample(
-      String project, String endpointId, String modelName, String deployedModelDisplayName)
+      String project, String endpointId, String model, String deployedModelDisplayName)
       throws IOException, ExecutionException, InterruptedException {
     EndpointServiceSettings settings =
         EndpointServiceSettings.newBuilder()
@@ -59,9 +60,10 @@ public class DeployModelCustomTrainedModelSample {
       MachineSpec machineSpec = MachineSpec.newBuilder().setMachineType("n1-standard-2").build();
       DedicatedResources dedicatedResources =
           DedicatedResources.newBuilder().setMinReplicaCount(1).setMachineSpec(machineSpec).build();
+
+      String modelName = ModelName.of(project, location, model).toString();
       DeployedModel deployedModel =
           DeployedModel.newBuilder()
-              // format: 'projects/{project}/locations/{location}/models/{model}'
               .setModel(modelName)
               .setDisplayName(deployedModelDisplayName)
               // `dedicated_resources` must be used for non-AutoML models

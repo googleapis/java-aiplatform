@@ -37,7 +37,6 @@ public class DeployModelCustomTrainedModelSampleTest {
   private static final String PROJECT_ID = "ucaip-sample-tests";
   private static final String MODEL_ID = "4992732768149438464";
   private static final String ENDPOINT_ID = "4366591682456584192";
-  private String modelName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -55,7 +54,6 @@ public class DeployModelCustomTrainedModelSampleTest {
 
   @Before
   public void setUp() {
-    modelName = String.format("projects/%s/locations/us-central1/models/%s", PROJECT_ID, MODEL_ID);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
@@ -87,7 +85,7 @@ public class DeployModelCustomTrainedModelSampleTest {
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
     try {
       DeployModelCustomTrainedModelSample.deployModelCustomTrainedModelSample(
-          PROJECT_ID, ENDPOINT_ID, modelName, deployedModelDisplayName);
+          PROJECT_ID, ENDPOINT_ID, MODEL_ID, deployedModelDisplayName);
       // Assert
       String got = bout.toString();
       assertThat(got).contains("deployModelResponse");

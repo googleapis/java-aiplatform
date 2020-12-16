@@ -18,9 +18,11 @@ package aiplatform;
 
 // [START aiplatform_create_data_labeling_job_specialist_pool_sample]
 import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
+import com.google.cloud.aiplatform.v1beta1.DatasetName;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.SpecialistPoolName;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
@@ -74,11 +76,14 @@ public class CreateDataLabelingJobSpecialistPoolSample {
       Value.Builder inputsBuilder = Value.newBuilder();
       JsonFormat.parser().merge(jsonInputs.toString(), inputsBuilder);
       Value inputs = inputsBuilder.build();
+
+      String datasetName = DatasetName.of(project, location, dataset).toString();
+      String specialistPoolName = SpecialistPoolName.of(project, location, specialistPool).toString();
+
       DataLabelingJob dataLabelingJob =
           DataLabelingJob.newBuilder()
               .setDisplayName(displayName)
-              // Full resource name: projects/{project}/locations/{location}/datasets/{dataset_id}
-              .addDatasets(dataset)
+              .addDatasets(datasetName)
               .setLabelerCount(1)
               .setInstructionUri(instructionUri)
               .setInputsSchemaUri(inputsSchemaUri)
@@ -86,9 +91,7 @@ public class CreateDataLabelingJobSpecialistPoolSample {
               .putAnnotationLabels(
                   "aiplatform.googleapis.com/annotation_set_name",
                   "data_labeling_job_specialist_pool")
-              // Full resource name:
-              // projects/{project}/locations/{location}/specialistPools/{specialist_pool_id}
-              .addSpecialistPools(specialistPool)
+              .addSpecialistPools(specialistPoolName)
               .build();
       LocationName parent = LocationName.of(project, location);
       DataLabelingJob response = client.createDataLabelingJob(parent, dataLabelingJob);

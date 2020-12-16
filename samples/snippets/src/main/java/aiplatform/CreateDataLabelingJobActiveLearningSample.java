@@ -19,6 +19,7 @@ package aiplatform;
 // [START aiplatform_create_data_labeling_job_active_learning_sample]
 import com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig;
 import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
+import com.google.cloud.aiplatform.v1beta1.DatasetName;
 import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
 import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
@@ -69,11 +70,13 @@ public class CreateDataLabelingJobActiveLearningSample {
       Value inputs = inputsBuilder.build();
       ActiveLearningConfig activeLearningConfig =
           ActiveLearningConfig.newBuilder().setMaxDataItemCount(1).build();
+
+      String datasetName = DatasetName.of(project, location, dataset).toString();
+
       DataLabelingJob dataLabelingJob =
           DataLabelingJob.newBuilder()
               .setDisplayName(displayName)
-              // Full resource name: projects/{project}/locations/{location}/datasets/{dataset_id}
-              .addDatasets(dataset)
+              .addDatasets(datasetName)
               .setLabelerCount(1)
               .setInstructionUri(instructionUri)
               .setInputsSchemaUri(inputsSchemaUri)

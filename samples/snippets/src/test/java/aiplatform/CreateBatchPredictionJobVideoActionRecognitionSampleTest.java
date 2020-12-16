@@ -92,12 +92,9 @@ public class CreateBatchPredictionJobVideoActionRecognitionSampleTest {
             "batch_prediction_video_action_recognition_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    String modelName =
-        String.format("projects/%s/locations/us-central1/models/%s", PROJECT, MODEL_ID);
-
     CreateBatchPredictionJobVideoActionRecognitionSample
         .createBatchPredictionJobVideoActionRecognitionSample(
-            PROJECT, batchPredictionDisplayName, modelName, GCS_SOURCE_URI, GCS_OUTPUT_URI);
+            PROJECT, batchPredictionDisplayName, MODEL_ID, GCS_SOURCE_URI, GCS_OUTPUT_URI);
 
     // Assert
     String got = bout.toString();

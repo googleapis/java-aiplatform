@@ -74,9 +74,6 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
-      GcsDestination gcsDestination =
-          GcsDestination.newBuilder().setOutputUriPrefix(baseOutputUriPrefix).build();
-
       JsonArray jsonArgs = new JsonArray();
       jsonArgs.add("--model-dir=$(AIP_MODEL_DIR)");
       // training_task_inputs
@@ -114,7 +111,9 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
               .setDisplayName(modelDisplayName)
               .setContainerSpec(modelContainerSpec)
               .build();
-
+      GcsDestination gcsDestination =
+          GcsDestination.newBuilder().setOutputUriPrefix(baseOutputUriPrefix).build();
+      
       // input_data_config
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder()

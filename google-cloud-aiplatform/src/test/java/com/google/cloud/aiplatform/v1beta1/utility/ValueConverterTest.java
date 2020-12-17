@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1.utility;
 
+import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType;
 import com.google.gson.JsonObject;

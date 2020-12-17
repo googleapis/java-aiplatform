@@ -37,8 +37,8 @@ public class UploadModelSampleTest {
   private static final String METADATASCHEMA_URI = "";
   private static final String IMAGE_URI =
       "gcr.io/cloud-ml-service-public/"
-              + "cloud-ml-online-prediction-model-server-cpu:"
-              + "v1_15py3cmle_op_images_20200229_0210_RC00";
+          + "cloud-ml-online-prediction-model-server-cpu:"
+          + "v1_15py3cmle_op_images_20200229_0210_RC00";
   private static final String ARTIFACT_URI = "gs://ucaip-samples-us-central1/model/explain/";
   private ByteArrayOutputStream bout;
   private PrintStream out;

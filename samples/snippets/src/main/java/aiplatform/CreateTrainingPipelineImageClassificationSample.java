@@ -72,7 +72,7 @@ public class CreateTrainingPipelineImageClassificationSample {
       String location = "us-central1";
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-                  + "automl_image_classification_1.0.0.yaml";
+              + "automl_image_classification_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
       AutoMlImageClassificationInputs autoMlImageClassificationInputs =

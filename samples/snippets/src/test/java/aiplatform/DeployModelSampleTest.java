@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
@@ -66,8 +65,7 @@ public class DeployModelSampleTest {
   }
 
   @Test
-  public void testDeployModelSample()
-      throws TimeoutException {
+  public void testDeployModelSample() throws TimeoutException {
     // As model deployment can take a long time, instead try to deploy a
     // nonexistent model and confirm that the model was not found, but other
     // elements of the request were valid.
@@ -76,8 +74,8 @@ public class DeployModelSampleTest {
             "temp_deploy_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
     try {
-      DeployModelSample.deployModelSample(PROJECT_ID, deployedModelDisplayName,
-          "4366591682456584192", MODEL_ID);
+      DeployModelSample.deployModelSample(
+          PROJECT_ID, deployedModelDisplayName, "4366591682456584192", MODEL_ID);
       // Assert
       String got = bout.toString();
       assertThat(got).contains("is not found.");

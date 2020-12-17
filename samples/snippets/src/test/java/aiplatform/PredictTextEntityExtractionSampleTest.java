@@ -86,4 +86,3 @@ public class PredictTextEntityExtractionSampleTest {
     assertThat(got).contains("Predict Text Entity Extraction Response");
   }
 }
-

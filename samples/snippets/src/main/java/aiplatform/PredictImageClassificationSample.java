@@ -19,6 +19,7 @@ package aiplatform;
 // [START aiplatform_predict_image_classification_sample]
 
 import com.google.api.client.util.Base64;
+import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
@@ -26,7 +27,6 @@ import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageClassificationPredictionInstance;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.params.ImageClassificationPredictionParams;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult;
-import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -78,18 +78,20 @@ public class PredictImageClassificationSample {
           .build();
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, ValueConverter.toValue(predictionParams));
+          predictionServiceClient.predict(endpointName, instances,
+              ValueConverter.toValue(predictionParams));
       System.out.println("Predict Image Classification Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
 
-        ClassificationPredictionResult.Builder resultBuilder = ClassificationPredictionResult.newBuilder();
+        ClassificationPredictionResult.Builder resultBuilder =
+            ClassificationPredictionResult.newBuilder();
         // Display names and confidences values correspond to
         // IDs in the ID list.
         ClassificationPredictionResult result =
-            (ClassificationPredictionResult)ValueConverter.fromValue(resultBuilder, prediction);
+            (ClassificationPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
         int counter = 0;
         for (Long id : result.getIdsList()) {
           System.out.printf("Label ID: %d\n", id);

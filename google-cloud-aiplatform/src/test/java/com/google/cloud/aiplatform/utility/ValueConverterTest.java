@@ -87,7 +87,7 @@ public class ValueConverterTest {
 
     Value actualStringValue = (Value) actualStringValueEntry.getValue();
     Assert.assertEquals("CLOUD", actualStringValue.getStringValue());
-    
+
     Value actualNumberValue = (Value) actualNumberValueEntry.getValue();
     // protobuf stores int64 values as strings rather than numbers
     long actualNumber = Long.parseLong(actualNumberValue.getStringValue());

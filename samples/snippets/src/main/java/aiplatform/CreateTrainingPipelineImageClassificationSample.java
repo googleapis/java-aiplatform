@@ -17,7 +17,7 @@
 package aiplatform;
 
 // [START aiplatform_create_training_pipeline_image_classification_sample]
-
+import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -40,7 +40,6 @@ import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType;
-import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.rpc.Status;
 import java.io.IOException;
 

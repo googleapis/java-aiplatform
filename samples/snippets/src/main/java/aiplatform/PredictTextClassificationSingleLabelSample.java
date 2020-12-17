@@ -17,14 +17,13 @@
 package aiplatform;
 
 // [START aiplatform_predict_text_classification_sample]
-
+import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextClassificationPredictionInstance;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult;
-import com.google.cloud.aiplatform.utility.ValueConverter;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,12 +71,13 @@ public class PredictTextClassificationSingleLabelSample {
       System.out.println("Predictions:\n\n");
       for (Value prediction : predictResponse.getPredictionsList()) {
 
-        ClassificationPredictionResult.Builder resultBuilder = ClassificationPredictionResult.newBuilder();
+        ClassificationPredictionResult.Builder resultBuilder =
+            ClassificationPredictionResult.newBuilder();
 
         // Display names and confidences values correspond to
         // IDs in the ID list.
         ClassificationPredictionResult result =
-            (ClassificationPredictionResult)ValueConverter.fromValue(resultBuilder, prediction);
+            (ClassificationPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
         int counter = 0;
         for (Long id : result.getIdsList()) {
           System.out.printf("Label ID: %d\n", id);

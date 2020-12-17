@@ -25,7 +25,6 @@ import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.util.Collection;
-import java.util.stream.Collectors;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,7 +79,6 @@ public class ValueConverterTest {
         actualNumberValueEntry = entry;
       }
     }
-
 
     Value actualBoolValue = (Value) actualBoolValueEntry.getValue();
     Assert.assertEquals(testObjectInputs.getMultiLabel(), actualBoolValue.getBoolValue());

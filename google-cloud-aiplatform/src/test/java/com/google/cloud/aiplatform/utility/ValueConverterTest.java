@@ -66,27 +66,28 @@ public class ValueConverterTest {
     Collection<Object> innerFields = actualStruct.getAllFields().values();
     Collection<MapEntry> fieldEntries = (Collection<MapEntry>) innerFields.toArray()[0];
 
-    MapEntry actualBoolValueEntry =
-        fieldEntries.stream()
-            .filter(item -> (item.getKey().toString().contains("multiLabel")))
-            .collect(Collectors.toList())
-            .get(0);
+    MapEntry actualBoolValueEntry = null;
+    MapEntry actualStringValueEntry = null;
+    MapEntry actualNumberValueEntry = null;
+
+    for (MapEntry entry : fieldEntries) {
+      String key = entry.getKey().toString();
+      if (key.contains("multiLabel")) {
+        actualBoolValueEntry = entry;
+      } else if (key.contains("modelType")) {
+        actualStringValueEntry = entry;
+      } else if (key.contains("budgetMilliNodeHours")) {
+        actualNumberValueEntry = entry;
+      }
+    }
+
+
     Value actualBoolValue = (Value) actualBoolValueEntry.getValue();
     Assert.assertEquals(testObjectInputs.getMultiLabel(), actualBoolValue.getBoolValue());
 
-    MapEntry actualStringValueEntry =
-        fieldEntries.stream()
-            .filter(item -> (item.getKey().toString().contains("modelType")))
-            .collect(Collectors.toList())
-            .get(0);
     Value actualStringValue = (Value) actualStringValueEntry.getValue();
     Assert.assertEquals("CLOUD", actualStringValue.getStringValue());
-
-    MapEntry actualNumberValueEntry =
-        fieldEntries.stream()
-            .filter(item -> (item.getKey().toString().contains("budgetMilliNodeHours")))
-            .collect(Collectors.toList())
-            .get(0);
+    
     Value actualNumberValue = (Value) actualNumberValueEntry.getValue();
     // protobuf stores int64 values as strings rather than numbers
     long actualNumber = Long.parseLong(actualNumberValue.getStringValue());

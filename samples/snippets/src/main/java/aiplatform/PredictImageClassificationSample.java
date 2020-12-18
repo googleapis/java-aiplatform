@@ -19,7 +19,7 @@ package aiplatform;
 // [START aiplatform_predict_image_classification_sample]
 
 import com.google.api.client.util.Base64;
-import com.google.cloud.aiplatform.utility.ValueConverter;
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;

@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.utility;
+package com.google.cloud.aiplatform.util;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType;
@@ -25,42 +28,25 @@ import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.util.Collection;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.function.ThrowingRunnable;
 
 public class ValueConverterTest {
 
-  private static JsonObject testJsonInputs;
-  private static Value testValueInputs;
-  private static AutoMlImageClassificationInputs testObjectInputs;
-
-  @Before
-  public void setUp() throws InvalidProtocolBufferException {
-    testJsonInputs = new JsonObject();
-    testJsonInputs.addProperty("multi_label", true);
-    testJsonInputs.addProperty("model_type", "CLOUD");
-    testJsonInputs.addProperty("budget_milli_node_hours", 8000);
-
-    Value.Builder valueBuilder = Value.newBuilder();
-    JsonFormat.parser().merge(testJsonInputs.toString(), valueBuilder);
-    testValueInputs = valueBuilder.build();
-
-    testObjectInputs =
+  @Test
+  public void testValueConverterToValue() throws InvalidProtocolBufferException {
+    AutoMlImageClassificationInputs testObjectInputs =
         AutoMlImageClassificationInputs.newBuilder()
             .setModelType(ModelType.CLOUD)
             .setBudgetMilliNodeHours(8000)
             .setMultiLabel(true)
             .setDisableEarlyStopping(false)
             .build();
-  }
 
-  @Test
-  public void testValueConverterToValue() throws InvalidProtocolBufferException {
     Value actualConvertedValue = ValueConverter.toValue(testObjectInputs);
 
     Struct actualStruct = actualConvertedValue.getStructValue();
-    Assert.assertEquals(3, actualStruct.getFieldsCount());
+    assertEquals(3, actualStruct.getFieldsCount());
 
     Collection<Object> innerFields = actualStruct.getAllFields().values();
     Collection<MapEntry> fieldEntries = (Collection<MapEntry>) innerFields.toArray()[0];
@@ -71,35 +57,65 @@ public class ValueConverterTest {
 
     for (MapEntry entry : fieldEntries) {
       String key = entry.getKey().toString();
-      if (key.contains("multiLabel")) {
+      if (key.equals("multiLabel")) {
         actualBoolValueEntry = entry;
-      } else if (key.contains("modelType")) {
+      } else if (key.equals("modelType")) {
         actualStringValueEntry = entry;
-      } else if (key.contains("budgetMilliNodeHours")) {
+      } else if (key.equals("budgetMilliNodeHours")) {
         actualNumberValueEntry = entry;
       }
     }
 
     Value actualBoolValue = (Value) actualBoolValueEntry.getValue();
-    Assert.assertEquals(testObjectInputs.getMultiLabel(), actualBoolValue.getBoolValue());
+    assertEquals(testObjectInputs.getMultiLabel(), actualBoolValue.getBoolValue());
 
     Value actualStringValue = (Value) actualStringValueEntry.getValue();
-    Assert.assertEquals("CLOUD", actualStringValue.getStringValue());
+    assertEquals("CLOUD", actualStringValue.getStringValue());
 
     Value actualNumberValue = (Value) actualNumberValueEntry.getValue();
     // protobuf stores int64 values as strings rather than numbers
     long actualNumber = Long.parseLong(actualNumberValue.getStringValue());
-    Assert.assertEquals(testObjectInputs.getBudgetMilliNodeHours(), actualNumber);
+    assertEquals(testObjectInputs.getBudgetMilliNodeHours(), actualNumber);
   }
 
   @Test
   public void testValueConverterFromValue() throws InvalidProtocolBufferException {
+
+    JsonObject testJsonInputs = new JsonObject();
+    testJsonInputs.addProperty("multi_label", true);
+    testJsonInputs.addProperty("model_type", "CLOUD");
+    testJsonInputs.addProperty("budget_milli_node_hours", 8000);
+
+    Value.Builder valueBuilder = Value.newBuilder();
+    JsonFormat.parser().merge(testJsonInputs.toString(), valueBuilder);
+    Value testValueInputs = valueBuilder.build();
+
     AutoMlImageClassificationInputs actualInputs =
         (AutoMlImageClassificationInputs)
             ValueConverter.fromValue(AutoMlImageClassificationInputs.newBuilder(), testValueInputs);
 
-    Assert.assertEquals(8000, actualInputs.getBudgetMilliNodeHours());
-    Assert.assertEquals(true, actualInputs.getMultiLabel());
-    Assert.assertEquals(ModelType.CLOUD, actualInputs.getModelType());
+    assertEquals(8000, actualInputs.getBudgetMilliNodeHours());
+    assertEquals(true, actualInputs.getMultiLabel());
+    assertEquals(ModelType.CLOUD, actualInputs.getModelType());
+  }
+
+  @Test
+  public void testValueConverterFromValueWithBadInputs() throws InvalidProtocolBufferException {
+    JsonObject testBadJsonInputs = new JsonObject();
+    testBadJsonInputs.addProperty("wrong_key", "some_value");
+
+    Value.Builder badValueBuilder = Value.newBuilder();
+    JsonFormat.parser().merge(testBadJsonInputs.toString(), badValueBuilder);
+    Value testBadValueInputs = badValueBuilder.build();
+
+    assertThrows(InvalidProtocolBufferException.class, new ThrowingRunnable() {
+      @Override
+      public void run() throws Throwable {
+        AutoMlImageClassificationInputs actualBadInput =
+            (AutoMlImageClassificationInputs)
+                ValueConverter.fromValue(AutoMlImageClassificationInputs.newBuilder(),
+                    testBadValueInputs);
+      }
+    });
   }
 }

@@ -17,7 +17,7 @@
 package aiplatform;
 
 // [START aiplatform_create_training_pipeline_image_classification_sample]
-import com.google.cloud.aiplatform.utility.ValueConverter;
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;

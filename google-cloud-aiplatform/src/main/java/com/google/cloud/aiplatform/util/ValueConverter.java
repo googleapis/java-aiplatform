@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.utility;
+package com.google.cloud.aiplatform.util;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;

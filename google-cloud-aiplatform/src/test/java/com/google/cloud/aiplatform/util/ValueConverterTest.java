@@ -106,7 +106,7 @@ public class ValueConverterTest {
 
     Value.Builder badValueBuilder = Value.newBuilder();
     JsonFormat.parser().merge(testBadJsonInputs.toString(), badValueBuilder);
-    Value testBadValueInputs = badValueBuilder.build();
+    final Value testBadValueInputs = badValueBuilder.build();
 
     assertThrows(
         InvalidProtocolBufferException.class,

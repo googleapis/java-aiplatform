@@ -108,14 +108,16 @@ public class ValueConverterTest {
     JsonFormat.parser().merge(testBadJsonInputs.toString(), badValueBuilder);
     Value testBadValueInputs = badValueBuilder.build();
 
-    assertThrows(InvalidProtocolBufferException.class, new ThrowingRunnable() {
-      @Override
-      public void run() throws Throwable {
-        AutoMlImageClassificationInputs actualBadInput =
-            (AutoMlImageClassificationInputs)
-                ValueConverter.fromValue(AutoMlImageClassificationInputs.newBuilder(),
-                    testBadValueInputs);
-      }
-    });
+    assertThrows(
+        InvalidProtocolBufferException.class,
+        new ThrowingRunnable() {
+          @Override
+          public void run() throws Throwable {
+            AutoMlImageClassificationInputs actualBadInput =
+                (AutoMlImageClassificationInputs)
+                    ValueConverter.fromValue(
+                        AutoMlImageClassificationInputs.newBuilder(), testBadValueInputs);
+          }
+        });
   }
 }

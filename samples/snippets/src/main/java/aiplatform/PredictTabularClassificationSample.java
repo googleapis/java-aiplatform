@@ -74,8 +74,8 @@ public class PredictTabularClassificationSample {
                 .fromValue(resultBuilder, prediction);
 
         for (int i = 0; i < result.getClassesCount(); i++) {
-            System.out.printf("\tClass: %s", result.getClasses(i));
-            System.out.printf("\tScore: %f", result.getScores(i));
+          System.out.printf("\tClass: %s", result.getClasses(i));
+          System.out.printf("\tScore: %f", result.getScores(i));
         }
       }
     }

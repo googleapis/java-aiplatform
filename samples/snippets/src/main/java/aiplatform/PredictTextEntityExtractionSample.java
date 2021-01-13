@@ -81,14 +81,14 @@ public class PredictTextEntityExtractionSample {
             (TextExtractionPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
 
         for (int i = 0; i < result.getIdsCount(); i++) {
-            long textStartOffset = result.getTextSegmentStartOffsets(i);
-            long textEndOffset = result.getTextSegmentEndOffsets(i);
-            String entity = content.substring((int)textStartOffset, (int)textEndOffset);
+          long textStartOffset = result.getTextSegmentStartOffsets(i);
+          long textEndOffset = result.getTextSegmentEndOffsets(i);
+          String entity = content.substring((int)textStartOffset, (int)textEndOffset);
 
-            System.out.format("\tEntity: %s\n", entity);
-            System.out.format("\tEntity type: %s\n", result.getDisplayNames(i));
-            System.out.format("\tConfidences: %f\n", result.getConfidences(i));
-            System.out.format("\tIDs: %d\n", result.getIds(i));
+          System.out.format("\tEntity: %s\n", entity);
+          System.out.format("\tEntity type: %s\n", result.getDisplayNames(i));
+          System.out.format("\tConfidences: %f\n", result.getConfidences(i));
+          System.out.format("\tIDs: %d\n", result.getIds(i));
         }
       }
     }

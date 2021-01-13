@@ -66,7 +66,7 @@ public class PredictImageObjectDetectionSample {
 
       ImageObjectDetectionPredictionParams params =
           ImageObjectDetectionPredictionParams.newBuilder()
-              .setConfidenceThreshold((float)(0.5))
+              .setConfidenceThreshold((float) (0.5))
               .setMaxPredictions(5)
               .build();
 
@@ -94,10 +94,10 @@ public class PredictImageObjectDetectionSample {
                 .fromValue(resultBuilder, prediction);
 
         for (int i = 0; i < result.getIdsCount(); i++) {
-            System.out.printf("\tDisplay name: %s\n", result.getDisplayNames(i));
-            System.out.printf("\tConfidences: %f\n", result.getConfidences(i));
-            System.out.printf("\tIDs: %d\n", result.getIds(i));
-            System.out.printf("\tBounding boxes: %s\n", result.getBboxes(i));
+          System.out.printf("\tDisplay name: %s\n", result.getDisplayNames(i));
+          System.out.printf("\tConfidences: %f\n", result.getConfidences(i));
+          System.out.printf("\tIDs: %d\n", result.getIds(i));
+          System.out.printf("\tBounding boxes: %s\n", result.getBboxes(i));
         }
       }
     }

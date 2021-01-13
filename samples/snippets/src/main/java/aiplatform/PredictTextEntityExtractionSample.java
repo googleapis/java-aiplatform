@@ -83,7 +83,7 @@ public class PredictTextEntityExtractionSample {
         for (int i = 0; i < result.getIdsCount(); i++) {
           long textStartOffset = result.getTextSegmentStartOffsets(i);
           long textEndOffset = result.getTextSegmentEndOffsets(i);
-          String entity = content.substring((int)textStartOffset, (int)textEndOffset);
+          String entity = content.substring((int) textStartOffset, (int) textEndOffset);
 
           System.out.format("\tEntity: %s\n", entity);
           System.out.format("\tEntity type: %s\n", result.getDisplayNames(i));

@@ -26,11 +26,7 @@ import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
-import com.google.gson.JsonObject;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
-import sun.text.normalizer.NormalizerBase.Mode;
 
 public class CreateTrainingPipelineVideoActionRecognitionSample {
 

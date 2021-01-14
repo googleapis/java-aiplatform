@@ -29,7 +29,6 @@ import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
 import com.google.rpc.Status;
 import java.io.IOException;
 

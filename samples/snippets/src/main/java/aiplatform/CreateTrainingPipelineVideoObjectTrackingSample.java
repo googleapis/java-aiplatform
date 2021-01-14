@@ -31,10 +31,7 @@ import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import java.io.IOException;
 
 public class CreateTrainingPipelineVideoObjectTrackingSample {

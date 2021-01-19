@@ -30,10 +30,8 @@ import org.junit.Test;
 public class GetModelEvaluationTabularClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_CLASSIFICATION_MODEL_ID");
-  private static final String EVALUATION_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_CLASSIFICATION_EVALUATION_ID");
+  private static final String MODEL_ID = "6036688272397172736";
+  private static final String EVALUATION_ID = "1866113044163962838";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

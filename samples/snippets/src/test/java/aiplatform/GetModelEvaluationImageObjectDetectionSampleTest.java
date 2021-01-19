@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class GetModelEvaluationImageObjectDetectionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("IMAGE_OBJECT_DETECT_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("IMAGE_OBJECT_DETECT_EVALUATION_ID");
+  private static final String MODEL_ID = "3512561418744365056";
+  private static final String EVALUATION_ID = "9035588644970168320";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

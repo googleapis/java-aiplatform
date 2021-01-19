@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class GetModelEvaluationTextClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("TEXT_CLASS_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("TEXT_CLASS_EVALUATION_ID");
+  private static final String MODEL_ID = "7827432074230366208";
+  private static final String EVALUATION_ID = "5064258198559522816";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

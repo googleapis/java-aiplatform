@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class GetModelEvaluationTextEntityExtractionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("TEXT_ENTITY_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("TEXT_ENTITY_EVALUATION_ID");
+  private static final String MODEL_ID = "6305215400179138560";
+  private static final String EVALUATION_ID = "1754112472442208256";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

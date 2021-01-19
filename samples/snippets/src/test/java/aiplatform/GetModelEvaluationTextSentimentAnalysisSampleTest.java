@@ -49,8 +49,6 @@ public class GetModelEvaluationTextSentimentAnalysisSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TEXT_SENTI_MODEL_ID");
-    requireEnvVar("TEXT_SENTI_EVALUATION_ID");
   }
 
   @Before

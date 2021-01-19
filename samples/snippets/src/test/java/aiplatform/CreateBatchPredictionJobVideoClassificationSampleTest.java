@@ -53,7 +53,6 @@ public class CreateBatchPredictionJobVideoClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("BATCH_PREDICTION_VIDEO_CLASS_MODEL_ID");
   }
 
   @Before

@@ -49,8 +49,6 @@ public class GetModelEvaluationTextEntityExtractionSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TEXT_ENTITY_MODEL_ID");
-    requireEnvVar("TEXT_ENTITY_EVALUATION_ID");
   }
 
   @Before

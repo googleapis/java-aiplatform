@@ -46,8 +46,6 @@ public class GetModelEvaluationTabularClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_CLASSIFICATION_MODEL_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_CLASSIFICATION_EVALUATION_ID");
   }
 
   @Before

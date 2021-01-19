@@ -46,8 +46,6 @@ public class GetModelEvaluationVideoClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("VIDEO_CLASS_MODEL_ID");
-    requireEnvVar("VIDEO_CLASS_EVALUATION_ID");
   }
 
   @Before

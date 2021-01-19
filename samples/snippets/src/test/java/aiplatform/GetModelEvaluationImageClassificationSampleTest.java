@@ -49,8 +49,6 @@ public class GetModelEvaluationImageClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("IMAGE_CLASS_MODEL_ID");
-    requireEnvVar("IMAGE_CLASS_EVALUATION_ID");
   }
 
   @Before

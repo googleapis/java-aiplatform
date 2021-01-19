@@ -49,7 +49,6 @@ public class ExportModelTabularClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
   }
 
   @Before

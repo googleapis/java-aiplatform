@@ -46,8 +46,6 @@ public class GetModelEvaluationVideoObjectTrackingSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("VIDEO_OBJECT_DETECT_MODEL_ID");
-    requireEnvVar("VIDEO_OBJECT_DETECT_EVALUATION_ID");
   }
 
   @Before

@@ -49,8 +49,6 @@ public class GetModelEvaluationTextClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TEXT_CLASS_MODEL_ID");
-    requireEnvVar("TEXT_CLASS_EVALUATION_ID");
   }
 
   @Before

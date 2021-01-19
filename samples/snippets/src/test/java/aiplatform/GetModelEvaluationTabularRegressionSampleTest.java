@@ -46,8 +46,6 @@ public class GetModelEvaluationTabularRegressionSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
   }
 
   @Before

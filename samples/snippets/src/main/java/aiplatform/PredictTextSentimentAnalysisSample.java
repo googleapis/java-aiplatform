@@ -18,14 +18,10 @@ package aiplatform;
 
 // [START aiplatform_predict_text_sentiment_analysis_sample]
 
-import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance;
-import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult;
-import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
@@ -56,31 +52,25 @@ public class PredictTextSentimentAnalysisSample {
     try (PredictionServiceClient predictionServiceClient =
         PredictionServiceClient.create(predictionServiceSettings)) {
       String location = "us-central1";
+      String jsonString = "{\"content\": \"" + content + "\"}";
 
       EndpointName endpointName = EndpointName.of(project, location, endpointId);
 
-      TextSentimentPredictionInstance instance =
-          TextSentimentPredictionInstance.newBuilder()
-              .setContent(content)
-              .build();
+      Value parameter = Value.newBuilder().setNumberValue(0).setNumberValue(5).build();
+      Value.Builder instance = Value.newBuilder();
+      JsonFormat.parser().merge(jsonString, instance);
 
       List<Value> instances = new ArrayList<>();
-      instances.add(ValueConverter.toValue(instance));
+      instances.add(instance.build());
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, ValueConverter.EMPTY_VALUE);
+          predictionServiceClient.predict(endpointName, instances, parameter);
       System.out.println("Predict Text Sentiment Analysis Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        TextSentimentPredictionResult.Builder resultBuilder =
-            TextSentimentPredictionResult.newBuilder();
-
-        TextSentimentPredictionResult result =
-            (TextSentimentPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
-
-        System.out.printf("\tSentiment measure: %d\n", result.getPrediction().getSentiment());
+        System.out.format("\tPrediction: %s\n", prediction);
       }
     }
   }

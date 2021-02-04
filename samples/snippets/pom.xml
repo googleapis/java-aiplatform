@@ -27,7 +27,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-aiplatform</artifactId>
-      <version>0.1.1-SNAPSHOT</version>
+      <version>0.2.0</version>
     </dependency>
     <!-- [END aiplatform_install_with_bom] -->
     <dependency>
@@ -54,8 +54,13 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.1</version>
+      <version>1.1.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
+      <version>0.2.0</version>
     </dependency>
 
   </dependencies>

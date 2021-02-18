@@ -42,8 +42,6 @@
         "generator": "bazel"
       }
     }
-<<<<<<< HEAD
-=======
   ],
   "generatedFiles": [
     ".github/CODEOWNERS",
@@ -817,6 +815,5 @@
     "samples/pom.xml",
     "samples/snapshot/pom.xml",
     "samples/snippets/pom.xml"
->>>>>>> master
   ]
 }

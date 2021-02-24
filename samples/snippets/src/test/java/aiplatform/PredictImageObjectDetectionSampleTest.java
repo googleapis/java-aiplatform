@@ -63,6 +63,7 @@ public class PredictImageObjectDetectionSampleTest {
     System.setOut(originalPrintStream);
   }
 
+  @Ignore
   @Test
   public void testPredictImageObjectDetection() throws IOException {
     // Act

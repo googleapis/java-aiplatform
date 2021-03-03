@@ -4,7 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "2bc6541ab0fffbc4ede8e80cab00be8c8498ea48"
+        "sha": "5bdf3d04f365cb27446456e6df2a691ce1441434"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
+        "internalRef": "357800868"
       }
     },
     {
@@ -123,7 +131,6 @@
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/PredictionServiceSettings.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/SpecialistPoolServiceClient.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/SpecialistPoolServiceSettings.java",
-    "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/gapic_metadata.json",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/package-info.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/DatasetServiceStub.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/DatasetServiceStubSettings.java",
@@ -173,7 +180,6 @@
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/PredictionServiceSettings.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/SpecialistPoolServiceClient.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/SpecialistPoolServiceSettings.java",
-    "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/gapic_metadata.json",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/package-info.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/stub/DatasetServiceStub.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/stub/DatasetServiceStubSettings.java",

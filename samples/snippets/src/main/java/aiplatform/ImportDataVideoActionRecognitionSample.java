@@ -68,6 +68,11 @@ public class ImportDataVideoActionRecognitionSample {
       OperationFuture<ImportDataResponse, ImportDataOperationMetadata> response =
           client.importDataAsync(name, importConfigs);
 
+      while (!response.isDone()) {
+        System.out.println("Waiting for response...");
+        Thread.sleep(10000);
+      }
+
       // You can use OperationFuture.getInitialFuture to get a future representing the initial
       // response to the request, which contains information while the operation is in progress.
       System.out.format("Operation name: %s\n", response.getInitialFuture().get().getName());

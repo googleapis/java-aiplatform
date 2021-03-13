@@ -18,9 +18,9 @@ package aiplatform;
 
 // [START aiplatform_cancel_data_labeling_job_sample]
 
-import com.google.cloud.aiplatform.v1beta1.DataLabelingJobName;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.DataLabelingJobName;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
 import java.io.IOException;
 
 public class CancelDataLabelingJobSample {

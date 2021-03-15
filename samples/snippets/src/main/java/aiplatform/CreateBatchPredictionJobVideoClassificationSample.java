@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_video_classification_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1.BatchDedicatedResources;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig;
@@ -36,10 +37,8 @@ import com.google.cloud.aiplatform.v1.ManualBatchTuningParameters;
 import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.cloud.aiplatform.v1.ResourcesConsumed;
 import com.google.cloud.aiplatform.v1.schema.predict.params.VideoClassificationPredictionParams;
-import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.protobuf.Any;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -77,10 +76,9 @@ public class CreateBatchPredictionJobVideoClassificationSample {
       String location = "us-central1";
       LocationName locationName = LocationName.of(project, location);
 
-
       VideoClassificationPredictionParams modelParamsObj =
           VideoClassificationPredictionParams.newBuilder()
-              .setConfidenceThreshold(((float)0.5))
+              .setConfidenceThreshold(((float) 0.5))
               .setMaxPredictions(10000)
               .setSegmentClassification(true)
               .setShotClassification(true)

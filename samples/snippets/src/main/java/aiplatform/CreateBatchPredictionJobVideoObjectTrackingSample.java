@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_video_object_tracking_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1.BatchDedicatedResources;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig;
@@ -36,10 +37,8 @@ import com.google.cloud.aiplatform.v1.ManualBatchTuningParameters;
 import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.cloud.aiplatform.v1.ResourcesConsumed;
 import com.google.cloud.aiplatform.v1.schema.predict.params.VideoObjectTrackingPredictionParams;
-import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.protobuf.Any;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -80,9 +79,9 @@ public class CreateBatchPredictionJobVideoObjectTrackingSample {
       ModelName modelName = ModelName.of(project, location, modelId);
 
       VideoObjectTrackingPredictionParams modelParamsObj =
-      VideoObjectTrackingPredictionParams.newBuilder()
-          .setConfidenceThreshold(((float)0.5))
-          .build();
+          VideoObjectTrackingPredictionParams.newBuilder()
+              .setConfidenceThreshold(((float) 0.5))
+              .build();
 
       Value modelParameters = ValueConverter.toValue(modelParamsObj);
 

@@ -78,8 +78,8 @@ public class CreateDataLabelingJobSpecialistPoolSample {
       Value inputs = inputsBuilder.build();
 
       String datasetName = DatasetName.of(project, location, dataset).toString();
-      String specialistPoolName = SpecialistPoolName.of(project, location, specialistPool)
-          .toString();
+      String specialistPoolName =
+          SpecialistPoolName.of(project, location, specialistPool).toString();
 
       DataLabelingJob dataLabelingJob =
           DataLabelingJob.newBuilder()

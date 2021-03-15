@@ -17,6 +17,7 @@
 package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_sample]
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1.AcceleratorType;
 import com.google.cloud.aiplatform.v1.BatchDedicatedResources;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob;
@@ -27,10 +28,7 @@ import com.google.cloud.aiplatform.v1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1.LocationName;
 import com.google.cloud.aiplatform.v1.MachineSpec;
 import com.google.cloud.aiplatform.v1.ModelName;
-import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 
 public class CreateBatchPredictionJobSample {

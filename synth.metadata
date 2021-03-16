@@ -4,7 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "5bdf3d04f365cb27446456e6df2a691ce1441434"
+        "sha": "761e878b02eb0268b16d1325749d399e66a487df"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
+        "internalRef": "357800868"
       }
     },
     {
@@ -27,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "79ab0b44a2cc7d803d07c107f9faf07729fc4012"
+        "sha": "0b064d767537e0675fc053e53fca473c5c701fb8"
       }
     }
   ],
@@ -131,7 +139,6 @@
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/PredictionServiceSettings.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/SpecialistPoolServiceClient.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/SpecialistPoolServiceSettings.java",
-    "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/gapic_metadata.json",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/package-info.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/DatasetServiceStub.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/DatasetServiceStubSettings.java",
@@ -181,7 +188,6 @@
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/PredictionServiceSettings.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/SpecialistPoolServiceClient.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/SpecialistPoolServiceSettings.java",
-    "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/gapic_metadata.json",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/package-info.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/stub/DatasetServiceStub.java",
     "google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1beta1/stub/DatasetServiceStubSettings.java",

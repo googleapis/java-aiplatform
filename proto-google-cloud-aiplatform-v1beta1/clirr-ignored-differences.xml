@@ -3,336 +3,107 @@
 <!-- TODO: remove after next major version is released -->
 <differences>
   <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/BatchMigrateResourcesOperationMetadataOrBuilder
-    </className>
+    <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
     <differenceType>7012</differenceType>
-    <method>* getPartialResults(*)</method>
+    <method>* get*(*)</method>
   </difference>
-
+  <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
+    <differenceType>7012</differenceType>
+    <method>* has*(*)</method>
+  </difference>
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/BatchMigrateResourcesOperationMetadataOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
     </className>
     <differenceType>7012</differenceType>
-    <method>* getPartialResultsCount()</method>
+    <method>* get*(*)</method>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/BatchMigrateResourcesOperationMetadataOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder
     </className>
     <differenceType>7012</differenceType>
-    <method>* getPartialResultsList()</method>
+    <method>* get*(*)</method>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/BatchMigrateResourcesOperationMetadataOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getPartialResultsOrBuilder(*)</method>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/BatchMigrateResourcesOperationMetadataOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getPartialResultsOrBuilderList()</method>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
   </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/BatchPredictionJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/BatchPredictionJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/BatchPredictionJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DataLabelingJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DataLabelingJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DataLabelingJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DatasetOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DatasetOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/DatasetOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/CustomJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/CustomJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/CustomJobOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/EndpointOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/EndpointOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/EndpointOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/HyperparameterTuningJobOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/HyperparameterTuningJobOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
+    <differenceType>7005</differenceType>
+    <method>* set*(*)</method>
+    <to>* set*(*)</to>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/HyperparameterTuningJobOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
     </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
+    <differenceType>6011</differenceType>
+    <field>*FIELD_NUMBER</field>
   </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecs()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecsCount()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecsList()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecsOrBuilder(*)</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecsOrBuilderList()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelOrBuilder</className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/SearchMigratableResourcesRequestOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResult$Prediction*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getFilter()</method>
+    <differenceType>8001</differenceType>
   </difference>
-
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/SearchMigratableResourcesRequestOrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getFilterBytes()</method>
+    <differenceType>7002</differenceType>
+    <method>* get*(*)</method>
   </difference>
-
-
   <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/StudySpecOrBuilder
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getMeasurementSelectionType()</method>
+    <differenceType>7002</differenceType>
+    <method>* has*(*)</method>
   </difference>
-
   <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/StudySpecOrBuilder
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getMeasurementSelectionTypeValue()</method>
+    <differenceType>7002</differenceType>
+    <method>* clear*(*)</method>
   </difference>
-
   <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/StudySpecOrBuilder
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getObservationNoise()</method>
+    <differenceType>7002</differenceType>
+    <method>* merge*(*)</method>
   </difference>
-
   <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/StudySpecOrBuilder
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
-    <differenceType>7012</differenceType>
-    <method>* getObservationNoiseValue()</method>
+    <differenceType>7002</differenceType>
+    <method>* set*(*)</method>
   </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/TrainingPipelineOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpec()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/TrainingPipelineOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getEncryptionSpecOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/TrainingPipelineOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasEncryptionSpec()</method>
-  </difference>
-
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecOverride()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecOverrideOrBuilder()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ExplainRequestOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* hasExplanationSpecOverride()</method>
-  </difference>
-
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/ModelEvaluationOrBuilder
-    </className>
-    <differenceType>7012</differenceType>
-    <method>* getExplanationSpecs(*)</method>
-  </difference>
-
 </differences>

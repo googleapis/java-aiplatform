@@ -32,8 +32,7 @@ import org.junit.Test;
 
 public class CreateBatchPredictionJobTextEntityExtractionSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("TEXT_ENTITY_MODEL_ID");
+  private static final String MODEL_ID = System.getenv("TEXT_ENTITY_MODEL_ID");
   private static final String GCS_SOURCE_URI =
       "gs://ucaip-samples-test-output/inputs/batch_predict_TEN/ten_inputs.jsonl";
   private static final String GCS_OUTPUT_URI = "gs://ucaip-samples-test-output/";
@@ -93,7 +92,12 @@ public class CreateBatchPredictionJobTextEntityExtractionSampleTest {
 
     CreateBatchPredictionJobTextEntityExtractionSample
         .createBatchPredictionJobTextEntityExtractionSample(
-            PROJECT, "us-central1", batchPredictionDisplayName, MODEL_ID, GCS_SOURCE_URI, GCS_OUTPUT_URI);
+            PROJECT,
+            "us-central1",
+            batchPredictionDisplayName,
+            MODEL_ID,
+            GCS_SOURCE_URI,
+            GCS_OUTPUT_URI);
 
     // Assert
     String got = bout.toString();

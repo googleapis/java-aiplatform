@@ -24,7 +24,6 @@ import com.google.cloud.aiplatform.v1.JobServiceClient;
 import com.google.cloud.aiplatform.v1.JobServiceSettings;
 import com.google.cloud.aiplatform.v1.LocationName;
 import com.google.cloud.aiplatform.v1.ModelName;
-import com.google.gson.JsonObject;
 import java.io.IOException;
 
 public class CreateBatchPredictionJobTextSentimentAnalysisSample {

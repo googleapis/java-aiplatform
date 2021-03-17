@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,6 @@ public class CreateBatchPredictionJobTextClassificationSample {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
       String modelName = ModelName.of(project, location, modelId).toString();
-      JsonObject jsonModelParameters = new JsonObject();
       GcsSource gcsSource = GcsSource.newBuilder().addUris(gcsSourceUri).build();
       BatchPredictionJob.InputConfig inputConfig =
           BatchPredictionJob.InputConfig.newBuilder()

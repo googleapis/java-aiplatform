@@ -33,6 +33,7 @@ import org.junit.Test;
 
 public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
+  private static final String LOCATION = "us-central1";
   private static final String MODEL_ID = System.getenv("TEXT_SENTI_MODEL_ID");
   private static final String GCS_SOURCE_URI =
       "gs://ucaip-samples-test-output/inputs/batch_predict_TSN/tsn_inputs.jsonl";
@@ -40,7 +41,7 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String batchPredictionJobId;
+  private String got;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -66,6 +67,7 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    String batchPredictionJobId = got.split("name:")[1].split("batchPredictionJobs/")[1].split("\"\n")[0];
     CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
     // Assert
@@ -94,7 +96,7 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
     CreateBatchPredictionJobTextSentimentAnalysisSample
         .createBatchPredictionJobTextSentimentAnalysisSample(
             PROJECT,
-            "us-central1",
+            LOCATION,
             batchPredictionDisplayName,
             MODEL_ID,
             GCS_SOURCE_URI,
@@ -104,6 +106,5 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
     String got = bout.toString();
     assertThat(got).contains(batchPredictionDisplayName);
     assertThat(got).contains("response:");
-    batchPredictionJobId = got.split("name:")[1].split("batchPredictionJobs/")[1].split("\"\n")[0];
   }
 }

@@ -17,6 +17,7 @@
 package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_text_sentiment_analysis_sample]
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.aiplatform.v1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1.GcsDestination;
 import com.google.cloud.aiplatform.v1.GcsSource;
@@ -58,30 +59,34 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (JobServiceClient client = JobServiceClient.create(settings)) {
-      String modelName = ModelName.of(project, location, modelId).toString();
-      GcsSource gcsSource = GcsSource.newBuilder().addUris(gcsSourceUri).build();
-      BatchPredictionJob.InputConfig inputConfig =
-          BatchPredictionJob.InputConfig.newBuilder()
-              .setInstancesFormat("jsonl")
-              .setGcsSource(gcsSource)
-              .build();
-      GcsDestination gcsDestination =
-          GcsDestination.newBuilder().setOutputUriPrefix(gcsDestinationOutputUriPrefix).build();
-      BatchPredictionJob.OutputConfig outputConfig =
-          BatchPredictionJob.OutputConfig.newBuilder()
-              .setPredictionsFormat("jsonl")
-              .setGcsDestination(gcsDestination)
-              .build();
-      BatchPredictionJob batchPredictionJob =
-          BatchPredictionJob.newBuilder()
-              .setDisplayName(displayName)
-              .setModel(modelName)
-              .setInputConfig(inputConfig)
-              .setOutputConfig(outputConfig)
-              .build();
-      LocationName parent = LocationName.of(project, location);
-      BatchPredictionJob response = client.createBatchPredictionJob(parent, batchPredictionJob);
-      System.out.format("response: %s\n", response);
+      try {
+        String modelName = ModelName.of(project, location, modelId).toString();
+        GcsSource gcsSource = GcsSource.newBuilder().addUris(gcsSourceUri).build();
+        BatchPredictionJob.InputConfig inputConfig =
+            BatchPredictionJob.InputConfig.newBuilder()
+                .setInstancesFormat("jsonl")
+                .setGcsSource(gcsSource)
+                .build();
+        GcsDestination gcsDestination =
+            GcsDestination.newBuilder().setOutputUriPrefix(gcsDestinationOutputUriPrefix).build();
+        BatchPredictionJob.OutputConfig outputConfig =
+            BatchPredictionJob.OutputConfig.newBuilder()
+                .setPredictionsFormat("jsonl")
+                .setGcsDestination(gcsDestination)
+                .build();
+        BatchPredictionJob batchPredictionJob =
+            BatchPredictionJob.newBuilder()
+                .setDisplayName(displayName)
+                .setModel(modelName)
+                .setInputConfig(inputConfig)
+                .setOutputConfig(outputConfig)
+                .build();
+        LocationName parent = LocationName.of(project, location);
+        BatchPredictionJob response = client.createBatchPredictionJob(parent, batchPredictionJob);
+        System.out.format("response: %s\n", response);
+      } catch (ApiException ex) {
+        System.out.format("Exception: %s\n", ex.getLocalizedMessage());
+      }
     }
   }
 }

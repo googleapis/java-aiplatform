@@ -67,7 +67,8 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    String batchPredictionJobId = got.split("name:")[1].split("batchPredictionJobs/")[1].split("\"\n")[0];
+    String batchPredictionJobId =
+        got.split("name:")[1].split("batchPredictionJobs/")[1].split("\"\n")[0];
     CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
     // Assert

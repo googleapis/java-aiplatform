@@ -11,7 +11,7 @@
   </difference>
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder
+      com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder
     </className>
     <differenceType>7012</differenceType>
     <method>* has*()</method>

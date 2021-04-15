@@ -104,7 +104,7 @@ public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
             GCS_OUTPUT_URI);
 
     // Assert
-    String got = bout.toString();
+    got = bout.toString();
     assertThat(got).contains(batchPredictionDisplayName);
     assertThat(got).contains("response:");
   }

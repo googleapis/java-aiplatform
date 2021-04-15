@@ -84,6 +84,7 @@ public class CreateBatchPredictionJobTextEntityExtractionSample {
         LocationName parent = LocationName.of(project, location);
         BatchPredictionJob response = client.createBatchPredictionJob(parent, batchPredictionJob);
         System.out.format("response: %s\n", response);
+        System.out.format("\tname:%s\n", response.getName());
       } catch (ApiException ex) {
         System.out.format("Exception: %s\n", ex.getLocalizedMessage());
       }

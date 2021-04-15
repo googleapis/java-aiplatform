@@ -108,13 +108,13 @@
   </difference>
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TimeSeriesForecastingPredictionResult
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
     </className>
     <differenceType>8001</differenceType>
   </difference>
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLForecasting*
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*
     </className>
     <differenceType>8001</differenceType>
   </difference>

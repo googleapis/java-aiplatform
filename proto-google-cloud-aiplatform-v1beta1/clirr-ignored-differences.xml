@@ -118,4 +118,11 @@
     </className>
     <differenceType>8001</differenceType>
   </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Tables*
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* has*(*)</method>
+  </difference>
 </differences>

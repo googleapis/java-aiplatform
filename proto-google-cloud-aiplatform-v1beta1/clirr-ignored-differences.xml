@@ -106,4 +106,16 @@
     <differenceType>7002</differenceType>
     <method>* set*(*)</method>
   </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TimeSeriesForecastingPredictionResult
+    </className>
+    <differenceType>8001</differenceType>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLForecasting*
+    </className>
+    <differenceType>8001</differenceType>
+  </difference>
 </differences>

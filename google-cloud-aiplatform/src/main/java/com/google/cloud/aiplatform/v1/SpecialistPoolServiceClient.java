@@ -542,6 +542,13 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SpecialistPoolServiceClient specialistPoolServiceClient =
    *     SpecialistPoolServiceClient.create()) {
+   *   ListSpecialistPoolsRequest request =
+   *       ListSpecialistPoolsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListSpecialistPoolsResponse response =
    *         specialistPoolServiceClient.listSpecialistPoolsCallable().call(request);

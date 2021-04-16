@@ -293,7 +293,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(TrainingPipelineName name) {
@@ -319,7 +319,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(String name) {
@@ -546,7 +546,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -573,7 +573,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -686,7 +686,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(TrainingPipelineName name) {
@@ -722,7 +722,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(String name) {

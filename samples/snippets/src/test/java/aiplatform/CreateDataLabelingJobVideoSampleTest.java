@@ -87,7 +87,7 @@ public class CreateDataLabelingJobVideoSampleTest {
   }
 
   @Test
-  @Ignore
+  @Ignore("Avoid creating actual data labeling job for humans")
   public void testCreateDataLabelingJobVideoSample() throws IOException {
     // Act
     String dataLabelingDisplayName =

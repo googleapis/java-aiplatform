@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.4.1...v0.5.0) (2021-04-23)
+
+
+### Features
+
+* removes unneeded protos and files from v1beta1 ([#198](https://www.github.com/googleapis/java-aiplatform/issues/198)) ([5c0de9f](https://www.github.com/googleapis/java-aiplatform/commit/5c0de9f6ac27685170644f467610dc89d2f0e34b))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#245](https://www.github.com/googleapis/java-aiplatform/issues/245)) ([43ec06b](https://www.github.com/googleapis/java-aiplatform/commit/43ec06bd4809bc97dda6f5a913452381389541d1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#253](https://www.github.com/googleapis/java-aiplatform/issues/253)) ([f8e020f](https://www.github.com/googleapis/java-aiplatform/commit/f8e020f7750511bfc3358dd44d465c03d9becf62))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#329](https://www.github.com/googleapis/java-aiplatform/issues/329)) ([591c274](https://www.github.com/googleapis/java-aiplatform/commit/591c274ff3ffca5e0d964148eaeebaca5551ecaa))
+
 ### [0.4.1](https://www.github.com/googleapis/java-aiplatform/compare/v0.4.0...v0.4.1) (2021-04-15)
 
 

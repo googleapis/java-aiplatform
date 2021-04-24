@@ -501,6 +501,14 @@ public class PipelineServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   ListTrainingPipelinesRequest request =
+   *       ListTrainingPipelinesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListTrainingPipelinesResponse response =
    *         pipelineServiceClient.listTrainingPipelinesCallable().call(request);

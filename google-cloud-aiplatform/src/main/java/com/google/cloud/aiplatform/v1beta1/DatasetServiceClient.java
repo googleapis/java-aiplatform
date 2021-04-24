@@ -576,6 +576,15 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDatasetsRequest request =
+   *       ListDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDatasetsResponse response = datasetServiceClient.listDatasetsCallable().call(request);
    *     for (Dataset element : response.getResponsesList()) {
@@ -1090,6 +1099,15 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDataItemsRequest request =
+   *       ListDataItemsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDataItemsResponse response = datasetServiceClient.listDataItemsCallable().call(request);
    *     for (DataItem element : response.getResponsesList()) {
@@ -1334,6 +1352,16 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListAnnotationsRequest request =
+   *       ListAnnotationsRequest.newBuilder()
+   *           .setParent(
+   *               DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListAnnotationsResponse response =
    *         datasetServiceClient.listAnnotationsCallable().call(request);

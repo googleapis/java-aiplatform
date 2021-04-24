@@ -872,7 +872,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
@@ -898,7 +898,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(String name) {
@@ -1124,7 +1124,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluationSlice getModelEvaluationSlice(ModelEvaluationSliceName name) {
@@ -1152,7 +1152,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluationSlice getModelEvaluationSlice(String name) {
@@ -1234,7 +1234,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationSlicesPagedResponse listModelEvaluationSlices(
@@ -1265,7 +1265,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationSlicesPagedResponse listModelEvaluationSlices(String parent) {

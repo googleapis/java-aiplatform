@@ -332,7 +332,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
-   *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
+   *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpecialistPool getSpecialistPool(SpecialistPoolName name) {
@@ -359,7 +359,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
-   *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
+   *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpecialistPool getSpecialistPool(String name) {

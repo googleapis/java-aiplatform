@@ -1142,7 +1142,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
@@ -1169,7 +1169,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(String name) {
@@ -1245,7 +1245,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(DataItemName parent) {
@@ -1273,7 +1273,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(String parent) {

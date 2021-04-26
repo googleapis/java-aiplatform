@@ -194,18 +194,6 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
-     * @return Whether the model field is set.
-     */
-    boolean hasModel();
-    /**
-     *
-     *
-     * <pre>
-     * Migrated model resource name.
-     * </pre>
-     *
-     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
-     *
      * @return The model.
      */
     java.lang.String getModel();
@@ -222,18 +210,6 @@ public final class BatchMigrateResourcesOperationMetadata
      */
     com.google.protobuf.ByteString getModelBytes();
 
-    /**
-     *
-     *
-     * <pre>
-     * Migrated dataset resource name.
-     * </pre>
-     *
-     * <code>string dataset = 4 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @return Whether the dataset field is set.
-     */
-    boolean hasDataset();
     /**
      *
      *
@@ -546,20 +522,6 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
      *
-     * @return Whether the model field is set.
-     */
-    public boolean hasModel() {
-      return resultCase_ == 3;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Migrated model resource name.
-     * </pre>
-     *
-     * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
-     *
      * @return The model.
      */
     public java.lang.String getModel() {
@@ -607,20 +569,6 @@ public final class BatchMigrateResourcesOperationMetadata
     }
 
     public static final int DATASET_FIELD_NUMBER = 4;
-    /**
-     *
-     *
-     * <pre>
-     * Migrated dataset resource name.
-     * </pre>
-     *
-     * <code>string dataset = 4 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @return Whether the dataset field is set.
-     */
-    public boolean hasDataset() {
-      return resultCase_ == 4;
-    }
     /**
      *
      *
@@ -1430,21 +1378,6 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
        *
-       * @return Whether the model field is set.
-       */
-      @java.lang.Override
-      public boolean hasModel() {
-        return resultCase_ == 3;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Migrated model resource name.
-       * </pre>
-       *
-       * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
-       *
        * @return The model.
        */
       @java.lang.Override
@@ -1555,21 +1488,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return this;
       }
 
-      /**
-       *
-       *
-       * <pre>
-       * Migrated dataset resource name.
-       * </pre>
-       *
-       * <code>string dataset = 4 [(.google.api.resource_reference) = { ... }</code>
-       *
-       * @return Whether the dataset field is set.
-       */
-      @java.lang.Override
-      public boolean hasDataset() {
-        return resultCase_ == 4;
-      }
       /**
        *
        *

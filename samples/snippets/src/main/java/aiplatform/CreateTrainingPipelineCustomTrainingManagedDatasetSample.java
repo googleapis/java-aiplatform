@@ -17,14 +17,14 @@
 package aiplatform;
 
 // [START aiplatform_create_training_pipeline_custom_training_managed_dataset_sample]
-import com.google.cloud.aiplatform.v1beta1.GcsDestination;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.GcsDestination;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.ModelContainerSpec;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
@@ -113,7 +113,7 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
               .build();
       GcsDestination gcsDestination =
           GcsDestination.newBuilder().setOutputUriPrefix(baseOutputUriPrefix).build();
-      
+
       // input_data_config
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder()

@@ -19,30 +19,24 @@ package aiplatform;
 // [START aiplatform_create_training_pipeline_tabular_classification_sample]
 
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
-import com.google.cloud.aiplatform.v1beta1.EnvVar;
-import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
-import com.google.cloud.aiplatform.v1beta1.ExplanationParameters;
-import com.google.cloud.aiplatform.v1beta1.ExplanationSpec;
-import com.google.cloud.aiplatform.v1beta1.FilterSplit;
-import com.google.cloud.aiplatform.v1beta1.FractionSplit;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.Port;
-import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
-import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
-import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
-import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1.DeployedModelRef;
+import com.google.cloud.aiplatform.v1.EnvVar;
+import com.google.cloud.aiplatform.v1.FilterSplit;
+import com.google.cloud.aiplatform.v1.FractionSplit;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.ModelContainerSpec;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.Port;
+import com.google.cloud.aiplatform.v1.PredefinedSplit;
+import com.google.cloud.aiplatform.v1.PredictSchemata;
+import com.google.cloud.aiplatform.v1.TimestampSplit;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,15 +49,11 @@ public class CreateTrainingPipelineTabularClassificationSample {
     String modelDisplayName = "YOUR_DATASET_DISPLAY_NAME";
     String datasetId = "YOUR_DATASET_ID";
     String targetColumn = "TARGET_COLUMN";
-    createTrainingPipelineTableClassification(
-        project, modelDisplayName, datasetId, targetColumn);
+    createTrainingPipelineTableClassification(project, modelDisplayName, datasetId, targetColumn);
   }
 
   static void createTrainingPipelineTableClassification(
-      String project,
-      String modelDisplayName,
-      String datasetId,
-      String targetColumn)
+      String project, String modelDisplayName, String datasetId, String targetColumn)
       throws IOException {
     PipelineServiceSettings pipelineServiceSettings =
         PipelineServiceSettings.newBuilder()
@@ -81,18 +71,22 @@ public class CreateTrainingPipelineTabularClassificationSample {
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_tables_1.0.0.yaml";
 
       // Set the columns used for training and their data types
-      Transformation transformation1 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_width").build())
-          .build();
-      Transformation transformation2 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_length").build())
-          .build();
-      Transformation transformation3 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_length").build())
-          .build();
-      Transformation transformation4 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_width").build())
-          .build();
+      Transformation transformation1 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_width").build())
+              .build();
+      Transformation transformation2 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_length").build())
+              .build();
+      Transformation transformation3 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("petal_length").build())
+              .build();
+      Transformation transformation4 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("petal_width").build())
+              .build();
 
       ArrayList<Transformation> transformationArrayList = new ArrayList<>();
       transformationArrayList.add(transformation1);
@@ -244,25 +238,6 @@ public class CreateTrainingPipelineTabularClassificationSample {
         System.out.format("\t\tEndpoint: %s\n", deployedModelRef.getEndpoint());
         System.out.format("\t\tDeployed Model Id: %s\n", deployedModelRef.getDeployedModelId());
       }
-
-      ExplanationSpec explanationSpec = modelResponse.getExplanationSpec();
-      System.out.println("\tExplanation Spec");
-
-      ExplanationParameters explanationParameters = explanationSpec.getParameters();
-      System.out.println("\t\tParameters");
-
-      SampledShapleyAttribution sampledShapleyAttribution =
-          explanationParameters.getSampledShapleyAttribution();
-      System.out.println("\t\tSampled Shapley Attribution");
-      System.out.format("\t\t\tPath Count: %s\n", sampledShapleyAttribution.getPathCount());
-
-      ExplanationMetadata explanationMetadata = explanationSpec.getMetadata();
-      System.out.println("\t\tMetadata");
-      System.out.format("\t\t\tInput: %s\n", explanationMetadata.getInputsMap());
-      System.out.format("\t\t\tOutput: %s\n", explanationMetadata.getOutputsMap());
-      System.out.format(
-          "\t\t\tFeature Attributions Schema Uri: %s\n",
-          explanationMetadata.getFeatureAttributionsSchemaUri());
 
       Status status = trainingPipelineResponse.getError();
       System.out.println("\tError");

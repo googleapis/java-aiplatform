@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
   @Override
   public void createSpecialistPool(
       CreateSpecialistPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -70,14 +70,20 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSpecialistPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getSpecialistPool(
       GetSpecialistPoolRequest request, StreamObserver<SpecialistPool> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SpecialistPool) {
       requests.add(request);
       responseObserver.onNext(((SpecialistPool) response));
@@ -85,7 +91,13 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSpecialistPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SpecialistPool.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -93,7 +105,7 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
   public void listSpecialistPools(
       ListSpecialistPoolsRequest request,
       StreamObserver<ListSpecialistPoolsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSpecialistPoolsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSpecialistPoolsResponse) response));
@@ -101,14 +113,20 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSpecialistPools, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSpecialistPoolsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteSpecialistPool(
       DeleteSpecialistPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,14 +134,20 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSpecialistPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateSpecialistPool(
       UpdateSpecialistPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -131,7 +155,13 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSpecialistPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

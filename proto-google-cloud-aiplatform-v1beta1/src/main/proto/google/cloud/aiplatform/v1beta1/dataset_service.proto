@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -181,9 +181,7 @@ message UpdateDatasetRequest {
 
   // Required. The update mask applies to the resource.
   // For the `FieldMask` definition, see
-  //
-  // [FieldMask](https:
-  // //tinyurl.com/dev-google-protobuf#google.protobuf.FieldMask).
+  // [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
   // Updatable fields:
   //
   //   * `display_name`
@@ -203,7 +201,19 @@ message ListDatasetsRequest {
     }
   ];
 
-  // The standard list filter.
+  // An expression for filtering the results of the request. For field names
+  // both snake_case and camelCase are supported.
+  //
+  //   * `display_name`: supports = and !=
+  //   * `metadata_schema_uri`: supports = and !=
+  //   * `labels` supports general map functions that is:
+  //     * `labels.key=value` - key:value equality
+  //     * `labels.key:* or labels:key - key existence
+  //     * A key including a space must be quoted. `labels."a key"`.
+  //
+  // Some examples:
+  //   * `displayName="myDisplayName"`
+  //   * `labels.myKey="myValue"`
   string filter = 2;
 
   // The standard list page size.
@@ -219,7 +229,7 @@ message ListDatasetsRequest {
   // Use "desc" after a field name for descending.
   // Supported fields:
   //   * `display_name`
-  //   * `data_item_count`   * `create_time`
+  //   * `create_time`
   //   * `update_time`
   string order_by = 6;
 }
@@ -348,7 +358,6 @@ message ListDataItemsResponse {
 message GetAnnotationSpecRequest {
   // Required. The name of the AnnotationSpec resource.
   // Format:
-  //
   // `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
@@ -365,7 +374,6 @@ message GetAnnotationSpecRequest {
 message ListAnnotationsRequest {
   // Required. The resource name of the DataItem to list Annotations from.
   // Format:
-  //
   // `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,

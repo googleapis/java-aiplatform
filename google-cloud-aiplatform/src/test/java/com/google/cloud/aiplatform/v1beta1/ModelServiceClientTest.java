@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -213,6 +213,7 @@ public class ModelServiceClientTest {
             .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -271,6 +272,7 @@ public class ModelServiceClientTest {
             .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -417,6 +419,7 @@ public class ModelServiceClientTest {
             .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -645,6 +648,7 @@ public class ModelServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -692,6 +696,7 @@ public class ModelServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .build();
     mockModelService.addResponse(expectedResponse);
 

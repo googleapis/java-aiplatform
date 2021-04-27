@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -161,18 +161,16 @@ message ListEndpointsRequest {
   // both snake_case and camelCase are supported.
   //
   //   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-  //     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-  //   * `display_name` supports =, != and regex()
-  //             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
+  //     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+  //   * `display_name` supports = and, !=
   //   * `labels` supports general map functions that is:
-  //             `labels.key=value` - key:value equality
-  //             `labels.key:* or labels:key - key existence
-  //              A key including a space must be quoted. `labels."a key"`.
+  //     * `labels.key=value` - key:value equality
+  //     * `labels.key:* or labels:key - key existence
+  //     * A key including a space must be quoted. `labels."a key"`.
   //
   // Some examples:
   //   * `endpoint=1`
   //   * `displayName="myDisplayName"`
-  //   * `regex(display_name, "^A") -> The display name starts with an A.
   //   * `labels.myKey="myValue"`
   string filter = 2 [(google.api.field_behavior) = OPTIONAL];
 
@@ -194,7 +192,7 @@ message ListEndpointsResponse {
   // List of Endpoints in the requested page.
   repeated Endpoint endpoints = 1;
 
-  // A token to retrieve next page of results.
+  // A token to retrieve the next page of results.
   // Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
   string next_page_token = 2;
 }
@@ -205,6 +203,8 @@ message UpdateEndpointRequest {
   Endpoint endpoint = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The update mask applies to the resource.
+  // See
+  // [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
 
   @Override
   public void predict(PredictRequest request, StreamObserver<PredictResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PredictResponse) {
       requests.add(request);
       responseObserver.onNext(((PredictResponse) response));
@@ -68,7 +68,13 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Predict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PredictResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

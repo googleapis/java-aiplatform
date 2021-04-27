@@ -37,6 +37,9 @@ public interface ModelContainerSpecOrBuilder
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+   * You can use the URI to one of AI Platform's [pre-built container images for
+   * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+   * in this field.
    * </pre>
    *
    * <code>
@@ -60,6 +63,9 @@ public interface ModelContainerSpecOrBuilder
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
+   * You can use the URI to one of AI Platform's [pre-built container images for
+   * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+   * in this field.
    * </pre>
    *
    * <code>
@@ -736,9 +742,8 @@ public interface ModelContainerSpecOrBuilder
    * container's response in the API response.
    * For example, if you set this field to `/foo`, then when AI Platform
    * receives a prediction request, it forwards the request body in a POST
-   * request to the following URL on the container:
-   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
-   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * request to the `/foo` path on the port of your container specified by the
+   * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -772,9 +777,8 @@ public interface ModelContainerSpecOrBuilder
    * container's response in the API response.
    * For example, if you set this field to `/foo`, then when AI Platform
    * receives a prediction request, it forwards the request body in a POST
-   * request to the following URL on the container:
-   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
-   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * request to the `/foo` path on the port of your container specified by the
+   * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -802,15 +806,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * Immutable. HTTP path on the container to send health checks to. AI Platform
    * intermittently sends GET requests to this path on the container's IP
    * address and port to check that the container is healthy. Read more about
    * [health
    * checks](https://tinyurl.com/cust-cont-reqs#checks).
    * For example, if you set this field to `/bar`, then AI Platform
-   * intermittently sends a GET request to the following URL on the container:
-   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
-   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * intermittently sends a GET request to the `/bar` path on the port of your
+   * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -837,15 +840,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * Immutable. HTTP path on the container to send health checks to. AI Platform
    * intermittently sends GET requests to this path on the container's IP
    * address and port to check that the container is healthy. Read more about
    * [health
    * checks](https://tinyurl.com/cust-cont-reqs#checks).
    * For example, if you set this field to `/bar`, then AI Platform
-   * intermittently sends a GET request to the following URL on the container:
-   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
-   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * intermittently sends a GET request to the `/bar` path on the port of your
+   * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:

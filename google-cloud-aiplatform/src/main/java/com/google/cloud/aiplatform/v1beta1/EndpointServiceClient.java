@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,7 +103,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class EndpointServiceClient implements BackgroundResource {
   private final EndpointServiceSettings settings;
   private final EndpointServiceStub stub;
@@ -504,6 +504,14 @@ public class EndpointServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   ListEndpointsRequest request =
+   *       ListEndpointsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListEndpointsResponse response =
    *         endpointServiceClient.listEndpointsCallable().call(request);
@@ -539,7 +547,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param endpoint Required. The Endpoint which replaces the resource on the server.
-   * @param updateMask Required. The update mask applies to the resource.
+   * @param updateMask Required. The update mask applies to the resource. See
+   *     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Endpoint updateEndpoint(Endpoint endpoint, FieldMask updateMask) {

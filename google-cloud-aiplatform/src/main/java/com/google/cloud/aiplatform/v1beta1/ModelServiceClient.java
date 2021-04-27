@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class ModelServiceClient implements BackgroundResource {
   private final ModelServiceSettings settings;
   private final ModelServiceStub stub;
@@ -497,6 +497,14 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListModelsResponse response = modelServiceClient.listModelsCallable().call(request);
    *     for (Model element : response.getResponsesList()) {
@@ -532,9 +540,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param model Required. The Model which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see
-   *     <p>[FieldMask](https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask).
+   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model updateModel(Model model, FieldMask updateMask) {
@@ -866,7 +872,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
@@ -892,7 +898,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(String name) {
@@ -1073,6 +1079,14 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelEvaluationsRequest request =
+   *       ListModelEvaluationsRequest.newBuilder()
+   *           .setParent(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListModelEvaluationsResponse response =
    *         modelServiceClient.listModelEvaluationsCallable().call(request);
@@ -1110,7 +1124,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluationSlice getModelEvaluationSlice(ModelEvaluationSliceName name) {
@@ -1138,7 +1152,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluationSlice getModelEvaluationSlice(String name) {
@@ -1220,7 +1234,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationSlicesPagedResponse listModelEvaluationSlices(
@@ -1251,7 +1265,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
-   *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationSlicesPagedResponse listModelEvaluationSlices(String parent) {
@@ -1334,6 +1348,16 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelEvaluationSlicesRequest request =
+   *       ListModelEvaluationSlicesRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListModelEvaluationSlicesResponse response =
    *         modelServiceClient.listModelEvaluationSlicesCallable().call(request);

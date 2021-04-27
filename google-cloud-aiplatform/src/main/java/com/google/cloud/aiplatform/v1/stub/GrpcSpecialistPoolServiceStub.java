@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -298,43 +298,52 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateSpecialistPoolRequest, Operation> createSpecialistPoolCallable() {
     return createSpecialistPoolCallable;
   }
 
+  @Override
   public OperationCallable<
           CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolOperationCallable() {
     return createSpecialistPoolOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolCallable() {
     return getSpecialistPoolCallable;
   }
 
+  @Override
   public UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
       listSpecialistPoolsCallable() {
     return listSpecialistPoolsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsPagedResponse>
       listSpecialistPoolsPagedCallable() {
     return listSpecialistPoolsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSpecialistPoolRequest, Operation> deleteSpecialistPoolCallable() {
     return deleteSpecialistPoolCallable;
   }
 
+  @Override
   public OperationCallable<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
       deleteSpecialistPoolOperationCallable() {
     return deleteSpecialistPoolOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSpecialistPoolRequest, Operation> updateSpecialistPoolCallable() {
     return updateSpecialistPoolCallable;
   }
 
+  @Override
   public OperationCallable<
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationCallable() {

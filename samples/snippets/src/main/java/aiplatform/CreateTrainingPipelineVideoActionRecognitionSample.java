@@ -18,14 +18,14 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_video_action_recognition_sample]
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
 import java.io.IOException;
 
 public class CreateTrainingPipelineVideoActionRecognitionSample {
@@ -41,10 +41,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
   }
 
   static void createTrainingPipelineVideoActionRecognitionSample(
-      String project,
-      String displayName,
-      String datasetId,
-      String modelDisplayName)
+      String project, String displayName, String datasetId, String modelDisplayName)
       throws IOException {
     PipelineServiceSettings settings =
         PipelineServiceSettings.newBuilder()
@@ -57,9 +54,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
       AutoMlVideoActionRecognitionInputs trainingTaskInputs =
-          AutoMlVideoActionRecognitionInputs.newBuilder()
-              .setModelType(ModelType.CLOUD)
-              .build();
+          AutoMlVideoActionRecognitionInputs.newBuilder().setModelType(ModelType.CLOUD).build();
 
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();

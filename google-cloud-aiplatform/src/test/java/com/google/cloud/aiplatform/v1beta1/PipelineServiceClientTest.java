@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -164,6 +165,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -221,6 +223,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -276,6 +279,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

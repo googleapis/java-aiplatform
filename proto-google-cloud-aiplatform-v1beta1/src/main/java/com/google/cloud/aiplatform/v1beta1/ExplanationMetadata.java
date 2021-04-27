@@ -8790,7 +8790,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -8811,7 +8811,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -8832,7 +8832,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -8841,6 +8841,22 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ValueOrBuilder getIndexDisplayNameMappingOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Specify a field name in the prediction to look for the display name.
+     * Use this if the prediction contains the display names for the outputs.
+     * The display names in the prediction must have the same shape of the
+     * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+     * a specific output.
+     * </pre>
+     *
+     * <code>string display_name_mapping_key = 2;</code>
+     *
+     * @return Whether the displayNameMappingKey field is set.
+     */
+    boolean hasDisplayNameMappingKey();
     /**
      *
      *
@@ -9079,7 +9095,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -9103,7 +9119,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -9130,7 +9146,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
      * The shape of the value must be an n-dimensional array of strings. The
-     * number of dimentions must match that of the outputs to be explained.
+     * number of dimensions must match that of the outputs to be explained.
      * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
@@ -9146,6 +9162,24 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DISPLAY_NAME_MAPPING_KEY_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Specify a field name in the prediction to look for the display name.
+     * Use this if the prediction contains the display names for the outputs.
+     * The display names in the prediction must have the same shape of the
+     * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+     * a specific output.
+     * </pre>
+     *
+     * <code>string display_name_mapping_key = 2;</code>
+     *
+     * @return Whether the displayNameMappingKey field is set.
+     */
+    public boolean hasDisplayNameMappingKey() {
+      return displayNameMappingCase_ == 2;
+    }
     /**
      *
      *
@@ -9694,7 +9728,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9718,7 +9752,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9752,7 +9786,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9783,7 +9817,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9811,7 +9845,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9851,7 +9885,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9885,7 +9919,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9906,7 +9940,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9935,7 +9969,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
        * The shape of the value must be an n-dimensional array of strings. The
-       * number of dimentions must match that of the outputs to be explained.
+       * number of dimensions must match that of the outputs to be explained.
        * The [Attribution.output_display_name][google.cloud.aiplatform.v1beta1.Attribution.output_display_name] is populated by locating in the
        * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
        * </pre>
@@ -9967,6 +10001,25 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         return indexDisplayNameMappingBuilder_;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Specify a field name in the prediction to look for the display name.
+       * Use this if the prediction contains the display names for the outputs.
+       * The display names in the prediction must have the same shape of the
+       * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+       * a specific output.
+       * </pre>
+       *
+       * <code>string display_name_mapping_key = 2;</code>
+       *
+       * @return Whether the displayNameMappingKey field is set.
+       */
+      @java.lang.Override
+      public boolean hasDisplayNameMappingKey() {
+        return displayNameMappingCase_ == 2;
+      }
       /**
        *
        *
@@ -10318,8 +10371,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
    * of the empty feature is chosen by AI Platform.
    * For AI Platform provided Tensorflow images, the key can be any friendly
-   * name of the feature . Once specified, [
-   * featureAttributions][Attribution.feature_attributions] will be keyed by
+   * name of the feature. Once specified,
+   * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -10354,8 +10407,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
    * of the empty feature is chosen by AI Platform.
    * For AI Platform provided Tensorflow images, the key can be any friendly
-   * name of the feature . Once specified, [
-   * featureAttributions][Attribution.feature_attributions] will be keyed by
+   * name of the feature. Once specified,
+   * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -10381,8 +10434,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
    * of the empty feature is chosen by AI Platform.
    * For AI Platform provided Tensorflow images, the key can be any friendly
-   * name of the feature . Once specified, [
-   * featureAttributions][Attribution.feature_attributions] will be keyed by
+   * name of the feature. Once specified,
+   * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -10414,8 +10467,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
    * of the empty feature is chosen by AI Platform.
    * For AI Platform provided Tensorflow images, the key can be any friendly
-   * name of the feature . Once specified, [
-   * featureAttributions][Attribution.feature_attributions] will be keyed by
+   * name of the feature. Once specified,
+   * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -10481,8 +10534,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -10512,8 +10565,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -10534,8 +10587,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -10563,8 +10616,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -11093,8 +11146,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11129,8 +11182,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11156,8 +11209,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11190,8 +11243,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11231,8 +11284,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11266,8 +11319,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11299,8 +11352,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
      * of the empty feature is chosen by AI Platform.
      * For AI Platform provided Tensorflow images, the key can be any friendly
-     * name of the feature . Once specified, [
-     * featureAttributions][Attribution.feature_attributions] will be keyed by
+     * name of the feature. Once specified,
+     * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances].
@@ -11357,8 +11410,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11389,8 +11442,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11412,8 +11465,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11442,8 +11495,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11478,8 +11531,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11509,8 +11562,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.
@@ -11537,8 +11590,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any string user
-     * defines.
+     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
      * Currently only one key is allowed.

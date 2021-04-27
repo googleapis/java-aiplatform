@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   @Override
   public void createCustomJob(
       CreateCustomJobRequest request, StreamObserver<CustomJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomJob) {
       requests.add(request);
       responseObserver.onNext(((CustomJob) response));
@@ -71,14 +71,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getCustomJob(
       GetCustomJobRequest request, StreamObserver<CustomJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomJob) {
       requests.add(request);
       responseObserver.onNext(((CustomJob) response));
@@ -86,14 +92,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listCustomJobs(
       ListCustomJobsRequest request, StreamObserver<ListCustomJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCustomJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCustomJobsResponse) response));
@@ -101,14 +113,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteCustomJob(
       DeleteCustomJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,14 +134,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void cancelCustomJob(
       CancelCustomJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -131,14 +155,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelCustomJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void createDataLabelingJob(
       CreateDataLabelingJobRequest request, StreamObserver<DataLabelingJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DataLabelingJob) {
       requests.add(request);
       responseObserver.onNext(((DataLabelingJob) response));
@@ -146,14 +176,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDataLabelingJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataLabelingJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getDataLabelingJob(
       GetDataLabelingJobRequest request, StreamObserver<DataLabelingJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DataLabelingJob) {
       requests.add(request);
       responseObserver.onNext(((DataLabelingJob) response));
@@ -161,7 +197,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataLabelingJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataLabelingJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -169,7 +211,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void listDataLabelingJobs(
       ListDataLabelingJobsRequest request,
       StreamObserver<ListDataLabelingJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDataLabelingJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDataLabelingJobsResponse) response));
@@ -177,14 +219,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataLabelingJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDataLabelingJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteDataLabelingJob(
       DeleteDataLabelingJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -192,14 +240,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDataLabelingJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void cancelDataLabelingJob(
       CancelDataLabelingJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -207,7 +261,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelDataLabelingJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -215,7 +275,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void createHyperparameterTuningJob(
       CreateHyperparameterTuningJobRequest request,
       StreamObserver<HyperparameterTuningJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof HyperparameterTuningJob) {
       requests.add(request);
       responseObserver.onNext(((HyperparameterTuningJob) response));
@@ -223,7 +283,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateHyperparameterTuningJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HyperparameterTuningJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -231,7 +297,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void getHyperparameterTuningJob(
       GetHyperparameterTuningJobRequest request,
       StreamObserver<HyperparameterTuningJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof HyperparameterTuningJob) {
       requests.add(request);
       responseObserver.onNext(((HyperparameterTuningJob) response));
@@ -239,7 +305,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetHyperparameterTuningJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HyperparameterTuningJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -247,7 +319,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void listHyperparameterTuningJobs(
       ListHyperparameterTuningJobsRequest request,
       StreamObserver<ListHyperparameterTuningJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListHyperparameterTuningJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListHyperparameterTuningJobsResponse) response));
@@ -255,14 +327,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListHyperparameterTuningJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListHyperparameterTuningJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteHyperparameterTuningJob(
       DeleteHyperparameterTuningJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -270,14 +348,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteHyperparameterTuningJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void cancelHyperparameterTuningJob(
       CancelHyperparameterTuningJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -285,7 +369,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelHyperparameterTuningJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -293,7 +383,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void createBatchPredictionJob(
       CreateBatchPredictionJobRequest request,
       StreamObserver<BatchPredictionJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchPredictionJob) {
       requests.add(request);
       responseObserver.onNext(((BatchPredictionJob) response));
@@ -301,14 +391,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBatchPredictionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchPredictionJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getBatchPredictionJob(
       GetBatchPredictionJobRequest request, StreamObserver<BatchPredictionJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchPredictionJob) {
       requests.add(request);
       responseObserver.onNext(((BatchPredictionJob) response));
@@ -316,7 +412,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBatchPredictionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchPredictionJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -324,7 +426,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   public void listBatchPredictionJobs(
       ListBatchPredictionJobsRequest request,
       StreamObserver<ListBatchPredictionJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBatchPredictionJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBatchPredictionJobsResponse) response));
@@ -332,14 +434,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBatchPredictionJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBatchPredictionJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteBatchPredictionJob(
       DeleteBatchPredictionJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -347,14 +455,20 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBatchPredictionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void cancelBatchPredictionJob(
       CancelBatchPredictionJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -362,7 +476,13 @@ public class MockJobServiceImpl extends JobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelBatchPredictionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

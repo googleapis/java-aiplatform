@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
   public void searchMigratableResources(
       SearchMigratableResourcesRequest request,
       StreamObserver<SearchMigratableResourcesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchMigratableResourcesResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchMigratableResourcesResponse) response));
@@ -71,14 +71,20 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchMigratableResources, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchMigratableResourcesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchMigrateResources(
       BatchMigrateResourcesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -86,7 +92,13 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchMigrateResources, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package google.cloud.aiplatform.v1beta1;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/aiplatform/v1beta1/encryption_spec.proto";
 import "google/cloud/aiplatform/v1beta1/explanation.proto";
 import "google/cloud/aiplatform/v1beta1/machine_resources.proto";
 import "google/protobuf/timestamp.proto";
@@ -80,6 +81,11 @@ message Endpoint {
 
   // Output only. Timestamp when this Endpoint was last updated.
   google.protobuf.Timestamp update_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Customer-managed encryption key spec for an Endpoint. If set, this
+  // Endpoint and all sub-resources of this Endpoint will be secured by
+  // this key.
+  EncryptionSpec encryption_spec = 10;
 }
 
 // A deployment of a Model. Endpoints contain one or more DeployedModels.
@@ -102,7 +108,7 @@ message DeployedModel {
   // Output only. The ID of the DeployedModel.
   string id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Required. The name of the Model this is the deployment of. Note that the Model
+  // Required. The name of the Model that this is the deployment of. Note that the Model
   // may be in a different location than the DeployedModel's Endpoint.
   string model = 2 [
     (google.api.field_behavior) = REQUIRED,
@@ -124,9 +130,9 @@ message DeployedModel {
   // overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
   // [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] are optional in the request. If a field of
   // [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-  // [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
-  // [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
-  // this Model is not allowed.
+  // [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. If the corresponding
+  // [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is not populated, all fields of the
+  // [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] will be used for the explanation configuration.
   ExplanationSpec explanation_spec = 9;
 
   // The service account that the DeployedModel's container runs as. Specify the
@@ -141,7 +147,7 @@ message DeployedModel {
   // If true, the container of the DeployedModel instances will send `stderr`
   // and `stdout` streams to Stackdriver Logging.
   //
-  // Only supported for custom-trained Models and AutoML Tables Models.
+  // Only supported for custom-trained Models and AutoML Tabular Models.
   bool enable_container_logging = 12;
 
   // These logs are like standard server access logs, containing

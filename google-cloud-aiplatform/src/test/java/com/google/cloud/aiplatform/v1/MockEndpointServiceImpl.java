@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
   @Override
   public void createEndpoint(
       CreateEndpointRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -70,13 +70,19 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEndpoint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getEndpoint(GetEndpointRequest request, StreamObserver<Endpoint> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Endpoint) {
       requests.add(request);
       responseObserver.onNext(((Endpoint) response));
@@ -84,14 +90,20 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEndpoint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Endpoint.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listEndpoints(
       ListEndpointsRequest request, StreamObserver<ListEndpointsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEndpointsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEndpointsResponse) response));
@@ -99,14 +111,20 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEndpoints, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEndpointsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateEndpoint(
       UpdateEndpointRequest request, StreamObserver<Endpoint> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Endpoint) {
       requests.add(request);
       responseObserver.onNext(((Endpoint) response));
@@ -114,14 +132,20 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEndpoint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Endpoint.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteEndpoint(
       DeleteEndpointRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -129,13 +153,19 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEndpoint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deployModel(DeployModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -143,14 +173,20 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeployModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void undeployModel(
       UndeployModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -158,7 +194,13 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeployModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

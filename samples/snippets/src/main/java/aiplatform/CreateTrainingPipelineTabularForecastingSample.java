@@ -117,7 +117,8 @@ public class CreateTrainingPipelineTabularForecastingSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(displayName)
               .setTrainingTaskDefinition(
-                  "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_forecasting_1.0.0.yaml")
+                  "gs://google-cloud-aiplatform/schema/"
+                      + "trainingjob/definition/automl_forecasting_1.0.0.yaml")
               .setTrainingTaskInputs(trainingTaskInputs)
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(modelToUpload)

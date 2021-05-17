@@ -139,4 +139,11 @@
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*</className>
     <differenceType>7002</differenceType>
   </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*
+    </className>
+    <differenceType>6011</differenceType>
+    <field>*FIELD_NUMBER</field>
+  </difference>
 </differences>

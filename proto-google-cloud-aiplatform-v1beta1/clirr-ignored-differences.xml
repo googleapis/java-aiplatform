@@ -135,11 +135,16 @@
     <differenceType>6001</differenceType>
     <field>TPU*</field>
   </difference>
-  <!--<difference>
+  <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*</className>
+    <differenceType>7002</differenceType>
+    <method>* has*()</method>
+  </difference>
+    <difference>
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*</className>
     <differenceType>7002</differenceType>
     <method>* merge*(*)</method>
-  </difference>-->
+  </difference>
   <difference>
     <className>
       com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*

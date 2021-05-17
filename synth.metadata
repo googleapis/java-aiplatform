@@ -3,7 +3,7 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-aiplatform.git",
+        "remote": "https://github.com/googleapis/java-aiplatform.git",
         "sha": "8d63f7e4a7506bdb62d36d40883f0efccdf9d0af"
       }
     },

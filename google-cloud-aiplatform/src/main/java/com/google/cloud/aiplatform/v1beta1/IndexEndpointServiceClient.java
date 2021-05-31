@@ -42,7 +42,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for managing AI Platform's IndexEndpoints.
+ * Service Description: A service for managing Vertex AI's IndexEndpoints.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -581,7 +581,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    *
    * @param indexEndpoint Required. The IndexEndpoint which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. See
-   *     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IndexEndpoint updateIndexEndpoint(

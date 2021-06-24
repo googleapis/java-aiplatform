@@ -39,9 +39,8 @@ import java.io.IOException;
 public class GetTrainingPipelineSample {
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-//    projects/ucaip-sample-tests/locations/us-central1/trainingPipelines/6790728948679442432
-    String project = "ucaip-sample-tests";
-    String trainingPipelineId = "6790728948679442432";
+    String project = "YOUR_PROJECT_ID";
+    String trainingPipelineId = "YOUR_TRAINING_PIPELINE_ID";
     getTrainingPipeline(project, trainingPipelineId);
   }
 

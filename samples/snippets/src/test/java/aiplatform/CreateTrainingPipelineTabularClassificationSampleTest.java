@@ -33,7 +33,6 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class CreateTrainingPipelineTabularClassificationSampleTest {
@@ -91,9 +90,9 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
 
       TrainingPipeline trainingPipelineResponse =
           pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
-      while ( trainingPipelineResponse.getState().name().contains("STATE_CANCELLED")) {
+      while (trainingPipelineResponse.getState().name().contains("STATE_CANCELLED")) {
         TimeUnit.SECONDS.sleep(30);
-        trainingPipelineResponse =  pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
+        trainingPipelineResponse = pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
       }
 
     }

@@ -94,7 +94,6 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
         TimeUnit.SECONDS.sleep(30);
         trainingPipelineResponse = pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
       }
-
     }
 
     // Delete the Training Pipeline

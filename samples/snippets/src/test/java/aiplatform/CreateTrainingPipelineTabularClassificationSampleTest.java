@@ -90,11 +90,10 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
 
       TrainingPipeline trainingPipelineResponse =
           pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
-      while (trainingPipelineResponse.getState().name().contains("STATE_CANCELLED")) {
+      while (!trainingPipelineResponse.getState().name().contains("STATE_CANCELLED")) {
         TimeUnit.SECONDS.sleep(30);
         trainingPipelineResponse = pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
       }
-
     }
 
     // Delete the Training Pipeline

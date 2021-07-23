@@ -81,8 +81,7 @@ use this Vertex AI Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-aiplatform/tree/master/samples) directory. The samples' `README.md`
-has instructions for running the samples.
+Samples are in the [`samples/`](https://github.com/googleapis/java-aiplatform/tree/master/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |

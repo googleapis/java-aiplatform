@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-aiplatform/compare/v1.0.2...v1.1.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#562](https://www.github.com/googleapis/java-aiplatform/issues/562)) ([3050342](https://www.github.com/googleapis/java-aiplatform/commit/30503423040fb08640a6ae11a7c04e7d34eeb93c))
+
 ### [1.0.2](https://www.github.com/googleapis/java-aiplatform/compare/v1.0.1...v1.0.2) (2021-07-07)
 
 

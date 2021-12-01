@@ -18,10 +18,8 @@ package aiplatform;
 
 // [START aiplatform_get_model_evaluation_tabular_regression_sample]
 
-import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationName;
-import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.cloud.aiplatform.v1.ModelServiceClient;
 import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
@@ -32,7 +30,8 @@ public class GetModelEvaluationTabularRegressionSample {
     // TODO(developer): Replace these variables before running the sample.
     // To obtain evaluationId run the code block below after setting modelServiceSettings.
     //
-    // try (ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings)) {
+    // try (ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings))
+    // {
     //   String location = "us-central1";
     //   ModelName modelFullId = ModelName.of(project, location, modelId);
     //   ListModelEvaluationsRequest modelEvaluationsrequest =

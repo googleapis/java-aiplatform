@@ -18,8 +18,10 @@ package aiplatform;
 
 // [START aiplatform_get_model_evaluation_text_sentiment_analysis_sample]
 
+import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationName;
+import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.cloud.aiplatform.v1.ModelServiceClient;
 import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
@@ -28,6 +30,18 @@ public class GetModelEvaluationTextSentimentAnalysisSample {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
+    // To obtain evaluationId run the code block below after setting modelServiceSettings.
+    //
+    // try (ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings)) {
+    //   String location = "us-central1";
+    //   ModelName modelFullId = ModelName.of(project, location, modelId);
+    //   ListModelEvaluationsRequest modelEvaluationsrequest =
+    //   ListModelEvaluationsRequest.newBuilder().setParent(modelFullId.toString()).build();
+    //   for (ModelEvaluation modelEvaluation :
+    //     modelServiceClient.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
+    //       System.out.format("Model Evaluation Name: %s%n", modelEvaluation.getName());
+    //   }
+    // }
     String project = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
     String evaluationId = "YOUR_EVALUATION_ID";

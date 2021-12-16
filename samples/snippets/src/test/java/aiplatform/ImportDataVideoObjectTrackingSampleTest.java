@@ -96,7 +96,7 @@ public class ImportDataVideoObjectTrackingSampleTest {
   }
 
   @After
-  public void tearDown() throws InterruptedException, ExecutionException, IOException, IllegalStateException {
+  public void tearDown() throws InterruptedException, ExecutionException, IOException {
     // delete the temp dataset
     if (datasetId != null) {
       DatasetServiceSettings datasetServiceSettings =

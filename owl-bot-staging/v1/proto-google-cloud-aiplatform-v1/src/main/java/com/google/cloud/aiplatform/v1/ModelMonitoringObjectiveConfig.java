@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1;
 
 /**
  * <pre>
- * Next ID: 7
+ * Next ID: 8
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}
@@ -7202,7 +7202,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Next ID: 7
+   * Next ID: 8
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}

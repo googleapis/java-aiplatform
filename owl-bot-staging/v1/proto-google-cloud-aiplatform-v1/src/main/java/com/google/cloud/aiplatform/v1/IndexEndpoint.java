@@ -647,9 +647,9 @@ private static final long serialVersionUID = 0L;
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-   * can be set.
+   * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -679,9 +679,9 @@ private static final long serialVersionUID = 0L;
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-   * can be set.
+   * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -710,17 +710,17 @@ private static final long serialVersionUID = 0L;
   private boolean enablePrivateServiceConnect_;
   /**
    * <pre>
-   * Optional. If true, expose the IndexEndpoint via private service connect.
+   * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
    * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
    * can be set.
    * </pre>
    *
-   * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
-  public boolean getEnablePrivateServiceConnect() {
+  @java.lang.Deprecated public boolean getEnablePrivateServiceConnect() {
     return enablePrivateServiceConnect_;
   }
 
@@ -2523,9 +2523,9 @@ private static final long serialVersionUID = 0L;
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2554,9 +2554,9 @@ private static final long serialVersionUID = 0L;
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2586,9 +2586,9 @@ private static final long serialVersionUID = 0L;
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2616,9 +2616,9 @@ private static final long serialVersionUID = 0L;
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2641,9 +2641,9 @@ private static final long serialVersionUID = 0L;
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2669,32 +2669,32 @@ private static final long serialVersionUID = 0L;
     private boolean enablePrivateServiceConnect_ ;
     /**
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
-    public boolean getEnablePrivateServiceConnect() {
+    @java.lang.Deprecated public boolean getEnablePrivateServiceConnect() {
       return enablePrivateServiceConnect_;
     }
     /**
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
-    public Builder setEnablePrivateServiceConnect(boolean value) {
+    @java.lang.Deprecated public Builder setEnablePrivateServiceConnect(boolean value) {
       
       enablePrivateServiceConnect_ = value;
       onChanged();
@@ -2702,16 +2702,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnablePrivateServiceConnect() {
+    @java.lang.Deprecated public Builder clearEnablePrivateServiceConnect() {
       
       enablePrivateServiceConnect_ = false;
       onChanged();

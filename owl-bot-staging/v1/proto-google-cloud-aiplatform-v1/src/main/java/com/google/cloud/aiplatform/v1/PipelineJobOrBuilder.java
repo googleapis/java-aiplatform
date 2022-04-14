@@ -161,28 +161,28 @@ public interface PipelineJobOrBuilder extends
 
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    * @return Whether the pipelineSpec field is set.
    */
   boolean hasPipelineSpec();
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    * @return The pipelineSpec.
    */
   com.google.protobuf.Struct getPipelineSpec();
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    */
   com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder();
 

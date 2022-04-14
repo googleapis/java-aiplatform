@@ -123,6 +123,33 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
 
   /**
    * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the latestMonitoringPipelineMetadata field is set.
+   */
+  boolean hasLatestMonitoringPipelineMetadata();
+  /**
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The latestMonitoringPipelineMetadata.
+   */
+  com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata getLatestMonitoringPipelineMetadata();
+  /**
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadataOrBuilder getLatestMonitoringPipelineMetadataOrBuilder();
+
+  /**
+   * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
    * Each DeployedModel needs to be configured separately.
    * </pre>

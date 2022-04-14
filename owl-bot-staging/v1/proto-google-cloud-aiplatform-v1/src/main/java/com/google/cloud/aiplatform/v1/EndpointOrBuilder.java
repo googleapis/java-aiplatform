@@ -431,7 +431,7 @@ public interface EndpointOrBuilder extends
 
   /**
    * <pre>
-   * If true, expose the Endpoint via private service connect.
+   * Deprecated: If true, expose the Endpoint via private service connect.
    * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.

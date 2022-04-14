@@ -503,9 +503,7 @@ private static final long serialVersionUID = 0L;
    * A list of historical [Snapshot
    * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
    * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by
-   * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
-   * descending.
+   * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -992,9 +990,7 @@ private static final long serialVersionUID = 0L;
      * A list of historical [Snapshot
      * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
      * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by
-     * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
-     * descending.
+     * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -1826,10 +1822,10 @@ private static final long serialVersionUID = 0L;
   private boolean disableMonitoring_;
   /**
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType
-   * this Feature belongs to. Only Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType this
+   * Feature belongs to.
+   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+   * INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -1846,8 +1842,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly> monitoringStatsAnomalies_;
   /**
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1858,8 +1853,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1871,8 +1865,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1883,8 +1876,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1895,8 +1887,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3371,10 +3362,10 @@ private static final long serialVersionUID = 0L;
     private boolean disableMonitoring_ ;
     /**
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3388,10 +3379,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3408,10 +3399,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3440,8 +3431,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3455,8 +3445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3470,8 +3459,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3485,8 +3473,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3507,8 +3494,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3526,8 +3512,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3547,8 +3532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3569,8 +3553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3588,8 +3571,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3607,8 +3589,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3627,8 +3608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3645,8 +3625,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3663,8 +3642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3675,8 +3653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3690,8 +3667,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3706,8 +3682,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3718,8 +3693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3731,8 +3705,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

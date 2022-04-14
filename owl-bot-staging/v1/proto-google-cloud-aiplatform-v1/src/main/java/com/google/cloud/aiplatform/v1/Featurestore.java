@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Possible states a Featurestore can have.
+   * Possible states a featurestore can have.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.aiplatform.v1.Featurestore.State}
@@ -204,9 +204,9 @@ private static final long serialVersionUID = 0L;
     STATE_UNSPECIFIED(0),
     /**
      * <pre>
-     * State when the Featurestore configuration is not being updated and the
-     * fields reflect the current configuration of the Featurestore. The
-     * Featurestore is usable in this state.
+     * State when the featurestore configuration is not being updated and the
+     * fields reflect the current configuration of the featurestore. The
+     * featurestore is usable in this state.
      * </pre>
      *
      * <code>STABLE = 1;</code>
@@ -214,14 +214,16 @@ private static final long serialVersionUID = 0L;
     STABLE(1),
     /**
      * <pre>
-     * State when the Featurestore configuration is being updated and the fields
-     * reflect the updated configuration of the Featurestore, not the current
-     * one. For example, `online_serving_config.fixed_node_count` can take
-     * minutes to update. While the update is in progress, the Featurestore
-     * will be in the UPDATING state and the value of `fixed_node_count` will be
-     * the updated value. Until the update completes, the actual number of nodes
-     * can still be the original value of `fixed_node_count`. The Featurestore
-     * is still usable in this state.
+     * The state of the featurestore configuration when it is being updated.
+     * During an update, the fields reflect either the original configuration
+     * or the updated configuration of the featurestore. For example,
+     * `online_serving_config.fixed_node_count` can take minutes to update.
+     * While the update is in progress, the featurestore is in the UPDATING
+     * state, and the value of `fixed_node_count` can be the original value or
+     * the updated value, depending on the progress of the operation. Until the
+     * update completes, the actual number of nodes can still be the original
+     * value of `fixed_node_count`. The featurestore is still usable in this
+     * state.
      * </pre>
      *
      * <code>UPDATING = 2;</code>
@@ -240,9 +242,9 @@ private static final long serialVersionUID = 0L;
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * State when the Featurestore configuration is not being updated and the
-     * fields reflect the current configuration of the Featurestore. The
-     * Featurestore is usable in this state.
+     * State when the featurestore configuration is not being updated and the
+     * fields reflect the current configuration of the featurestore. The
+     * featurestore is usable in this state.
      * </pre>
      *
      * <code>STABLE = 1;</code>
@@ -250,14 +252,16 @@ private static final long serialVersionUID = 0L;
     public static final int STABLE_VALUE = 1;
     /**
      * <pre>
-     * State when the Featurestore configuration is being updated and the fields
-     * reflect the updated configuration of the Featurestore, not the current
-     * one. For example, `online_serving_config.fixed_node_count` can take
-     * minutes to update. While the update is in progress, the Featurestore
-     * will be in the UPDATING state and the value of `fixed_node_count` will be
-     * the updated value. Until the update completes, the actual number of nodes
-     * can still be the original value of `fixed_node_count`. The Featurestore
-     * is still usable in this state.
+     * The state of the featurestore configuration when it is being updated.
+     * During an update, the fields reflect either the original configuration
+     * or the updated configuration of the featurestore. For example,
+     * `online_serving_config.fixed_node_count` can take minutes to update.
+     * While the update is in progress, the featurestore is in the UPDATING
+     * state, and the value of `fixed_node_count` can be the original value or
+     * the updated value, depending on the progress of the operation. Until the
+     * update completes, the actual number of nodes can still be the original
+     * value of `fixed_node_count`. The featurestore is still usable in this
+     * state.
      * </pre>
      *
      * <code>UPDATING = 2;</code>
@@ -354,11 +358,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The number of nodes for each cluster. The number of nodes will not
-     * scale automatically but can be scaled manually by providing different
-     * values when updating.
-     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-     * reset the other.
+     * The number of nodes for the online store. The number of nodes doesn't
+     * scale automatically, but you can manually update the number of
+     * nodes. If set to 0, the featurestore will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -457,11 +460,10 @@ private static final long serialVersionUID = 0L;
     private int fixedNodeCount_;
     /**
      * <pre>
-     * The number of nodes for each cluster. The number of nodes will not
-     * scale automatically but can be scaled manually by providing different
-     * values when updating.
-     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-     * reset the other.
+     * The number of nodes for the online store. The number of nodes doesn't
+     * scale automatically, but you can manually update the number of
+     * nodes. If set to 0, the featurestore will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -782,11 +784,10 @@ private static final long serialVersionUID = 0L;
       private int fixedNodeCount_ ;
       /**
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -798,11 +799,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -817,11 +817,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -1191,10 +1190,11 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig onlineServingConfig_;
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the onlineServingConfig field is set.
    */
   @java.lang.Override
@@ -1203,10 +1203,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The onlineServingConfig.
    */
   @java.lang.Override
@@ -1215,10 +1216,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder getOnlineServingConfigOrBuilder() {
@@ -2534,10 +2536,11 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig, com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Builder, com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder> onlineServingConfigBuilder_;
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the onlineServingConfig field is set.
      */
     public boolean hasOnlineServingConfig() {
@@ -2545,10 +2548,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The onlineServingConfig.
      */
     public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig getOnlineServingConfig() {
@@ -2560,10 +2564,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setOnlineServingConfig(com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig value) {
       if (onlineServingConfigBuilder_ == null) {
@@ -2580,10 +2585,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setOnlineServingConfig(
         com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Builder builderForValue) {
@@ -2598,10 +2604,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeOnlineServingConfig(com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig value) {
       if (onlineServingConfigBuilder_ == null) {
@@ -2620,10 +2627,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearOnlineServingConfig() {
       if (onlineServingConfigBuilder_ == null) {
@@ -2638,10 +2646,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Builder getOnlineServingConfigBuilder() {
       
@@ -2650,10 +2659,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder getOnlineServingConfigOrBuilder() {
       if (onlineServingConfigBuilder_ != null) {
@@ -2665,10 +2675,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig, com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Builder, com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder> 

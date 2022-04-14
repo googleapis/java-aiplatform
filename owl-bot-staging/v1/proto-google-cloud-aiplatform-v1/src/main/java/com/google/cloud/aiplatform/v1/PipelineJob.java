@@ -2061,10 +2061,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct pipelineSpec_;
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    * @return Whether the pipelineSpec field is set.
    */
   @java.lang.Override
@@ -2073,10 +2073,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    * @return The pipelineSpec.
    */
   @java.lang.Override
@@ -2085,10 +2085,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder() {
@@ -4042,10 +4042,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> pipelineSpecBuilder_;
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      * @return Whether the pipelineSpec field is set.
      */
     public boolean hasPipelineSpec() {
@@ -4053,10 +4053,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      * @return The pipelineSpec.
      */
     public com.google.protobuf.Struct getPipelineSpec() {
@@ -4068,10 +4068,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder setPipelineSpec(com.google.protobuf.Struct value) {
       if (pipelineSpecBuilder_ == null) {
@@ -4088,10 +4088,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder setPipelineSpec(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -4106,10 +4106,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder mergePipelineSpec(com.google.protobuf.Struct value) {
       if (pipelineSpecBuilder_ == null) {
@@ -4128,10 +4128,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder clearPipelineSpec() {
       if (pipelineSpecBuilder_ == null) {
@@ -4146,10 +4146,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public com.google.protobuf.Struct.Builder getPipelineSpecBuilder() {
       
@@ -4158,10 +4158,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder() {
       if (pipelineSpecBuilder_ != null) {
@@ -4173,10 +4173,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 

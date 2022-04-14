@@ -63,6 +63,33 @@ public interface StudySpecOrBuilder extends
 
   /**
    * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;</code>
+   * @return Whether the convexAutomatedStoppingSpec field is set.
+   */
+  boolean hasConvexAutomatedStoppingSpec();
+  /**
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;</code>
+   * @return The convexAutomatedStoppingSpec.
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec getConvexAutomatedStoppingSpec();
+  /**
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;</code>
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder getConvexAutomatedStoppingSpecOrBuilder();
+
+  /**
+   * <pre>
    * Required. Metric specs for the Study.
    * </pre>
    *

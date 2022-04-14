@@ -201,28 +201,31 @@ public interface FeaturestoreOrBuilder extends
 
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the onlineServingConfig field is set.
    */
   boolean hasOnlineServingConfig();
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The onlineServingConfig.
    */
   com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig getOnlineServingConfig();
   /**
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder getOnlineServingConfigOrBuilder();
 

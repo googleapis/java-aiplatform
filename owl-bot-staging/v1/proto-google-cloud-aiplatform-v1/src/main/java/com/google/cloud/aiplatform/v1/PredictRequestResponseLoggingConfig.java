@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -776,7 +776,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is

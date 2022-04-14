@@ -48,31 +48,31 @@ public interface UpdateContextRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

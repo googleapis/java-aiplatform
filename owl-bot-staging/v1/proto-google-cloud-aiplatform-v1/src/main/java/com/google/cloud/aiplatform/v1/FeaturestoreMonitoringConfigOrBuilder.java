@@ -65,9 +65,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE
-   * or INT64).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE or INT64).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig numerical_threshold_config = 3;</code>
@@ -78,9 +76,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE
-   * or INT64).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE or INT64).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig numerical_threshold_config = 3;</code>
@@ -91,9 +87,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE
-   * or INT64).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) DOUBLE or INT64).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig numerical_threshold_config = 3;</code>
@@ -104,9 +98,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or
-   * STRING).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or STRING).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig categorical_threshold_config = 4;</code>
@@ -117,9 +109,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or
-   * STRING).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or STRING).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig categorical_threshold_config = 4;</code>
@@ -130,9 +120,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder extends
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or
-   * STRING).
+   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL or STRING).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ThresholdConfig categorical_threshold_config = 4;</code>

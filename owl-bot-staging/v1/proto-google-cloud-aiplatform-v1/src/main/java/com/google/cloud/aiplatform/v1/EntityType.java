@@ -533,10 +533,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoringConfig_;
   /**
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -552,10 +551,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -571,10 +569,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1921,10 +1918,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig, com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder, com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder> monitoringConfigBuilder_;
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1939,10 +1935,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1961,10 +1956,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1988,10 +1982,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2013,10 +2006,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2042,10 +2034,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2067,10 +2058,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2086,10 +2076,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2108,10 +2097,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value
-     * type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 under this EntityType.
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+     * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is

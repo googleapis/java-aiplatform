@@ -78,6 +78,11 @@
     <field>SIMILARITY*</field>
   </difference>
   <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <field>SIMILARITY*</field>
+  </difference>
+  <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
     <method>* getSimilarity*(*)</method>

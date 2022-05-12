@@ -643,6 +643,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -651,6 +652,7 @@ public class ModelServiceClientTest {
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -695,6 +697,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -703,6 +706,7 @@ public class ModelServiceClientTest {
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -747,6 +751,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -755,6 +760,7 @@ public class ModelServiceClientTest {
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -797,6 +803,7 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -805,6 +812,7 @@ public class ModelServiceClientTest {
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

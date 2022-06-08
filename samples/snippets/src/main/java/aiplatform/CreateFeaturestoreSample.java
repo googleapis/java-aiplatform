@@ -19,7 +19,7 @@
  * the code snippet
  */
 
-package com.google.cloud.featurestore;
+package aiplatform;
 
 // [START aiplatform_create_featurestore_sample]
 
@@ -46,7 +46,7 @@ public class CreateFeaturestoreSample {
     int fixedNodeCount = 1;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
-    int timeout = 15*60;
+    int timeout = 900;
     createFeaturestoreSample(project, featurestoreId, fixedNodeCount, location, endpoint, timeout);
   }
 

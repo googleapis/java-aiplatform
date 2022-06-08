@@ -19,7 +19,7 @@
  * the code snippet
  */
 
-package com.google.cloud.featurestore;
+package aiplatform;
 
 // [START aiplatform_delete_featurestore_sample]
 
@@ -40,8 +40,8 @@ public class DeleteFeaturestoreSample {
   public static void main(String[] args)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "vertex-ai-dev"; //"YOUR_PROJECT_ID";
-    String featurestoreId = "movie_prediction"; //"YOUR_FEATURESTORE_ID";
+    String project = "vertex-ai-dev"; // "YOUR_PROJECT_ID";
+    String featurestoreId = "movie_prediction"; // "YOUR_FEATURESTORE_ID";
     boolean useForce = true;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
@@ -49,8 +49,8 @@ public class DeleteFeaturestoreSample {
     deleteFeaturestoreSample(project, featurestoreId, useForce, location, endpoint, timeout);
   }
 
-  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce, String location,
-      String endpoint, int timeout)
+  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
+      String location, String endpoint, int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -63,8 +63,8 @@ public class DeleteFeaturestoreSample {
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
       DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString()).setForce(useForce)
-          .build();
+          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+          .setForce(useForce).build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);

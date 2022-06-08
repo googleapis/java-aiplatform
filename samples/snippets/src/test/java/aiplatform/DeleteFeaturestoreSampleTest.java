@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.featurestore;
+package aiplatform;
 
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
@@ -86,11 +86,12 @@ public class DeleteFeaturestoreSampleTest {
     String createFeaturestoreResponse = bout.toString();
     assertThat(createFeaturestoreResponse).contains("Create Featurestore Response");
     featurestoreId =
-        createFeaturestoreResponse.split("Name: ")[1].split("featurestores/")[1].split("\n")[0].trim();
+        createFeaturestoreResponse.split("Name: ")[1].split("featurestores/")[1].split("\n")[0]
+            .trim();
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE, LOCATION,
-        ENDPOINT, TIMEOUT);
+    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
+        LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();

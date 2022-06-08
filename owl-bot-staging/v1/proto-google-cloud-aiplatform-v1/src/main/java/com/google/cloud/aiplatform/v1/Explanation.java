@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private Explanation() {
     attributions_ = java.util.Collections.emptyList();
+    neighbors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -64,6 +65,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.aiplatform.v1.Attribution.parser(), extensionRegistry));
             break;
           }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              neighbors_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.Neighbor>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            neighbors_.add(
+                input.readMessage(com.google.cloud.aiplatform.v1.Neighbor.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,6 +93,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         attributions_ = java.util.Collections.unmodifiableList(attributions_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        neighbors_ = java.util.Collections.unmodifiableList(neighbors_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -216,6 +229,76 @@ private static final long serialVersionUID = 0L;
     return attributions_.get(index);
   }
 
+  public static final int NEIGHBORS_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.aiplatform.v1.Neighbor> neighbors_;
+  /**
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.Neighbor> getNeighborsList() {
+    return neighbors_;
+  }
+  /**
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.NeighborOrBuilder> 
+      getNeighborsOrBuilderList() {
+    return neighbors_;
+  }
+  /**
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public int getNeighborsCount() {
+    return neighbors_.size();
+  }
+  /**
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Neighbor getNeighbors(int index) {
+    return neighbors_.get(index);
+  }
+  /**
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NeighborOrBuilder getNeighborsOrBuilder(
+      int index) {
+    return neighbors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -233,6 +316,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < attributions_.size(); i++) {
       output.writeMessage(1, attributions_.get(i));
     }
+    for (int i = 0; i < neighbors_.size(); i++) {
+      output.writeMessage(2, neighbors_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -245,6 +331,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < attributions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, attributions_.get(i));
+    }
+    for (int i = 0; i < neighbors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, neighbors_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -263,6 +353,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getAttributionsList()
         .equals(other.getAttributionsList())) return false;
+    if (!getNeighborsList()
+        .equals(other.getNeighborsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -277,6 +369,10 @@ private static final long serialVersionUID = 0L;
     if (getAttributionsCount() > 0) {
       hash = (37 * hash) + ATTRIBUTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAttributionsList().hashCode();
+    }
+    if (getNeighborsCount() > 0) {
+      hash = (37 * hash) + NEIGHBORS_FIELD_NUMBER;
+      hash = (53 * hash) + getNeighborsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -412,6 +508,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getAttributionsFieldBuilder();
+        getNeighborsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -422,6 +519,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         attributionsBuilder_.clear();
+      }
+      if (neighborsBuilder_ == null) {
+        neighbors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        neighborsBuilder_.clear();
       }
       return this;
     }
@@ -458,6 +561,15 @@ private static final long serialVersionUID = 0L;
         result.attributions_ = attributions_;
       } else {
         result.attributions_ = attributionsBuilder_.build();
+      }
+      if (neighborsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          neighbors_ = java.util.Collections.unmodifiableList(neighbors_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.neighbors_ = neighbors_;
+      } else {
+        result.neighbors_ = neighborsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -530,6 +642,32 @@ private static final long serialVersionUID = 0L;
                  getAttributionsFieldBuilder() : null;
           } else {
             attributionsBuilder_.addAllMessages(other.attributions_);
+          }
+        }
+      }
+      if (neighborsBuilder_ == null) {
+        if (!other.neighbors_.isEmpty()) {
+          if (neighbors_.isEmpty()) {
+            neighbors_ = other.neighbors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNeighborsIsMutable();
+            neighbors_.addAll(other.neighbors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.neighbors_.isEmpty()) {
+          if (neighborsBuilder_.isEmpty()) {
+            neighborsBuilder_.dispose();
+            neighborsBuilder_ = null;
+            neighbors_ = other.neighbors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            neighborsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getNeighborsFieldBuilder() : null;
+          } else {
+            neighborsBuilder_.addAllMessages(other.neighbors_);
           }
         }
       }
@@ -1071,6 +1209,354 @@ private static final long serialVersionUID = 0L;
         attributions_ = null;
       }
       return attributionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.Neighbor> neighbors_ =
+      java.util.Collections.emptyList();
+    private void ensureNeighborsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        neighbors_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.Neighbor>(neighbors_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.aiplatform.v1.Neighbor, com.google.cloud.aiplatform.v1.Neighbor.Builder, com.google.cloud.aiplatform.v1.NeighborOrBuilder> neighborsBuilder_;
+
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Neighbor> getNeighborsList() {
+      if (neighborsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(neighbors_);
+      } else {
+        return neighborsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public int getNeighborsCount() {
+      if (neighborsBuilder_ == null) {
+        return neighbors_.size();
+      } else {
+        return neighborsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.aiplatform.v1.Neighbor getNeighbors(int index) {
+      if (neighborsBuilder_ == null) {
+        return neighbors_.get(index);
+      } else {
+        return neighborsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setNeighbors(
+        int index, com.google.cloud.aiplatform.v1.Neighbor value) {
+      if (neighborsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNeighborsIsMutable();
+        neighbors_.set(index, value);
+        onChanged();
+      } else {
+        neighborsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setNeighbors(
+        int index, com.google.cloud.aiplatform.v1.Neighbor.Builder builderForValue) {
+      if (neighborsBuilder_ == null) {
+        ensureNeighborsIsMutable();
+        neighbors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        neighborsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNeighbors(com.google.cloud.aiplatform.v1.Neighbor value) {
+      if (neighborsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNeighborsIsMutable();
+        neighbors_.add(value);
+        onChanged();
+      } else {
+        neighborsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNeighbors(
+        int index, com.google.cloud.aiplatform.v1.Neighbor value) {
+      if (neighborsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNeighborsIsMutable();
+        neighbors_.add(index, value);
+        onChanged();
+      } else {
+        neighborsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNeighbors(
+        com.google.cloud.aiplatform.v1.Neighbor.Builder builderForValue) {
+      if (neighborsBuilder_ == null) {
+        ensureNeighborsIsMutable();
+        neighbors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        neighborsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNeighbors(
+        int index, com.google.cloud.aiplatform.v1.Neighbor.Builder builderForValue) {
+      if (neighborsBuilder_ == null) {
+        ensureNeighborsIsMutable();
+        neighbors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        neighborsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addAllNeighbors(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Neighbor> values) {
+      if (neighborsBuilder_ == null) {
+        ensureNeighborsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, neighbors_);
+        onChanged();
+      } else {
+        neighborsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearNeighbors() {
+      if (neighborsBuilder_ == null) {
+        neighbors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        neighborsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder removeNeighbors(int index) {
+      if (neighborsBuilder_ == null) {
+        ensureNeighborsIsMutable();
+        neighbors_.remove(index);
+        onChanged();
+      } else {
+        neighborsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.aiplatform.v1.Neighbor.Builder getNeighborsBuilder(
+        int index) {
+      return getNeighborsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.aiplatform.v1.NeighborOrBuilder getNeighborsOrBuilder(
+        int index) {
+      if (neighborsBuilder_ == null) {
+        return neighbors_.get(index);  } else {
+        return neighborsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.NeighborOrBuilder> 
+         getNeighborsOrBuilderList() {
+      if (neighborsBuilder_ != null) {
+        return neighborsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(neighbors_);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.aiplatform.v1.Neighbor.Builder addNeighborsBuilder() {
+      return getNeighborsFieldBuilder().addBuilder(
+          com.google.cloud.aiplatform.v1.Neighbor.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.aiplatform.v1.Neighbor.Builder addNeighborsBuilder(
+        int index) {
+      return getNeighborsFieldBuilder().addBuilder(
+          index, com.google.cloud.aiplatform.v1.Neighbor.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Output only. List of the nearest neighbors for example-based explanations.
+     * For models deployed with the examples explanations feature enabled, the
+     * attributions field is empty and instead the neighbors field is populated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Neighbor.Builder> 
+         getNeighborsBuilderList() {
+      return getNeighborsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.aiplatform.v1.Neighbor, com.google.cloud.aiplatform.v1.Neighbor.Builder, com.google.cloud.aiplatform.v1.NeighborOrBuilder> 
+        getNeighborsFieldBuilder() {
+      if (neighborsBuilder_ == null) {
+        neighborsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Neighbor, com.google.cloud.aiplatform.v1.Neighbor.Builder, com.google.cloud.aiplatform.v1.NeighborOrBuilder>(
+                neighbors_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        neighbors_ = null;
+      }
+      return neighborsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -16,8 +16,10 @@
 
 package com.google.cloud.aiplatform.v1;
 
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -34,6 +36,15 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1.stub.ModelServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -99,6 +110,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).listModelsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listModelVersions. */
+  public PagedCallSettings<
+          ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+      listModelVersionsSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).listModelVersionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateModel. */
   public UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).updateModelSettings();
@@ -113,6 +131,22 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
   public OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).deleteModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public UnaryCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).deleteModelVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public OperationCallSettings<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).deleteModelVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mergeVersionAliases. */
+  public UnaryCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).mergeVersionAliasesSettings();
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
@@ -159,6 +193,33 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).listModelEvaluationSlicesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final ModelServiceSettings create(ModelServiceStubSettings stub)
@@ -281,6 +342,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
       return getStubSettingsBuilder().listModelsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listModelVersions. */
+    public PagedCallSettings.Builder<
+            ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+        listModelVersionsSettings() {
+      return getStubSettingsBuilder().listModelVersionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateModel. */
     public UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings() {
       return getStubSettingsBuilder().updateModelSettings();
@@ -295,6 +363,24 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings() {
       return getStubSettingsBuilder().deleteModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    public UnaryCallSettings.Builder<DeleteModelVersionRequest, Operation>
+        deleteModelVersionSettings() {
+      return getStubSettingsBuilder().deleteModelVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    public OperationCallSettings.Builder<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+        deleteModelVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteModelVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mergeVersionAliases. */
+    public UnaryCallSettings.Builder<MergeVersionAliasesRequest, Model>
+        mergeVersionAliasesSettings() {
+      return getStubSettingsBuilder().mergeVersionAliasesSettings();
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
@@ -341,6 +427,34 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings() {
       return getStubSettingsBuilder().listModelEvaluationSlicesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

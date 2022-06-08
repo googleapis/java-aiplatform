@@ -6,7 +6,6 @@ package com.google.cloud.aiplatform.v1;
 /**
  * <pre>
  * Value for a feature.
- * (-- NEXT ID: 15 --)
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.FeatureValue}
@@ -1711,7 +1710,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Value for a feature.
-   * (-- NEXT ID: 15 --)
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.FeatureValue}

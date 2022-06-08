@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Vertex AI API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= DatasetServiceClient =======================
  *
@@ -154,11 +156,8 @@
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   for (MigratableResource element :
- *       migrationServiceClient.searchMigratableResources(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+ *   Location response = migrationServiceClient.getLocation(request);
  * }
  * }</pre>
  *

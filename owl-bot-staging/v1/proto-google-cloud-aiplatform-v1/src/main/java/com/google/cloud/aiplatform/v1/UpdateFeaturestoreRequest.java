@@ -173,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -194,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -215,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -770,6 +773,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -790,6 +794,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -814,6 +819,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -843,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -870,6 +877,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -901,6 +909,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -928,6 +937,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -949,6 +959,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -973,6 +984,7 @@ private static final long serialVersionUID = 0L;
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

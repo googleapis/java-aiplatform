@@ -1428,6 +1428,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the Model to export.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be exported.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1449,6 +1451,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the Model to export.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be exported.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1847,6 +1851,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1867,6 +1873,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1888,6 +1896,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1907,6 +1917,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1921,6 +1933,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

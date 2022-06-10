@@ -36,11 +36,12 @@ import org.junit.runners.JUnit4;
 public class CreateFeaturestoreSampleTest {
 
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
-  private static final int FIXED_NODE_COUNT = 1;
+  private static final int MIN_NODE_COUNT = 1;
+  private static final int MAX_NODE_COUNT = 5;
   private static final boolean USE_FORCE = true;
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
-  private static final int TIMEOUT = 300;
+  private static final int TIMEOUT = 900;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -87,8 +88,8 @@ public class CreateFeaturestoreSampleTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreSample.createFeaturestoreSample(PROJECT_ID, id, FIXED_NODE_COUNT, LOCATION,
-        ENDPOINT, TIMEOUT);
+    CreateFeaturestoreSample.createFeaturestoreSample(PROJECT_ID, id,
+        MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();

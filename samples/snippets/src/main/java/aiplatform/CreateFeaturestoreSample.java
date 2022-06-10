@@ -24,13 +24,14 @@ package aiplatform;
 // [START aiplatform_create_featurestore_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1.CreateFeaturestoreOperationMetadata;
-import com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest;
-import com.google.cloud.aiplatform.v1.Featurestore;
-import com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
-import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest;
+import com.google.cloud.aiplatform.v1beta1.Featurestore;
+import com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig;
+import com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling;
+import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceClient;
+import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -43,15 +44,17 @@ public class CreateFeaturestoreSample {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
     String featurestoreId = "YOUR_FEATURESTORE_ID";
-    int fixedNodeCount = 1;
+    int minNodeCount = 1;
+    int maxNodeCount = 5;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 900;
-    createFeaturestoreSample(project, featurestoreId, fixedNodeCount, location, endpoint, timeout);
+    createFeaturestoreSample(project, featurestoreId, minNodeCount, maxNodeCount,
+        location, endpoint, timeout);
   }
 
-  static void createFeaturestoreSample(String project, String featurestoreId, int fixedNodeCount,
-      String location, String endpoint, int timeout)
+  static void createFeaturestoreSample(String project, String featurestoreId,
+      int minNodeCount, int maxNodeCount, String location, String endpoint, int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -63,14 +66,15 @@ public class CreateFeaturestoreSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      OnlineServingConfig.Builder builderValue =
-          OnlineServingConfig.newBuilder().setFixedNodeCount(fixedNodeCount);
+      OnlineServingConfig.Builder builderValue = OnlineServingConfig.newBuilder().setScaling(
+          Scaling.newBuilder().setMinNodeCount(minNodeCount).setMaxNodeCount(maxNodeCount));
       Featurestore featurestore =
           Featurestore.newBuilder().setOnlineServingConfig(builderValue).build();
+      String parent = LocationName.of(project, location).toString();
 
-      CreateFeaturestoreRequest createFeaturestoreRequest = CreateFeaturestoreRequest.newBuilder()
-          .setParent(LocationName.of(project, location).toString()).setFeaturestore(featurestore)
-          .setFeaturestoreId(featurestoreId).build();
+      CreateFeaturestoreRequest createFeaturestoreRequest =
+          CreateFeaturestoreRequest.newBuilder().setParent(parent).setFeaturestore(featurestore)
+              .setFeaturestoreId(featurestoreId).build();
 
       OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata> featurestoreFuture =
           featurestoreServiceClient.createFeaturestoreAsync(createFeaturestoreRequest);

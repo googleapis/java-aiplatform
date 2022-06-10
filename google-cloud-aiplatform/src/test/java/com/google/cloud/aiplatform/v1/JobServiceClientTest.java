@@ -569,7 +569,7 @@ public class JobServiceClientTest {
             .setLabelerCount(-1457777167)
             .setInstructionUri("instructionUri1989242366")
             .setInputsSchemaUri("inputsSchemaUri1757461538")
-            .setInputs(Value.newBuilder().build())
+            .setInputs(Value.newBuilder().setBoolValue(true).build())
             .setState(JobState.forNumber(0))
             .setLabelingProgress(-685978914)
             .setCurrentSpend(Money.newBuilder().build())
@@ -629,7 +629,7 @@ public class JobServiceClientTest {
             .setLabelerCount(-1457777167)
             .setInstructionUri("instructionUri1989242366")
             .setInputsSchemaUri("inputsSchemaUri1757461538")
-            .setInputs(Value.newBuilder().build())
+            .setInputs(Value.newBuilder().setBoolValue(true).build())
             .setState(JobState.forNumber(0))
             .setLabelingProgress(-685978914)
             .setCurrentSpend(Money.newBuilder().build())
@@ -689,7 +689,7 @@ public class JobServiceClientTest {
             .setLabelerCount(-1457777167)
             .setInstructionUri("instructionUri1989242366")
             .setInputsSchemaUri("inputsSchemaUri1757461538")
-            .setInputs(Value.newBuilder().build())
+            .setInputs(Value.newBuilder().setBoolValue(true).build())
             .setState(JobState.forNumber(0))
             .setLabelingProgress(-685978914)
             .setCurrentSpend(Money.newBuilder().build())
@@ -747,7 +747,7 @@ public class JobServiceClientTest {
             .setLabelerCount(-1457777167)
             .setInstructionUri("instructionUri1989242366")
             .setInputsSchemaUri("inputsSchemaUri1757461538")
-            .setInputs(Value.newBuilder().build())
+            .setInputs(Value.newBuilder().setBoolValue(true).build())
             .setState(JobState.forNumber(0))
             .setLabelingProgress(-685978914)
             .setCurrentSpend(Money.newBuilder().build())
@@ -1546,7 +1546,7 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
-            .setModelParameters(Value.newBuilder().build())
+            .setModelParameters(Value.newBuilder().setBoolValue(true).build())
             .setOutputConfig(BatchPredictionJob.OutputConfig.newBuilder().build())
             .setDedicatedResources(BatchDedicatedResources.newBuilder().build())
             .setManualBatchTuningParameters(ManualBatchTuningParameters.newBuilder().build())
@@ -1612,7 +1612,7 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
-            .setModelParameters(Value.newBuilder().build())
+            .setModelParameters(Value.newBuilder().setBoolValue(true).build())
             .setOutputConfig(BatchPredictionJob.OutputConfig.newBuilder().build())
             .setDedicatedResources(BatchDedicatedResources.newBuilder().build())
             .setManualBatchTuningParameters(ManualBatchTuningParameters.newBuilder().build())
@@ -1678,7 +1678,7 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
-            .setModelParameters(Value.newBuilder().build())
+            .setModelParameters(Value.newBuilder().setBoolValue(true).build())
             .setOutputConfig(BatchPredictionJob.OutputConfig.newBuilder().build())
             .setDedicatedResources(BatchDedicatedResources.newBuilder().build())
             .setManualBatchTuningParameters(ManualBatchTuningParameters.newBuilder().build())
@@ -1743,7 +1743,7 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
-            .setModelParameters(Value.newBuilder().build())
+            .setModelParameters(Value.newBuilder().setBoolValue(true).build())
             .setOutputConfig(BatchPredictionJob.OutputConfig.newBuilder().build())
             .setDedicatedResources(BatchDedicatedResources.newBuilder().build())
             .setManualBatchTuningParameters(ManualBatchTuningParameters.newBuilder().build())
@@ -2065,7 +2065,7 @@ public class JobServiceClientTest {
             .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
             .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
             .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
-            .setSamplePredictInstance(Value.newBuilder().build())
+            .setSamplePredictInstance(Value.newBuilder().setBoolValue(true).build())
             .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
             .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
             .setLogTtl(Duration.newBuilder().build())
@@ -2138,7 +2138,7 @@ public class JobServiceClientTest {
             .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
             .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
             .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
-            .setSamplePredictInstance(Value.newBuilder().build())
+            .setSamplePredictInstance(Value.newBuilder().setBoolValue(true).build())
             .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
             .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
             .setLogTtl(Duration.newBuilder().build())
@@ -2323,7 +2323,7 @@ public class JobServiceClientTest {
             .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
             .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
             .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
-            .setSamplePredictInstance(Value.newBuilder().build())
+            .setSamplePredictInstance(Value.newBuilder().setBoolValue(true).build())
             .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
             .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
             .setLogTtl(Duration.newBuilder().build())
@@ -2393,7 +2393,7 @@ public class JobServiceClientTest {
             .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
             .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
             .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
-            .setSamplePredictInstance(Value.newBuilder().build())
+            .setSamplePredictInstance(Value.newBuilder().setBoolValue(true).build())
             .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
             .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
             .setLogTtl(Duration.newBuilder().build())
@@ -2557,7 +2557,7 @@ public class JobServiceClientTest {
             .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
             .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
             .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
-            .setSamplePredictInstance(Value.newBuilder().build())
+            .setSamplePredictInstance(Value.newBuilder().setBoolValue(true).build())
             .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
             .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
             .setLogTtl(Duration.newBuilder().build())
@@ -2975,7 +2975,7 @@ public class JobServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -3006,7 +3006,7 @@ public class JobServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -3032,7 +3032,7 @@ public class JobServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -3061,7 +3061,7 @@ public class JobServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -3081,7 +3081,7 @@ public class JobServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -3110,7 +3110,7 @@ public class JobServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

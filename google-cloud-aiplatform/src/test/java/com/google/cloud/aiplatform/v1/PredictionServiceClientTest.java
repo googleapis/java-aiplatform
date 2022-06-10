@@ -115,7 +115,7 @@ public class PredictionServiceClientTest {
 
     EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     List<Value> instances = new ArrayList<>();
-    Value parameters = Value.newBuilder().build();
+    Value parameters = Value.newBuilder().setBoolValue(true).build();
 
     PredictResponse actualResponse = client.predict(endpoint, instances, parameters);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -141,7 +141,7 @@ public class PredictionServiceClientTest {
     try {
       EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       List<Value> instances = new ArrayList<>();
-      Value parameters = Value.newBuilder().build();
+      Value parameters = Value.newBuilder().setBoolValue(true).build();
       client.predict(endpoint, instances, parameters);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -162,7 +162,7 @@ public class PredictionServiceClientTest {
 
     String endpoint = "endpoint1741102485";
     List<Value> instances = new ArrayList<>();
-    Value parameters = Value.newBuilder().build();
+    Value parameters = Value.newBuilder().setBoolValue(true).build();
 
     PredictResponse actualResponse = client.predict(endpoint, instances, parameters);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -188,7 +188,7 @@ public class PredictionServiceClientTest {
     try {
       String endpoint = "endpoint1741102485";
       List<Value> instances = new ArrayList<>();
-      Value parameters = Value.newBuilder().build();
+      Value parameters = Value.newBuilder().setBoolValue(true).build();
       client.predict(endpoint, instances, parameters);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -294,7 +294,7 @@ public class PredictionServiceClientTest {
 
     EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     List<Value> instances = new ArrayList<>();
-    Value parameters = Value.newBuilder().build();
+    Value parameters = Value.newBuilder().setBoolValue(true).build();
     String deployedModelId = "deployedModelId-1817547906";
 
     ExplainResponse actualResponse =
@@ -323,7 +323,7 @@ public class PredictionServiceClientTest {
     try {
       EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       List<Value> instances = new ArrayList<>();
-      Value parameters = Value.newBuilder().build();
+      Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
       Assert.fail("No exception raised");
@@ -344,7 +344,7 @@ public class PredictionServiceClientTest {
 
     String endpoint = "endpoint1741102485";
     List<Value> instances = new ArrayList<>();
-    Value parameters = Value.newBuilder().build();
+    Value parameters = Value.newBuilder().setBoolValue(true).build();
     String deployedModelId = "deployedModelId-1817547906";
 
     ExplainResponse actualResponse =
@@ -373,7 +373,7 @@ public class PredictionServiceClientTest {
     try {
       String endpoint = "endpoint1741102485";
       List<Value> instances = new ArrayList<>();
-      Value parameters = Value.newBuilder().build();
+      Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
       Assert.fail("No exception raised");
@@ -497,7 +497,7 @@ public class PredictionServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -528,7 +528,7 @@ public class PredictionServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -554,7 +554,7 @@ public class PredictionServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -583,7 +583,7 @@ public class PredictionServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -603,7 +603,7 @@ public class PredictionServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -632,7 +632,7 @@ public class PredictionServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

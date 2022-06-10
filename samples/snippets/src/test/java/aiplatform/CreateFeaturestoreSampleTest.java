@@ -85,6 +85,7 @@ public class CreateFeaturestoreSampleTest {
   @Test
   public void testCreateFeaturestoreSample()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
+    
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);

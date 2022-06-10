@@ -40,8 +40,8 @@ public class DeleteFeaturestoreSample {
   public static void main(String[] args)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
-    String project = "vertex-ai-dev"; // "YOUR_PROJECT_ID";
-    String featurestoreId = "movie_prediction"; // "YOUR_FEATURESTORE_ID";
+    String project = "YOUR_PROJECT_ID";
+    String featurestoreId = "YOUR_FEATURESTORE_ID";
     boolean useForce = true;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";

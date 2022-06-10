@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * 
+ * 
+ * Create a featurestore resource to contain entity types and features. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * the code snippet
  */
 
 package aiplatform;

@@ -117,7 +117,7 @@ public class IndexServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
@@ -175,7 +175,7 @@ public class IndexServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
@@ -233,7 +233,7 @@ public class IndexServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
@@ -280,7 +280,7 @@ public class IndexServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
@@ -415,7 +415,7 @@ public class IndexServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
@@ -664,7 +664,7 @@ public class IndexServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -695,7 +695,7 @@ public class IndexServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -721,7 +721,7 @@ public class IndexServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -750,7 +750,7 @@ public class IndexServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -770,7 +770,7 @@ public class IndexServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -799,7 +799,7 @@ public class IndexServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

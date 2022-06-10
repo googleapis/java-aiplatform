@@ -226,7 +226,7 @@ public class ModelServiceClientTest {
             .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -290,7 +290,7 @@ public class ModelServiceClientTest {
             .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -530,7 +530,7 @@ public class ModelServiceClientTest {
             .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -857,7 +857,7 @@ public class ModelServiceClientTest {
             .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -924,7 +924,7 @@ public class ModelServiceClientTest {
             .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -1082,12 +1082,12 @@ public class ModelServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1134,12 +1134,12 @@ public class ModelServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1186,12 +1186,12 @@ public class ModelServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1236,12 +1236,12 @@ public class ModelServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1375,7 +1375,7 @@ public class ModelServiceClientTest {
                     .toString())
             .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -1425,7 +1425,7 @@ public class ModelServiceClientTest {
                     .toString())
             .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -1670,7 +1670,7 @@ public class ModelServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1701,7 +1701,7 @@ public class ModelServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1727,7 +1727,7 @@ public class ModelServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1756,7 +1756,7 @@ public class ModelServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1776,7 +1776,7 @@ public class ModelServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1805,7 +1805,7 @@ public class ModelServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

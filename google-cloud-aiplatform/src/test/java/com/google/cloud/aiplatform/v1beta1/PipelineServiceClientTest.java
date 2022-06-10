@@ -122,8 +122,8 @@ public class PipelineServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInputDataConfig(InputDataConfig.newBuilder().build())
             .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
-            .setTrainingTaskInputs(Value.newBuilder().build())
-            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setTrainingTaskInputs(Value.newBuilder().setBoolValue(true).build())
+            .setTrainingTaskMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelToUpload(Model.newBuilder().build())
             .setModelId("modelId1226956324")
             .setParentModel("parentModel998431903")
@@ -182,8 +182,8 @@ public class PipelineServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInputDataConfig(InputDataConfig.newBuilder().build())
             .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
-            .setTrainingTaskInputs(Value.newBuilder().build())
-            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setTrainingTaskInputs(Value.newBuilder().setBoolValue(true).build())
+            .setTrainingTaskMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelToUpload(Model.newBuilder().build())
             .setModelId("modelId1226956324")
             .setParentModel("parentModel998431903")
@@ -242,8 +242,8 @@ public class PipelineServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInputDataConfig(InputDataConfig.newBuilder().build())
             .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
-            .setTrainingTaskInputs(Value.newBuilder().build())
-            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setTrainingTaskInputs(Value.newBuilder().setBoolValue(true).build())
+            .setTrainingTaskMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelToUpload(Model.newBuilder().build())
             .setModelId("modelId1226956324")
             .setParentModel("parentModel998431903")
@@ -300,8 +300,8 @@ public class PipelineServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInputDataConfig(InputDataConfig.newBuilder().build())
             .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
-            .setTrainingTaskInputs(Value.newBuilder().build())
-            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setTrainingTaskInputs(Value.newBuilder().setBoolValue(true).build())
+            .setTrainingTaskMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelToUpload(Model.newBuilder().build())
             .setModelId("modelId1226956324")
             .setParentModel("parentModel998431903")
@@ -1179,7 +1179,7 @@ public class PipelineServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1210,7 +1210,7 @@ public class PipelineServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1236,7 +1236,7 @@ public class PipelineServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1265,7 +1265,7 @@ public class PipelineServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1285,7 +1285,7 @@ public class PipelineServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1314,7 +1314,7 @@ public class PipelineServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

@@ -24,13 +24,13 @@ package aiplatform;
 // [START aiplatform_create_featurestore_fixed_nodes_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1.CreateFeaturestoreOperationMetadata;
-import com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest;
-import com.google.cloud.aiplatform.v1.Featurestore;
-import com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
-import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest;
+import com.google.cloud.aiplatform.v1beta1.Featurestore;
+import com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig;
+import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceClient;
+import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

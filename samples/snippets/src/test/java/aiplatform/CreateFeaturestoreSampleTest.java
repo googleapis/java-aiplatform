@@ -19,11 +19,19 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.FeaturestoreName;
+import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
+import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
+import com.google.protobuf.Empty;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
@@ -66,14 +74,41 @@ public class CreateFeaturestoreSampleTest {
     originalPrintStream = System.out;
     System.setOut(out);
   }
+  
+  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
+      String location, String endpoint, int timeout)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+
+    FeaturestoreServiceSettings featurestoreServiceSettings =
+        FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
+
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (FeaturestoreServiceClient featurestoreServiceClient =
+        FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
+
+      DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
+          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+          .setForce(useForce).build();
+
+      OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
+          featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);
+      System.out.format("Operation name: %s%n", operationFuture.getInitialFuture().get().getName());
+      System.out.println("Waiting for operation to finish...");
+      operationFuture.get(timeout, TimeUnit.SECONDS);
+
+      System.out.format("Deleted Featurestore.");
+    }
+  }
 
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, TIMEOUT);
+    deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
+        LOCATION, ENDPOINT, 60);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();

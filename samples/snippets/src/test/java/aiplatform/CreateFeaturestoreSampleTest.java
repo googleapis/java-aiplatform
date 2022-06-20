@@ -74,9 +74,14 @@ public class CreateFeaturestoreSampleTest {
     originalPrintStream = System.out;
     System.setOut(out);
   }
-  
-  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
-      String location, String endpoint, int timeout)
+
+  static void deleteFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      boolean useForce,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -88,9 +93,11 @@ public class CreateFeaturestoreSampleTest {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setForce(useForce).build();
+      DeleteFeaturestoreRequest deleteFeaturestoreRequest =
+          DeleteFeaturestoreRequest.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setForce(useForce)
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);
@@ -107,8 +114,7 @@ public class CreateFeaturestoreSampleTest {
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 60);
+    deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 60);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -123,8 +129,8 @@ public class CreateFeaturestoreSampleTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreSample.createFeaturestoreSample(PROJECT_ID, id,
-        MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+    CreateFeaturestoreSample.createFeaturestoreSample(
+        PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();

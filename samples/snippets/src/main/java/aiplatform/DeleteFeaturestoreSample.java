@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Delete a featurestore. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Delete a featurestore. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -49,8 +49,13 @@ public class DeleteFeaturestoreSample {
     deleteFeaturestoreSample(project, featurestoreId, useForce, location, endpoint, timeout);
   }
 
-  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
-      String location, String endpoint, int timeout)
+  static void deleteFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      boolean useForce,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -62,9 +67,11 @@ public class DeleteFeaturestoreSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setForce(useForce).build();
+      DeleteFeaturestoreRequest deleteFeaturestoreRequest =
+          DeleteFeaturestoreRequest.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setForce(useForce)
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);

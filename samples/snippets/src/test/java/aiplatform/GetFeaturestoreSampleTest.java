@@ -81,8 +81,14 @@ public class GetFeaturestoreSampleTest {
     System.setOut(out);
   }
 
-  static void createFeaturestoreSample(String project, String featurestoreId, int minNodeCount,
-      int maxNodeCount, String location, String endpoint, int timeout)
+  static void createFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      int minNodeCount,
+      int maxNodeCount,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -97,20 +103,25 @@ public class GetFeaturestoreSampleTest {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      OnlineServingConfig.Builder builderValue = OnlineServingConfig.newBuilder().setScaling(
-          Scaling.newBuilder().setMinNodeCount(minNodeCount).setMaxNodeCount(maxNodeCount));
+      OnlineServingConfig.Builder builderValue =
+          OnlineServingConfig.newBuilder()
+              .setScaling(
+                  Scaling.newBuilder().setMinNodeCount(minNodeCount).setMaxNodeCount(maxNodeCount));
       Featurestore featurestore =
           Featurestore.newBuilder().setOnlineServingConfig(builderValue).build();
       String parent = LocationName.of(project, location).toString();
 
       CreateFeaturestoreRequest createFeaturestoreRequest =
-          CreateFeaturestoreRequest.newBuilder().setParent(parent).setFeaturestore(featurestore)
-              .setFeaturestoreId(featurestoreId).build();
+          CreateFeaturestoreRequest.newBuilder()
+              .setParent(parent)
+              .setFeaturestore(featurestore)
+              .setFeaturestoreId(featurestoreId)
+              .build();
 
       OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata> featurestoreFuture =
           featurestoreServiceClient.createFeaturestoreAsync(createFeaturestoreRequest);
-      System.out.format("Operation name: %s%n",
-          featurestoreFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", featurestoreFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       Featurestore featurestoreResponse = featurestoreFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Create Featurestore Response");
@@ -118,8 +129,13 @@ public class GetFeaturestoreSampleTest {
     }
   }
 
-  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
-      String location, String endpoint, int timeout)
+  static void deleteFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      boolean useForce,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -134,9 +150,11 @@ public class GetFeaturestoreSampleTest {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setForce(useForce).build();
+      DeleteFeaturestoreRequest deleteFeaturestoreRequest =
+          DeleteFeaturestoreRequest.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setForce(useForce)
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);
@@ -170,8 +188,8 @@ public class GetFeaturestoreSampleTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    createFeaturestoreSample(PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT,
-        900);
+    createFeaturestoreSample(
+        PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();
@@ -187,5 +205,4 @@ public class GetFeaturestoreSampleTest {
     String getFeaturestoreResponse = bout.toString();
     assertThat(getFeaturestoreResponse).contains("Get Featurestore Response");
   }
-
 }

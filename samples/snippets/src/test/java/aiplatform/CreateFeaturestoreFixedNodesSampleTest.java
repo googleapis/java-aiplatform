@@ -74,8 +74,13 @@ public class CreateFeaturestoreFixedNodesSampleTest {
     System.setOut(out);
   }
 
-  static void deleteFeaturestoreSample(String project, String featurestoreId, boolean useForce,
-      String location, String endpoint, int timeout)
+  static void deleteFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      boolean useForce,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -90,9 +95,11 @@ public class CreateFeaturestoreFixedNodesSampleTest {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteFeaturestoreRequest deleteFeaturestoreRequest = DeleteFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setForce(useForce).build();
+      DeleteFeaturestoreRequest deleteFeaturestoreRequest =
+          DeleteFeaturestoreRequest.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setForce(useForce)
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeaturestoreAsync(deleteFeaturestoreRequest);
@@ -124,8 +131,8 @@ public class CreateFeaturestoreFixedNodesSampleTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreFixedNodesSample.createFeaturestoreFixedNodesSample(PROJECT_ID, id,
-        FIXED_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+    CreateFeaturestoreFixedNodesSample.createFeaturestoreFixedNodesSample(
+        PROJECT_ID, id, FIXED_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();

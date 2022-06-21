@@ -12,10 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
- * 
+ *
+ *
  * Create a featurestore resource to contain entity types and features. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -47,12 +47,17 @@ public class CreateFeaturestoreFixedNodesSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 900;
-    createFeaturestoreFixedNodesSample(project, featurestoreId, fixedNodeCount, location, endpoint,
-        timeout);
+    createFeaturestoreFixedNodesSample(
+        project, featurestoreId, fixedNodeCount, location, endpoint, timeout);
   }
 
-  static void createFeaturestoreFixedNodesSample(String project, String featurestoreId,
-      int fixedNodeCount, String location, String endpoint, int timeout)
+  static void createFeaturestoreFixedNodesSample(
+      String project,
+      String featurestoreId,
+      int fixedNodeCount,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -69,14 +74,17 @@ public class CreateFeaturestoreFixedNodesSample {
       Featurestore featurestore =
           Featurestore.newBuilder().setOnlineServingConfig(builderValue).build();
 
-      CreateFeaturestoreRequest createFeaturestoreRequest = CreateFeaturestoreRequest.newBuilder()
-          .setParent(LocationName.of(project, location).toString()).setFeaturestore(featurestore)
-          .setFeaturestoreId(featurestoreId).build();
+      CreateFeaturestoreRequest createFeaturestoreRequest =
+          CreateFeaturestoreRequest.newBuilder()
+              .setParent(LocationName.of(project, location).toString())
+              .setFeaturestore(featurestore)
+              .setFeaturestoreId(featurestoreId)
+              .build();
 
       OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata> featurestoreFuture =
           featurestoreServiceClient.createFeaturestoreAsync(createFeaturestoreRequest);
-      System.out.format("Operation name: %s%n",
-          featurestoreFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", featurestoreFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       Featurestore featurestoreResponse = featurestoreFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Create Featurestore Response");

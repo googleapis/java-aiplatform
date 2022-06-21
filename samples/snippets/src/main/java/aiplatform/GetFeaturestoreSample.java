@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Gets details of a single featurestore. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Gets details of a single featurestore. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -41,8 +41,8 @@ public class GetFeaturestoreSample {
     getFeaturestoreSample(project, featurestoreId, location, endpoint);
   }
 
-  static void getFeaturestoreSample(String project, String featurestoreId, String location,
-      String endpoint) throws IOException {
+  static void getFeaturestoreSample(
+      String project, String featurestoreId, String location, String endpoint) throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -53,8 +53,10 @@ public class GetFeaturestoreSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      GetFeaturestoreRequest getFeaturestoreRequest = GetFeaturestoreRequest.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString()).build();
+      GetFeaturestoreRequest getFeaturestoreRequest =
+          GetFeaturestoreRequest.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .build();
 
       Featurestore featurestore = featurestoreServiceClient.getFeaturestore(getFeaturestoreRequest);
       System.out.println("Get Featurestore Response");

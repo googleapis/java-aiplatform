@@ -356,7 +356,7 @@ public class BatchReadFeatureValuesSampleTest {
 
     // Batch read feature values
     BatchReadFeatureValuesSample.batchReadFeatureValuesSample(PROJECT_ID, featurestoreId,
-        INPUT_CSV_FILE, destinationTableUri, LOCATION, ENDPOINT, TIMEOUT);
+        entityTypeId, INPUT_CSV_FILE, destinationTableUri, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String batchReadFeatureValuesResponse = bout.toString();

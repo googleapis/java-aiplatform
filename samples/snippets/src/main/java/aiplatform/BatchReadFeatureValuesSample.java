@@ -52,18 +52,20 @@ public class BatchReadFeatureValuesSample {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
     String featurestoreId = "YOUR_FEATURESTORE_ID";
+    String entityTypeId = "YOUR_ENTITY_TYPE_ID";
     String inputCsvFile = "YOU_INPUT_CSV_FILE";
     String destinationTableUri = "YOUR_DESTINATION_TABLE_URI";
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    batchReadFeatureValuesSample(project, featurestoreId, inputCsvFile, destinationTableUri,
-        location, endpoint, timeout);
+    batchReadFeatureValuesSample(project, featurestoreId, entityTypeId, inputCsvFile,
+        destinationTableUri, location, endpoint, timeout);
   }
 
   static void batchReadFeatureValuesSample(String project, String featurestoreId,
-      String inputCsvFile, String destinationTableUri, String location, String endpoint,
-      int timeout) throws IOException, InterruptedException, ExecutionException, TimeoutException {
+      String entityTypeId, String inputCsvFile, String destinationTableUri, String location,
+      String endpoint, int timeout)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -79,7 +81,7 @@ public class BatchReadFeatureValuesSample {
       ids.add("*");
       FeatureSelector featureSelector = FeatureSelector.newBuilder()
           .setIdMatcher(IdMatcher.newBuilder().addAllIds(ids).build()).build();
-      EntityTypeSpec entityTypeSpec = EntityTypeSpec.newBuilder().setEntityTypeId("movies")
+      EntityTypeSpec entityTypeSpec = EntityTypeSpec.newBuilder().setEntityTypeId(entityTypeId)
           .setFeatureSelector(featureSelector).build();
       entityTypeSpecs.add(entityTypeSpec);
 

@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.aiplatform.v1beta1.AvroSource;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse;
@@ -40,6 +41,11 @@ import com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scal
 import com.google.cloud.aiplatform.v1beta1.FeaturestoreName;
 import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceClient;
 import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.GcsSource;
+import com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec;
+import com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -77,6 +83,11 @@ public class BatchReadFeatureValuesSampleTest {
   private static final String INPUT_CSV_FILE =
       "gs://cloud-samples-data-us-central1/vertex-ai/feature-store/datasets/movie_prediction.csv";
   private static final boolean USE_FORCE = true;
+  private static final String ENTITY_ID_FIELD = "movie_id";
+  private static final String FEATURE_TIME_FIELD = "update_time";
+  private static final String GCS_SOURCE_URI =
+      "gs://cloud-samples-data-us-central1/vertex-ai/feature-store/datasets/movies.avro";
+  private static final int WORKER_COUNT = 2;
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
   private static final int TIMEOUT = 300;
@@ -224,6 +235,44 @@ public class BatchReadFeatureValuesSampleTest {
     }
   }
 
+  @SuppressWarnings({"unchecked", "rawtypes"})
+  static void importFeatureValuesSample(String project, String featurestoreId, String entityTypeId,
+      String gcsSourceUri, String entityIdField, String featureTimeField, int workerCount,
+      String location, String endpoint, int timeout)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+    FeaturestoreServiceSettings featurestoreServiceSettings =
+        FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
+
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (FeaturestoreServiceClient featurestoreServiceClient =
+        FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
+      List<FeatureSpec> featureSpecs = new ArrayList<>();
+
+      featureSpecs.add(FeatureSpec.newBuilder().setId("title").build());
+      featureSpecs.add(FeatureSpec.newBuilder().setId("genres").build());
+      featureSpecs.add(FeatureSpec.newBuilder().setId("average_rating").build());
+      ImportFeatureValuesRequest importFeatureValuesRequest = ImportFeatureValuesRequest
+          .newBuilder()
+          .setEntityType(
+              EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+          .setEntityIdField(entityIdField).setFeatureTimeField(featureTimeField)
+          .addAllFeatureSpecs((Iterable) featureSpecs).setWorkerCount(workerCount)
+          .setAvroSource(
+              AvroSource.newBuilder().setGcsSource(GcsSource.newBuilder().addUris(gcsSourceUri)))
+          .build();
+      OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata> future =
+          featurestoreServiceClient.importFeatureValuesAsync(importFeatureValuesRequest);
+      System.out.format("Operation name: %s%n", future.getInitialFuture().get().getName());
+      System.out.println("Waiting for operation to finish...");
+      ImportFeatureValuesResponse importFeatureValuesResponse =
+          future.get(timeout, TimeUnit.SECONDS);
+      System.out.println("Import Feature Values Response");
+      System.out.println(importFeatureValuesResponse);
+    }
+  }
+
   static void createBigQueryDataset(String projectId, String datasetName, String location) {
     try {
       // Initialize client that will be used to send requests. This client only needs
@@ -344,6 +393,13 @@ public class BatchReadFeatureValuesSampleTest {
     String batchCreateFeaturesResponse = bout.toString();
     assertThat(batchCreateFeaturesResponse).contains("Batch Create Features Response");
 
+    // Import feature values
+    importFeatureValuesSample(PROJECT_ID, featurestoreId, entityTypeId, GCS_SOURCE_URI,
+        ENTITY_ID_FIELD, FEATURE_TIME_FIELD, WORKER_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+
+    // Assert
+    String importFeatureValuesResponse = bout.toString();
+    assertThat(importFeatureValuesResponse).contains("Import Feature Values Response");
 
     // Create the big query dataset
     createBigQueryDataset(PROJECT_ID, datasetName, LOCATION);

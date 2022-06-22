@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private DeployedModel() {
     id_ = "";
     model_ = "";
+    modelVersionId_ = "";
     displayName_ = "";
     serviceAccount_ = "";
   }
@@ -155,6 +156,12 @@ private static final long serialVersionUID = 0L;
           case 120: {
 
             disableContainerLogging_ = input.readBool();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelVersionId_ = s;
             break;
           }
           default: {
@@ -420,6 +427,52 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 18;
+  private volatile java.lang.Object modelVersionId_;
+  /**
+   * <pre>
+   * Output only. The version ID of the model that is deployed.
+   * </pre>
+   *
+   * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The modelVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The version ID of the model that is deployed.
+   * </pre>
+   *
+   * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for modelVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelVersionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -757,6 +810,9 @@ private static final long serialVersionUID = 0L;
     if (disableContainerLogging_ != false) {
       output.writeBool(15, disableContainerLogging_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, modelVersionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -806,6 +862,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, disableContainerLogging_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, modelVersionId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -825,6 +884,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getModel()
         .equals(other.getModel())) return false;
+    if (!getModelVersionId()
+        .equals(other.getModelVersionId())) return false;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
@@ -876,6 +937,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     if (hasCreateTime()) {
@@ -1051,6 +1114,8 @@ private static final long serialVersionUID = 0L;
 
       model_ = "";
 
+      modelVersionId_ = "";
+
       displayName_ = "";
 
       if (createTimeBuilder_ == null) {
@@ -1121,6 +1186,7 @@ private static final long serialVersionUID = 0L;
       }
       result.id_ = id_;
       result.model_ = model_;
+      result.modelVersionId_ = modelVersionId_;
       result.displayName_ = displayName_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -1195,6 +1261,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        onChanged();
+      }
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
@@ -1864,6 +1934,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelVersionId_ = "";
+    /**
+     * <pre>
+     * Output only. The version ID of the model that is deployed.
+     * </pre>
+     *
+     * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The modelVersionId.
+     */
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the model that is deployed.
+     * </pre>
+     *
+     * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for modelVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the model that is deployed.
+     * </pre>
+     *
+     * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the model that is deployed.
+     * </pre>
+     *
+     * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionId() {
+      
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the model that is deployed.
+     * </pre>
+     *
+     * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelVersionId_ = value;
       onChanged();
       return this;
     }

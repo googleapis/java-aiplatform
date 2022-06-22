@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     model_ = "";
+    modelVersionId_ = "";
     state_ = 0;
     partialFailures_ = java.util.Collections.emptyList();
   }
@@ -318,6 +319,12 @@ private static final long serialVersionUID = 0L;
               unmanagedContainerModel_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 242: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelVersionId_ = s;
             break;
           }
           default: {
@@ -4933,6 +4940,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 30;
+  private volatile java.lang.Object modelVersionId_;
+  /**
+   * <pre>
+   * Output only. The version ID of the Model that produces the predictions via this job.
+   * </pre>
+   *
+   * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The modelVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The version ID of the Model that produces the predictions via this job.
+   * </pre>
+   *
+   * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for modelVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int UNMANAGED_CONTAINER_MODEL_FIELD_NUMBER = 28;
   private com.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanagedContainerModel_;
   /**
@@ -5976,6 +6029,9 @@ private static final long serialVersionUID = 0L;
     if (unmanagedContainerModel_ != null) {
       output.writeMessage(28, getUnmanagedContainerModel());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, modelVersionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6080,6 +6136,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(28, getUnmanagedContainerModel());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, modelVersionId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6101,6 +6160,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getModel()
         .equals(other.getModel())) return false;
+    if (!getModelVersionId()
+        .equals(other.getModelVersionId())) return false;
     if (hasUnmanagedContainerModel() != other.hasUnmanagedContainerModel()) return false;
     if (hasUnmanagedContainerModel()) {
       if (!getUnmanagedContainerModel()
@@ -6205,6 +6266,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
     if (hasUnmanagedContainerModel()) {
       hash = (37 * hash) + UNMANAGED_CONTAINER_MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getUnmanagedContainerModel().hashCode();
@@ -6451,6 +6514,8 @@ private static final long serialVersionUID = 0L;
 
       model_ = "";
 
+      modelVersionId_ = "";
+
       if (unmanagedContainerModelBuilder_ == null) {
         unmanagedContainerModel_ = null;
       } else {
@@ -6588,6 +6653,7 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.model_ = model_;
+      result.modelVersionId_ = modelVersionId_;
       if (unmanagedContainerModelBuilder_ == null) {
         result.unmanagedContainerModel_ = unmanagedContainerModel_;
       } else {
@@ -6739,6 +6805,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        onChanged();
+      }
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
         onChanged();
       }
       if (other.hasUnmanagedContainerModel()) {
@@ -7167,6 +7237,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelVersionId_ = "";
+    /**
+     * <pre>
+     * Output only. The version ID of the Model that produces the predictions via this job.
+     * </pre>
+     *
+     * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The modelVersionId.
+     */
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the Model that produces the predictions via this job.
+     * </pre>
+     *
+     * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for modelVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the Model that produces the predictions via this job.
+     * </pre>
+     *
+     * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the Model that produces the predictions via this job.
+     * </pre>
+     *
+     * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionId() {
+      
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The version ID of the Model that produces the predictions via this job.
+     * </pre>
+     *
+     * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelVersionId_ = value;
       onChanged();
       return this;
     }

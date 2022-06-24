@@ -15,7 +15,7 @@
  *
  *
  * List available featurestore details. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -51,12 +51,14 @@ public class ListFeaturestoresSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      ListFeaturestoresRequest listFeaturestoresRequest = ListFeaturestoresRequest.newBuilder()
-          .setParent(LocationName.of(project, location).toString()).build();
+      ListFeaturestoresRequest listFeaturestoresRequest =
+          ListFeaturestoresRequest.newBuilder()
+              .setParent(LocationName.of(project, location).toString())
+              .build();
 
       System.out.println("List Featurestores Response");
-      for (Featurestore element : featurestoreServiceClient
-          .listFeaturestores(listFeaturestoresRequest).iterateAll()) {
+      for (Featurestore element :
+          featurestoreServiceClient.listFeaturestores(listFeaturestoresRequest).iterateAll()) {
         System.out.println(element);
       }
     }

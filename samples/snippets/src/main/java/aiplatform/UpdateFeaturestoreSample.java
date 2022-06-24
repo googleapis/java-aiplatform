@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Updates the parameters of a single featurestore. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Updates the parameters of a single featurestore. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -49,12 +49,18 @@ public class UpdateFeaturestoreSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    updateFeaturestoreSample(project, featurestoreId, minNodeCount, maxNodeCount, location,
-        endpoint, timeout);
+    updateFeaturestoreSample(
+        project, featurestoreId, minNodeCount, maxNodeCount, location, endpoint, timeout);
   }
 
-  static void updateFeaturestoreSample(String project, String featurestoreId, int minNodeCount,
-      int maxNodeCount, String location, String endpoint, int timeout)
+  static void updateFeaturestoreSample(
+      String project,
+      String featurestoreId,
+      int minNodeCount,
+      int maxNodeCount,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -65,19 +71,23 @@ public class UpdateFeaturestoreSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      OnlineServingConfig.Builder builderValue = OnlineServingConfig.newBuilder().setScaling(
-          Scaling.newBuilder().setMinNodeCount(minNodeCount).setMaxNodeCount(maxNodeCount));
-      Featurestore featurestore = Featurestore.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setOnlineServingConfig(builderValue).build();
+      OnlineServingConfig.Builder builderValue =
+          OnlineServingConfig.newBuilder()
+              .setScaling(
+                  Scaling.newBuilder().setMinNodeCount(minNodeCount).setMaxNodeCount(maxNodeCount));
+      Featurestore featurestore =
+          Featurestore.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setOnlineServingConfig(builderValue)
+              .build();
 
       UpdateFeaturestoreRequest request =
           UpdateFeaturestoreRequest.newBuilder().setFeaturestore(featurestore).build();
 
       OperationFuture<Featurestore, UpdateFeaturestoreOperationMetadata> updateFeaturestoreFuture =
           featurestoreServiceClient.updateFeaturestoreAsync(request);
-      System.out.format("Operation name: %s%n",
-          updateFeaturestoreFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", updateFeaturestoreFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       Featurestore featurestoreResponse = updateFeaturestoreFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Update Featurestore Response");

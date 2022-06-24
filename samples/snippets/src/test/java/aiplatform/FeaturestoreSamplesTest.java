@@ -73,8 +73,8 @@ public class FeaturestoreSamplesTest {
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 60);
+    DeleteFeaturestoreSample.deleteFeaturestoreSample(
+        PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 60);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -89,8 +89,8 @@ public class FeaturestoreSamplesTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreFixedNodesSample.createFeaturestoreFixedNodesSample(PROJECT_ID, id,
-        FIXED_NODE_COUNT, LOCATION, ENDPOINT, 900);
+    CreateFeaturestoreFixedNodesSample.createFeaturestoreFixedNodesSample(
+        PROJECT_ID, id, FIXED_NODE_COUNT, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();
@@ -106,10 +106,9 @@ public class FeaturestoreSamplesTest {
     String getFeaturestoreResponse = bout.toString();
     assertThat(getFeaturestoreResponse).contains("Get Featurestore Response");
 
-
     // Update the featurestore with autoscaling
-    UpdateFeaturestoreSample.updateFeaturestoreSample(PROJECT_ID, featurestoreId, MIN_NODE_COUNT,
-        MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+    UpdateFeaturestoreSample.updateFeaturestoreSample(
+        PROJECT_ID, featurestoreId, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String updateFeaturestoreResponse = bout.toString();
@@ -123,8 +122,8 @@ public class FeaturestoreSamplesTest {
     assertThat(listFeaturestoresResponse).contains("List Featurestores Response");
 
     // Update the featurestore with fixed nodes
-    UpdateFeaturestoreFixedNodesSample.updateFeaturestoreFixedNodesSample(PROJECT_ID,
-        featurestoreId, FIXED_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+    UpdateFeaturestoreFixedNodesSample.updateFeaturestoreFixedNodesSample(
+        PROJECT_ID, featurestoreId, FIXED_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String updateFeaturestoreFixedNodesResponse = bout.toString();

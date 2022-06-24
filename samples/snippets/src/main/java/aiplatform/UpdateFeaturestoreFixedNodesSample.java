@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Update featurestore. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Update featurestore. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -47,12 +47,17 @@ public class UpdateFeaturestoreFixedNodesSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    updateFeaturestoreFixedNodesSample(project, featurestoreId, fixedNodeCount, location, endpoint,
-        timeout);
+    updateFeaturestoreFixedNodesSample(
+        project, featurestoreId, fixedNodeCount, location, endpoint, timeout);
   }
 
-  static void updateFeaturestoreFixedNodesSample(String project, String featurestoreId,
-      int fixedNodeCount, String location, String endpoint, int timeout)
+  static void updateFeaturestoreFixedNodesSample(
+      String project,
+      String featurestoreId,
+      int fixedNodeCount,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -65,17 +70,19 @@ public class UpdateFeaturestoreFixedNodesSample {
 
       OnlineServingConfig.Builder builderValue =
           OnlineServingConfig.newBuilder().setFixedNodeCount(fixedNodeCount);
-      Featurestore featurestore = Featurestore.newBuilder()
-          .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setOnlineServingConfig(builderValue).build();
+      Featurestore featurestore =
+          Featurestore.newBuilder()
+              .setName(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setOnlineServingConfig(builderValue)
+              .build();
 
       UpdateFeaturestoreRequest request =
           UpdateFeaturestoreRequest.newBuilder().setFeaturestore(featurestore).build();
 
       OperationFuture<Featurestore, UpdateFeaturestoreOperationMetadata> updateFeaturestoreFuture =
           featurestoreServiceClient.updateFeaturestoreAsync(request);
-      System.out.format("Operation name: %s%n",
-          updateFeaturestoreFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", updateFeaturestoreFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       Featurestore featurestoreResponse = updateFeaturestoreFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Update Featurestore Fixed Nodes Response");

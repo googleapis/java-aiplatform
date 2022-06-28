@@ -69,3 +69,4 @@ public class UpdateEntityTypeSample {
   }
 }
 // [END aiplatform_update_entity_type_sample]
+

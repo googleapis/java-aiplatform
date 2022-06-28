@@ -76,3 +76,4 @@ public class ListEntityTypesAsyncSample {
   }
 }
 // [END aiplatform_list_entity_types_async_sample]
+

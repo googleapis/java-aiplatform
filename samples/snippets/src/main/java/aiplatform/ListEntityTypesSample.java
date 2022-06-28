@@ -64,3 +64,4 @@ public class ListEntityTypesSample {
   }
 }
 // [END aiplatform_list_entity_types_sample]
+

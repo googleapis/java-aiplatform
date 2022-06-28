@@ -65,3 +65,4 @@ public class GetEntityTypeSample {
   }
 }
 // [END aiplatform_get_entity_type_sample]
+

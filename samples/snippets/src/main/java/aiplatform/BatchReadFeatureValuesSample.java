@@ -109,3 +109,4 @@ public class BatchReadFeatureValuesSample {
   }
 }
 // [END aiplatform_batch_read_feature_values_sample]
+

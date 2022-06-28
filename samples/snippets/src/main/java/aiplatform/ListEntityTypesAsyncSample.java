@@ -43,8 +43,8 @@ public class ListEntityTypesAsyncSample {
     listEntityTypesAsyncSample(project, featurestoreId, location, endpoint);
   }
 
-  static void listEntityTypesAsyncSample(String project, String featurestoreId, String location,
-      String endpoint) throws IOException {
+  static void listEntityTypesAsyncSample(
+      String project, String featurestoreId, String location, String endpoint) throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -55,8 +55,10 @@ public class ListEntityTypesAsyncSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      ListEntityTypesRequest listEntityTypeRequest = ListEntityTypesRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString()).build();
+      ListEntityTypesRequest listEntityTypeRequest =
+          ListEntityTypesRequest.newBuilder()
+              .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .build();
       System.out.println("List Entity Types Async Response");
       while (true) {
         ListEntityTypesResponse listEntityTypesResponse =
@@ -76,4 +78,3 @@ public class ListEntityTypesAsyncSample {
   }
 }
 // [END aiplatform_list_entity_types_async_sample]
-

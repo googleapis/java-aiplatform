@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  *
- * Update entity type. See 
+ * Update entity type. See
  * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
@@ -43,8 +43,14 @@ public class UpdateEntityTypeSample {
     updateEntityTypeSample(project, featurestoreId, entityTypeId, description, location, endpoint);
   }
 
-  static void updateEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String description, String location, String endpoint) throws IOException {
+  static void updateEntityTypeSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String description,
+      String location,
+      String endpoint)
+      throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -55,9 +61,12 @@ public class UpdateEntityTypeSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      EntityType entityType = EntityType.newBuilder()
-          .setName(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .setDescription(description).build();
+      EntityType entityType =
+          EntityType.newBuilder()
+              .setName(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .setDescription(description)
+              .build();
 
       UpdateEntityTypeRequest updateEntityTypeRequest =
           UpdateEntityTypeRequest.newBuilder().setEntityType(entityType).build();
@@ -69,4 +78,3 @@ public class UpdateEntityTypeSample {
   }
 }
 // [END aiplatform_update_entity_type_sample]
-

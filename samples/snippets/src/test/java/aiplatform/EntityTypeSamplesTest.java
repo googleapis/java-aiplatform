@@ -74,8 +74,8 @@ public class EntityTypeSamplesTest {
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 60);
+    DeleteFeaturestoreSample.deleteFeaturestoreSample(
+        PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 60);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -90,8 +90,8 @@ public class EntityTypeSamplesTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreSample.createFeaturestoreSample(PROJECT_ID, id, MIN_NODE_COUNT,
-        MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
+    CreateFeaturestoreSample.createFeaturestoreSample(
+        PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();
@@ -103,16 +103,16 @@ public class EntityTypeSamplesTest {
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
     String entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
-    CreateEntityTypeSample.createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        DESCRIPTION, LOCATION, ENDPOINT, TIMEOUT);
+    CreateEntityTypeSample.createEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String createEntityTypeResponse = bout.toString();
     assertThat(createEntityTypeResponse).contains("Create Entity Type Response");
 
     // Get the entity type
-    GetEntityTypeSample.getEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId, LOCATION,
-        ENDPOINT);
+    GetEntityTypeSample.getEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT);
 
     // Assert
     String getEntityTypeResponse = bout.toString();
@@ -123,8 +123,15 @@ public class EntityTypeSamplesTest {
         UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
     String entityTypeMonitoringId =
         String.format("temp_create_entity_type_test_%s", entityTypeMonitoringTempUuid);
-    CreateEntityTypeMonitoringSample.createEntityTypeMonitoringSample(PROJECT_ID, featurestoreId,
-        entityTypeMonitoringId, DESCRIPTION, MONITORING_INTERVAL_DAYS, LOCATION, ENDPOINT, TIMEOUT);
+    CreateEntityTypeMonitoringSample.createEntityTypeMonitoringSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeMonitoringId,
+        DESCRIPTION,
+        MONITORING_INTERVAL_DAYS,
+        LOCATION,
+        ENDPOINT,
+        TIMEOUT);
 
     // Assert
     String createEntityTypeMonitoringResponse = bout.toString();
@@ -139,16 +146,16 @@ public class EntityTypeSamplesTest {
     assertThat(listEntityTypeResponse).contains("List Entity Types Response");
 
     // Update the entity type
-    UpdateEntityTypeSample.updateEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        DESCRIPTION, LOCATION, ENDPOINT);
+    UpdateEntityTypeSample.updateEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT);
 
     // Assert
     String updateEntityTypeResponse = bout.toString();
     assertThat(updateEntityTypeResponse).contains("Update Entity Type Response");
 
     // Update the entity type
-    UpdateEntityTypeMonitoringSample.updateEntityTypeMonitoringSample(PROJECT_ID, featurestoreId,
-        entityTypeId, MONITORING_INTERVAL_DAYS, LOCATION, ENDPOINT);
+    UpdateEntityTypeMonitoringSample.updateEntityTypeMonitoringSample(
+        PROJECT_ID, featurestoreId, entityTypeId, MONITORING_INTERVAL_DAYS, LOCATION, ENDPOINT);
 
     // Assert
     String updateEntityTypeMonitoringResponse = bout.toString();
@@ -156,21 +163,19 @@ public class EntityTypeSamplesTest {
         .contains("Update Entity Type Monitoring Response");
 
     // List entity types
-    ListEntityTypesAsyncSample.listEntityTypesAsyncSample(PROJECT_ID, featurestoreId, LOCATION,
-        ENDPOINT);
+    ListEntityTypesAsyncSample.listEntityTypesAsyncSample(
+        PROJECT_ID, featurestoreId, LOCATION, ENDPOINT);
 
     // Assert
     String listEntityTypeAsyncResponse = bout.toString();
     assertThat(listEntityTypeAsyncResponse).contains("List Entity Types Async Response");
 
     // Delete the entity type
-    DeleteEntityTypeSample.deleteEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        LOCATION, ENDPOINT, TIMEOUT);
+    DeleteEntityTypeSample.deleteEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String deleteEntityTypeResponse = bout.toString();
     assertThat(deleteEntityTypeResponse).contains("Deleted Entity Type");
-
   }
 }
-

@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Get entity type details. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Get entity type details. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -42,8 +42,9 @@ public class GetEntityTypeSample {
     getEntityTypeSample(project, featurestoreId, entityTypeId, location, endpoint);
   }
 
-  static void getEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String location, String endpoint) throws IOException {
+  static void getEntityTypeSample(
+      String project, String featurestoreId, String entityTypeId, String location, String endpoint)
+      throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -54,9 +55,11 @@ public class GetEntityTypeSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      GetEntityTypeRequest getEntityTypeRequest = GetEntityTypeRequest.newBuilder()
-          .setName(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .build();
+      GetEntityTypeRequest getEntityTypeRequest =
+          GetEntityTypeRequest.newBuilder()
+              .setName(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .build();
 
       EntityType entityType = featurestoreServiceClient.getEntityType(getEntityTypeRequest);
       System.out.println("Get Entity Type Response");
@@ -65,4 +68,3 @@ public class GetEntityTypeSample {
   }
 }
 // [END aiplatform_get_entity_type_sample]
-

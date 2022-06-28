@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  *
- * Update entity type. See 
+ * Update entity type. See
  * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
@@ -42,12 +42,17 @@ public class UpdateEntityTypeMonitoringSample {
     int monitoringIntervalDays = 1;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
-    updateEntityTypeMonitoringSample(project, featurestoreId, entityTypeId, monitoringIntervalDays,
-        location, endpoint);
+    updateEntityTypeMonitoringSample(
+        project, featurestoreId, entityTypeId, monitoringIntervalDays, location, endpoint);
   }
 
-  static void updateEntityTypeMonitoringSample(String project, String featurestoreId,
-      String entityTypeId, int monitoringIntervalDays, String location, String endpoint)
+  static void updateEntityTypeMonitoringSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      int monitoringIntervalDays,
+      String location,
+      String endpoint)
       throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -63,9 +68,12 @@ public class UpdateEntityTypeMonitoringSample {
               .setSnapshotAnalysis(
                   SnapshotAnalysis.newBuilder().setMonitoringIntervalDays(monitoringIntervalDays))
               .build();
-      EntityType entityType = EntityType.newBuilder()
-          .setName(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .setMonitoringConfig(featurestoreMonitoringConfig).build();
+      EntityType entityType =
+          EntityType.newBuilder()
+              .setName(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .setMonitoringConfig(featurestoreMonitoringConfig)
+              .build();
 
       UpdateEntityTypeRequest updateEntityTypeRequest =
           UpdateEntityTypeRequest.newBuilder().setEntityType(entityType).build();
@@ -77,4 +85,3 @@ public class UpdateEntityTypeMonitoringSample {
   }
 }
 // [END aiplatform_update_entity_type_monitoring_sample]
-

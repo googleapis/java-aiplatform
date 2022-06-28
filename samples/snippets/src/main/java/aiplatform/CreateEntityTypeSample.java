@@ -15,7 +15,7 @@
  *
  *
  * Create an entity type so that you can create its related features. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -47,12 +47,18 @@ public class CreateEntityTypeSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    createEntityTypeSample(project, featurestoreId, entityTypeId, description, location, endpoint,
-        timeout);
+    createEntityTypeSample(
+        project, featurestoreId, entityTypeId, description, location, endpoint, timeout);
   }
 
-  static void createEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String description, String location, String endpoint, int timeout)
+  static void createEntityTypeSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String description,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -66,14 +72,17 @@ public class CreateEntityTypeSample {
 
       EntityType entityType = EntityType.newBuilder().setDescription(description).build();
 
-      CreateEntityTypeRequest createEntityTypeRequest = CreateEntityTypeRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setEntityType(entityType).setEntityTypeId(entityTypeId).build();
+      CreateEntityTypeRequest createEntityTypeRequest =
+          CreateEntityTypeRequest.newBuilder()
+              .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setEntityType(entityType)
+              .setEntityTypeId(entityTypeId)
+              .build();
 
       OperationFuture<EntityType, CreateEntityTypeOperationMetadata> entityTypeFuture =
           featurestoreServiceClient.createEntityTypeAsync(createEntityTypeRequest);
-      System.out.format("Operation name: %s%n",
-          entityTypeFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", entityTypeFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       EntityType entityTypeResponse = entityTypeFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Create Entity Type Response");
@@ -82,4 +91,3 @@ public class CreateEntityTypeSample {
   }
 }
 // [END aiplatform_create_entity_type_sample]
-

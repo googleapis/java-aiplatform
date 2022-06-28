@@ -15,7 +15,7 @@
  *
  *
  * Create an entity type so that you can create its related features. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -50,13 +50,26 @@ public class CreateEntityTypeMonitoringSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    createEntityTypeMonitoringSample(project, featurestoreId, entityTypeId, description,
-        monitoringIntervalDays, location, endpoint, timeout);
+    createEntityTypeMonitoringSample(
+        project,
+        featurestoreId,
+        entityTypeId,
+        description,
+        monitoringIntervalDays,
+        location,
+        endpoint,
+        timeout);
   }
 
-  static void createEntityTypeMonitoringSample(String project, String featurestoreId,
-      String entityTypeId, String description, int monitoringIntervalDays, String location,
-      String endpoint, int timeout)
+  static void createEntityTypeMonitoringSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String description,
+      int monitoringIntervalDays,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -74,17 +87,23 @@ public class CreateEntityTypeMonitoringSample {
                   SnapshotAnalysis.newBuilder().setMonitoringIntervalDays(monitoringIntervalDays))
               .build();
 
-      EntityType entityType = EntityType.newBuilder().setDescription(description)
-          .setMonitoringConfig(featurestoreMonitoringConfig).build();
+      EntityType entityType =
+          EntityType.newBuilder()
+              .setDescription(description)
+              .setMonitoringConfig(featurestoreMonitoringConfig)
+              .build();
 
-      CreateEntityTypeRequest createEntityTypeRequest = CreateEntityTypeRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setEntityType(entityType).setEntityTypeId(entityTypeId).build();
+      CreateEntityTypeRequest createEntityTypeRequest =
+          CreateEntityTypeRequest.newBuilder()
+              .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .setEntityType(entityType)
+              .setEntityTypeId(entityTypeId)
+              .build();
 
       OperationFuture<EntityType, CreateEntityTypeOperationMetadata> entityTypeFuture =
           featurestoreServiceClient.createEntityTypeAsync(createEntityTypeRequest);
-      System.out.format("Operation name: %s%n",
-          entityTypeFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", entityTypeFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       EntityType entityTypeResponse = entityTypeFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Create Entity Type Monitoring Response");
@@ -93,4 +112,3 @@ public class CreateEntityTypeMonitoringSample {
   }
 }
 // [END aiplatform_create_entity_type_monitoring_sample]
-

@@ -41,8 +41,8 @@ public class ListEntityTypesSample {
     listEntityTypesSample(project, featurestoreId, location, endpoint);
   }
 
-  static void listEntityTypesSample(String project, String featurestoreId, String location,
-      String endpoint) throws IOException {
+  static void listEntityTypesSample(
+      String project, String featurestoreId, String location, String endpoint) throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -53,15 +53,16 @@ public class ListEntityTypesSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      ListEntityTypesRequest listEntityTypeRequest = ListEntityTypesRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString()).build();
+      ListEntityTypesRequest listEntityTypeRequest =
+          ListEntityTypesRequest.newBuilder()
+              .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
+              .build();
       System.out.println("List Entity Types Response");
-      for (EntityType element : featurestoreServiceClient.listEntityTypes(listEntityTypeRequest)
-          .iterateAll()) {
+      for (EntityType element :
+          featurestoreServiceClient.listEntityTypes(listEntityTypeRequest).iterateAll()) {
         System.out.println(element);
       }
     }
   }
 }
 // [END aiplatform_list_entity_types_sample]
-

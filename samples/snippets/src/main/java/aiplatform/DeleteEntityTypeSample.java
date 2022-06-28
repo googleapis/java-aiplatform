@@ -15,7 +15,7 @@
  *
  *
  * Delete an entity type from featurestore resource. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -49,8 +49,13 @@ public class DeleteEntityTypeSample {
     deleteEntityTypeSample(project, featurestoreId, entityTypeId, location, endpoint, timeout);
   }
 
-  static void deleteEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String location, String endpoint, int timeout)
+  static void deleteEntityTypeSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -62,9 +67,12 @@ public class DeleteEntityTypeSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteEntityTypeRequest deleteEntityTypeRequest = DeleteEntityTypeRequest.newBuilder()
-          .setName(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .setForce(true).build();
+      DeleteEntityTypeRequest deleteEntityTypeRequest =
+          DeleteEntityTypeRequest.newBuilder()
+              .setName(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .setForce(true)
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteEntityTypeAsync(deleteEntityTypeRequest);
@@ -77,4 +85,3 @@ public class DeleteEntityTypeSample {
   }
 }
 // [END aiplatform_delete_entity_type_sample]
-

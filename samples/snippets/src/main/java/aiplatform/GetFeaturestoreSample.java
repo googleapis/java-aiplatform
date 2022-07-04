@@ -65,4 +65,3 @@ public class GetFeaturestoreSample {
   }
 }
 // [END aiplatform_get_featurestore_sample]
-

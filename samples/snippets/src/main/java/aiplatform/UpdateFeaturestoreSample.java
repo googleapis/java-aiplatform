@@ -96,4 +96,3 @@ public class UpdateFeaturestoreSample {
   }
 }
 // [END aiplatform_update_featurestore_sample]
-

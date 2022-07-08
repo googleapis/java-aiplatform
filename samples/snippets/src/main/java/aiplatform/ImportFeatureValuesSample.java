@@ -85,13 +85,14 @@ public class ImportFeatureValuesSample {
           .setAvroSource(
               AvroSource.newBuilder().setGcsSource(GcsSource.newBuilder().addUris(gcsSourceUri)))
           .build();
-      OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata> future =
-          featurestoreServiceClient.importFeatureValuesAsync(importFeatureValuesRequest);
+      OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata> 
+            importFeatureValuesFuture =
+              featurestoreServiceClient.importFeatureValuesAsync(importFeatureValuesRequest);
       System.out.format("Operation name: %s%n",
-          future.getInitialFuture().get().getName());
+          importFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       ImportFeatureValuesResponse importFeatureValuesResponse =
-          future.get(timeout, TimeUnit.SECONDS);
+          importFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Import Feature Values Response");
       System.out.println(importFeatureValuesResponse);
     }

@@ -69,12 +69,12 @@ public class BatchCreateFeaturesSample {
       List<CreateFeatureRequest> createFeatureRequests = new ArrayList<>();
 
       Feature titleFeature = Feature.newBuilder().setDescription("The title of the movie")
-          .setValueType(ValueType.valueOf("STRING")).build();
+          .setValueType(ValueType.STRING).build();
       Feature genresFeature = Feature.newBuilder().setDescription("The genres of the movie")
-          .setValueType(ValueType.valueOf("STRING")).build();
+          .setValueType(ValueType.STRING).build();
       Feature averageRatingFeature = Feature.newBuilder()
           .setDescription("The average rating for the movie, range is [1.0-5.0]")
-          .setValueType(ValueType.valueOf("DOUBLE")).build();
+          .setValueType(ValueType.DOUBLE).build();
 
       createFeatureRequests.add(
           CreateFeatureRequest.newBuilder().setFeature(titleFeature).setFeatureId("title").build());
@@ -85,16 +85,19 @@ public class BatchCreateFeaturesSample {
       createFeatureRequests.add(CreateFeatureRequest.newBuilder().setFeature(averageRatingFeature)
           .setFeatureId("average_rating").build());
 
-      BatchCreateFeaturesRequest request = BatchCreateFeaturesRequest.newBuilder()
+      BatchCreateFeaturesRequest batchCreateFeaturesRequest = BatchCreateFeaturesRequest
+          .newBuilder()
           .setParent(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
           .addAllRequests(createFeatureRequests).build();
 
-      OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata> future =
-          featurestoreServiceClient.batchCreateFeaturesAsync(request);
-      System.out.format("Operation name: %s%n", future.getInitialFuture().get().getName());
+      OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata> 
+            batchCreateFeaturesFuture = 
+              featurestoreServiceClient.batchCreateFeaturesAsync(batchCreateFeaturesRequest);
+      System.out.format("Operation name: %s%n",
+          batchCreateFeaturesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       BatchCreateFeaturesResponse batchCreateFeaturesResponse =
-          future.get(timeout, TimeUnit.SECONDS);
+          batchCreateFeaturesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Batch Create Features Response");
       System.out.println(batchCreateFeaturesResponse);
     }

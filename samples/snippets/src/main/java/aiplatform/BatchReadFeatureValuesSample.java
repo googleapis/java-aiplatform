@@ -94,15 +94,16 @@ public class BatchReadFeatureValuesSample {
               .setCsvReadInstances(CsvSource.newBuilder().setGcsSource(gcsSource))
               .setDestination(
                   FeatureValueDestination.newBuilder().setBigqueryDestination(bigQueryDestination))
-              // .addAllPassThroughFields(passThroughFieldsList)
               .addAllEntityTypeSpecs(entityTypeSpecs).build();
 
-      OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata> brf =
-          featurestoreServiceClient.batchReadFeatureValuesAsync(batchReadFeatureValuesRequest);
-      System.out.format("Operation name: %s%n", brf.getInitialFuture().get().getName());
+      OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata> 
+            batchReadFeatureValuesFuture =
+              featurestoreServiceClient.batchReadFeatureValuesAsync(batchReadFeatureValuesRequest);
+      System.out.format("Operation name: %s%n",
+          batchReadFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       BatchReadFeatureValuesResponse batchReadFeatureValuesResponse =
-          brf.get(timeout, TimeUnit.SECONDS);
+          batchReadFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Batch Read Feature Values Response");
       System.out.println(batchReadFeatureValuesResponse);
     }

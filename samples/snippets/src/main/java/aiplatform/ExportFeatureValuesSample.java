@@ -36,8 +36,7 @@ import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
 import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
 import com.google.cloud.aiplatform.v1.IdMatcher;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -70,10 +69,9 @@ public class ExportFeatureValuesSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      List<String> ids = new ArrayList<>();
-      ids.add("*");
-      FeatureSelector featureSelector = FeatureSelector.newBuilder()
-          .setIdMatcher(IdMatcher.newBuilder().addAllIds(ids).build()).build();
+      FeatureSelector featureSelector =
+          FeatureSelector.newBuilder().setIdMatcher(IdMatcher.newBuilder()
+              .addAllIds(Arrays.asList("title", "genres", "average_rating")).build()).build();
 
       ExportFeatureValuesRequest exportFeatureValuesRequest =
           ExportFeatureValuesRequest.newBuilder()
@@ -83,13 +81,14 @@ public class ExportFeatureValuesSample {
                   BigQueryDestination.newBuilder().setOutputUri(destinationTableUri)))
               .setFeatureSelector(featureSelector).setFullExport(FullExport.newBuilder()).build();
 
-      OperationFuture<ExportFeatureValuesResponse, ExportFeatureValuesOperationMetadata> future =
-          featurestoreServiceClient.exportFeatureValuesAsync(exportFeatureValuesRequest);
+      OperationFuture<ExportFeatureValuesResponse, ExportFeatureValuesOperationMetadata> 
+            exportFeatureValuesFuture =
+              featurestoreServiceClient.exportFeatureValuesAsync(exportFeatureValuesRequest);
       System.out.format("Operation name: %s%n",
-          future.getInitialFuture().get().getName());
+          exportFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       ExportFeatureValuesResponse exportFeatureValuesResponse =
-          future.get(timeout, TimeUnit.SECONDS);
+          exportFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Export Feature Values Response");
       System.out.println(exportFeatureValuesResponse);
     }

@@ -34,13 +34,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.location.MockLocations;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
-import com.google.iam.v1.MockIAMPolicy;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -1171,6 +1169,94 @@ public class ModelServiceClientTest {
       String parent = "parent-995424086";
       ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
       client.importModelEvaluation(parent, modelEvaluation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesTest() throws Exception {
+    BatchImportModelEvaluationSlicesResponse expectedResponse =
+        BatchImportModelEvaluationSlicesResponse.newBuilder()
+            .addAllImportedModelEvaluationSlices(new ArrayList<String>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelEvaluationName parent =
+        ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
+    List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+
+    BatchImportModelEvaluationSlicesResponse actualResponse =
+        client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportModelEvaluationSlicesRequest actualRequest =
+        ((BatchImportModelEvaluationSlicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(modelEvaluationSlices, actualRequest.getModelEvaluationSlicesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelEvaluationName parent =
+          ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
+      List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+      client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesTest2() throws Exception {
+    BatchImportModelEvaluationSlicesResponse expectedResponse =
+        BatchImportModelEvaluationSlicesResponse.newBuilder()
+            .addAllImportedModelEvaluationSlices(new ArrayList<String>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+
+    BatchImportModelEvaluationSlicesResponse actualResponse =
+        client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportModelEvaluationSlicesRequest actualRequest =
+        ((BatchImportModelEvaluationSlicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(modelEvaluationSlices, actualRequest.getModelEvaluationSlicesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+      client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

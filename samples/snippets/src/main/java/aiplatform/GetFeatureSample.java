@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Get feature details. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Get feature details. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -44,8 +44,14 @@ public class GetFeatureSample {
     getFeatureSample(project, featurestoreId, entityTypeId, featureId, location, endpoint);
   }
 
-  static void getFeatureSample(String project, String featurestoreId, String entityTypeId,
-      String featureId, String location, String endpoint) throws IOException {
+  static void getFeatureSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String featureId,
+      String location,
+      String endpoint)
+      throws IOException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -56,10 +62,12 @@ public class GetFeatureSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      GetFeatureRequest getFeatureRequest = GetFeatureRequest.newBuilder()
-          .setName(
-              FeatureName.of(project, location, featurestoreId, entityTypeId, featureId).toString())
-          .build();
+      GetFeatureRequest getFeatureRequest =
+          GetFeatureRequest.newBuilder()
+              .setName(
+                  FeatureName.of(project, location, featurestoreId, entityTypeId, featureId)
+                      .toString())
+              .build();
 
       Feature feature = featurestoreServiceClient.getFeature(getFeatureRequest);
       System.out.println("Get Feature Response");
@@ -69,4 +77,3 @@ public class GetFeatureSample {
   }
 }
 // [END aiplatform_get_feature_sample]
-

@@ -15,7 +15,7 @@
  *
  *
  * Delete a single feature from an existing entity type. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -48,12 +48,18 @@ public class DeleteFeatureSample {
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
 
-    deleteFeatureSample(project, featurestoreId, entityTypeId, featureId, location, endpoint,
-        timeout);
+    deleteFeatureSample(
+        project, featurestoreId, entityTypeId, featureId, location, endpoint, timeout);
   }
 
-  static void deleteFeatureSample(String project, String featurestoreId, String entityTypeId,
-      String featureId, String location, String endpoint, int timeout)
+  static void deleteFeatureSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String featureId,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -64,10 +70,12 @@ public class DeleteFeatureSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      DeleteFeatureRequest deleteFeatureRequest = DeleteFeatureRequest.newBuilder()
-          .setName(
-              FeatureName.of(project, location, featurestoreId, entityTypeId, featureId).toString())
-          .build();
+      DeleteFeatureRequest deleteFeatureRequest =
+          DeleteFeatureRequest.newBuilder()
+              .setName(
+                  FeatureName.of(project, location, featurestoreId, entityTypeId, featureId)
+                      .toString())
+              .build();
 
       OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
           featurestoreServiceClient.deleteFeatureAsync(deleteFeatureRequest);
@@ -80,4 +88,3 @@ public class DeleteFeatureSample {
   }
 }
 // [END aiplatform_delete_feature_sample]
-

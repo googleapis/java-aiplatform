@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * List available feature details. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * List available feature details. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -43,8 +43,9 @@ public class ListFeaturesSample {
     listFeaturesSample(project, featurestoreId, entityTypeId, location, endpoint);
   }
 
-  static void listFeaturesSample(String project, String featurestoreId, String entityTypeId,
-      String location, String endpoint) throws IOException {
+  static void listFeaturesSample(
+      String project, String featurestoreId, String entityTypeId, String location, String endpoint)
+      throws IOException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -54,12 +55,14 @@ public class ListFeaturesSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      ListFeaturesRequest listFeaturesRequest = ListFeaturesRequest.newBuilder()
-          .setParent(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .build();
+      ListFeaturesRequest listFeaturesRequest =
+          ListFeaturesRequest.newBuilder()
+              .setParent(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .build();
       System.out.println("List Features Response");
-      for (Feature element : featurestoreServiceClient.listFeatures(listFeaturesRequest)
-          .iterateAll()) {
+      for (Feature element :
+          featurestoreServiceClient.listFeatures(listFeaturesRequest).iterateAll()) {
         System.out.println(element);
       }
       featurestoreServiceClient.close();
@@ -67,4 +70,3 @@ public class ListFeaturesSample {
   }
 }
 // [END aiplatform_list_features_sample]
-

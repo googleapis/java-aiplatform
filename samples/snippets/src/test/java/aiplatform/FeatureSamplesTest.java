@@ -69,19 +69,19 @@ public class FeatureSamplesTest {
     originalPrintStream = System.out;
     System.setOut(out);
   }
-  
+
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 300);
+    DeleteFeaturestoreSample.deleteFeaturestoreSample(
+        PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
     assertThat(deleteFeaturestoreResponse).contains("Deleted Featurestore");
-    
+
     System.out.flush();
     System.setOut(originalPrintStream);
   }
@@ -101,12 +101,12 @@ public class FeatureSamplesTest {
     featurestoreId =
         createFeaturestoreResponse.split("Name: ")[1].split("featurestores/")[1].split("\n")[0]
             .trim();
-    
+
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
     String entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
-    CreateEntityTypeSample.createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        DESCRIPTION, LOCATION, ENDPOINT, 900);
+    CreateEntityTypeSample.createEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createEntityTypeResponse = bout.toString();
@@ -115,59 +115,65 @@ public class FeatureSamplesTest {
     // Create the feature
     String featureTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String featureId = String.format("temp_create_feature_test_%s", featureTempUuid);
-    CreateFeatureSample.createFeatureSample(PROJECT_ID, featurestoreId, entityTypeId, featureId,
-        DESCRIPTION, VALUE_TYPE, LOCATION, ENDPOINT, 900);
+    CreateFeatureSample.createFeatureSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeId,
+        featureId,
+        DESCRIPTION,
+        VALUE_TYPE,
+        LOCATION,
+        ENDPOINT,
+        900);
 
     // Assert
     String createFeatureResponse = bout.toString();
     assertThat(createFeatureResponse).contains("Create Feature Response");
-    
+
     // Get the feature
-    GetFeatureSample.getFeatureSample(PROJECT_ID, featurestoreId, entityTypeId, featureId, LOCATION,
-        ENDPOINT);
+    GetFeatureSample.getFeatureSample(
+        PROJECT_ID, featurestoreId, entityTypeId, featureId, LOCATION, ENDPOINT);
 
     // Assert
     String getFeatureResponse = bout.toString();
     assertThat(getFeatureResponse).contains("Get Feature Response");
 
     // List features
-    ListFeaturesSample.listFeaturesSample(PROJECT_ID, featurestoreId, entityTypeId, LOCATION,
-        ENDPOINT);
+    ListFeaturesSample.listFeaturesSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT);
 
     // Assert
     String listfeatureResponse = bout.toString();
     assertThat(listfeatureResponse).contains("List Features Response");
 
     // List features
-    ListFeaturesAsyncSample.listFeaturesAsyncSample(PROJECT_ID, featurestoreId, entityTypeId,
-        LOCATION, ENDPOINT);
+    ListFeaturesAsyncSample.listFeaturesAsyncSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT);
 
     // Assert
     String listfeatureAsyncResponse = bout.toString();
     assertThat(listfeatureAsyncResponse).contains("List Features Async Response");
-    
+
     // Search features
     SearchFeaturesSample.searchFeaturesSample(PROJECT_ID, QUERY, LOCATION, ENDPOINT);
 
     // Assert
     String searchFeaturesResponse = bout.toString();
     assertThat(searchFeaturesResponse).contains("Search Features Response");
-    
+
     // Search features
     SearchFeaturesAsyncSample.searchFeaturesAsyncSample(PROJECT_ID, QUERY, LOCATION, ENDPOINT);
 
     // Assert
     String searchFeaturesAsyncResponse = bout.toString();
     assertThat(searchFeaturesAsyncResponse).contains("Search Features Async Response");
-    
+
     // Delete the feature
-    DeleteFeatureSample.deleteFeatureSample(PROJECT_ID, featurestoreId, entityTypeId, featureId,
-        LOCATION, ENDPOINT, 300);
+    DeleteFeatureSample.deleteFeatureSample(
+        PROJECT_ID, featurestoreId, entityTypeId, featureId, LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeatureResponse = bout.toString();
     assertThat(deleteFeatureResponse).contains("Deleted Feature");
-    
   }
 }
-

@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Update feature. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Update feature. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -43,8 +43,14 @@ public class UpdateFeatureSample {
     updateFeatureSample(project, featurestoreId, entityTypeId, featureId, location, endpoint);
   }
 
-  static void updateFeatureSample(String project, String featurestoreId, String entityTypeId,
-      String featureId, String location, String endpoint) throws IOException {
+  static void updateFeatureSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String featureId,
+      String location,
+      String endpoint)
+      throws IOException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -54,10 +60,13 @@ public class UpdateFeatureSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      Feature feature = Feature.newBuilder()
-          .setName(
-              FeatureName.of(project, location, featurestoreId, entityTypeId, featureId).toString())
-          .setDescription("sample feature title  updated").build();
+      Feature feature =
+          Feature.newBuilder()
+              .setName(
+                  FeatureName.of(project, location, featurestoreId, entityTypeId, featureId)
+                      .toString())
+              .setDescription("sample feature title  updated")
+              .build();
 
       UpdateFeatureRequest request = UpdateFeatureRequest.newBuilder().setFeature(feature).build();
       Feature featureResponse = featurestoreServiceClient.updateFeature(request);
@@ -68,4 +77,3 @@ public class UpdateFeatureSample {
   }
 }
 // [END aiplatform_update_feature_sample]
-

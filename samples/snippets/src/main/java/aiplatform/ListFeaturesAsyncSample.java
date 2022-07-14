@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * List available feature details. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * List available feature details. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -45,8 +45,9 @@ public class ListFeaturesAsyncSample {
     listFeaturesAsyncSample(project, featurestoreId, entityTypeId, location, endpoint);
   }
 
-  static void listFeaturesAsyncSample(String project, String featurestoreId, String entityTypeId,
-      String location, String endpoint) throws IOException {
+  static void listFeaturesAsyncSample(
+      String project, String featurestoreId, String entityTypeId, String location, String endpoint)
+      throws IOException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -56,9 +57,11 @@ public class ListFeaturesAsyncSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      ListFeaturesRequest listFeaturesRequest = ListFeaturesRequest.newBuilder()
-          .setParent(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .build();
+      ListFeaturesRequest listFeaturesRequest =
+          ListFeaturesRequest.newBuilder()
+              .setParent(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .build();
       System.out.println("List Features Async Response");
       while (true) {
         ListFeaturesResponse listFeaturesResponse =
@@ -78,4 +81,3 @@ public class ListFeaturesAsyncSample {
   }
 }
 // [END aiplatform_list_features_async_sample]
-

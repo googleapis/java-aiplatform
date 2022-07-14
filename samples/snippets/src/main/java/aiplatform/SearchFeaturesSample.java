@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Search for featurestore resources. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Search for featurestore resources. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -52,11 +52,14 @@ public class SearchFeaturesSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      SearchFeaturesRequest searchFeaturesRequest = SearchFeaturesRequest.newBuilder()
-          .setLocation(LocationName.of(project, location).toString()).setQuery(query).build();
+      SearchFeaturesRequest searchFeaturesRequest =
+          SearchFeaturesRequest.newBuilder()
+              .setLocation(LocationName.of(project, location).toString())
+              .setQuery(query)
+              .build();
       System.out.println("Search Features Response");
-      for (Feature element : featurestoreServiceClient.searchFeatures(searchFeaturesRequest)
-          .iterateAll()) {
+      for (Feature element :
+          featurestoreServiceClient.searchFeatures(searchFeaturesRequest).iterateAll()) {
         System.out.println(element);
       }
       featurestoreServiceClient.close();
@@ -64,4 +67,3 @@ public class SearchFeaturesSample {
   }
 }
 // [END aiplatform_search_features_sample]
-

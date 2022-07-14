@@ -15,7 +15,7 @@
  *
  *
  * Create a single feature for an existing entity type. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -50,13 +50,29 @@ public class CreateFeatureSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 900;
-    createFeatureSample(project, featurestoreId, entityTypeId, featureId, description, valueType,
-        location, endpoint, timeout);
+    createFeatureSample(
+        project,
+        featurestoreId,
+        entityTypeId,
+        featureId,
+        description,
+        valueType,
+        location,
+        endpoint,
+        timeout);
   }
 
-  static void createFeatureSample(String project, String featurestoreId, String entityTypeId,
-      String featureId, String description, ValueType valueType, String location, String endpoint,
-      int timeout) throws IOException, InterruptedException, ExecutionException, TimeoutException {
+  static void createFeatureSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String featureId,
+      String description,
+      ValueType valueType,
+      String location,
+      String endpoint,
+      int timeout)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -67,13 +83,16 @@ public class CreateFeatureSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      Feature feature = Feature.newBuilder().setDescription(description)
-          .setValueType(valueType)
-          .build();
+      Feature feature =
+          Feature.newBuilder().setDescription(description).setValueType(valueType).build();
 
-      CreateFeatureRequest createFeatureRequest = CreateFeatureRequest.newBuilder()
-          .setParent(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .setFeature(feature).setFeatureId(featureId).build();
+      CreateFeatureRequest createFeatureRequest =
+          CreateFeatureRequest.newBuilder()
+              .setParent(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .setFeature(feature)
+              .setFeatureId(featureId)
+              .build();
 
       OperationFuture<Feature, CreateFeatureOperationMetadata> featureFuture =
           featurestoreServiceClient.createFeatureAsync(createFeatureRequest);
@@ -87,4 +106,3 @@ public class CreateFeatureSample {
   }
 }
 // [END aiplatform_create_feature_sample]
-

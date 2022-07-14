@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  *
- * Search for featurestore resources. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Search for featurestore resources. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -34,8 +34,7 @@ import java.io.IOException;
 
 public class SearchFeaturesAsyncSample {
 
-  public static void main(String[] args)
-      throws IOException {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String project = "YOUR_PROJECT_ID";
     String query = "YOUR_QUERY";
@@ -44,8 +43,8 @@ public class SearchFeaturesAsyncSample {
     searchFeaturesAsyncSample(project, query, location, endpoint);
   }
 
-  static void searchFeaturesAsyncSample(String project, String query, String location,
-      String endpoint) throws IOException {
+  static void searchFeaturesAsyncSample(
+      String project, String query, String location, String endpoint) throws IOException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -55,8 +54,11 @@ public class SearchFeaturesAsyncSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      SearchFeaturesRequest searchFeaturesRequest = SearchFeaturesRequest.newBuilder()
-          .setLocation(LocationName.of(project, location).toString()).setQuery(query).build();
+      SearchFeaturesRequest searchFeaturesRequest =
+          SearchFeaturesRequest.newBuilder()
+              .setLocation(LocationName.of(project, location).toString())
+              .setQuery(query)
+              .build();
       System.out.println("Search Features Async Response");
       while (true) {
         SearchFeaturesResponse response =
@@ -77,4 +79,3 @@ public class SearchFeaturesAsyncSample {
   }
 }
 // [END aiplatform_search_features_async_sample]
-

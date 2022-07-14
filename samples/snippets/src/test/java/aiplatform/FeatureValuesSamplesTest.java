@@ -19,13 +19,6 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata;
-import com.google.cloud.aiplatform.v1.CreateEntityTypeRequest;
-import com.google.cloud.aiplatform.v1.EntityType;
-import com.google.cloud.aiplatform.v1.FeaturestoreName;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryException;
@@ -37,10 +30,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
@@ -64,6 +58,8 @@ public class FeatureValuesSamplesTest {
   private static final int WORKER_COUNT = 2;
   private static final String INPUT_CSV_FILE =
       "gs://cloud-samples-data-us-central1/vertex-ai/feature-store/datasets/movie_prediction.csv";
+  private static final List<String> FEATURE_SELECTOR_IDS =
+      Arrays.asList("title", "genres", "average_rating");
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
   private static final int TIMEOUT = 900;
@@ -99,36 +95,6 @@ public class FeatureValuesSamplesTest {
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
-  }
-
-  static void createEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String description, String location, String endpoint, int timeout)
-      throws IOException, InterruptedException, ExecutionException, TimeoutException {
-
-    FeaturestoreServiceSettings featurestoreServiceSettings =
-        FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
-
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the "close" method on the client to safely clean up any remaining background resources.
-    try (FeaturestoreServiceClient featurestoreServiceClient =
-        FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
-
-      EntityType entityType = EntityType.newBuilder().setDescription(description).build();
-
-      CreateEntityTypeRequest createEntityTypeRequest = CreateEntityTypeRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setEntityType(entityType).setEntityTypeId(entityTypeId).build();
-
-      OperationFuture<EntityType, CreateEntityTypeOperationMetadata> entityTypeFuture =
-          featurestoreServiceClient.createEntityTypeAsync(createEntityTypeRequest);
-      System.out.format("Operation name: %s%n",
-          entityTypeFuture.getInitialFuture().get().getName());
-      System.out.println("Waiting for operation to finish...");
-      EntityType entityTypeResponse = entityTypeFuture.get(timeout, TimeUnit.SECONDS);
-      System.out.println("Create Entity Type Response");
-      System.out.format("Name: %s%n", entityTypeResponse.getName());
-    }
   }
 
   static void createBigQueryDataset(String projectId, String datasetName, String location) {
@@ -173,7 +139,7 @@ public class FeatureValuesSamplesTest {
 
     // Delete the featurestore
     DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 60);
+        LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -208,8 +174,8 @@ public class FeatureValuesSamplesTest {
 
     // Create the entity type
     String entityTypeId = "movies";
-    createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION,
-        ENDPOINT, TIMEOUT);
+    CreateEntityTypeSample.createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
+        DESCRIPTION, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createEntityTypeResponse = bout.toString();
@@ -243,7 +209,7 @@ public class FeatureValuesSamplesTest {
 
     // Export feature values
     ExportFeatureValuesSample.exportFeatureValuesSample(PROJECT_ID, featurestoreId, entityTypeId,
-        destinationTableUri, LOCATION, ENDPOINT, TIMEOUT);
+        destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String exportFeatureValuesResponse = bout.toString();
@@ -254,7 +220,7 @@ public class FeatureValuesSamplesTest {
 
     // Snapshot export feature values
     ExportFeatureValuesSnapshotSample.exportFeatureValuesSnapshotSample(PROJECT_ID, featurestoreId,
-        entityTypeId, destinationTableUri, LOCATION, ENDPOINT, TIMEOUT);
+        entityTypeId, destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String snapshotResponse = bout.toString();
@@ -265,7 +231,8 @@ public class FeatureValuesSamplesTest {
 
     // Batch read feature values
     BatchReadFeatureValuesSample.batchReadFeatureValuesSample(PROJECT_ID, featurestoreId,
-        entityTypeId, INPUT_CSV_FILE, destinationTableUri, LOCATION, ENDPOINT, TIMEOUT);
+        entityTypeId, INPUT_CSV_FILE, destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT,
+        TIMEOUT);
 
     // Assert
     String batchReadFeatureValuesResponse = bout.toString();

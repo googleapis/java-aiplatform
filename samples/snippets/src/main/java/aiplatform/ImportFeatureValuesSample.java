@@ -95,6 +95,7 @@ public class ImportFeatureValuesSample {
           importFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Import Feature Values Response");
       System.out.println(importFeatureValuesResponse);
+      featurestoreServiceClient.close();
     }
   }
 }

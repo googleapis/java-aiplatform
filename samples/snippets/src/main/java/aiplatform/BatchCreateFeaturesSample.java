@@ -100,6 +100,7 @@ public class BatchCreateFeaturesSample {
           batchCreateFeaturesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Batch Create Features Response");
       System.out.println(batchCreateFeaturesResponse);
+      featurestoreServiceClient.close();
     }
   }
 }

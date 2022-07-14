@@ -40,6 +40,7 @@ import com.google.cloud.aiplatform.v1.GcsSource;
 import com.google.cloud.aiplatform.v1.IdMatcher;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -55,16 +56,17 @@ public class BatchReadFeatureValuesSample {
     String entityTypeId = "YOUR_ENTITY_TYPE_ID";
     String inputCsvFile = "YOU_INPUT_CSV_FILE";
     String destinationTableUri = "YOUR_DESTINATION_TABLE_URI";
+    List<String> featureSelectorIds = Arrays.asList("title", "genres", "average_rating");
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
     batchReadFeatureValuesSample(project, featurestoreId, entityTypeId, inputCsvFile,
-        destinationTableUri, location, endpoint, timeout);
+        destinationTableUri, featureSelectorIds, location, endpoint, timeout);
   }
 
   static void batchReadFeatureValuesSample(String project, String featurestoreId,
-      String entityTypeId, String inputCsvFile, String destinationTableUri, String location,
-      String endpoint, int timeout)
+      String entityTypeId, String inputCsvFile, String destinationTableUri,
+      List<String> featureSelectorIds, String location, String endpoint, int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -77,12 +79,11 @@ public class BatchReadFeatureValuesSample {
 
       List<EntityTypeSpec> entityTypeSpecs = new ArrayList<>();
 
-      List<String> ids = new ArrayList<>();
-      ids.add("*");
       FeatureSelector featureSelector = FeatureSelector.newBuilder()
-          .setIdMatcher(IdMatcher.newBuilder().addAllIds(ids).build()).build();
+          .setIdMatcher(IdMatcher.newBuilder().addAllIds(featureSelectorIds).build()).build();
       EntityTypeSpec entityTypeSpec = EntityTypeSpec.newBuilder().setEntityTypeId(entityTypeId)
           .setFeatureSelector(featureSelector).build();
+
       entityTypeSpecs.add(entityTypeSpec);
 
       BigQueryDestination bigQueryDestination =
@@ -106,6 +107,7 @@ public class BatchReadFeatureValuesSample {
           batchReadFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Batch Read Feature Values Response");
       System.out.println(batchReadFeatureValuesResponse);
+      featurestoreServiceClient.close();
     }
   }
 }

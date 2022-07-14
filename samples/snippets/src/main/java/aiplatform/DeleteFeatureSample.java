@@ -21,7 +21,7 @@
 
 package aiplatform;
 
-// [START aiplatform_delete_Feature_sample]
+// [START aiplatform_delete_feature_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1.DeleteFeatureRequest;
@@ -74,10 +74,10 @@ public class DeleteFeatureSample {
       System.out.format("Operation name: %s%n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       operationFuture.get(timeout, TimeUnit.SECONDS);
-
       System.out.format("Deleted Feature.");
+      featurestoreServiceClient.close();
     }
   }
 }
-// [END aiplatform_delete_Feature_sample]
+// [END aiplatform_delete_feature_sample]
 

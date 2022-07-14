@@ -19,19 +19,12 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata;
-import com.google.cloud.aiplatform.v1.CreateEntityTypeRequest;
-import com.google.cloud.aiplatform.v1.EntityType;
-import com.google.cloud.aiplatform.v1.FeaturestoreName;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceClient;
-import com.google.cloud.aiplatform.v1.FeaturestoreServiceSettings;
+import com.google.cloud.aiplatform.v1.Feature.ValueType;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
@@ -46,13 +39,12 @@ public class FeatureSamplesTest {
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final int MIN_NODE_COUNT = 1;
   private static final int MAX_NODE_COUNT = 5;
-  private static final String VALUE_TYPE = "STRING";
+  private static final ValueType VALUE_TYPE = ValueType.STRING;
   private static final String DESCRIPTION = "Test Description";
   private static final boolean USE_FORCE = true;
   private static final String QUERY = "value_type=STRING";
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
-  private static final int TIMEOUT = 900;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -77,36 +69,6 @@ public class FeatureSamplesTest {
     originalPrintStream = System.out;
     System.setOut(out);
   }
-
-  static void createEntityTypeSample(String project, String featurestoreId, String entityTypeId,
-      String description, String location, String endpoint, int timeout)
-      throws IOException, InterruptedException, ExecutionException, TimeoutException {
-
-    FeaturestoreServiceSettings featurestoreServiceSettings =
-        FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
-
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the "close" method on the client to safely clean up any remaining background resources.
-    try (FeaturestoreServiceClient featurestoreServiceClient =
-        FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
-
-      EntityType entityType = EntityType.newBuilder().setDescription(description).build();
-
-      CreateEntityTypeRequest createEntityTypeRequest = CreateEntityTypeRequest.newBuilder()
-          .setParent(FeaturestoreName.of(project, location, featurestoreId).toString())
-          .setEntityType(entityType).setEntityTypeId(entityTypeId).build();
-
-      OperationFuture<EntityType, CreateEntityTypeOperationMetadata> entityTypeFuture =
-          featurestoreServiceClient.createEntityTypeAsync(createEntityTypeRequest);
-      System.out.format("Operation name: %s%n",
-          entityTypeFuture.getInitialFuture().get().getName());
-      System.out.println("Waiting for operation to finish...");
-      EntityType entityTypeResponse = entityTypeFuture.get(timeout, TimeUnit.SECONDS);
-      System.out.println("Create Entity Type Response");
-      System.out.format("Name: %s%n", entityTypeResponse.getName());
-    }
-  }
   
   @After
   public void tearDown()
@@ -114,7 +76,7 @@ public class FeatureSamplesTest {
 
     // Delete the featurestore
     DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 60);
+        LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -143,8 +105,8 @@ public class FeatureSamplesTest {
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
     String entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
-    createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        DESCRIPTION, LOCATION, ENDPOINT, TIMEOUT);
+    CreateEntityTypeSample.createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
+        DESCRIPTION, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createEntityTypeResponse = bout.toString();
@@ -154,7 +116,7 @@ public class FeatureSamplesTest {
     String featureTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String featureId = String.format("temp_create_feature_test_%s", featureTempUuid);
     CreateFeatureSample.createFeatureSample(PROJECT_ID, featurestoreId, entityTypeId, featureId,
-        DESCRIPTION, VALUE_TYPE, LOCATION, ENDPOINT, TIMEOUT);
+        DESCRIPTION, VALUE_TYPE, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createFeatureResponse = bout.toString();
@@ -200,7 +162,7 @@ public class FeatureSamplesTest {
     
     // Delete the feature
     DeleteFeatureSample.deleteFeatureSample(PROJECT_ID, featurestoreId, entityTypeId, featureId,
-        LOCATION, ENDPOINT, TIMEOUT);
+        LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeatureResponse = bout.toString();

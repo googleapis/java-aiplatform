@@ -63,6 +63,7 @@ public class UpdateFeatureSample {
       Feature featureResponse = featurestoreServiceClient.updateFeature(request);
       System.out.println("Update Feature Response");
       System.out.format("Name: %s%n", featureResponse.getName());
+      featurestoreServiceClient.close();
     }
   }
 }

@@ -46,16 +46,16 @@ public class CreateFeatureSample {
     String entityTypeId = "YOUR_ENTITY_TYPE_ID";
     String featureId = "YOUR_FEATURE_ID";
     String description = "YOUR_FEATURE_DESCRIPTION";
-    String valueType = "YOUR_FEATURE_VALUE_TYPE";
+    ValueType valueType = ValueType.STRING;
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
-    int timeout = 300;
+    int timeout = 900;
     createFeatureSample(project, featurestoreId, entityTypeId, featureId, description, valueType,
         location, endpoint, timeout);
   }
 
   static void createFeatureSample(String project, String featurestoreId, String entityTypeId,
-      String featureId, String description, String valueType, String location, String endpoint,
+      String featureId, String description, ValueType valueType, String location, String endpoint,
       int timeout) throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
     FeaturestoreServiceSettings featurestoreServiceSettings =
@@ -68,8 +68,7 @@ public class CreateFeatureSample {
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
       Feature feature = Feature.newBuilder().setDescription(description)
-          .setValueType(ValueType.valueOf(valueType))
-          // .setDisableMonitoring(disableMonitoring)
+          .setValueType(valueType)
           .build();
 
       CreateFeatureRequest createFeatureRequest = CreateFeatureRequest.newBuilder()
@@ -83,6 +82,7 @@ public class CreateFeatureSample {
       Feature featureResponse = featureFuture.get(timeout, TimeUnit.SECONDS);
       System.out.println("Create Feature Response");
       System.out.format("Name: %s%n", featureResponse.getName());
+      featurestoreServiceClient.close();
     }
   }
 }

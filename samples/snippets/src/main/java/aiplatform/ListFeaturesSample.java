@@ -62,6 +62,7 @@ public class ListFeaturesSample {
           .iterateAll()) {
         System.out.println(element);
       }
+      featurestoreServiceClient.close();
     }
   }
 }

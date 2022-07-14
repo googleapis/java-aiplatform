@@ -59,6 +59,7 @@ public class SearchFeaturesSample {
           .iterateAll()) {
         System.out.println(element);
       }
+      featurestoreServiceClient.close();
     }
   }
 }

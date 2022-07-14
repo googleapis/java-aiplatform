@@ -64,6 +64,7 @@ public class GetFeatureSample {
       Feature feature = featurestoreServiceClient.getFeature(getFeatureRequest);
       System.out.println("Get Feature Response");
       System.out.println(feature);
+      featurestoreServiceClient.close();
     }
   }
 }

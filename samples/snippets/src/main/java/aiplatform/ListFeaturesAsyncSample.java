@@ -73,6 +73,7 @@ public class ListFeaturesAsyncSample {
           break;
         }
       }
+      featurestoreServiceClient.close();
     }
   }
 }

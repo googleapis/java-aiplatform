@@ -37,18 +37,15 @@ import org.junit.runners.JUnit4;
 public class FeatureSamplesTest {
 
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
-  private static final int MIN_NODE_COUNT = 1;
-  private static final int MAX_NODE_COUNT = 5;
   private static final ValueType VALUE_TYPE = ValueType.STRING;
   private static final String DESCRIPTION = "Test Description";
-  private static final boolean USE_FORCE = true;
   private static final String QUERY = "value_type=STRING";
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String featurestoreId;
+  private String featurestoreId = "featurestore_sample";
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -74,14 +71,6 @@ public class FeatureSamplesTest {
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
-    // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(
-        PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 300);
-
-    // Assert
-    String deleteFeaturestoreResponse = bout.toString();
-    assertThat(deleteFeaturestoreResponse).contains("Deleted Featurestore");
-
     System.out.flush();
     System.setOut(originalPrintStream);
   }
@@ -89,18 +78,6 @@ public class FeatureSamplesTest {
   @Test
   public void testFeatureSamples()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
-    // Create the featurestore
-    String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
-    String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreSample.createFeaturestoreSample(
-        PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, 900);
-
-    // Assert
-    String createFeaturestoreResponse = bout.toString();
-    assertThat(createFeaturestoreResponse).contains("Create Featurestore Response");
-    featurestoreId =
-        createFeaturestoreResponse.split("Name: ")[1].split("featurestores/")[1].split("\n")[0]
-            .trim();
 
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);

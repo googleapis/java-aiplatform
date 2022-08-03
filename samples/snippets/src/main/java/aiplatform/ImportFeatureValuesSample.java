@@ -15,7 +15,7 @@
  *
  *
  * Bulk import values into a featurestore for existing features. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -55,13 +55,30 @@ public class ImportFeatureValuesSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    importFeatureValuesSample(project, featurestoreId, entityTypeId, gcsSourceUri, entityIdField,
-        featureTimeField, workerCount, location, endpoint, timeout);
+    importFeatureValuesSample(
+        project,
+        featurestoreId,
+        entityTypeId,
+        gcsSourceUri,
+        entityIdField,
+        featureTimeField,
+        workerCount,
+        location,
+        endpoint,
+        timeout);
   }
 
-  static void importFeatureValuesSample(String project, String featurestoreId, String entityTypeId,
-      String gcsSourceUri, String entityIdField, String featureTimeField, int workerCount,
-      String location, String endpoint, int timeout)
+  static void importFeatureValuesSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String gcsSourceUri,
+      String entityIdField,
+      String featureTimeField,
+      int workerCount,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -76,20 +93,23 @@ public class ImportFeatureValuesSample {
       featureSpecs.add(FeatureSpec.newBuilder().setId("title").build());
       featureSpecs.add(FeatureSpec.newBuilder().setId("genres").build());
       featureSpecs.add(FeatureSpec.newBuilder().setId("average_rating").build());
-      ImportFeatureValuesRequest importFeatureValuesRequest = ImportFeatureValuesRequest
-          .newBuilder()
-          .setEntityType(
-              EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .setEntityIdField(entityIdField).setFeatureTimeField(featureTimeField)
-          .addAllFeatureSpecs(featureSpecs).setWorkerCount(workerCount)
-          .setAvroSource(
-              AvroSource.newBuilder().setGcsSource(GcsSource.newBuilder().addUris(gcsSourceUri)))
-          .build();
-      OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata> 
-            importFeatureValuesFuture =
+      ImportFeatureValuesRequest importFeatureValuesRequest =
+          ImportFeatureValuesRequest.newBuilder()
+              .setEntityType(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .setEntityIdField(entityIdField)
+              .setFeatureTimeField(featureTimeField)
+              .addAllFeatureSpecs(featureSpecs)
+              .setWorkerCount(workerCount)
+              .setAvroSource(
+                  AvroSource.newBuilder()
+                      .setGcsSource(GcsSource.newBuilder().addUris(gcsSourceUri)))
+              .build();
+      OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata>
+          importFeatureValuesFuture =
               featurestoreServiceClient.importFeatureValuesAsync(importFeatureValuesRequest);
-      System.out.format("Operation name: %s%n",
-          importFeatureValuesFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", importFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       ImportFeatureValuesResponse importFeatureValuesResponse =
           importFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
@@ -100,4 +120,3 @@ public class ImportFeatureValuesSample {
   }
 }
 // [END aiplatform_import_feature_values_sample]
-

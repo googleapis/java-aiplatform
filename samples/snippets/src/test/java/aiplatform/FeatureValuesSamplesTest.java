@@ -102,8 +102,12 @@ public class FeatureValuesSamplesTest {
       // Initialize client that will be used to send requests. This client only needs
       // to be created
       // once, and can be reused for multiple requests.
-      BigQuery bigquery = BigQueryOptions.newBuilder().setLocation(location).setProjectId(projectId)
-          .build().getService();
+      BigQuery bigquery =
+          BigQueryOptions.newBuilder()
+              .setLocation(location)
+              .setProjectId(projectId)
+              .build()
+              .getService();
       DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
 
       Dataset newDataset = bigquery.create(datasetInfo);
@@ -118,8 +122,12 @@ public class FeatureValuesSamplesTest {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
-      BigQuery bigquery = BigQueryOptions.newBuilder().setLocation(location).setProjectId(projectId)
-          .build().getService();
+      BigQuery bigquery =
+          BigQueryOptions.newBuilder()
+              .setLocation(location)
+              .setProjectId(projectId)
+              .build()
+              .getService();
 
       DatasetId datasetId = DatasetId.of(projectId, datasetName);
       boolean success = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
@@ -138,8 +146,8 @@ public class FeatureValuesSamplesTest {
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     // Delete the featurestore
-    DeleteFeaturestoreSample.deleteFeaturestoreSample(PROJECT_ID, featurestoreId, USE_FORCE,
-        LOCATION, ENDPOINT, 300);
+    DeleteFeaturestoreSample.deleteFeaturestoreSample(
+        PROJECT_ID, featurestoreId, USE_FORCE, LOCATION, ENDPOINT, 300);
 
     // Assert
     String deleteFeaturestoreResponse = bout.toString();
@@ -162,8 +170,8 @@ public class FeatureValuesSamplesTest {
     // Create the featurestore
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     String id = String.format("temp_create_featurestore_test_%s", tempUuid);
-    CreateFeaturestoreSample.createFeaturestoreSample(PROJECT_ID, id, MIN_NODE_COUNT,
-        MAX_NODE_COUNT, LOCATION, ENDPOINT, 900);
+    CreateFeaturestoreSample.createFeaturestoreSample(
+        PROJECT_ID, id, MIN_NODE_COUNT, MAX_NODE_COUNT, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createFeaturestoreResponse = bout.toString();
@@ -174,24 +182,32 @@ public class FeatureValuesSamplesTest {
 
     // Create the entity type
     String entityTypeId = "movies";
-    CreateEntityTypeSample.createEntityTypeSample(PROJECT_ID, featurestoreId, entityTypeId,
-        DESCRIPTION, LOCATION, ENDPOINT, 900);
+    CreateEntityTypeSample.createEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT, 900);
 
     // Assert
     String createEntityTypeResponse = bout.toString();
     assertThat(createEntityTypeResponse).contains("Create Entity Type Response");
 
     // Batch create features
-    BatchCreateFeaturesSample.batchCreateFeaturesSample(PROJECT_ID, featurestoreId, entityTypeId,
-        LOCATION, ENDPOINT, TIMEOUT);
+    BatchCreateFeaturesSample.batchCreateFeaturesSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, TIMEOUT);
 
     // Assert
     String batchCreateFeaturesResponse = bout.toString();
     assertThat(batchCreateFeaturesResponse).contains("Batch Create Features Response");
 
     // Import feature values
-    ImportFeatureValuesSample.importFeatureValuesSample(PROJECT_ID, featurestoreId, entityTypeId,
-        GCS_SOURCE_URI, ENTITY_ID_FIELD, FEATURE_TIME_FIELD, WORKER_COUNT, LOCATION, ENDPOINT,
+    ImportFeatureValuesSample.importFeatureValuesSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeId,
+        GCS_SOURCE_URI,
+        ENTITY_ID_FIELD,
+        FEATURE_TIME_FIELD,
+        WORKER_COUNT,
+        LOCATION,
+        ENDPOINT,
         TIMEOUT);
 
     // Assert
@@ -208,8 +224,15 @@ public class FeatureValuesSamplesTest {
     assertThat(createBigQueryDatasetResponse).contains(datasetName + " created successfully");
 
     // Export feature values
-    ExportFeatureValuesSample.exportFeatureValuesSample(PROJECT_ID, featurestoreId, entityTypeId,
-        destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT, TIMEOUT);
+    ExportFeatureValuesSample.exportFeatureValuesSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeId,
+        destinationTableUri,
+        FEATURE_SELECTOR_IDS,
+        LOCATION,
+        ENDPOINT,
+        TIMEOUT);
 
     // Assert
     String exportFeatureValuesResponse = bout.toString();
@@ -219,8 +242,15 @@ public class FeatureValuesSamplesTest {
         String.format("bq://%s.%s.%s_snapshot", PROJECT_ID, datasetName, destinationTableName);
 
     // Snapshot export feature values
-    ExportFeatureValuesSnapshotSample.exportFeatureValuesSnapshotSample(PROJECT_ID, featurestoreId,
-        entityTypeId, destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT, TIMEOUT);
+    ExportFeatureValuesSnapshotSample.exportFeatureValuesSnapshotSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeId,
+        destinationTableUri,
+        FEATURE_SELECTOR_IDS,
+        LOCATION,
+        ENDPOINT,
+        TIMEOUT);
 
     // Assert
     String snapshotResponse = bout.toString();
@@ -230,14 +260,19 @@ public class FeatureValuesSamplesTest {
         String.format("bq://%s.%s.%s_batchRead", PROJECT_ID, datasetName, destinationTableName);
 
     // Batch read feature values
-    BatchReadFeatureValuesSample.batchReadFeatureValuesSample(PROJECT_ID, featurestoreId,
-        entityTypeId, INPUT_CSV_FILE, destinationTableUri, FEATURE_SELECTOR_IDS, LOCATION, ENDPOINT,
+    BatchReadFeatureValuesSample.batchReadFeatureValuesSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeId,
+        INPUT_CSV_FILE,
+        destinationTableUri,
+        FEATURE_SELECTOR_IDS,
+        LOCATION,
+        ENDPOINT,
         TIMEOUT);
 
     // Assert
     String batchReadFeatureValuesResponse = bout.toString();
     assertThat(batchReadFeatureValuesResponse).contains("Batch Read Feature Values Response");
-
   }
 }
-

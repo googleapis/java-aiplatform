@@ -15,7 +15,7 @@
  *
  *
  * Create features in bulk for an existing entity type. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup
  * before running the code snippet
  */
 
@@ -54,8 +54,13 @@ public class BatchCreateFeaturesSample {
     batchCreateFeaturesSample(project, featurestoreId, entityTypeId, location, endpoint, timeout);
   }
 
-  static void batchCreateFeaturesSample(String project, String featurestoreId, String entityTypeId,
-      String location, String endpoint, int timeout)
+  static void batchCreateFeaturesSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -68,33 +73,49 @@ public class BatchCreateFeaturesSample {
 
       List<CreateFeatureRequest> createFeatureRequests = new ArrayList<>();
 
-      Feature titleFeature = Feature.newBuilder().setDescription("The title of the movie")
-          .setValueType(ValueType.STRING).build();
-      Feature genresFeature = Feature.newBuilder().setDescription("The genres of the movie")
-          .setValueType(ValueType.STRING).build();
-      Feature averageRatingFeature = Feature.newBuilder()
-          .setDescription("The average rating for the movie, range is [1.0-5.0]")
-          .setValueType(ValueType.DOUBLE).build();
+      Feature titleFeature =
+          Feature.newBuilder()
+              .setDescription("The title of the movie")
+              .setValueType(ValueType.STRING)
+              .build();
+      Feature genresFeature =
+          Feature.newBuilder()
+              .setDescription("The genres of the movie")
+              .setValueType(ValueType.STRING)
+              .build();
+      Feature averageRatingFeature =
+          Feature.newBuilder()
+              .setDescription("The average rating for the movie, range is [1.0-5.0]")
+              .setValueType(ValueType.DOUBLE)
+              .build();
 
       createFeatureRequests.add(
           CreateFeatureRequest.newBuilder().setFeature(titleFeature).setFeatureId("title").build());
 
-      createFeatureRequests.add(CreateFeatureRequest.newBuilder().setFeature(genresFeature)
-          .setFeatureId("genres").build());
+      createFeatureRequests.add(
+          CreateFeatureRequest.newBuilder()
+              .setFeature(genresFeature)
+              .setFeatureId("genres")
+              .build());
 
-      createFeatureRequests.add(CreateFeatureRequest.newBuilder().setFeature(averageRatingFeature)
-          .setFeatureId("average_rating").build());
+      createFeatureRequests.add(
+          CreateFeatureRequest.newBuilder()
+              .setFeature(averageRatingFeature)
+              .setFeatureId("average_rating")
+              .build());
 
-      BatchCreateFeaturesRequest batchCreateFeaturesRequest = BatchCreateFeaturesRequest
-          .newBuilder()
-          .setParent(EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-          .addAllRequests(createFeatureRequests).build();
+      BatchCreateFeaturesRequest batchCreateFeaturesRequest =
+          BatchCreateFeaturesRequest.newBuilder()
+              .setParent(
+                  EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
+              .addAllRequests(createFeatureRequests)
+              .build();
 
-      OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata> 
-            batchCreateFeaturesFuture = 
+      OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+          batchCreateFeaturesFuture =
               featurestoreServiceClient.batchCreateFeaturesAsync(batchCreateFeaturesRequest);
-      System.out.format("Operation name: %s%n",
-          batchCreateFeaturesFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", batchCreateFeaturesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       BatchCreateFeaturesResponse batchCreateFeaturesResponse =
           batchCreateFeaturesFuture.get(timeout, TimeUnit.SECONDS);
@@ -105,4 +126,3 @@ public class BatchCreateFeaturesSample {
   }
 }
 // [END aiplatform_batch_create_features_sample]
-

@@ -14,9 +14,9 @@
  * limitations under the License.
  *
  *
- * Batch read feature values from a featurestore, as determined by your 
- * read instances list file, to export data. See 
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * Batch read feature values from a featurestore, as determined by your
+ * read instances list file, to export data. See
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -60,13 +60,28 @@ public class BatchReadFeatureValuesSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    batchReadFeatureValuesSample(project, featurestoreId, entityTypeId, inputCsvFile,
-        destinationTableUri, featureSelectorIds, location, endpoint, timeout);
+    batchReadFeatureValuesSample(
+        project,
+        featurestoreId,
+        entityTypeId,
+        inputCsvFile,
+        destinationTableUri,
+        featureSelectorIds,
+        location,
+        endpoint,
+        timeout);
   }
 
-  static void batchReadFeatureValuesSample(String project, String featurestoreId,
-      String entityTypeId, String inputCsvFile, String destinationTableUri,
-      List<String> featureSelectorIds, String location, String endpoint, int timeout)
+  static void batchReadFeatureValuesSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String inputCsvFile,
+      String destinationTableUri,
+      List<String> featureSelectorIds,
+      String location,
+      String endpoint,
+      int timeout)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
@@ -79,10 +94,15 @@ public class BatchReadFeatureValuesSample {
 
       List<EntityTypeSpec> entityTypeSpecs = new ArrayList<>();
 
-      FeatureSelector featureSelector = FeatureSelector.newBuilder()
-          .setIdMatcher(IdMatcher.newBuilder().addAllIds(featureSelectorIds).build()).build();
-      EntityTypeSpec entityTypeSpec = EntityTypeSpec.newBuilder().setEntityTypeId(entityTypeId)
-          .setFeatureSelector(featureSelector).build();
+      FeatureSelector featureSelector =
+          FeatureSelector.newBuilder()
+              .setIdMatcher(IdMatcher.newBuilder().addAllIds(featureSelectorIds).build())
+              .build();
+      EntityTypeSpec entityTypeSpec =
+          EntityTypeSpec.newBuilder()
+              .setEntityTypeId(entityTypeId)
+              .setFeatureSelector(featureSelector)
+              .build();
 
       entityTypeSpecs.add(entityTypeSpec);
 
@@ -95,13 +115,14 @@ public class BatchReadFeatureValuesSample {
               .setCsvReadInstances(CsvSource.newBuilder().setGcsSource(gcsSource))
               .setDestination(
                   FeatureValueDestination.newBuilder().setBigqueryDestination(bigQueryDestination))
-              .addAllEntityTypeSpecs(entityTypeSpecs).build();
+              .addAllEntityTypeSpecs(entityTypeSpecs)
+              .build();
 
-      OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata> 
-            batchReadFeatureValuesFuture =
+      OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata>
+          batchReadFeatureValuesFuture =
               featurestoreServiceClient.batchReadFeatureValuesAsync(batchReadFeatureValuesRequest);
-      System.out.format("Operation name: %s%n",
-          batchReadFeatureValuesFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", batchReadFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       BatchReadFeatureValuesResponse batchReadFeatureValuesResponse =
           batchReadFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
@@ -112,4 +133,3 @@ public class BatchReadFeatureValuesSample {
   }
 }
 // [END aiplatform_batch_read_feature_values_sample]
-

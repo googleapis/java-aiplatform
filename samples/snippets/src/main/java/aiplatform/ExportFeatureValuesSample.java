@@ -15,7 +15,7 @@
  *
  *
  * Bulk export feature values from a featurestore. See
- * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running 
+ * https://cloud.google.com/vertex-ai/docs/featurestore/setup before running
  * the code snippet
  */
 
@@ -55,13 +55,27 @@ public class ExportFeatureValuesSample {
     String location = "us-central1";
     String endpoint = "us-central1-aiplatform.googleapis.com:443";
     int timeout = 300;
-    exportFeatureValuesSample(project, featurestoreId, entityTypeId, destinationTableUri,
-        featureSelectorIds, location, endpoint, timeout);
+    exportFeatureValuesSample(
+        project,
+        featurestoreId,
+        entityTypeId,
+        destinationTableUri,
+        featureSelectorIds,
+        location,
+        endpoint,
+        timeout);
   }
 
-  static void exportFeatureValuesSample(String project, String featurestoreId, String entityTypeId,
-      String destinationTableUri, List<String> featureSelectorIds, String location, String endpoint,
-      int timeout) throws IOException, InterruptedException, ExecutionException, TimeoutException {
+  static void exportFeatureValuesSample(
+      String project,
+      String featurestoreId,
+      String entityTypeId,
+      String destinationTableUri,
+      List<String> featureSelectorIds,
+      String location,
+      String endpoint,
+      int timeout)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     FeaturestoreServiceSettings featurestoreServiceSettings =
         FeaturestoreServiceSettings.newBuilder().setEndpoint(endpoint).build();
 
@@ -71,22 +85,28 @@ public class ExportFeatureValuesSample {
     try (FeaturestoreServiceClient featurestoreServiceClient =
         FeaturestoreServiceClient.create(featurestoreServiceSettings)) {
 
-      FeatureSelector featureSelector = FeatureSelector.newBuilder()
-          .setIdMatcher(IdMatcher.newBuilder().addAllIds(featureSelectorIds).build()).build();
+      FeatureSelector featureSelector =
+          FeatureSelector.newBuilder()
+              .setIdMatcher(IdMatcher.newBuilder().addAllIds(featureSelectorIds).build())
+              .build();
 
       ExportFeatureValuesRequest exportFeatureValuesRequest =
           ExportFeatureValuesRequest.newBuilder()
               .setEntityType(
                   EntityTypeName.of(project, location, featurestoreId, entityTypeId).toString())
-              .setDestination(FeatureValueDestination.newBuilder().setBigqueryDestination(
-                  BigQueryDestination.newBuilder().setOutputUri(destinationTableUri)))
-              .setFeatureSelector(featureSelector).setFullExport(FullExport.newBuilder()).build();
+              .setDestination(
+                  FeatureValueDestination.newBuilder()
+                      .setBigqueryDestination(
+                          BigQueryDestination.newBuilder().setOutputUri(destinationTableUri)))
+              .setFeatureSelector(featureSelector)
+              .setFullExport(FullExport.newBuilder())
+              .build();
 
-      OperationFuture<ExportFeatureValuesResponse, ExportFeatureValuesOperationMetadata> 
-            exportFeatureValuesFuture =
+      OperationFuture<ExportFeatureValuesResponse, ExportFeatureValuesOperationMetadata>
+          exportFeatureValuesFuture =
               featurestoreServiceClient.exportFeatureValuesAsync(exportFeatureValuesRequest);
-      System.out.format("Operation name: %s%n",
-          exportFeatureValuesFuture.getInitialFuture().get().getName());
+      System.out.format(
+          "Operation name: %s%n", exportFeatureValuesFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       ExportFeatureValuesResponse exportFeatureValuesResponse =
           exportFeatureValuesFuture.get(timeout, TimeUnit.SECONDS);
@@ -97,4 +117,3 @@ public class ExportFeatureValuesSample {
   }
 }
 // [END aiplatform_export_feature_values_sample]
-

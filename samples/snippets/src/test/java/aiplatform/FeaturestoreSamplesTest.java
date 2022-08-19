@@ -37,8 +37,8 @@ public class FeaturestoreSamplesTest {
 
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final int MIN_NODE_COUNT = 1;
-  private static final int MAX_NODE_COUNT = 5;
-  private static final int FIXED_NODE_COUNT = 5;
+  private static final int MAX_NODE_COUNT = 2;
+  private static final int FIXED_NODE_COUNT = 2;
   private static final boolean USE_FORCE = true;
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";

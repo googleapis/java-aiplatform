@@ -48,7 +48,7 @@ public class FeatureValuesSamplesTest {
 
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final int MIN_NODE_COUNT = 1;
-  private static final int MAX_NODE_COUNT = 5;
+  private static final int MAX_NODE_COUNT = 2;
   private static final String DESCRIPTION = "Test Description";
   private static final boolean USE_FORCE = true;
   private static final String ENTITY_ID_FIELD = "movie_id";

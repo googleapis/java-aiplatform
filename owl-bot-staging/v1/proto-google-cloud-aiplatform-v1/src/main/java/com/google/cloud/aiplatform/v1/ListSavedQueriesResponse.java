@@ -111,8 +111,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> savedQueries_;
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -123,8 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -136,8 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -148,8 +145,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -160,8 +156,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -595,8 +590,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -610,8 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -625,8 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -640,8 +632,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -662,8 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -681,8 +671,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -702,8 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -724,8 +712,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -743,8 +730,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -762,8 +748,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -782,8 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -800,8 +784,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -818,8 +801,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -830,8 +812,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -845,8 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -861,8 +841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -873,8 +852,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -886,8 +864,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of SavedQueries that matches the specified filter in the
-     * request.
+     * A list of SavedQueries that match the specified filter in the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>

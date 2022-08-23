@@ -154,10 +154,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1.ExplanationMetadata metadata_;
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -166,10 +166,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The metadata.
    */
   @java.lang.Override
@@ -178,10 +178,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder getMetadataOrBuilder() {
@@ -697,10 +697,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.ExplanationMetadata, com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder, com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder> metadataBuilder_;
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
@@ -708,10 +708,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The metadata.
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadata getMetadata() {
@@ -723,10 +723,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMetadata(com.google.cloud.aiplatform.v1.ExplanationMetadata value) {
       if (metadataBuilder_ == null) {
@@ -743,10 +743,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMetadata(
         com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder builderForValue) {
@@ -761,10 +761,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMetadata(com.google.cloud.aiplatform.v1.ExplanationMetadata value) {
       if (metadataBuilder_ == null) {
@@ -783,10 +783,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -801,10 +801,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder getMetadataBuilder() {
       
@@ -813,10 +813,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -828,10 +828,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1.ExplanationMetadata, com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder, com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder> 

@@ -7,7 +7,6 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Sampling Strategy for logging, can be for both training and prediction
  * dataset.
- * Next ID: 2
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SamplingStrategy}
@@ -823,7 +822,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Sampling Strategy for logging, can be for both training and prediction
    * dataset.
-   * Next ID: 2
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SamplingStrategy}

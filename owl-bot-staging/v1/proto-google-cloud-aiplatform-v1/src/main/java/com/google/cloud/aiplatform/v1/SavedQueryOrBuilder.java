@@ -206,7 +206,7 @@ public interface SavedQueryOrBuilder extends
 
   /**
    * <pre>
-   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * Used to perform a consistent read-modify-write update. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface SavedQueryOrBuilder extends
   java.lang.String getEtag();
   /**
    * <pre>
-   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * Used to perform a consistent read-modify-write update. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *

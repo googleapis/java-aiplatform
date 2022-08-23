@@ -9,8 +9,7 @@ public interface ListSavedQueriesResponseOrBuilder extends
 
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -19,8 +18,7 @@ public interface ListSavedQueriesResponseOrBuilder extends
       getSavedQueriesList();
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -28,8 +26,7 @@ public interface ListSavedQueriesResponseOrBuilder extends
   com.google.cloud.aiplatform.v1.SavedQuery getSavedQueries(int index);
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -37,8 +34,7 @@ public interface ListSavedQueriesResponseOrBuilder extends
   int getSavedQueriesCount();
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>
@@ -47,8 +43,7 @@ public interface ListSavedQueriesResponseOrBuilder extends
       getSavedQueriesOrBuilderList();
   /**
    * <pre>
-   * A list of SavedQueries that matches the specified filter in the
-   * request.
+   * A list of SavedQueries that match the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 1;</code>

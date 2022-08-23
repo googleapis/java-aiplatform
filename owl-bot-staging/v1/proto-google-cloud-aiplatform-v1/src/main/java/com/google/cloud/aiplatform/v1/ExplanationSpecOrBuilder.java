@@ -36,28 +36,28 @@ public interface ExplanationSpecOrBuilder extends
 
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1.ExplanationMetadata getMetadata();
   /**
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder getMetadataOrBuilder();
 }

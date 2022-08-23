@@ -5,7 +5,8 @@ package com.google.cloud.aiplatform.v1;
 
 /**
  * <pre>
- * Next ID: 8
+ * The objective configuration for model monitoring, including the information
+ * needed to detect anomalies for one particular model.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}
@@ -7842,7 +7843,8 @@ com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue);
   }
   /**
    * <pre>
-   * Next ID: 8
+   * The objective configuration for model monitoring, including the information
+   * needed to detect anomalies for one particular model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}

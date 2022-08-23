@@ -4,10 +4,6 @@
 package com.google.cloud.aiplatform.v1;
 
 /**
- * <pre>
- * Next ID: 3
- * </pre>
- *
  * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig}
  */
 public final class ModelMonitoringAlertConfig extends
@@ -1103,10 +1099,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Next ID: 3
-   * </pre>
-   *
    * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig}
    */
   public static final class Builder extends

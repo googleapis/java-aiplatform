@@ -6,7 +6,6 @@ package com.google.cloud.aiplatform.v1;
 /**
  * <pre>
  * The config for feature monitoring threshold.
- * Next ID: 3
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ThresholdConfig}
@@ -349,7 +348,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The config for feature monitoring threshold.
-   * Next ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ThresholdConfig}

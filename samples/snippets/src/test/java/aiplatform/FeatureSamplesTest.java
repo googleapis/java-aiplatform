@@ -42,10 +42,11 @@ public class FeatureSamplesTest {
   private static final String QUERY = "value_type=STRING";
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
+  private static final String featurestoreId = "perm_sample_featurestore";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String featurestoreId = "featurestore_sample";
+  private String entityTypeId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -70,7 +71,15 @@ public class FeatureSamplesTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    
+    // Delete the entity type
+    DeleteEntityTypeSample.deleteEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, 300);
 
+    // Assert
+    String deleteEntityTypeResponse = bout.toString();
+    assertThat(deleteEntityTypeResponse).contains("Deleted Entity Type");
+    
     System.out.flush();
     System.setOut(originalPrintStream);
   }
@@ -78,10 +87,10 @@ public class FeatureSamplesTest {
   @Test
   public void testFeatureSamples()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
-
+    
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
-    String entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
+    entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
     CreateEntityTypeSample.createEntityTypeSample(
         PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT, 900);
 
@@ -152,5 +161,6 @@ public class FeatureSamplesTest {
     // Assert
     String deleteFeatureResponse = bout.toString();
     assertThat(deleteFeatureResponse).contains("Deleted Feature");
+    
   }
 }

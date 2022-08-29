@@ -71,7 +71,7 @@ public class FeatureSamplesTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    
+
     // Delete the entity type
     DeleteEntityTypeSample.deleteEntityTypeSample(
         PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, 300);
@@ -79,7 +79,7 @@ public class FeatureSamplesTest {
     // Assert
     String deleteEntityTypeResponse = bout.toString();
     assertThat(deleteEntityTypeResponse).contains("Deleted Entity Type");
-    
+
     System.out.flush();
     System.setOut(originalPrintStream);
   }
@@ -87,7 +87,7 @@ public class FeatureSamplesTest {
   @Test
   public void testFeatureSamples()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
-    
+
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 16);
     entityTypeId = String.format("temp_create_entity_type_test_%s", entityTypeTempUuid);
@@ -161,6 +161,5 @@ public class FeatureSamplesTest {
     // Assert
     String deleteFeatureResponse = bout.toString();
     assertThat(deleteFeatureResponse).contains("Deleted Feature");
-    
   }
 }

@@ -18,6 +18,7 @@ package aiplatform;
 
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
+
 import com.google.cloud.aiplatform.v1.Feature.ValueType;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;

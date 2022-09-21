@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Next ID: 8
+ * The objective configuration for model monitoring, including the information
+ * needed to detect anomalies for one particular model.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig}
@@ -9450,7 +9451,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Next ID: 8
+   * The objective configuration for model monitoring, including the information
+   * needed to detect anomalies for one particular model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig}

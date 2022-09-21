@@ -65,16 +65,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of getIndex to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * IndexServiceSettings.Builder indexServiceSettingsBuilder = IndexServiceSettings.newBuilder();
  * indexServiceSettingsBuilder
  *     .getIndexSettings()
  *     .setRetrySettings(
- *         indexServiceSettingsBuilder
- *             .getIndexSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         indexServiceSettingsBuilder.getIndexSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IndexServiceSettings indexServiceSettings = indexServiceSettingsBuilder.build();
@@ -126,6 +126,18 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
   public OperationCallSettings<DeleteIndexRequest, Empty, DeleteOperationMetadata>
       deleteIndexOperationSettings() {
     return ((IndexServiceStubSettings) getStubSettings()).deleteIndexOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to upsertDatapoints. */
+  public UnaryCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).upsertDatapointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeDatapoints. */
+  public UnaryCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).removeDatapointsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -295,6 +307,18 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
     public OperationCallSettings.Builder<DeleteIndexRequest, Empty, DeleteOperationMetadata>
         deleteIndexOperationSettings() {
       return getStubSettingsBuilder().deleteIndexOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upsertDatapoints. */
+    public UnaryCallSettings.Builder<UpsertDatapointsRequest, UpsertDatapointsResponse>
+        upsertDatapointsSettings() {
+      return getStubSettingsBuilder().upsertDatapointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeDatapoints. */
+    public UnaryCallSettings.Builder<RemoveDatapointsRequest, RemoveDatapointsResponse>
+        removeDatapointsSettings() {
+      return getStubSettingsBuilder().removeDatapointsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

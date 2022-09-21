@@ -69,17 +69,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of getMetadataStore to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * MetadataServiceSettings.Builder metadataServiceSettingsBuilder =
  *     MetadataServiceSettings.newBuilder();
  * metadataServiceSettingsBuilder
  *     .getMetadataStoreSettings()
  *     .setRetrySettings(
- *         metadataServiceSettingsBuilder
- *             .getMetadataStoreSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         metadataServiceSettingsBuilder.getMetadataStoreSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetadataServiceSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();
@@ -223,6 +223,12 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
   public UnaryCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
       addContextChildrenSettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).addContextChildrenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeContextChildren. */
+  public UnaryCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).removeContextChildrenSettings();
   }
 
   /** Returns the object with the settings used for calls to queryContextLineageSubgraph. */
@@ -577,6 +583,12 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     public UnaryCallSettings.Builder<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenSettings() {
       return getStubSettingsBuilder().addContextChildrenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeContextChildren. */
+    public UnaryCallSettings.Builder<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+        removeContextChildrenSettings() {
+      return getStubSettingsBuilder().removeContextChildrenSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryContextLineageSubgraph. */

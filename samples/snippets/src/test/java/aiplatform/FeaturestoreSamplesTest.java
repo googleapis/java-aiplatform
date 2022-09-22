@@ -138,7 +138,7 @@ public class FeaturestoreSamplesTest {
     // Assert
     String listFeaturestoresAsyncResponse = bout.toString();
     assertThat(listFeaturestoresAsyncResponse).contains("List Featurestores Async Response");
-    
+
     // Create the entity type
     String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 14);
     String entityTypeId = String.format("temp_featurestore_samples_test_%s", entityTypeTempUuid);

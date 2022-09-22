@@ -255,7 +255,7 @@ public class FeatureValuesSamplesTest {
     // Assert
     String deleteFeatureResponse = bout.toString();
     assertThat(deleteFeatureResponse).contains("Deleted Feature");
-    
+
     // Batch create features
     BatchCreateFeaturesSample.batchCreateFeaturesSample(
         PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, TIMEOUT);

@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.2](https://github.com/googleapis/java-aiplatform/compare/v3.4.1...v3.4.2) (2022-10-10)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.20.1 ([#1091](https://github.com/googleapis/java-aiplatform/issues/1091)) ([de61e5b](https://github.com/googleapis/java-aiplatform/commit/de61e5bd7ff16e326f39d4a9b51182aaf667d76e))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.1 ([#1092](https://github.com/googleapis/java-aiplatform/issues/1092)) ([ff34c82](https://github.com/googleapis/java-aiplatform/commit/ff34c82582905a03a385d522173e897f3ea19e36))
+
 ## [3.4.1](https://github.com/googleapis/java-aiplatform/compare/v3.4.0...v3.4.1) (2022-10-10)
 
 

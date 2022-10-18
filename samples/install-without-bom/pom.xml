@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-aiplatform</artifactId>
-      <version>3.4.1</version>
+      <version>3.5.0</version>
     </dependency>
     <!-- [END aiplatform_install_without_bom] -->
     <dependency>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-      <version>4.0.0-rc-2</version>
+      <version>3.21.7</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

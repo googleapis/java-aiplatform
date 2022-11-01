@@ -13,7 +13,7 @@ Java idiomatic client for [Vertex AI][product-docs].
 [google-cloud-java/java-aiplatform](
 https://github.com/googleapis/google-cloud-java/tree/main/java-aiplatform).
 This repository will be archived in the future.
-The future releases will appear in https://github.com/googleapis/google-cloud-java/releases.
+Future releases will appear in the new repository (https://github.com/googleapis/google-cloud-java/releases).
 The Maven artifact coordinates (`com.google.cloud:google-cloud-aiplatform`) remain the same.
 
 ## Quickstart

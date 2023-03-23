@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-aiplatform/compare/v3.4.2...v3.5.0) (2023-03-23)
+
+
+### Features
+
+* Add annotation_labels to ImportDataConfig in aiplatform v1 dataset.proto ([#1118](https://github.com/googleapis/java-aiplatform/issues/1118)) ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add annotation_labels to ImportDataConfig in aiplatform v1beta1 dataset.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add failed_main_jobs and failed_pre_caching_check_jobs to ContainerDetail in aiplatform v1 pipeline_job.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add failed_main_jobs and failed_pre_caching_check_jobs to ContainerDetail in aiplatform v1beta1 pipeline_job.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add metadata_artifact to Model in aiplatform v1 model.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add metadata_artifact to Model in aiplatform v1beta1 model.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add NVIDIA_A100_80GB to AcceleratorType in aiplatform v1beta1 accelerator_type.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add persist_ml_use_assignment to InputDataConfig in aiplatform v1 training_pipeline.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add persist_ml_use_assignment to InputDataConfig in aiplatform v1beta1 training_pipeline.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add start_time to BatchReadFeatureValuesRequest in aiplatform v1 featurestore_service.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add start_time to BatchReadFeatureValuesRequest in aiplatform v1beta1 featurestore_service.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+* Add total_deployed_model_count and total_endpoint_count to QueryDeployedModelsResponse in aiplatform v1beta1 deployment_resource_pool_service.proto ([c04bf6f](https://github.com/googleapis/java-aiplatform/commit/c04bf6f56843ccbbf8130f9d023ec3667660eac4))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.18.0 ([#1113](https://github.com/googleapis/java-aiplatform/issues/1113)) ([36faad4](https://github.com/googleapis/java-aiplatform/commit/36faad416694763b1f956809095a828a655fe4f0))
+
 ## [3.4.2](https://github.com/googleapis/java-aiplatform/compare/v3.4.1...v3.4.2) (2022-10-10)
 
 
